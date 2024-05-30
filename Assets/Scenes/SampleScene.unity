@@ -681,8 +681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.024170168, y: -0.000000009136267, z: 2.2088954e-10, w: 0.9997079}
-  m_LocalPosition: {x: -0.0000000011454819, y: 2.7346103, z: -11.525349}
+  m_LocalRotation: {x: -0.035646174, y: -9.37825e-17, z: -3.3451132e-18, w: 0.9993645}
+  m_LocalPosition: {x: 0, y: 2.1999998, z: -17.810001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,14 +1365,14 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 5
+      Radius: 6
       Height: 1.5
     Center:
-      Radius: 6
-      Height: 0.25
-    Bottom:
-      Radius: 5
+      Radius: 7
       Height: -0.5
+    Bottom:
+      Radius: 6
+      Height: -2
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
@@ -1456,8 +1456,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616755383}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.024170062, y: 0.000000026431902, z: -6.390299e-10, w: 0.9997079}
-  m_LocalPosition: {x: 0, y: 2.9499998, z: -16.810001}
+  m_LocalRotation: {x: -0.035646174, y: -9.3483824e-17, z: 5.0287217e-18, w: 0.9993645}
+  m_LocalPosition: {x: 0, y: 2.1999998, z: -17.810001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1509,14 +1509,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616755383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CameraRadius: 0.4
   Decollision:
-    Enabled: 1
+    Enabled: 0
     ObstacleLayers:
       serializedVersion: 2
       m_Bits: 1
@@ -2379,7 +2379,7 @@ GameObject:
   - component: {fileID: 1378348205}
   m_Layer: 0
   m_Name: ----- PLAYER
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
