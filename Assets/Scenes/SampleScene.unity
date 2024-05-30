@@ -2476,7 +2476,7 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 1378348201}
   <Controller>k__BackingField: {fileID: 1378348205}
   <Animator>k__BackingField: {fileID: 1378348204}
-  <FreeLookMovementSpeed>k__BackingField: 6
+  <FreeLookMovementSpeed>k__BackingField: 8
   <RotationDamping>k__BackingField: 10
 --- !u!1 &1473267832
 GameObject:
