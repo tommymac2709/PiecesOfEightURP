@@ -1,16 +1,25 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Targeter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public List<Target> targets = new List<Target>();
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (!other.TryGetComponent<Target>(out Target target)) { return; }
+
+        targets.Add(target);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if(!other.TryGetComponent<Target>(out Target target)) { return; }
+
+        targets.Remove(target);
+
     }
 }
