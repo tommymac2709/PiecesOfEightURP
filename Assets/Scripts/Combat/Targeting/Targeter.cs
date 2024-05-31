@@ -22,4 +22,9 @@ public class Targeter : MonoBehaviour
         targets.Remove(target);
 
     }
+
+    public void SelectTarget()
+    {
+        if (targets.Count == 0) return;
+    }
 }
