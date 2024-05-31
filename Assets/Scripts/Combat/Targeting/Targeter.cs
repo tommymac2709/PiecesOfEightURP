@@ -7,6 +7,8 @@ public class Targeter : MonoBehaviour
 
     public List<Target> targets = new List<Target>();
 
+    public Target CurrentTarget { get; private set; }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent<Target>(out Target target)) { return; }
@@ -23,8 +25,18 @@ public class Targeter : MonoBehaviour
 
     }
 
-    public void SelectTarget()
+    public bool SelectTarget()
     {
-        if (targets.Count == 0) return;
+        if (targets.Count == 0) return false;
+
+        CurrentTarget = targets[0];
+
+        return true;
+
+    }
+
+    public void CancelTargeting()
+    {
+        CurrentTarget = null;   
     }
 }

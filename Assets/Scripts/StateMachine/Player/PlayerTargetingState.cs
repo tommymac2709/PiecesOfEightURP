@@ -26,6 +26,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void OnTarget()
     {
+        stateMachine.Targeter.CancelTargeting();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 
