@@ -10,6 +10,9 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public Targeter Targeter { get; private set; }
 
+    [field: SerializeField] public GameObject TargetCamera { get; private set; }
+
+    [field: SerializeField] public GameObject FreeLookCamera { get; private set; }
 
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float RotationDamping { get; private set; }
