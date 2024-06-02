@@ -681,7 +681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17254244, y: 0.24427538, z: -0.044216912, w: -0.953207}
+  m_LocalRotation: {x: 0.1784246, y: -0.00000013084704, z: 0.000000023727067, w: 0.9839536}
   m_LocalPosition: {x: 0, y: 4.2, z: -14.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1559,7 +1559,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000004851654, y: -0.000000034383575, z: -0.0000000042427963,
     w: 1}
-  m_LocalPosition: {x: 0.9966922, y: -2.7003832, z: -3.1566653}
+  m_LocalPosition: {x: 0.0000010638471, y: -0.0000019073486, z: 4.2720017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2431,6 +2431,7 @@ GameObject:
   - component: {fileID: 1378348201}
   - component: {fileID: 1378348204}
   - component: {fileID: 1378348205}
+  - component: {fileID: 1378348207}
   m_Layer: 0
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -2530,11 +2531,26 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 1378348201}
   <Controller>k__BackingField: {fileID: 1378348205}
   <Animator>k__BackingField: {fileID: 1378348204}
+  <ForceReceiver>k__BackingField: {fileID: 1378348207}
   <Targeter>k__BackingField: {fileID: 1261586592}
   <TargetCamera>k__BackingField: {fileID: 2119512548}
   <FreeLookCamera>k__BackingField: {fileID: 616755383}
   <FreeLookMovementSpeed>k__BackingField: 8
+  <TargetingMovementSpeed>k__BackingField: 6
   <RotationDamping>k__BackingField: 10
+--- !u!114 &1378348207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378348200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc310ddbbd42fef4e863a47abd8b3b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1378348205}
 --- !u!1 &1473267832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,7 +4149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119512548}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17254244, y: 0.24427538, z: -0.044216912, w: -0.953207}
+  m_LocalRotation: {x: 0.1784246, y: -0.00000013042488, z: 0.00000002139908, w: 0.9839536}
   m_LocalPosition: {x: 0, y: 4.2, z: -14.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

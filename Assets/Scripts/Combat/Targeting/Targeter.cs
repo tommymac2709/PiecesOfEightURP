@@ -11,6 +11,13 @@ public class Targeter : MonoBehaviour
 
     public Target CurrentTarget { get; private set; }
 
+    private Camera mainCamera;
+
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent<Target>(out Target target)) { return; }
@@ -32,7 +39,31 @@ public class Targeter : MonoBehaviour
     {
         if (targets.Count == 0) return false;
 
-        CurrentTarget = targets[0];
+        Target closestTarget = null;
+        float closestTargetDistance = Mathf.Infinity;   
+
+        foreach (Target target in targets) 
+        {
+            Vector3 viewPos = mainCamera.WorldToViewportPoint(target.transform.position); //CHANGE TO VECTOR2 FOR CLOSEST TO CENTRE OF SCREEN TARGETING
+
+            if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
+            {
+                continue;
+            }
+
+            Vector3 toPlayer = viewPos - transform.position;
+
+            //Vector2 toCentre = viewPos - new Vector2(0.5f, 0.5f); UNCOMMENT FOR CLOSEST TO CENTRE OF SCREEN TARGETING 
+            if (toPlayer.sqrMagnitude < closestTargetDistance) //change toPlayer to toCentre FOR CLOSEST TO CENTRE OF SCREEN TARGETING
+            { 
+                closestTarget = target;
+                closestTargetDistance = toPlayer.sqrMagnitude; //change toPlayer to toCentre FOR CLOSEST TO CENTRE OF SCREEN TARGETING
+            }
+        }
+
+        if (closestTarget == null) return false;
+
+        CurrentTarget = closestTarget;
         cinemachineTargetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
 
 
