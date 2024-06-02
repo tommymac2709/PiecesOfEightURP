@@ -81,6 +81,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d197126-f09b-4527-90df-cf0a4a6c315d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -314,6 +323,39 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""CancelTarget"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e45814b5-5a7d-48cf-ad51-9a6fa2b83c6d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Mouse and Keyboard"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2119972-35f8-4e1b-80fc-9ff389c53b8e"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Mouse and Keyboard"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11c57fe3-4b2f-4028-a8f5-04e48a080f69"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -356,6 +398,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
         m_Player_CancelTarget = m_Player.FindAction("CancelTarget", throwIfNotFound: true);
+        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -428,6 +471,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Target;
     private readonly InputAction m_Player_CancelTarget;
+    private readonly InputAction m_Player_Attack;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -438,6 +482,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Target => m_Wrapper.m_Player_Target;
         public InputAction @CancelTarget => m_Wrapper.m_Player_CancelTarget;
+        public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -465,6 +510,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CancelTarget.started += instance.OnCancelTarget;
             @CancelTarget.performed += instance.OnCancelTarget;
             @CancelTarget.canceled += instance.OnCancelTarget;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -487,6 +535,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CancelTarget.started -= instance.OnCancelTarget;
             @CancelTarget.performed -= instance.OnCancelTarget;
             @CancelTarget.canceled -= instance.OnCancelTarget;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -530,5 +581,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnTarget(InputAction.CallbackContext context);
         void OnCancelTarget(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

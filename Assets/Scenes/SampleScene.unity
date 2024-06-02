@@ -2531,6 +2531,10 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 1378348201}
   <Controller>k__BackingField: {fileID: 1378348205}
   <Animator>k__BackingField: {fileID: 1378348204}
+  <AttackData>k__BackingField:
+  - <animationName>k__BackingField: Attack1
+  - <animationName>k__BackingField: Attack2
+  - <animationName>k__BackingField: Attack3
   <ForceReceiver>k__BackingField: {fileID: 1378348207}
   <Targeter>k__BackingField: {fileID: 1261586592}
   <TargetCamera>k__BackingField: {fileID: 2119512548}
