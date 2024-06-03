@@ -9,6 +9,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public Vector2 MovementValue { get; private set; }
 
     public bool IsAttacking { get; private set; }
+    public bool IsTargeting;
 
     public event Action JumpEvent;
     public event Action DodgeEvent;

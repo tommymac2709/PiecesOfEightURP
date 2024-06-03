@@ -16,6 +16,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.InputReader.IsTargeting = true;
         stateMachine.TargetCamera.SetActive(true);
         stateMachine.FreeLookCamera.SetActive(false);
 
@@ -50,7 +51,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Exit()
     {
-        Debug.Log("Exited Targeting State");
+        stateMachine.InputReader.IsTargeting = false;
         stateMachine.InputReader.TargetEvent -= OnTarget;
     }
 

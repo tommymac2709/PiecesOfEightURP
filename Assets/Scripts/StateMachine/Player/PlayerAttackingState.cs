@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerAttackingState : PlayerBaseState
 {
+    private bool alreadyAppliedForce = false;
+
     private float previousFrameTime;
 
     private AttackData attackData;
@@ -25,8 +27,9 @@ public class PlayerAttackingState : PlayerBaseState
 
 
         float normalizedTime = GetNormalizedTime();
+        Vector3 movement = CalculateMovement();
 
-        if (normalizedTime > previousFrameTime && normalizedTime < 1f)
+        if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
 
             if(normalizedTime >= attackData.ForceTime)
@@ -37,11 +40,24 @@ public class PlayerAttackingState : PlayerBaseState
             if (stateMachine.InputReader.IsAttacking)
             {
                 TryComboAttack(normalizedTime);
+
+                if (stateMachine.Targeter.CurrentTarget != null && stateMachine.InputReader.IsTargeting) return;
+
+                if (movement == Vector3.zero) { return; }
+
+                FaceDirection(movement, Time.deltaTime);
             }
         }
         else
         {
-            // go back to locomotion
+            if (stateMachine.Targeter.CurrentTarget != null)
+            {
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+            }
+            else
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            }
         }
 
         previousFrameTime = normalizedTime;
@@ -63,7 +79,11 @@ public class PlayerAttackingState : PlayerBaseState
 
     private void TryApplyForce()
     {
+        if (alreadyAppliedForce) { return; }
 
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attackData.Force);
+
+        alreadyAppliedForce = true;
     }
 
     private float GetNormalizedTime()
@@ -83,6 +103,25 @@ public class PlayerAttackingState : PlayerBaseState
         {
             return 0f;  
         }
+    }
+
+    private Vector3 CalculateMovement()
+    {
+        Vector3 forward = stateMachine.MainCameraTransform.forward;
+        Vector3 right = stateMachine.MainCameraTransform.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        return forward * stateMachine.InputReader.MovementValue.y + right * stateMachine.InputReader.MovementValue.x;
+    }
+
+    private void FaceDirection(Vector3 movement, float deltaTime)
+    {
+        stateMachine.transform.rotation = Quaternion.Lerp(stateMachine.transform.rotation, Quaternion.LookRotation(movement), deltaTime * stateMachine.RotationDamping);
     }
 
     
