@@ -23,4 +23,6 @@ public class AttackData
     //I.e. if the player is still holding the attack button when the animtion is .8 of the way through, play the next attack
     [field: SerializeField] public float ComboAttackTime { get; private set; }
 
+    [field: SerializeField] public float Knockback { get; private set; }
+
 }
