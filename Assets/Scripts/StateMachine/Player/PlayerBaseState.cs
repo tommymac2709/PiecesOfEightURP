@@ -11,6 +11,13 @@ public abstract class PlayerBaseState : State
         this.stateMachine = stateMachine;
     }
 
+    //Use for any states where the character needs to move (gravity, knockback etc) but there is no Input
+    protected void MoveNoInput(float deltaTime)
+    {
+        //Calls the move function below
+        Move(Vector3.zero, deltaTime);
+    }
+
     protected void Move(Vector3 motion, float deltaTime)
     {
         stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);

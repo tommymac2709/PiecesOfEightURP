@@ -655,7 +655,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -681,8 +681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1784246, y: -0.00000013084704, z: 0.000000023727067, w: 0.9839536}
-  m_LocalPosition: {x: 0, y: 4.2, z: -14.81}
+  m_LocalRotation: {x: -0.035646174, y: -9.37825e-17, z: -3.3451132e-18, w: 0.9993645}
+  m_LocalPosition: {x: 0, y: 2.1999998, z: -17.810001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Priority:
     Enabled: 1
-    m_Value: 0
+    m_Value: 1
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20230301
@@ -2532,9 +2532,18 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 1378348205}
   <Animator>k__BackingField: {fileID: 1378348204}
   <AttackData>k__BackingField:
-  - <animationName>k__BackingField: Attack1
-  - <animationName>k__BackingField: Attack2
-  - <animationName>k__BackingField: Attack3
+  - <AnimationName>k__BackingField: Attack1
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboStateIndex>k__BackingField: 1
+    <ComboAttackTime>k__BackingField: 0.8
+  - <AnimationName>k__BackingField: Attack2
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboStateIndex>k__BackingField: 2
+    <ComboAttackTime>k__BackingField: 0.8
+  - <AnimationName>k__BackingField: Attack3
+    <TransitionDuration>k__BackingField: 0.2
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0
   <ForceReceiver>k__BackingField: {fileID: 1378348207}
   <Targeter>k__BackingField: {fileID: 1261586592}
   <TargetCamera>k__BackingField: {fileID: 2119512548}
@@ -4243,7 +4252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Priority:
-    Enabled: 0
+    Enabled: 1
     m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
