@@ -10,6 +10,8 @@ public class AttackData
 
     [field: SerializeField] public int ComboStateIndex { get; private set; } = -1;
 
+    [field: SerializeField] public int DamageAmount { get; private set; }
+
 
     //How far through the animation a force is added
     [field: SerializeField] public float ForceTime { get; private set; }

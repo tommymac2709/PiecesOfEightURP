@@ -681,8 +681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.035646178, y: -1.7699965e-11, z: -6.313373e-13, w: 0.9993645}
-  m_LocalPosition: {x: 0, y: 2.1999998, z: -17.810001}
+  m_LocalRotation: {x: -0.035646174, y: 0, z: 0, w: 0.9993645}
+  m_LocalPosition: {x: 0, y: 7.04, z: -17.810001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1456,8 +1456,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616755383}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.035646178, y: -1.76927e-11, z: -4.2762056e-13, w: 0.9993645}
-  m_LocalPosition: {x: 0, y: 2.1999998, z: -17.810001}
+  m_LocalRotation: {x: -0.035646174, y: 0, z: 0, w: 0.9993645}
+  m_LocalPosition: {x: 0, y: 7.04, z: -17.810001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2561,7 +2561,7 @@ Transform:
   m_GameObject: {fileID: 1378348200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10.81}
+  m_LocalPosition: {x: 0, y: 4.84, z: -10.81}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2636,23 +2636,27 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: Attack1
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
+    <DamageAmount>k__BackingField: 10
     <ForceTime>k__BackingField: 0.1
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.8
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
+    <DamageAmount>k__BackingField: 15
     <ForceTime>k__BackingField: 0.25
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.8
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
+    <DamageAmount>k__BackingField: 20
     <ForceTime>k__BackingField: 0.5
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0
   <ForceReceiver>k__BackingField: {fileID: 1378348207}
   <Targeter>k__BackingField: {fileID: 1261586592}
+  <WeaponDamage>k__BackingField: {fileID: 1146455978}
   <TargetCamera>k__BackingField: {fileID: 2119512548}
   <FreeLookCamera>k__BackingField: {fileID: 616755383}
   <FreeLookMovementSpeed>k__BackingField: 8
@@ -3088,7 +3092,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.92, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1652218240}
@@ -3493,6 +3497,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652218239}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1704226373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4628213873641533887, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_Name
+      value: The Jedi Temple
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313394572383749, guid: 6fd28dc1d3b3a5443a74edf3caf5653c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fd28dc1d3b3a5443a74edf3caf5653c, type: 3}
 --- !u!1 &1712305224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,7 +4396,7 @@ Transform:
   m_GameObject: {fileID: 2119512548}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1784246, y: -0.00000013042488, z: 0.00000002139908, w: 0.9839536}
-  m_LocalPosition: {x: 0, y: 4.2, z: -14.81}
+  m_LocalPosition: {x: 0, y: 9.04, z: -14.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4564,3 +4636,4 @@ SceneRoots:
   - {fileID: 2105802104}
   - {fileID: 1573943617}
   - {fileID: 1170372835}
+  - {fileID: 1704226373}
