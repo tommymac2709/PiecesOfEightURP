@@ -19,6 +19,15 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        MoveNoInput(deltaTime);
+
+        if (IsInChaseRange())
+        {
+            Debug.Log("Run away!");
+            //transition to fleeing / chasing state 
+            return;
+        }
+
         stateMachine.Animator.SetFloat(MovementSpeedHash, 0, AnimatorDampTime, deltaTime);
     }
 
