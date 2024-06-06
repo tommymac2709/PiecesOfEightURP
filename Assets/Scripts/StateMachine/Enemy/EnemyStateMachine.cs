@@ -10,6 +10,8 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
 
+    [field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
+
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
     [field: SerializeField] public float WanderRadius { get; private set; }
@@ -17,6 +19,8 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public float WanderTimer { get; private set; }
 
     [field: SerializeField] public float AttackRange { get; private set; }
+
+    [field: SerializeField] public int AttackDamage { get; private set; }
 
     [field: SerializeField] public float PlayerDetectRange { get; private set; }
 
@@ -31,7 +35,7 @@ public class EnemyStateMachine : StateMachine
         Agent.updatePosition = false;
         Agent.updateRotation = false;
         
-        SwitchState(new EnemyWanderState(this));
+        SwitchState(new EnemyIdleState(this));
     }
 
     private void OnDrawGizmosSelected()

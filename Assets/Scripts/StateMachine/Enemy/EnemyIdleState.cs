@@ -21,19 +21,19 @@ public class EnemyIdleState : EnemyBaseState
     {
         MoveNoInput(deltaTime);
 
-        //if (IsInChaseRange())
-        //{
-            
-        //    stateMachine.SwitchState(new EnemyChasingState(stateMachine));
-        //    return;
-        //}
-
-        if (IsInFleeRange())
+        if (IsInChaseRange())
         {
 
-            stateMachine.SwitchState(new EnemyFleeState(stateMachine));
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
         }
+
+        //if (IsInFleeRange())
+        //{
+
+        //    stateMachine.SwitchState(new EnemyFleeState(stateMachine));
+        //    return;
+        //}
 
         stateMachine.Animator.SetFloat(MovementSpeedHash, 0, AnimatorDampTime, deltaTime);
     }

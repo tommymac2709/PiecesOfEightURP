@@ -24,6 +24,12 @@ public class EnemyChasingState : EnemyBaseState
             return;
         }
 
+        if (IsInAttackRange())
+        {
+            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+            return;
+        }
+
         MoveToPlayer(deltaTime);
 
         FacePlayer();
