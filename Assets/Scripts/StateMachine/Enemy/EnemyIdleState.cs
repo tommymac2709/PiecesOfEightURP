@@ -13,7 +13,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.SetFloat(MovementSpeedHash, 0);
+        
         stateMachine.Animator.CrossFadeInFixedTime(MotionBlendTreeHash, CrossFadeDuration);
     }
 
@@ -21,10 +21,17 @@ public class EnemyIdleState : EnemyBaseState
     {
         MoveNoInput(deltaTime);
 
-        if (IsInChaseRange())
+        //if (IsInChaseRange())
+        //{
+            
+        //    stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+        //    return;
+        //}
+
+        if (IsInFleeRange())
         {
-            Debug.Log("Run away!");
-            //transition to fleeing / chasing state 
+
+            stateMachine.SwitchState(new EnemyFleeState(stateMachine));
             return;
         }
 
@@ -33,7 +40,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     
