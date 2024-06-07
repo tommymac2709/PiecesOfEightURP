@@ -7,23 +7,26 @@ public class EnemyAttackState : EnemyBaseState
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
+    
+
     public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
-        stateMachine.WeaponDamage.SetAttack(stateMachine.AttackDamage, 0f);
+        stateMachine.WeaponDamage.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
 
         stateMachine.Animator.CrossFadeInFixedTime(AttackAnimHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
     {
-       if (!IsInAttackRange())
+        if (GetNormalizedTime(stateMachine.Animator) >= 1)
         {
-            stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }
+        
     }
 
     public override void Exit()

@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
+
+    public event Action OnTakeDamage;
+    public event Action OnDie;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +30,13 @@ public class Health : MonoBehaviour
         if (currentHealth < 0)
         {
             currentHealth = 0;
+        }
+
+        OnTakeDamage?.Invoke();
+
+        if (currentHealth == 0)
+        {
+            OnDie?.Invoke();
         }
 
         Debug.Log(currentHealth);
