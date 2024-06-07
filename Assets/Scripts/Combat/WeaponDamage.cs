@@ -25,9 +25,9 @@ public class WeaponDamage : MonoBehaviour
 
         alreadyCollidedWith.Add(other);
 
-        if (other.TryGetComponent<Health>(out Health health))
+        if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
         {
-            health.DealDamage(damage);
+            damageReceiver.DealDamage(playerCollider.transform, damage);
         }
 
         if (other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))

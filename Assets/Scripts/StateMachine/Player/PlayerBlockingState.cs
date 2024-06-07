@@ -13,17 +13,24 @@ public class PlayerBlockingState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.DamageReceiver.SetIsBlocking(true);
         stateMachine.Animator.CrossFadeInFixedTime(BlockAnimHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
     {
-        
+        MoveNoInput(deltaTime);
+
+        if (!stateMachine.InputReader.IsBlocking || stateMachine.InputReader.IsTargeting && stateMachine.Targeter.CurrentTarget == null)
+        {
+            ReturnToLocomotion();
+            return;
+        }
     }
 
     public override void Exit()
     {
-        
+        stateMachine.DamageReceiver.SetIsBlocking(false);
     }
 
     

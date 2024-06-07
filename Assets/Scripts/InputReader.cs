@@ -11,6 +11,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public bool IsAttacking { get; private set; }
     public bool IsBlocking { get; private set; }
 
+    public bool IsSprinting { get; private set; }
+
     public bool IsTargeting;
 
     public event Action JumpEvent;
@@ -98,6 +100,18 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         else if (context.canceled)
         {
             IsBlocking = false;
+        }
+    }
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            IsSprinting = true;
+        }
+        else if (context.canceled)
+        {
+            IsSprinting = false;
         }
     }
 }

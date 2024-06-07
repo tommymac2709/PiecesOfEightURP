@@ -3194,6 +3194,7 @@ GameObject:
   - component: {fileID: 5049605926301838905}
   - component: {fileID: 7472134977629846448}
   - component: {fileID: 664748408960178753}
+  - component: {fileID: 8311431661288316288}
   m_Layer: 0
   m_Name: ----- ENEMY
   m_TagString: Untagged
@@ -3382,6 +3383,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4528406913152600717}
   characterController: {fileID: 2871223791956703218}
+--- !u!114 &8311431661288316288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109ab2699a0d744819a64fa5dd57a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1403208636335331178}
+  coveredAngle: 90
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0

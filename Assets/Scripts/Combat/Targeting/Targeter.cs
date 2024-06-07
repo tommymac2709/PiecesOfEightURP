@@ -46,7 +46,7 @@ public class Targeter : MonoBehaviour
         {
             Vector3 viewPos = mainCamera.WorldToViewportPoint(target.transform.position); //CHANGE TO VECTOR2 FOR CLOSEST TO CENTRE OF SCREEN TARGETING
 
-            if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
+            if (!target.GetComponentInChildren<Renderer>().isVisible)
             {
                 continue;
             }

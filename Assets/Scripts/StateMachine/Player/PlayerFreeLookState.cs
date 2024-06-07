@@ -1,3 +1,4 @@
+using RPGCharacterAnims.Actions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.TargetCamera.SetActive(false);
         
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.InputReader.JumpEvent += OnJump;
+        stateMachine.InputReader.DodgeEvent += OnDodge;
 
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
     }
@@ -40,7 +43,15 @@ public class PlayerFreeLookState : PlayerBaseState
 
         Vector3 movement = CalculateMovement();
 
-        Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime); //Calls from BaseState
+        if (stateMachine.InputReader.IsSprinting)
+        {
+            Move(movement * stateMachine.FreeLookSprintMovementSpeed, deltaTime); //Calls from BaseState
+        }
+        else
+        {
+            Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime); //Calls from BaseState
+        }
+        
 
         
 
@@ -58,6 +69,20 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
+        stateMachine.InputReader.JumpEvent -= OnJump;
+        stateMachine.InputReader.DodgeEvent -= OnDodge;
+    }
+
+    private void OnDodge()
+    {
+        stateMachine.SwitchState(new PlayerFreeLookDodgeState(stateMachine));
+        return;
+    }
+
+    private void OnJump() 
+    { 
+        stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+        return;
     }
 
     private void OnTarget()
@@ -65,6 +90,7 @@ public class PlayerFreeLookState : PlayerBaseState
         if (!stateMachine.Targeter.SelectTarget()) return;
         
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+        return;
     }
 
     private Vector3 CalculateMovement()

@@ -26,6 +26,8 @@ public class EnemyAttackState : EnemyBaseState
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }
+
+        FacePlayer();
         
     }
 

@@ -1,4 +1,6 @@
 //using System.Diagnostics;
+using RPGCharacterAnims.Actions;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
@@ -11,6 +13,9 @@ public class PlayerTargetingState : PlayerBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
+    
+    
+
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -22,6 +27,7 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.FreeLookCamera.SetActive(false);
 
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.InputReader.DodgeEvent += OnDodge;
 
         stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
     }
@@ -34,6 +40,12 @@ public class PlayerTargetingState : PlayerBaseState
             return;
         }
 
+        if (stateMachine.InputReader.IsBlocking)
+        {
+            stateMachine.SwitchState(new PlayerBlockingState(stateMachine));
+            return;
+        }
+
         if (stateMachine.Targeter.CurrentTarget == null)
         {
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
@@ -41,7 +53,7 @@ public class PlayerTargetingState : PlayerBaseState
             //This return stops anything else under it from occuring in the state
         }
 
-        Vector3 movement = CalculateMovement();
+        Vector3 movement = CalculateMovement(deltaTime);
 
         Move(movement * stateMachine.TargetingMovementSpeed, deltaTime);
 
@@ -54,6 +66,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.InputReader.IsTargeting = false;
         stateMachine.InputReader.TargetEvent -= OnTarget;
+        stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
 
     private void OnTarget()
@@ -62,13 +75,23 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 
-    private Vector3 CalculateMovement()
+    private void OnDodge()
+    {
+         if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
+        stateMachine.SwitchState(new PlayerDodgeState(stateMachine, stateMachine.InputReader.MovementValue));
+        return;
+        
+    }
+
+    
+
+    private Vector3 CalculateMovement(float deltaTime)
     {
         Vector3 movement = new Vector3();
 
         movement += stateMachine.transform.right * stateMachine.InputReader.MovementValue.x;
         movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
-
+       
         return movement;
     }
 
