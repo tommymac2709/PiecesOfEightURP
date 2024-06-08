@@ -7,7 +7,7 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
-    
+    private float invulnerabilityTimer;
     private float remainingDodgeDuration;
     Vector3 movement;
 
@@ -19,6 +19,9 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.DamageReceiver.SetIsInvulnerable(true);
+        invulnerabilityTimer = stateMachine.DodgeInvulnerabilityDurationFreeLook;
+
         remainingDodgeDuration = stateMachine.DodgeDurationFreeLook;
 
         stateMachine.Animator.CrossFadeInFixedTime(DodgeRollHash, CrossFadeDuration);
@@ -39,6 +42,12 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
         Move(movement, Time.deltaTime);
 
         remainingDodgeDuration -= deltaTime;
+        invulnerabilityTimer -= deltaTime;
+
+        if (invulnerabilityTimer <= 0) 
+        {
+            stateMachine.DamageReceiver.SetIsInvulnerable(false);
+        }
 
         if (remainingDodgeDuration <= 0)
         {

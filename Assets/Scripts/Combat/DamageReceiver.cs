@@ -8,6 +8,13 @@ public class DamageReceiver : MonoBehaviour
 
     private bool isBlocking = false;
 
+    private bool isInvulnerable;
+
+    public void SetIsInvulnerable(bool isInvulnerable)
+    {
+        this.isInvulnerable = isInvulnerable;
+    }
+
     public void SetIsBlocking(bool state)
     {
         isBlocking = state;
@@ -15,6 +22,8 @@ public class DamageReceiver : MonoBehaviour
 
     public void DealDamage(Transform attacker, int damageAmount)
     {
+        if (isInvulnerable) { return; }
+
         if (isBlocking && AttackerInCoverage(attacker)) { return; }
 
         health.DealDamage(damageAmount);

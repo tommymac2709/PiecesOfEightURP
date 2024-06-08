@@ -39,6 +39,10 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float DodgeCooldown { get; private set; }
 
+    [field: SerializeField] public float DodgeInvulnerabilityDurationFreeLook { get; private set; }
+
+    [field: SerializeField] public float DodgeInvulnerabilityDurationTargeting { get; private set; }
+
     [field: SerializeField] public float JumpForce { get; private set; }
 
     [field: SerializeField] public float ImpactStateDuration { get; private set; }
