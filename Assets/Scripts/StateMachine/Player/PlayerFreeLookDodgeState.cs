@@ -9,7 +9,7 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
 
     
     private float remainingDodgeDuration;
-    
+    Vector3 movement;
 
 
     public PlayerFreeLookDodgeState(PlayerStateMachine stateMachine) : base(stateMachine)
@@ -22,21 +22,21 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
         remainingDodgeDuration = stateMachine.DodgeDurationFreeLook;
 
         stateMachine.Animator.CrossFadeInFixedTime(DodgeRollHash, CrossFadeDuration);
-        
+        Vector3 movement = CalculateMovement();
+
+
+        movement += movement * stateMachine.DodgeDistanceFreeLook / stateMachine.DodgeDurationFreeLook;
+
+        this.movement = movement;
+
+        FaceMovementDirection(movement, Time.deltaTime);
 
     }
 
     public override void Tick(float deltaTime)
     {
-        Vector3 movement = CalculateMovement();
 
-
-        movement +=  movement * stateMachine.DodgeDistanceFreeLook / stateMachine.DodgeDurationFreeLook;
-
-        Move(movement, deltaTime);
-
-        FaceMovementDirection(movement, deltaTime);
-
+        Move(movement, Time.deltaTime);
 
         remainingDodgeDuration -= deltaTime;
 

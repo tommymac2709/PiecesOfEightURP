@@ -3832,6 +3832,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1747191137802173258, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2460188113998975960, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}
       propertyPath: m_IsActive
@@ -3847,6 +3852,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ----- PLAYER
       objectReference: {fileID: 0}
+    - target: {fileID: 7843319965864679738, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 2c3fcc96f5c817e4bb36c8741d9e50d8, type: 3}
     - target: {fileID: 8656708052073494075, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}
       propertyPath: <JumpForce>k__BackingField
