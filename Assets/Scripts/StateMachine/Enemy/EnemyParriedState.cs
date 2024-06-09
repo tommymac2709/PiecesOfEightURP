@@ -1,23 +1,23 @@
 using UnityEngine;
 
-public class EnemyImpactState : EnemyBaseState
+public class EnemyParriedState : EnemyBaseState
 {
-    private readonly int ImpactAnimHash = Animator.StringToHash("Impact");
+    private readonly int ParriedAnimHash = Animator.StringToHash("Parried");
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
     private float stateDuration;
 
-    public EnemyImpactState(EnemyStateMachine stateMachine, float stateDuration) : base(stateMachine)
+    public EnemyParriedState(EnemyStateMachine stateMachine, float stateDuration) : base(stateMachine)
     {
         this.stateDuration = stateDuration;
     }
 
     public override void Enter()
     {
-        
-        stateMachine.Animator.CrossFadeInFixedTime(ImpactAnimHash, CrossFadeDuration);
+
+        stateMachine.Animator.CrossFadeInFixedTime(ParriedAnimHash, CrossFadeDuration);
     }
     public override void Tick(float deltaTime)
     {

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class WeaponDamage : MonoBehaviour
 {
+
+
     [SerializeField] private Collider playerCollider;
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
@@ -24,6 +26,8 @@ public class WeaponDamage : MonoBehaviour
         if (alreadyCollidedWith.Contains(other)) { return; }
 
         alreadyCollidedWith.Add(other);
+
+        
 
         if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
         {

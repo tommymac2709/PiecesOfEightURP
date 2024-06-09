@@ -63,7 +63,7 @@ public class EnemyStateMachine : StateMachine
 
     private void HandleTakeDamage()
     {
-        SwitchState(new EnemyImpactState(this));
+        SwitchState(new EnemyImpactState(this, ImpactStateDuration));
     }
 
     private void HandleDie()

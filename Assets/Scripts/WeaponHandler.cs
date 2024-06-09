@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponHandler : MonoBehaviour
 {
     [SerializeField] private GameObject weaponLogicGameObject;
+
+   
 
     public void EnableHitbox()
     {
@@ -12,5 +15,6 @@ public class WeaponHandler : MonoBehaviour
     public void DisableHitBox()
     {
         weaponLogicGameObject.SetActive(false);
+
     }
 }
