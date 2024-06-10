@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerFallState : PlayerBaseState
@@ -17,8 +18,10 @@ public class PlayerFallState : PlayerBaseState
     public override void Enter()
     {
         momentum = stateMachine.Controller.velocity;
-        //momentum.y = 0f;
+        momentum.y = 0f;
         stateMachine.Animator.CrossFadeInFixedTime(FallAnimHash, CrossFadeDuration);
+
+        stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetect;
     }
 
     public override void Tick(float deltaTime)
@@ -35,8 +38,11 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetect;
     }
 
-    
+    private void HandleLedgeDetect(Vector3 closestPoint, Vector3 ledgeForward)
+    {
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, closestPoint, ledgeForward));
+    }
 }

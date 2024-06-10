@@ -17,6 +17,8 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetect;
+
         stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
 
         momentum = stateMachine.Controller.velocity / 2;
@@ -39,8 +41,13 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetect;
     }
 
-    
+    private void HandleLedgeDetect(Vector3 closestPoint, Vector3 ledgeForward)
+    {
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, closestPoint, ledgeForward));
+    }
+
+
 }

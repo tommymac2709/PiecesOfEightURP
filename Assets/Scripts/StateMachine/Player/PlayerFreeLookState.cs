@@ -13,7 +13,13 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
-    public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
+    private bool shouldFade;
+
+    public PlayerFreeLookState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine) 
+    { 
+        this.shouldFade = shouldFade;
+    
+    }
 
     public override void Enter()
     {
@@ -24,7 +30,17 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.DodgeEvent += OnDodge;
 
-        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f);
+
+        if (shouldFade)
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
+        }
+        else
+        {
+            stateMachine.Animator.Play(FreeLookBlendTreeHash);
+        }
+        
     }
 
     public override void Tick(float deltaTime)
