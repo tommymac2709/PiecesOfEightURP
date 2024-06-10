@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHangingState : PlayerBaseState
@@ -11,6 +12,8 @@ public class PlayerHangingState : PlayerBaseState
 
     private Vector3 closestPoint;
     private Vector3 ledgeForward;
+
+    private float stateTimer = 0f;
     public PlayerHangingState(PlayerStateMachine stateMachine, Vector3 closestPoint, Vector3 ledgeForward) : base(stateMachine)
     {
         this.closestPoint = closestPoint;
@@ -19,16 +22,17 @@ public class PlayerHangingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.InputReader.enabled = false;
+        
         stateMachine.transform.rotation = Quaternion.LookRotation(ledgeForward, Vector3.up);
         
         stateMachine.Animator.CrossFadeInFixedTime(HangAnimHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
-    {
+    { 
+        stateTimer += deltaTime;
 
-        if (stateMachine.InputReader.MovementValue.y > 0f)
+        if (stateTimer > 0.25f &&  stateMachine.InputReader.MovementValue.y > 0f)
         {
             
             stateMachine.SwitchState(new PlayerPullUpState(stateMachine));

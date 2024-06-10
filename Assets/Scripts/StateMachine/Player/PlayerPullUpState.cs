@@ -23,20 +23,21 @@ public class PlayerPullUpState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (GetNormalizedTime(stateMachine.Animator, "Climbing") < 1f) { return; }
+        if (GetNormalizedTime(stateMachine.Animator, "Climbing") < 0.85f) { return; }
 
+        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine, false));
         stateMachine.Controller.enabled = false;
         stateMachine.transform.Translate(offset, Space.Self);
         stateMachine.Controller.enabled = true;
-
-        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine, false));
+        return;
+        
     }
 
     public override void Exit()
     {
         stateMachine.FreeLookCamera.SetActive(true);
         stateMachine.ClimbCamera.SetActive(false);
-        
+
         stateMachine.Controller.Move(Vector3.zero);
         stateMachine.ForceReceiver.Reset();
     }
