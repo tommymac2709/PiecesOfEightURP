@@ -9,7 +9,7 @@ public class PlayerBlockingState : PlayerBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
-    private float parryTimer = 0.1f;
+    private float parryTimer = 0.2f;
 
     
 
