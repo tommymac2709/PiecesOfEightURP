@@ -3166,6 +3166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e191cbdf79c144ea4af07fb198938f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ClimbCamera>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 1645534417191781813}
   <Controller>k__BackingField: {fileID: 3423118866662943953}
   <Animator>k__BackingField: {fileID: 7843319965864679738}
@@ -3194,15 +3195,26 @@ MonoBehaviour:
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0
     <Knockback>k__BackingField: 20
+  <DamageReceiver>k__BackingField: {fileID: 1318740368944555670}
   <ForceReceiver>k__BackingField: {fileID: 2563405223279904825}
   <Health>k__BackingField: {fileID: 198542440665773613}
+  <LedgeDetector>k__BackingField: {fileID: 0}
   <Ragdoll>k__BackingField: {fileID: 8374886347335840474}
   <Targeter>k__BackingField: {fileID: 2547335843263519822}
   <WeaponDamage>k__BackingField: {fileID: 4642837822242414563}
   <TargetCamera>k__BackingField: {fileID: 0}
   <FreeLookCamera>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 8
+  <FreeLookSprintMovementSpeed>k__BackingField: 0
   <TargetingMovementSpeed>k__BackingField: 6
+  <DodgeDuration>k__BackingField: 0
+  <DodgeDurationFreeLook>k__BackingField: 0
+  <DodgeDistance>k__BackingField: 0
+  <DodgeDistanceFreeLook>k__BackingField: 0
+  <DodgeCooldown>k__BackingField: 0
+  <DodgeInvulnerabilityDurationFreeLook>k__BackingField: 0
+  <DodgeInvulnerabilityDurationTargeting>k__BackingField: 0
+  <JumpForce>k__BackingField: 0
   <ImpactStateDuration>k__BackingField: 0.5
   <RotationDamping>k__BackingField: 10
 --- !u!114 &1645534417191781813

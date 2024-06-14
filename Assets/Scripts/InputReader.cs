@@ -18,6 +18,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
+    public event Action UseAbilityEvent;
     public event Action CancelTargetEvent;
 
     
@@ -113,5 +114,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         {
             IsSprinting = false;
         }
+    }
+
+    public void OnUseAbility(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        UseAbilityEvent?.Invoke();
     }
 }

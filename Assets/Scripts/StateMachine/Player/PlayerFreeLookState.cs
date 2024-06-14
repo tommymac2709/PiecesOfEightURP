@@ -1,4 +1,5 @@
 using RPGCharacterAnims.Actions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.DodgeEvent += OnDodge;
+        stateMachine.InputReader.UseAbilityEvent += OnUseAbility;
 
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f);
 
@@ -87,6 +89,12 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.JumpEvent -= OnJump;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
+        stateMachine.InputReader.UseAbilityEvent -= OnUseAbility;
+    }
+
+    private void OnUseAbility()
+    {
+        
     }
 
     private void OnDodge()
