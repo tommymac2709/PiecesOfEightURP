@@ -94,7 +94,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnUseAbility()
     {
-
+        if (stateMachine.AbilityManager.abilities[stateMachine.AbilityManager.currentAbilityIndex].isCoolingDown ) { return; }
         stateMachine.SwitchState(new PlayerUseAbilityState(stateMachine, stateMachine.AbilityManager.abilities[stateMachine.AbilityManager.currentAbilityIndex]));
         return;
     }

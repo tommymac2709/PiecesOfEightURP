@@ -14,7 +14,7 @@ public abstract class Ability : ScriptableObject
 
     public virtual void Activate(GameObject parent)
     {
-        if (isActive || isCoolingDown) { return; }
+        if (isActive) { return; }
         Debug.Log(abilityName + " activated.");
         // Add custom activation logic here
         isActive = true;
@@ -26,8 +26,9 @@ public abstract class Ability : ScriptableObject
     {
         Debug.Log(abilityName + " deactivated.");
         isActive = false;
-        OnAbilityDeactivated();
+        
         parent.GetComponent<MonoBehaviour>().StartCoroutine(Cooldown());
+        
         // Add custom deactivation logic here
     }
 
@@ -39,6 +40,7 @@ public abstract class Ability : ScriptableObject
     private IEnumerator Cooldown()
     {
         isCoolingDown = true;
+        OnAbilityDeactivated();
         yield return new WaitForSeconds(cooldownTime);
         isCoolingDown = false;
     }
