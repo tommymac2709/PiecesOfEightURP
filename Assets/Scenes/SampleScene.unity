@@ -1859,7 +1859,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7287925223851343817}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1723038714}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89109ab2699a0d744819a64fa5dd57a4, type: 3}
@@ -3482,6 +3482,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712305224}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1723038714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7701608915712708403, guid: f13b3ad2a6eae604fb03671991086398,
+    type: 3}
+  m_PrefabInstance: {fileID: 7287925223851343817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1862897931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3782,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7287925223851343817}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1939945171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723038714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4275f58e6dacea47a098bdcb0cb7967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 11400000, guid: 8418c47818b562d4d9a5193f9180a8a8, type: 2}
 --- !u!1 &2018459741
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,6 +4493,11 @@ PrefabInstance:
       objectReference: {fileID: 1167211828}
     - target: {fileID: 8656708052073494075, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}
+      propertyPath: <AbilityManager>k__BackingField
+      value: 
+      objectReference: {fileID: 1939945171}
+    - target: {fileID: 8656708052073494075, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
       propertyPath: <DamageReceiver>k__BackingField
       value: 
       objectReference: {fileID: 647237846}
@@ -4582,7 +4607,11 @@ PrefabInstance:
         type: 3}
       insertIndex: 0
       addedObject: {fileID: 1184001519}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7701608915712708403, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1939945171}
   m_SourcePrefab: {fileID: 100100000, guid: f13b3ad2a6eae604fb03671991086398, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
