@@ -54,6 +54,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float ImpactStateDuration { get; private set; }
     [field: SerializeField] public float RotationDamping { get; private set; }
 
+    public bool IsInvisible { get; private set; }
+
     public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
     public Transform MainCameraTransform { get; private set; }
 

@@ -7,6 +7,8 @@ public class DamageReceiver : MonoBehaviour
 
     [SerializeField] Health health;
 
+    [SerializeField] WeaponHandler weapon;
+
     [SerializeField] float coveredAngle = 90f;
 
     private bool isBlocking = false;
@@ -43,6 +45,7 @@ public class DamageReceiver : MonoBehaviour
         {
             if (canParry && AttackerInCoverage(attacker))
             {
+                weapon.HitOne();
                 enemyStateMachine.SwitchState(new EnemyParriedState(enemyStateMachine, 2f));
                 return;
             }
@@ -50,8 +53,13 @@ public class DamageReceiver : MonoBehaviour
        
         if (isInvulnerable) { return; }
 
-        if (isBlocking && AttackerInCoverage(attacker)) { return; }
+        if (isBlocking && AttackerInCoverage(attacker)) 
+        {
+            weapon.HitTwo();
+            return; 
+        }
 
+        weapon.HitOne();
         health.DealDamage(damageAmount);
     }
 

@@ -1784,6 +1784,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4742278284287751391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5758172370510883418}
+  m_Layer: 0
+  m_Name: CameraFocus (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5758172370510883418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4742278284287751391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.022582496, y: 0.17604141, z: 0.0028098675, w: -0.9841197}
+  m_LocalPosition: {x: 0.012965889, y: 0.76049465, z: -0.053938337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8068509373424368862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4791069627277724753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,7 +2070,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1 &5265859395355849748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3089,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5758172370510883418}
   - {fileID: 2639438790243359582}
   - {fileID: 1263289498313835386}
   - {fileID: 6167053774611475574}
@@ -3129,6 +3161,7 @@ GameObject:
   - component: {fileID: 198542440665773613}
   - component: {fileID: 8374886347335840474}
   - component: {fileID: 1318740368944555670}
+  - component: {fileID: 8776662263045707868}
   m_Layer: 3
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -3152,6 +3185,7 @@ Transform:
   - {fileID: 4308725855376714652}
   - {fileID: 8073170129207665911}
   - {fileID: 8956717619032040538}
+  - {fileID: 846078146414949184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8656708052073494075
@@ -3170,11 +3204,12 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 1645534417191781813}
   <Controller>k__BackingField: {fileID: 3423118866662943953}
   <Animator>k__BackingField: {fileID: 7843319965864679738}
+  <AbilityManager>k__BackingField: {fileID: 8776662263045707868}
   <AttackData>k__BackingField:
   - <AnimationName>k__BackingField: Attack1
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
-    <DamageAmount>k__BackingField: 10
+    <DamageAmount>k__BackingField: 0
     <ForceTime>k__BackingField: 0.1
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.8
@@ -3182,7 +3217,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
-    <DamageAmount>k__BackingField: 15
+    <DamageAmount>k__BackingField: 0
     <ForceTime>k__BackingField: 0.25
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.8
@@ -3190,7 +3225,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
-    <DamageAmount>k__BackingField: 20
+    <DamageAmount>k__BackingField: 0
     <ForceTime>k__BackingField: 0.5
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0
@@ -3198,23 +3233,23 @@ MonoBehaviour:
   <DamageReceiver>k__BackingField: {fileID: 1318740368944555670}
   <ForceReceiver>k__BackingField: {fileID: 2563405223279904825}
   <Health>k__BackingField: {fileID: 198542440665773613}
-  <LedgeDetector>k__BackingField: {fileID: 0}
+  <LedgeDetector>k__BackingField: {fileID: 6257324588347675412}
   <Ragdoll>k__BackingField: {fileID: 8374886347335840474}
   <Targeter>k__BackingField: {fileID: 2547335843263519822}
   <WeaponDamage>k__BackingField: {fileID: 4642837822242414563}
   <TargetCamera>k__BackingField: {fileID: 0}
   <FreeLookCamera>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 8
-  <FreeLookSprintMovementSpeed>k__BackingField: 0
+  <FreeLookSprintMovementSpeed>k__BackingField: 15
   <TargetingMovementSpeed>k__BackingField: 6
-  <DodgeDuration>k__BackingField: 0
-  <DodgeDurationFreeLook>k__BackingField: 0
-  <DodgeDistance>k__BackingField: 0
-  <DodgeDistanceFreeLook>k__BackingField: 0
-  <DodgeCooldown>k__BackingField: 0
-  <DodgeInvulnerabilityDurationFreeLook>k__BackingField: 0
-  <DodgeInvulnerabilityDurationTargeting>k__BackingField: 0
-  <JumpForce>k__BackingField: 0
+  <DodgeDuration>k__BackingField: 0.5
+  <DodgeDurationFreeLook>k__BackingField: 1
+  <DodgeDistance>k__BackingField: 3
+  <DodgeDistanceFreeLook>k__BackingField: 5
+  <DodgeCooldown>k__BackingField: 1
+  <DodgeInvulnerabilityDurationFreeLook>k__BackingField: 0.35
+  <DodgeInvulnerabilityDurationTargeting>k__BackingField: 0.2
+  <JumpForce>k__BackingField: 7
   <ImpactStateDuration>k__BackingField: 0.5
   <RotationDamping>k__BackingField: 10
 --- !u!114 &1645534417191781813
@@ -3346,6 +3381,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 198542440665773613}
   coveredAngle: 90
+--- !u!114 &8776662263045707868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701608915712708403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4275f58e6dacea47a098bdcb0cb7967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 11400000, guid: 8418c47818b562d4d9a5193f9180a8a8, type: 2}
+  IsInvisible: 0
 --- !u!1 &7782863245003004983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3767,6 +3817,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3198460922138970002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8436218363394917974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846078146414949184}
+  - component: {fileID: 543349791963025872}
+  - component: {fileID: 3393794882901854823}
+  - component: {fileID: 6257324588347675412}
+  m_Layer: 7
+  m_Name: LedgeDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &846078146414949184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436218363394917974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.07, z: 0.242}
+  m_LocalScale: {x: 0.59781, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9086872322371046598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &543349791963025872
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436218363394917974}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3393794882901854823
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436218363394917974}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6257324588347675412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436218363394917974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441d71b9e28531c4b9fccbc4cdb8e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canGrabLedge: 0
 --- !u!1 &8440868657395990075
 GameObject:
   m_ObjectHideFlags: 0

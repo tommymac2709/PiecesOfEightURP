@@ -11,6 +11,7 @@ public abstract class Ability : ScriptableObject
 
     public event Action AbilityDeactivatedEvent;
 
+    
 
     public virtual void Activate(GameObject parent)
     {
@@ -50,4 +51,15 @@ public abstract class Ability : ScriptableObject
         yield return new WaitForSeconds(activeTime);
         Deactivate(parent);
     }
+
+    public virtual bool RequireTargeting()
+    {
+        return false;
+    }
+
+    public virtual bool CanMove()
+    {
+        return false;
+    }
+
 }

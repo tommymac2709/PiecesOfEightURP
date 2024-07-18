@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Invisibility
   m_EditorClassIdentifier: 
   abilityName: Invisibility
-  cooldownTime: 10
+  cooldownTime: 2
   activeTime: 1

@@ -28,6 +28,7 @@ public class PlayerTargetingState : PlayerBaseState
 
         stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.DodgeEvent += OnDodge;
+        stateMachine.InputReader.UseAbilityEvent += OnUseAbility;
 
         stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
     }
@@ -67,6 +68,14 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.InputReader.IsTargeting = false;
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
+        stateMachine.InputReader.UseAbilityEvent -= OnUseAbility;
+    }
+
+    private void OnUseAbility()
+    {
+        if (stateMachine.AbilityManager.abilities[stateMachine.AbilityManager.currentAbilityIndex].isCoolingDown) { return; }
+        stateMachine.SwitchState(new PlayerUseAbilityState(stateMachine, stateMachine.AbilityManager.abilities[stateMachine.AbilityManager.currentAbilityIndex]));
+        return;
     }
 
     private void OnTarget()

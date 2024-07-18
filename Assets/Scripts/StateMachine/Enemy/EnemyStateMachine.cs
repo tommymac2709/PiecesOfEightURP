@@ -37,12 +37,14 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public float PlayerFleeRange { get; private set; }
 
     public Health Player { get; private set; }
+    public AbilityManager PlayerAbilityManager { get; private set; }
 
     private void Start()
     {
         //Player = GameObject.FindGameObjectWithTag("Player");
 
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        PlayerAbilityManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
         Agent.updatePosition = false;
         Agent.updateRotation = false;
         

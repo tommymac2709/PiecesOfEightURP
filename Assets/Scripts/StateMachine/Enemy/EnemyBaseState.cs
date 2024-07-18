@@ -66,6 +66,18 @@ public abstract class EnemyBaseState : State
         return distanceToPlayerSqr <= stateMachine.PlayerFleeRange * stateMachine.PlayerFleeRange;
     }
 
+    protected bool CanSeePlayer()
+    {
+        if (stateMachine.PlayerAbilityManager.IsInvisible == false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     protected Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;

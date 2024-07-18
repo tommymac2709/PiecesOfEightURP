@@ -20,6 +20,11 @@ public class EnemyIdleState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         MoveNoInput(deltaTime);
+        
+        //if (!CanSeePlayer())
+        //{
+        //    return;
+        //}
 
         if (IsInChaseRange())
         {

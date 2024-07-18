@@ -8,6 +8,8 @@ public class AbilityManager : MonoBehaviour
 
     public event Action TriggerAbility;
 
+    public bool IsInvisible;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) currentAbilityIndex = 0;
