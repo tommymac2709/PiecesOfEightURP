@@ -94,8 +94,8 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnUseAbility()
     {
-        stateMachine.SwitchState(new PlayerSwordThrowAbilityState(stateMachine));
-        return;
+        //stateMachine.SwitchState(new PlayerSwordThrowAbilityState(stateMachine));
+        //return;
     }
 
     private void OnDodge()

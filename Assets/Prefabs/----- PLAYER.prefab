@@ -2040,6 +2040,101 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!1 &5248747558287914218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7442217455975116609}
+  - component: {fileID: 1071464487532116499}
+  - component: {fileID: 8009969162730957696}
+  - component: {fileID: 3753712496337384851}
+  m_Layer: 7
+  m_Name: LedgeDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7442217455975116609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248747558287914218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.07, z: 0.242}
+  m_LocalScale: {x: 0.59781, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9086872322371046598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1071464487532116499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248747558287914218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8009969162730957696
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248747558287914218}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3753712496337384851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248747558287914218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441d71b9e28531c4b9fccbc4cdb8e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canGrabLedge: 0
 --- !u!1 &5265859395355849748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9018640162763844234}
   - {fileID: 2639438790243359582}
   - {fileID: 1263289498313835386}
   - {fileID: 6167053774611475574}
@@ -3152,6 +3248,7 @@ Transform:
   - {fileID: 4308725855376714652}
   - {fileID: 8073170129207665911}
   - {fileID: 8956717619032040538}
+  - {fileID: 7442217455975116609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8656708052073494075
@@ -3174,7 +3271,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: Attack1
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
-    <DamageAmount>k__BackingField: 10
+    <DamageAmount>k__BackingField: 0
     <ForceTime>k__BackingField: 0.1
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.8
@@ -3182,7 +3279,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
-    <DamageAmount>k__BackingField: 15
+    <DamageAmount>k__BackingField: 0
     <ForceTime>k__BackingField: 0.25
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.8
@@ -3190,7 +3287,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
-    <DamageAmount>k__BackingField: 20
+    <DamageAmount>k__BackingField: 0
     <ForceTime>k__BackingField: 0.5
     <Force>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0
@@ -3198,23 +3295,23 @@ MonoBehaviour:
   <DamageReceiver>k__BackingField: {fileID: 1318740368944555670}
   <ForceReceiver>k__BackingField: {fileID: 2563405223279904825}
   <Health>k__BackingField: {fileID: 198542440665773613}
-  <LedgeDetector>k__BackingField: {fileID: 0}
+  <LedgeDetector>k__BackingField: {fileID: 3753712496337384851}
   <Ragdoll>k__BackingField: {fileID: 8374886347335840474}
   <Targeter>k__BackingField: {fileID: 2547335843263519822}
   <WeaponDamage>k__BackingField: {fileID: 4642837822242414563}
   <TargetCamera>k__BackingField: {fileID: 0}
   <FreeLookCamera>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 8
-  <FreeLookSprintMovementSpeed>k__BackingField: 0
+  <FreeLookSprintMovementSpeed>k__BackingField: 15
   <TargetingMovementSpeed>k__BackingField: 6
-  <DodgeDuration>k__BackingField: 0
-  <DodgeDurationFreeLook>k__BackingField: 0
-  <DodgeDistance>k__BackingField: 0
-  <DodgeDistanceFreeLook>k__BackingField: 0
-  <DodgeCooldown>k__BackingField: 0
-  <DodgeInvulnerabilityDurationFreeLook>k__BackingField: 0
-  <DodgeInvulnerabilityDurationTargeting>k__BackingField: 0
-  <JumpForce>k__BackingField: 0
+  <DodgeDuration>k__BackingField: 0.5
+  <DodgeDurationFreeLook>k__BackingField: 1
+  <DodgeDistance>k__BackingField: 3
+  <DodgeDistanceFreeLook>k__BackingField: 5
+  <DodgeCooldown>k__BackingField: 1
+  <DodgeInvulnerabilityDurationFreeLook>k__BackingField: 0.35
+  <DodgeInvulnerabilityDurationTargeting>k__BackingField: 0.2
+  <JumpForce>k__BackingField: 7
   <ImpactStateDuration>k__BackingField: 0.5
   <RotationDamping>k__BackingField: 10
 --- !u!114 &1645534417191781813
@@ -3541,6 +3638,37 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &7979120977623814698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9018640162763844234}
+  m_Layer: 0
+  m_Name: CameraFocus (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9018640162763844234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979120977623814698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.022582496, y: 0.17604141, z: 0.0028098675, w: -0.9841197}
+  m_LocalPosition: {x: 0.012965889, y: 0.76049465, z: -0.053938337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8068509373424368862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7980329559360987053
 GameObject:
   m_ObjectHideFlags: 0
