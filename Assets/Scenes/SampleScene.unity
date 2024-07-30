@@ -1076,6 +1076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: younglingtake3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 62acea2e05c22304095a37e049f23ef8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2096,6 +2101,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3120034904618028772}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &846238181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7472134977629846448, guid: 39303c5f15701d14a828bd24e6ad028e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3120034904618028772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00281dc97cfeea542b4b1befe1f49456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1037458542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4471,7 +4488,7 @@ PrefabInstance:
     - target: {fileID: 1675606206178462272, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
@@ -4486,7 +4503,7 @@ PrefabInstance:
     - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
       propertyPath: <MovementSpeed>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
@@ -4568,6 +4585,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8311431661288316288, guid: 39303c5f15701d14a828bd24e6ad028e,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 846238181}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4646,9 +4668,26 @@ PrefabInstance:
       objectReference: {fileID: 616755383}
     - target: {fileID: 8776662263045707868, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}
+      propertyPath: abilities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776662263045707868, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
       propertyPath: 'abilities.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 51178569873e691438b3699896689879,
+        type: 2}
+    - target: {fileID: 8776662263045707868, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      propertyPath: 'abilities.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6cd26f59ee56e874b99ee83692654512,
+        type: 2}
+    - target: {fileID: 8776662263045707868, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      propertyPath: 'abilities.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8418c47818b562d4d9a5193f9180a8a8,
         type: 2}
     - target: {fileID: 9086872322371046598, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}

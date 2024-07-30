@@ -102,8 +102,12 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnDodge()
     {
-        stateMachine.SwitchState(new PlayerFreeLookDodgeState(stateMachine));
-        return;
+        if(stateMachine.InputReader.MovementValue.x != 0 || stateMachine.InputReader.MovementValue.y != 0)
+        {
+            stateMachine.SwitchState(new PlayerFreeLookDodgeState(stateMachine));
+            return;
+        }
+        
     }
 
     private void OnJump() 

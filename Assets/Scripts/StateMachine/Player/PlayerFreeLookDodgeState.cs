@@ -32,7 +32,7 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
 
         this.movement = movement;
 
-        FaceMovementDirection(movement, Time.deltaTime);
+        
 
     }
 
@@ -40,7 +40,7 @@ public class PlayerFreeLookDodgeState : PlayerBaseState
     {
 
         Move(movement, Time.deltaTime);
-
+        FaceMovementDirection(movement, Time.deltaTime);
         remainingDodgeDuration -= deltaTime;
         invulnerabilityTimer -= deltaTime;
 
