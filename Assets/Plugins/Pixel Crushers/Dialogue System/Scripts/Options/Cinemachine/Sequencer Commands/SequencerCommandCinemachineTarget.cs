@@ -1,12 +1,14 @@
 #if USE_CINEMACHINE
 using UnityEngine;
-#if UNITY_6000_0_OR_NEWER
+//#if USE_CINEMACHINE
+//#if UNITY_6000_0_OR_NEWER
 using Unity.Cinemachine;
 using CinemachineCam = Unity.Cinemachine.CinemachineCamera;
-#else
-using Cinemachine;
-using CinemachineCam = Cinemachine.CinemachineVirtualCamera;
-#endif
+//#else
+//using Cinemachine;
+//using CinemachineCam = Cinemachine.CinemachineVirtualCamera;
+//#endif
+//#endif
 
 namespace PixelCrushers.DialogueSystem.SequencerCommands
 {

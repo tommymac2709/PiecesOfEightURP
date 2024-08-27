@@ -1,13 +1,15 @@
 #if USE_CINEMACHINE
 using System.Collections;
 using UnityEngine;
-#if UNITY_6000_0_OR_NEWER
+//#if USE_CINEMACHINE
+//#if UNITY_6000_0_OR_NEWER
 using Unity.Cinemachine;
 using CinemachineCam = Unity.Cinemachine.CinemachineCamera;
-#else
-using Cinemachine;
-using CinemachineCam = Cinemachine.CinemachineVirtualCamera;
-#endif
+//#else
+//using Cinemachine;
+//using CinemachineCam = Cinemachine.CinemachineVirtualCamera;
+//#endif
+//#endif
 
 namespace PixelCrushers.DialogueSystem.SequencerCommands
 {
@@ -39,7 +41,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             {
                 if (DialogueDebug.LogInfo) Debug.Log("Dialogue System: Sequencer: CinemachineZoom(" + vcam + ", " + 
                     zoom + ", " + duration + ")");
-#if UNITY_6000_0_OR_NEWER
+//#if UNITY_6000_0_OR_NEWER
                 if (vcam.Lens.Orthographic)
                 {
                     if (duration > 0)
@@ -55,23 +57,23 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                     }
                     vcam.Lens.OrthographicSize = zoom;
                 }
-#else
-                if (vcam.m_Lens.Orthographic)
-                {
-                    if (duration > 0)
-                    {
-                        var originalSize = vcam.m_Lens.OrthographicSize;
-                        float elapsed = 0;
-                        while (elapsed < duration)
-                        {
-                            vcam.m_Lens.OrthographicSize = Mathf.Lerp(originalSize, zoom, elapsed / duration);
-                            yield return null;
-                            elapsed += DialogueTime.deltaTime;
-                        }
-                    }
-                    vcam.m_Lens.OrthographicSize = zoom;
-                }
-#endif
+//#else
+//                if (vcam.m_Lens.Orthographic)
+//                {
+//                    if (duration > 0)
+//                    {
+//                        var originalSize = vcam.m_Lens.OrthographicSize;
+//                        float elapsed = 0;
+//                        while (elapsed < duration)
+//                        {
+//                            vcam.m_Lens.OrthographicSize = Mathf.Lerp(originalSize, zoom, elapsed / duration);
+//                            yield return null;
+//                            elapsed += DialogueTime.deltaTime;
+//                        }
+//                    }
+//                    vcam.m_Lens.OrthographicSize = zoom;
+//                }
+//#endif
                 else
                 {
                     // May need to wait until Cinemachine 3 for 3D params to be exposed.
