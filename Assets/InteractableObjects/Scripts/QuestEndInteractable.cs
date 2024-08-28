@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestEndInteractable : MonoBehaviour
+public class QuestEndInteractable : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string _interactText;
+    [SerializeField] private string _questName;
+
+    public void Interact(Transform transform)
     {
-        
+        if (PixelCrushers.DialogueSystem.QuestLog.IsQuestActive(_questName))
+        {
+            PixelCrushers.DialogueSystem.QuestLog.CompleteQuest(_questName);
+            Debug.Log(_questName + " quest has been completed");
+            BoxCollider collider = GetComponent<BoxCollider>();
+            collider.enabled = false;
+        }
+       
     }
 
-    // Update is called once per frame
-    void Update()
+    public string GetInteractText()
     {
-        
+        return _interactText;
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }
