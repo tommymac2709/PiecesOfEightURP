@@ -33489,6 +33489,11 @@ PrefabInstance:
       propertyPath: weaponSource
       value: 
       objectReference: {fileID: 1045641674}
+    - target: {fileID: 3548058377365113305, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      propertyPath: weaponLogicGameObject
+      value: 
+      objectReference: {fileID: 2065848164}
     - target: {fileID: 7701608915712708403, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}
       propertyPath: m_Name
@@ -33504,6 +33509,11 @@ PrefabInstance:
       propertyPath: <TargetCamera>k__BackingField
       value: 
       objectReference: {fileID: 2119512548}
+    - target: {fileID: 8656708052073494075, guid: f13b3ad2a6eae604fb03671991086398,
+        type: 3}
+      propertyPath: <WeaponDamage>k__BackingField
+      value: 
+      objectReference: {fileID: 2065848167}
     - target: {fileID: 8656708052073494075, guid: f13b3ad2a6eae604fb03671991086398,
         type: 3}
       propertyPath: <FreeLookCamera>k__BackingField
