@@ -45,7 +45,7 @@ public class DamageReceiver : MonoBehaviour
         {
             if (canParry && AttackerInCoverage(attacker))
             {
-                weapon.HitOne();
+                //weapon.HitOne();
                 enemyStateMachine.SwitchState(new EnemyParriedState(enemyStateMachine, 2f));
                 return;
             }
@@ -53,13 +53,13 @@ public class DamageReceiver : MonoBehaviour
        
         if (isInvulnerable) { return; }
 
-        if (isBlocking && AttackerInCoverage(attacker)) 
+        if (isBlocking && AttackerInCoverage(attacker))
         {
-            weapon.HitTwo();
-            return; 
+            //weapon.HitTwo();
+            return;
         }
 
-        weapon.HitOne();
+        //weapon.HitOne();
         health.DealDamage(damageAmount);
     }
 

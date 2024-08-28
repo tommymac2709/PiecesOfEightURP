@@ -21,6 +21,7 @@ public class PlayerBlockingState : PlayerBaseState
 
     public override void Enter()
     {
+        Debug.Log("Entered blocking state");
         stateMachine.DamageReceiver.SetCanParry(true);
         stateMachine.DamageReceiver.SetIsBlocking(true);
         stateMachine.Animator.CrossFadeInFixedTime(BlockAnimHash, CrossFadeDuration);

@@ -6,14 +6,14 @@ public class WeaponHandler : MonoBehaviour
 {
     [SerializeField] private GameObject weaponLogicGameObject;
 
-    [SerializeField] AudioSource weaponSource;
+    //[SerializeField] AudioSource weaponSource;
 
-    [SerializeField] AudioClip swingOne;
+    //[SerializeField] AudioClip swingOne;
 
-    [SerializeField] AudioClip swingTwo;
+    //[SerializeField] AudioClip swingTwo;
 
-    [SerializeField] AudioClip hitOne;
-    [SerializeField] AudioClip hitTwo;
+    //[SerializeField] AudioClip hitOne;
+    //[SerializeField] AudioClip hitTwo;
 
     public void EnableHitbox()
     {
@@ -26,26 +26,26 @@ public class WeaponHandler : MonoBehaviour
         weaponLogicGameObject.SetActive(false);
     }
 
-    public void SwingOne()
-    {
-        weaponSource.Stop();
-        weaponSource.PlayOneShot(swingOne);
-    }
+    //public void SwingOne()
+    //{
+    //    weaponSource.Stop();
+    //    weaponSource.PlayOneShot(swingOne);
+    //}
 
-    public void SwingTwo()
-    {
-        weaponSource.Stop();
-        weaponSource.PlayOneShot(swingTwo);
-    }
+    //public void SwingTwo()
+    //{
+    //    weaponSource.Stop();
+    //    weaponSource.PlayOneShot(swingTwo);
+    //}
 
-    public void HitOne()
-    {
-        weaponSource.PlayOneShot(hitOne);
-    }
+    //public void HitOne()
+    //{
+    //    weaponSource.PlayOneShot(hitOne);
+    //}
 
-    public void HitTwo()
-    {
-        weaponSource.PlayOneShot(hitTwo);
-    }
+    //public void HitTwo()
+    //{
+    //    weaponSource.PlayOneShot(hitTwo);
+    //}
 
 }
