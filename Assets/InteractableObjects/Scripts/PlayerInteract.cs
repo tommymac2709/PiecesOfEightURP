@@ -5,16 +5,39 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private float _interactRange;
-   
-    void Update()
+
+    [SerializeField] private PlayerStateMachine stateMachine;
+
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.E)) //checks for input of the E key
+        stateMachine.InputReader.InteractEvent += OnInteract;
+    }
+
+    
+
+    private void OnDisable()
+    {
+        stateMachine.InputReader.InteractEvent -= OnInteract;
+    }
+
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.E)) //checks for input of the E key
+    //    {
+    //        IInteractable interactable = GetInteractableObject();
+    //        if (interactable != null)
+    //        {
+    //            interactable.Interact(transform);
+    //        }
+    //    }
+    //}
+
+    private void OnInteract()
+    {
+        IInteractable interactable = GetInteractableObject();
+        if (interactable != null)
         {
-            IInteractable interactable = GetInteractableObject();
-            if (interactable != null)
-            {
-                interactable.Interact(transform);
-            }
+            interactable.Interact(transform);
         }
     }
 

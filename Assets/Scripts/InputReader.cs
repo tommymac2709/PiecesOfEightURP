@@ -20,6 +20,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action TargetEvent;
     public event Action UseAbilityEvent;
     public event Action CancelTargetEvent;
+    public event Action InteractEvent;
 
     
 
@@ -121,5 +122,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) { return; }
 
         UseAbilityEvent?.Invoke();
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        InteractEvent?.Invoke();
     }
 }

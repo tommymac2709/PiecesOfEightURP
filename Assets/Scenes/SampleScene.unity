@@ -1114,6 +1114,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1492725331464128286, guid: bfd46c7ea9a65af45a03df8919ea0a1d,
+        type: 3}
+      propertyPath: m_text
+      value: Enter
+      objectReference: {fileID: 0}
     - target: {fileID: 2289616081529612993, guid: bfd46c7ea9a65af45a03df8919ea0a1d,
         type: 3}
       propertyPath: _playerInteract
@@ -32152,12 +32157,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactRange: 3
+  stateMachine: {fileID: 2050380407}
 --- !u!143 &2050380404 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 3423118866662943953, guid: f13b3ad2a6eae604fb03671991086398,
     type: 3}
   m_PrefabInstance: {fileID: 7287925223851343817}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2050380407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8656708052073494075, guid: f13b3ad2a6eae604fb03671991086398,
+    type: 3}
+  m_PrefabInstance: {fileID: 7287925223851343817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113636172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e191cbdf79c144ea4af07fb198938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2050458492
 GameObject:
   m_ObjectHideFlags: 0
