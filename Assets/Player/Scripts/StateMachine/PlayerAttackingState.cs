@@ -9,6 +9,8 @@ public class PlayerAttackingState : PlayerBaseState
 
     private AttackData attackData;
 
+
+
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         attackData = stateMachine.AttackData[attackIndex];
