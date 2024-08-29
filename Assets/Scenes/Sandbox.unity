@@ -34802,34 +34802,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ClimbCamera>k__BackingField: {fileID: 430115084}
   <InputReader>k__BackingField: {fileID: 8355854842587118204}
+  <Fighter>k__BackingField: {fileID: 8606082020515043680}
   <Controller>k__BackingField: {fileID: 5378060027269829400}
   <Animator>k__BackingField: {fileID: 719160408485881587}
   <AbilityManager>k__BackingField: {fileID: 2084918906965649301}
-  <AttackData>k__BackingField:
-  - <AnimationName>k__BackingField: Attack1
-    <TransitionDuration>k__BackingField: 0.1
-    <ComboStateIndex>k__BackingField: 1
-    <DamageAmount>k__BackingField: 10
-    <ForceTime>k__BackingField: 0.1
-    <Force>k__BackingField: 2
-    <ComboAttackTime>k__BackingField: 0.8
-    <Knockback>k__BackingField: 10
-  - <AnimationName>k__BackingField: Attack2
-    <TransitionDuration>k__BackingField: 0.1
-    <ComboStateIndex>k__BackingField: 2
-    <DamageAmount>k__BackingField: 20
-    <ForceTime>k__BackingField: 0.25
-    <Force>k__BackingField: 2
-    <ComboAttackTime>k__BackingField: 0.8
-    <Knockback>k__BackingField: 15
-  - <AnimationName>k__BackingField: Attack3
-    <TransitionDuration>k__BackingField: 0.2
-    <ComboStateIndex>k__BackingField: -1
-    <DamageAmount>k__BackingField: 40
-    <ForceTime>k__BackingField: 0.5
-    <Force>k__BackingField: 2
-    <ComboAttackTime>k__BackingField: 0
-    <Knockback>k__BackingField: 20
   <DamageReceiver>k__BackingField: {fileID: 8606082020515043679}
   <ForceReceiver>k__BackingField: {fileID: 5093819774782044144}
   <Health>k__BackingField: {fileID: 7485743633962650084}
@@ -37825,7 +37801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultWeapon: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: dcb66bf625ee19944b10ae9074fc3b31, type: 2}
   _rightHandTransform: {fileID: 1079810760669346432}
   _leftHandTransform: {fileID: 2742091275783911935}
 --- !u!4 &8608300783625244371

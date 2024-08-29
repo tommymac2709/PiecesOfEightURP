@@ -8,11 +8,13 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject ClimbCamera { get; private set; }
 
     [field: SerializeField] public InputReader InputReader { get; private set; }
+
+    [field: SerializeField] public Fighter Fighter { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
 
     [field: SerializeField] public AbilityManager AbilityManager { get; private set; }
-    [field: SerializeField] public AttackData[] AttackData { get; private set; }
+    //[field: SerializeField] public AttackData[] AttackData { get; private set; }
 
     [field: SerializeField] public DamageReceiver DamageReceiver { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }

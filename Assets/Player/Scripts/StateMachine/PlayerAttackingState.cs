@@ -7,17 +7,33 @@ public class PlayerAttackingState : PlayerBaseState
 
     private float previousFrameTime;
 
-    private AttackData attackData;
+    private AttackData currentAttack;
 
-    public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
+    private bool hasCombo;
+
+    public PlayerAttackingState(PlayerStateMachine stateMachine, AttackData attack) : base(stateMachine)
     {
-        attackData = stateMachine.AttackData[attackIndex];
+        currentAttack = attack;
+
+        stateMachine.Fighter.SetCurrentAttack(attack); //Inform fighter of new attack
+        
+    }
+
+    public PlayerAttackingState(PlayerStateMachine stateMachine, int attack) : base(stateMachine)
+    {
+        currentAttack = stateMachine.Fighter.GetCurrentAttack(attack);
+
     }
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(attackData.AnimationName, attackData.TransitionDuration);
-        stateMachine.WeaponDamage.SetAttack(attackData.DamageAmount, attackData.Knockback);
+        
+
+        if (currentAttack.ApplyRootMotion) stateMachine.Animator.applyRootMotion = true;
+        hasCombo = currentAttack.NextComboAttack != null;
+
+        stateMachine.Animator.CrossFadeInFixedTime(currentAttack.AnimationName, currentAttack.TransitionDuration);
+        //stateMachine.WeaponDamage.SetAttack(attackData.DamageAmount, attackData.Knockback);
     }
 
     public override void Tick(float deltaTime)
@@ -33,14 +49,18 @@ public class PlayerAttackingState : PlayerBaseState
         if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
 
-            if(normalizedTime >= attackData.ForceTime)
-            {
-                TryApplyForce();
-            }
+            //if(normalizedTime >= currentAttack.ForceTime)
+            //{
+            //    TryApplyForce();
+            //}
 
             if (stateMachine.InputReader.IsAttacking)
             {
-                TryComboAttack(normalizedTime);
+                if (hasCombo)
+                {
+                    ComboAttack(normalizedTime);
+                }
+                
 
                 if (stateMachine.Targeter.CurrentTarget != null && stateMachine.InputReader.IsTargeting) return;
 
@@ -69,23 +89,21 @@ public class PlayerAttackingState : PlayerBaseState
     {
         
     }
-    private void TryComboAttack(float normalizedTime)
+    private void ComboAttack(float normalizedTime)
     {
-        if (attackData.ComboStateIndex == -1) { return; }
+        if (normalizedTime < currentAttack.ComboAttackTime) { return; }
 
-        if (normalizedTime < attackData.ComboAttackTime) { return; }
-
-        stateMachine.SwitchState(new PlayerAttackingState(stateMachine,attackData.ComboStateIndex));
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine,currentAttack.NextComboAttack));
     }
 
-    private void TryApplyForce()
-    {
-        if (alreadyAppliedForce) { return; }
+    //private void TryApplyForce()
+    //{
+    //    if (alreadyAppliedForce) { return; }
 
-        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attackData.Force);
+    //    stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * currentAttack.Force);
 
-        alreadyAppliedForce = true;
-    }
+    //    alreadyAppliedForce = true;
+    //}
 
     
 

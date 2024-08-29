@@ -11,6 +11,9 @@ public class Weapon : ScriptableObject
     [SerializeField] float _weaponDamage;
     [SerializeField] bool isRightHanded = true;
 
+    [field: SerializeField] public AttackData[] Attacks { get; private set; } = null;
+
+
     const string weaponName = "Weapon";
     
 
