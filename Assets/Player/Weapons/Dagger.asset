@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbd6c21e330a8e6498f4712cf609f098, type: 3}
-  m_Name: Sword
+  m_Name: Dagger
   m_EditorClassIdentifier: 
-  _weaponPrefab: {fileID: 2353232748905043175, guid: cdb5e54566dbd784c9325ea60fd5f270,
+  _weaponPrefab: {fileID: 2353232748905043175, guid: ff5ceda12a71c1c4b9eb6477bd43eb94,
     type: 3}
-  _weaponDamage: 5
+  _weaponDamage: 2
+  isRightHanded: 1

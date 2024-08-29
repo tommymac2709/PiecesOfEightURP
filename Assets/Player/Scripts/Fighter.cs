@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    [SerializeField] Weapon weapon = null;
-    [SerializeField] Transform _handTransform = null;
+    [SerializeField] Weapon defaultWeapon = null;
+    [SerializeField] Transform _rightHandTransform = null;
+    [SerializeField] Transform _leftHandTransform = null;
+
+    Weapon _currentWeapon = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnWeapon();
+        EquipWeapon(defaultWeapon);
     }
 
     // Update is called once per frame
@@ -19,9 +22,10 @@ public class Fighter : MonoBehaviour
         
     }
 
-    private void SpawnWeapon()
+    public void EquipWeapon(Weapon weapon)
     {
-        if (weapon == null) return;
-        weapon.Spawn(_handTransform);
+        _currentWeapon = weapon;
+       
+        weapon.Spawn(_rightHandTransform, _leftHandTransform);
     }
 }

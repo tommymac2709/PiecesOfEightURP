@@ -19961,7 +19961,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: -10, z: -1}
   combinedCenterOfMass: {x: 0, y: -10, z: -1}
   useDefaultInertia: 1
-  inertiaTensor: {x: 395615700, y: 191551040, z: 229344530}
+  inertiaTensor: {x: 395615700, y: 191551070, z: 229344530}
   combinedInertiaTensor: {x: 0, y: 0, z: 0}
 --- !u!114 &1268021266
 MonoBehaviour:
@@ -29276,6 +29276,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1914405277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1914506754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914506755}
+  m_Layer: 0
+  m_Name: ----- PICKUPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1914506755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914506754}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1918046827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37644,8 +37675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 15c930a3f46342e47b0705240d7194bd, type: 2}
-  _handTransform: {fileID: 1079810760669346432}
+  defaultWeapon: {fileID: 0}
+  _rightHandTransform: {fileID: 1079810760669346432}
+  _leftHandTransform: {fileID: 2742091275783911935}
 --- !u!4 &8608300783625244371
 Transform:
   m_ObjectHideFlags: 0
@@ -37806,3 +37838,4 @@ SceneRoots:
   - {fileID: 1961572017275007759}
   - {fileID: 3120034904618028772}
   - {fileID: 138067268}
+  - {fileID: 1914506755}
