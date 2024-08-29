@@ -35,7 +35,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentAttack != null)
+        if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter._currentWeapon.Attacks.Length > 0)
         {
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
             return;

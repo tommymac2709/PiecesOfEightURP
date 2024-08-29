@@ -37804,6 +37804,7 @@ MonoBehaviour:
   defaultWeapon: {fileID: 11400000, guid: dcb66bf625ee19944b10ae9074fc3b31, type: 2}
   _rightHandTransform: {fileID: 1079810760669346432}
   _leftHandTransform: {fileID: 2742091275783911935}
+  _currentWeapon: {fileID: 0}
   currentAttack: {fileID: 0}
 --- !u!4 &8608300783625244371
 Transform:
