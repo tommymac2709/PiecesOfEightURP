@@ -47,8 +47,10 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.InputReader.IsAttacking)
+        if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentAttack != null)
         {
+
+
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
             return;
         }

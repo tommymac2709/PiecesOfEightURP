@@ -9,7 +9,7 @@ public class Fighter : MonoBehaviour
     [SerializeField] Transform _leftHandTransform = null;
 
     Weapon _currentWeapon = null;
-    private AttackData currentAttack;
+    public AttackData currentAttack;
     // Start is called before the first frame update
     void Start()
     {

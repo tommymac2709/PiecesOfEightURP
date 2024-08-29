@@ -16,5 +16,6 @@ MonoBehaviour:
   <AnimationName>k__BackingField: Attack2
   damageModifier: 1
   transitionDuration: 0.1
-  <NextComboAttack>k__BackingField: {fileID: 0}
+  <NextComboAttack>k__BackingField: {fileID: 11400000, guid: bbc2a1d1f7118264e95af55b02455bc4,
+    type: 2}
   comboAttackTime: 0.8
