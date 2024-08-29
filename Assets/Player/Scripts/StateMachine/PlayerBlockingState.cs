@@ -47,6 +47,7 @@ public class PlayerBlockingState : PlayerBaseState
 
     public override void Exit()
     {
+        stateMachine.DamageReceiver.SetCanParry(false);
         stateMachine.DamageReceiver.SetIsBlocking(false);
     }
 
