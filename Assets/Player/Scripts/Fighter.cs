@@ -11,6 +11,10 @@ public class Fighter : MonoBehaviour
     public WeaponConfig currentWeaponConfig = null;
     Weapon currentWeapon;
     public AttackData currentAttack;
+    private Coroutine hitCoroutine = null;
+
+    private List<Collider> alreadyCollidedWith = new List<Collider>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +34,12 @@ public class Fighter : MonoBehaviour
         // Assuming Spawn() returns the instantiated weapon's GameObject
         GameObject weaponObject = weapon.Spawn(_rightHandTransform, _leftHandTransform);
 
+        if (weaponObject != null)
+        {
+            currentWeapon = weaponObject.GetComponent<Weapon>();
+        }
         // Get the Weapon component from the spawned weapon
-        currentWeapon = weaponObject.GetComponent<Weapon>();
+        
     }
 
 
@@ -60,11 +68,47 @@ public class Fighter : MonoBehaviour
         currentAttack = attack;
     }
 
-    public void TryHit(int slot)
+    public void TryHitStart(int slot)
+    {
+        
+        // Start hit detection with an infinite duration
+        if (hitCoroutine != null)
+        {
+            StopCoroutine(hitCoroutine);
+        }
+        hitCoroutine = StartCoroutine(TryHitCoroutine(slot, Mathf.Infinity));
+    }
+
+    public void TryHitEnd()
+    {
+        // Stop hit detection
+        if (hitCoroutine != null)
+        {
+            StopCoroutine(hitCoroutine);
+            hitCoroutine = null;
+        }
+    }
+
+    private IEnumerator TryHitCoroutine(int slot, float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            PerformHitDetection(slot);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private void PerformHitDetection(int slot)
     {
         if (currentAttack == null) return;
+
+        alreadyCollidedWith.Clear();
+
         Vector3 transformPoint;
         float damageRadius = .5f;
+
         switch (slot)
         {
             case 0:
@@ -81,11 +125,17 @@ public class Fighter : MonoBehaviour
                 transformPoint = _rightHandTransform.position;
                 break;
         }
+
         Debug.Log($"Attacking with slot {slot}, position {transformPoint}");
+
         foreach (Collider other in Physics.OverlapSphere(transformPoint, damageRadius))
         {
             if (other.gameObject == gameObject) continue;
-            
+
+            if (alreadyCollidedWith.Contains(other)) { return; }
+
+            alreadyCollidedWith.Add(other);
+
             if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
             {
                 damageReceiver.DealDamage(other.transform, 1);
