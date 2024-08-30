@@ -5,9 +5,9 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
-public class Weapon : ScriptableObject
+public class WeaponConfig : ScriptableObject
 {
-    [SerializeField] GameObject _weaponPrefab = null;
+    [SerializeField] public GameObject _weaponPrefab = null;
     [SerializeField] float _weaponDamage;
     [SerializeField] bool isRightHanded = true;
 

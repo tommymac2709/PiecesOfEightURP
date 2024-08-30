@@ -19923,7 +19923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1268021264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30103,37 +30103,37 @@ PrefabInstance:
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.90703
+      value: -40.9
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.72
+      value: -4.67
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.74
+      value: -50.37
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.20461273
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.0096633425
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.9777056
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.046172652
       objectReference: {fileID: 0}
     - target: {fileID: 579425424142892359, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
@@ -32426,7 +32426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2093388910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37802,10 +37802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultWeapon: {fileID: 11400000, guid: dcb66bf625ee19944b10ae9074fc3b31, type: 2}
+  defaultWeaponConfig: {fileID: 0}
   _rightHandTransform: {fileID: 1079810760669346432}
   _leftHandTransform: {fileID: 2742091275783911935}
-  _currentWeapon: {fileID: 0}
+  currentWeaponConfig: {fileID: 0}
   currentAttack: {fileID: 0}
 --- !u!4 &8608300783625244371
 Transform:
