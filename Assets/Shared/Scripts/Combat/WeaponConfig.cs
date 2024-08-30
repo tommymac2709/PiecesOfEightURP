@@ -8,7 +8,7 @@ using UnityEngine;
 public class WeaponConfig : ScriptableObject
 {
     [SerializeField] public GameObject _weaponPrefab = null;
-    [SerializeField] float _weaponDamage;
+    [SerializeField] int _weaponDamage;
     [SerializeField] bool isRightHanded = true;
 
     [field: SerializeField] public AttackData[] Attacks { get; private set; } = null;
@@ -61,7 +61,7 @@ public class WeaponConfig : ScriptableObject
         Destroy(oldWeapon.gameObject);
     }
 
-    public float GetWeaponDamage()
+    public int GetWeaponDamage()
     {
         return _weaponDamage;
     }

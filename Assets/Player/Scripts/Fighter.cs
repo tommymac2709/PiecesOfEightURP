@@ -138,7 +138,7 @@ public class Fighter : MonoBehaviour
 
             if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
             {
-                damageReceiver.DealDamage(other.transform, 1);
+                damageReceiver.DealDamage(other.transform, currentWeaponConfig.GetWeaponDamage());
             }
         }
     }
