@@ -18,6 +18,7 @@ public class EnemyImpactState : EnemyBaseState
     {
         
         stateMachine.Animator.CrossFadeInFixedTime(ImpactAnimHash, CrossFadeDuration);
+        Debug.Log(stateMachine.Health.currentHealth);
     }
     public override void Tick(float deltaTime)
     {

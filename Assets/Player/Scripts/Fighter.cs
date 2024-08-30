@@ -9,6 +9,7 @@ public class Fighter : MonoBehaviour
     [SerializeField] Transform _leftHandTransform = null;
 
     public WeaponConfig currentWeaponConfig = null;
+    Weapon currentWeapon;
     public AttackData currentAttack;
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,14 @@ public class Fighter : MonoBehaviour
     public void EquipWeapon(WeaponConfig weapon)
     {
         currentWeaponConfig = weapon;
-       
-        weapon.Spawn(_rightHandTransform, _leftHandTransform);
+
+        // Assuming Spawn() returns the instantiated weapon's GameObject
+        GameObject weaponObject = weapon.Spawn(_rightHandTransform, _leftHandTransform);
+
+        // Get the Weapon component from the spawned weapon
+        currentWeapon = weaponObject.GetComponent<Weapon>();
     }
+
 
     /// <summary>
     /// Get specified animation by index, and set the current Attack.
@@ -54,11 +60,17 @@ public class Fighter : MonoBehaviour
         currentAttack = attack;
     }
 
-    void TryHit(int slot)
+    public void TryHit(int slot)
     {
+        if (currentAttack == null) return;
         Vector3 transformPoint;
+        float damageRadius = .5f;
         switch (slot)
         {
+            case 0:
+                transformPoint = currentWeapon.DamagePoint;
+                damageRadius = currentWeapon.DamageRadius;
+                break;
             case 1:
                 transformPoint = _rightHandTransform.position;
                 break;
@@ -70,7 +82,17 @@ public class Fighter : MonoBehaviour
                 break;
         }
         Debug.Log($"Attacking with slot {slot}, position {transformPoint}");
+        foreach (Collider other in Physics.OverlapSphere(transformPoint, damageRadius))
+        {
+            if (other.gameObject == gameObject) continue;
+            
+            if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
+            {
+                damageReceiver.DealDamage(other.transform, 1);
+            }
+        }
     }
+
 
 
 }

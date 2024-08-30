@@ -15,20 +15,23 @@ public class WeaponConfig : ScriptableObject
 
 
     const string weaponName = "Weapon";
-    
 
-    public void Spawn(Transform rightHandTransform, Transform leftHandTransform)
+
+    public GameObject Spawn(Transform rightHandTransform, Transform leftHandTransform)
     {
         DestroyOldWeapon(rightHandTransform, leftHandTransform);
 
+        GameObject weapon = null;
         if (_weaponPrefab != null)
         {
             Transform handTransform = GetTransform(rightHandTransform, leftHandTransform);
-            GameObject weapon = Instantiate(_weaponPrefab, handTransform);
+            weapon = Instantiate(_weaponPrefab, handTransform);
             weapon.name = weaponName;
         }
-        
+
+        return weapon;
     }
+
 
     private Transform GetTransform(Transform rightHandTransform, Transform leftHandTransform)
     {
