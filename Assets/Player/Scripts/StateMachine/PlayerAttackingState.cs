@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttackingState : PlayerBaseState
@@ -48,7 +49,7 @@ public class PlayerAttackingState : PlayerBaseState
 
         if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
-
+            
             //if(normalizedTime >= currentAttack.ForceTime)
             //{
             //    TryApplyForce();
@@ -60,6 +61,11 @@ public class PlayerAttackingState : PlayerBaseState
                 {
                     ComboAttack(normalizedTime);
                 }
+                else
+                {
+                    
+                }
+
                 
 
                 if (stateMachine.Targeter.CurrentTarget != null && stateMachine.InputReader.IsTargeting) return;
