@@ -32,6 +32,11 @@ public class Health : MonoBehaviour
         
     }
 
+    public float GetPercent()
+    {
+        return 100 * (currentHealth / GetComponent<BaseStats>().GetHealth());
+    }
+
     public void DealDamage(int damage)
     {
         if (currentHealth <= 0) { return; }
