@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    public int currentHealth { get; private set; }
+    [SerializeField] public int currentHealth { get; private set; }
 
     public event Action OnTakeDamage;
     public event Action OnDie;
@@ -14,7 +14,16 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHealth = maxHealth;
+        //Change when completing enemy setup
+        if (GetComponent<BaseStats>() != null)
+        {
+            currentHealth = GetComponent<BaseStats>().GetHealth();
+        }
+        else
+        {
+            currentHealth = maxHealth;
+        }
+        
     }
 
     // Update is called once per frame
