@@ -16,6 +16,5 @@ MonoBehaviour:
   <AnimationName>k__BackingField: DaggerLeft1
   damageModifier: 1
   transitionDuration: 0.1
-  <NextComboAttack>k__BackingField: {fileID: 11400000, guid: ad58a41c7c9ae0548a462e8d69fb6501,
-    type: 2}
+  <NextComboAttack>k__BackingField: {fileID: 0}
   comboAttackTime: 0.99

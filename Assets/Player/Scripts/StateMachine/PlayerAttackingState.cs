@@ -33,6 +33,7 @@ public class PlayerAttackingState : PlayerBaseState
         if (currentAttack.ApplyRootMotion) stateMachine.Animator.applyRootMotion = true;
         hasCombo = currentAttack.NextComboAttack != null;
 
+
         stateMachine.Animator.CrossFadeInFixedTime(currentAttack.AnimationName, currentAttack.TransitionDuration);
         //stateMachine.WeaponDamage.SetAttack(attackData.DamageAmount, attackData.Knockback);
     }
@@ -61,10 +62,7 @@ public class PlayerAttackingState : PlayerBaseState
                 {
                     ComboAttack(normalizedTime);
                 }
-                else
-                {
-                    
-                }
+                
 
                 
 
