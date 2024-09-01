@@ -92,10 +92,10 @@ public class Fighter : MonoBehaviour
     private IEnumerator TryHitCoroutine(int slot, float duration)
     {
         alreadyCollidedWith.Clear();
-        foreach (var item in alreadyCollidedWith)
-        {
-            Debug.Log(item.name);
-        }
+        //foreach (var item in alreadyCollidedWith)
+        //{
+        //    Debug.Log(item.name);
+        //}
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
@@ -144,10 +144,10 @@ public class Fighter : MonoBehaviour
             if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
             {
                 alreadyCollidedWith.Add(other);
-                foreach (var item in alreadyCollidedWith)
-                {
-                    Debug.Log("Added " + item.name + " to already hit list");
-                }
+                //foreach (var item in alreadyCollidedWith)
+                //{
+                //    Debug.Log("Added " + item.name + " to already hit list");
+                //}
                 damageReceiver.DealDamage(other.transform, currentWeaponConfig.GetWeaponDamage());
                
             }
