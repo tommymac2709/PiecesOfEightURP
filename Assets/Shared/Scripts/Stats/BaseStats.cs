@@ -5,14 +5,30 @@ using UnityEngine;
 public class BaseStats : MonoBehaviour
 {
     [Range(1, 99)]
-    [SerializeField] private int startingLevel = 1;
+    [SerializeField] int startingLevel = 1;
     [SerializeField] CharacterClass characterClass;
     [SerializeField] Progression progression = null;
 
-    private void Update()
+    int currentLevel = 0;
+
+    private void Start()
     {
-        
-        
+        currentLevel = CalculateLevel();
+        Experience experience = GetComponent<Experience>();
+        if (experience != null )
+        {
+            experience.onExperienceGained += UpdateLevel;
+        }
+    }
+
+    private void UpdateLevel()
+    {
+        int newLevel = CalculateLevel();
+        if (newLevel > currentLevel) 
+        {
+            currentLevel = newLevel;
+            print("Levelled up!");
+        }
     }
 
     public float GetStat(Stat stat)
@@ -22,11 +38,19 @@ public class BaseStats : MonoBehaviour
 
     public int GetLevel()
     {
+        if (currentLevel < 1)
+        {
+            currentLevel = CalculateLevel();
+        }
+        return currentLevel;
+    }
+
+    public int CalculateLevel()
+    {
         Experience experience = GetComponent<Experience>();
-        if (experience == null) { return startingLevel; }
+        if (experience == null) return startingLevel;
 
         float currentXP = experience.GetExperience();
-
         int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, characterClass);
         for (int level = 1; level <= penultimateLevel; level++)
         {

@@ -9,7 +9,7 @@ public class Progression : ScriptableObject
 
     Dictionary<CharacterClass, Dictionary<Stat, float[]>> lookupTable = null;
 
-    public float GetStat(Stat stat, CharacterClass characterClass, int level) 
+    public float GetStat(Stat stat, CharacterClass characterClass, int level)
     {
         BuildLookup();
 
@@ -33,13 +33,13 @@ public class Progression : ScriptableObject
 
     private void BuildLookup()
     {
-        if (lookupTable != null) { return; }
+        if (lookupTable != null) return;
 
         lookupTable = new Dictionary<CharacterClass, Dictionary<Stat, float[]>>();
 
         foreach (ProgressionCharacterClass progressionClass in characterClasses)
         {
-            var statLookupTable = new Dictionary<Stat, float[]>();  
+            var statLookupTable = new Dictionary<Stat, float[]>();
 
             foreach (ProgressionStat progressionStat in progressionClass.stats)
             {
@@ -48,7 +48,6 @@ public class Progression : ScriptableObject
 
             lookupTable[progressionClass.characterClass] = statLookupTable;
         }
-
     }
 
     [System.Serializable]
@@ -56,7 +55,6 @@ public class Progression : ScriptableObject
     {
         public CharacterClass characterClass;
         public ProgressionStat[] stats;
-        
     }
 
     [System.Serializable]

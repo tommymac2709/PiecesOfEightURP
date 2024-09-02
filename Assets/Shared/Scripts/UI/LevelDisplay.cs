@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,12 +21,14 @@ public class LevelDisplay : MonoBehaviour
 
     private void Update()
     {
+        
+        playerLevelValueText.text = String.Format("{0:0}", playerBaseStats.GetLevel());
+
         if (targeter.GetTarget() == null)
         {
             enemyLevelValueText.text = "N/A";
             return;
         }
-        playerLevelValueText.text = playerBaseStats.GetLevel().ToString();
         enemyLevelValueText.text = targeter.GetTarget().GetComponent<BaseStats>().GetLevel().ToString();
     }
 }
