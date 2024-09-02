@@ -9,20 +9,34 @@ public class BaseStats : MonoBehaviour
     [SerializeField] CharacterClass characterClass;
     [SerializeField] Progression progression = null;
 
-<<<<<<< HEAD
-=======
     private void Update()
     {
-        if (gameObject.tag == "Player")
-        {
-            print(GetLevel());
-        }
+        
         
     }
 
->>>>>>> parent of 63d6077 (Updated starting level)
     public float GetStat(Stat stat)
     {
-        return progression.GetStat(stat, characterClass, startingLevel);
+        return progression.GetStat(stat, characterClass, GetLevel());
+    }
+
+    public int GetLevel()
+    {
+        Experience experience = GetComponent<Experience>();
+        if (experience == null) { return startingLevel; }
+
+        float currentXP = experience.GetExperience();
+
+        int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, characterClass);
+        for (int level = 1; level <= penultimateLevel; level++)
+        {
+            float XPToLevelUp = progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level);
+            if (XPToLevelUp > currentXP)
+            {
+                return level;
+            }
+        }
+
+        return penultimateLevel + 1;
     }
 }
