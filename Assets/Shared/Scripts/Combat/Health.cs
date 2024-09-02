@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] public int currentHealth { get; private set; }
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] public float currentHealth { get; private set; }
 
     public event Action OnTakeDamage;
     public event Action OnDie;
 
-    public bool IsDead => currentHealth == 0;
+    public bool IsDead => currentHealth == 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
         return 100 * (currentHealth / GetComponent<BaseStats>().GetHealth());
     }
 
-    public void DealDamage(int damage)
+    public void DealDamage(float damage)
     {
         if (currentHealth <= 0) { return; }
 
