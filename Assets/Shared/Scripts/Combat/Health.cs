@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
         //Change when completing enemy setup
         if (GetComponent<BaseStats>() != null)
         {
-            currentHealth = GetComponent<BaseStats>().GetHealth();
+            currentHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
         else
         {
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
 
     public float GetPercent()
     {
-        return 100 * (currentHealth / GetComponent<BaseStats>().GetHealth());
+        return 100 * (currentHealth / GetComponent<BaseStats>().GetStat(Stat.Health));
     }
 
     public void DealDamage(GameObject instigator, float damage)
@@ -72,6 +72,6 @@ public class Health : MonoBehaviour
 
         if (experience == null) { return; }
 
-        experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
+        experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
     }
 }

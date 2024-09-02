@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Experience : MonoBehaviour
 {
-    [SerializeField] int currentExperiencePoints = 0;
+    [SerializeField] float currentExperiencePoints = 0;
 
-    public void GainExperience(int experience)
+    public void GainExperience(float experience)
     {
         currentExperiencePoints += experience;
+    }
+
+    public float GetExperience()
+    {
+        return currentExperiencePoints;
     }
 }
