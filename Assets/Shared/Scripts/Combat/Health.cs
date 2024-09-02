@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
         return 100 * (currentHealth / GetComponent<BaseStats>().GetHealth());
     }
 
-    public void DealDamage(float damage)
+    public void DealDamage(GameObject instigator, float damage)
     {
         if (currentHealth <= 0) { return; }
 
@@ -53,11 +53,25 @@ public class Health : MonoBehaviour
         if (currentHealth == 0)
         {
             OnDie?.Invoke();
+            AwardExperience(instigator);
+
         }
+
+
 
         Debug.Log(currentHealth);
 
         //the above from currentHealth-= damage can be written as:
         //currentHealth = Mathf.Max(currentHealth - damage, 0);
+    }
+
+    private void AwardExperience(GameObject instigator)
+    {
+        Experience experience = instigator.GetComponent<Experience>();
+        Debug.Log("Attacker was " + instigator.gameObject.name);
+
+        if (experience == null) { return; }
+
+        experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
     }
 }

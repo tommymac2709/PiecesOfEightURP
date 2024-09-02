@@ -37,7 +37,7 @@ public class DamageReceiver : MonoBehaviour
 
 
 
-    public void DealDamage(Transform attacker, int damageAmount)
+    public void DealDamage(GameObject instigator, Transform attacker, int damageAmount)
     {
         attacker.TryGetComponent<EnemyStateMachine>(out var enemyStateMachine);
 
@@ -60,7 +60,7 @@ public class DamageReceiver : MonoBehaviour
         }
 
         //weapon.HitOne();
-        health.DealDamage(damageAmount);
+        health.DealDamage(instigator, damageAmount);
     }
 
     private bool AttackerInCoverage(Transform other)

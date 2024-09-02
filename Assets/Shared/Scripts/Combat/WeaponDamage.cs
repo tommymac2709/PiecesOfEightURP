@@ -31,7 +31,7 @@ public class WeaponDamage : MonoBehaviour
 
         if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
         {
-            damageReceiver.DealDamage(playerCollider.transform, damage);
+            damageReceiver.DealDamage( gameObject, playerCollider.transform, damage);
         }
 
         if (other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))

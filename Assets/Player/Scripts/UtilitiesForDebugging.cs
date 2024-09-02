@@ -15,9 +15,9 @@ public class UtilitiesForDebugging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            health.DealDamage(5f);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha0))
+        //{
+        //    health.DealDamage(5f);
+        //}
     }
 }

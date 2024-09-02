@@ -14616,7 +14616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800ed84f4464c4d4cbbda73c352ab18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLevel: 4
+  startingLevel: 1
   characterClass: 1
   progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
 --- !u!1001 &940785700
@@ -38528,6 +38528,7 @@ GameObject:
   - component: {fileID: 8802840039290111618}
   - component: {fileID: 9158735126705449443}
   - component: {fileID: 9158735126705449444}
+  - component: {fileID: 9158735126705449445}
   m_Layer: 3
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -38562,6 +38563,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb4b5e4e4a008f468ded3585be5ff73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9158735126705449445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158735126705449442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e2b387dcf200a4f846b6110ec0be4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentExperiencePoints: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

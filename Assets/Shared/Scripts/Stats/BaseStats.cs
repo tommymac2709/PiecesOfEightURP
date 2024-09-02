@@ -13,4 +13,9 @@ public class BaseStats : MonoBehaviour
     {
         return progression.GetHealth(characterClass, startingLevel);
     }
+
+    public int GetExperienceReward()
+    {
+        return 10;
+    }
 }

@@ -148,7 +148,7 @@ public class Fighter : MonoBehaviour
                 //{
                 //    Debug.Log("Added " + item.name + " to already hit list");
                 //}
-                damageReceiver.DealDamage(other.transform, currentWeaponConfig.GetWeaponDamage());
+                damageReceiver.DealDamage( gameObject, other.transform, currentWeaponConfig.GetWeaponDamage());
                
             }
         }
