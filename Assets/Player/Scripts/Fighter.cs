@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
  
-public class Fighter : MonoBehaviour
+public class Fighter : MonoBehaviour, IModifierProvider
 {
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
     [SerializeField] Transform _rightHandTransform = null;
@@ -66,6 +66,15 @@ public class Fighter : MonoBehaviour
     public void SetCurrentAttack(AttackData attack)
     {
         currentAttack = attack;
+    }
+
+    public IEnumerable<float> GetAdditiveModifier(Stat stat)
+    {
+        if (stat == Stat.Damage)
+        {
+            yield return currentWeaponConfig.GetWeaponDamage();
+            //Can have 2 yield returns for multiple weapons 
+        }
     }
 
     public void TryHitStart(int slot)
@@ -156,6 +165,5 @@ public class Fighter : MonoBehaviour
         }
     }
 
-
-
+    
 }

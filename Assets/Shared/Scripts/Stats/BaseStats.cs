@@ -43,7 +43,7 @@ public class BaseStats : MonoBehaviour
 
     public float GetStat(Stat stat)
     {
-        return progression.GetStat(stat, characterClass, GetLevel());
+        return progression.GetStat(stat, characterClass, GetLevel()) + GetAdditiveModifier(stat);
     }
 
     public int GetLevel()
@@ -72,5 +72,20 @@ public class BaseStats : MonoBehaviour
         }
 
         return penultimateLevel + 1;
+    }
+
+    private float GetAdditiveModifier(Stat stat)
+    {
+        float total = 0;
+
+        foreach (IModifierProvider provider in GetComponents<IModifierProvider>())
+        {
+            foreach (float modifier in provider.GetAdditiveModifier(stat))
+            {
+                total += modifier;
+            }
+        }
+
+        return total;
     }
 }
