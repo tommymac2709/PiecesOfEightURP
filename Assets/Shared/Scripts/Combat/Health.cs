@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using GameDevTV.Utils;
 
 public class Health : MonoBehaviour
 {
@@ -7,28 +8,27 @@ public class Health : MonoBehaviour
     [SerializeField] float regenerationPercentage = 70f;
 
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] public float currentHealth { get; private set; }
+    [SerializeField] public LazyValue<float> currentHealth { get; private set; }
 
     public event Action OnTakeDamage;
     public event Action OnDie;
 
-    public bool IsDead => currentHealth == 0f;
+    public bool IsDead => currentHealth.value == 0f;
+
+    private void Awake()
+    {
+        currentHealth = new LazyValue<float>(GetInitialHealth);
+    }
+
+    private float GetInitialHealth()
+    {
+        return GetComponent<BaseStats>().GetStat(Stat.Health);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-
-        //Change when completing enemy setup
-        if (GetComponent<BaseStats>() != null)
-        {
-            currentHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
-        }
-        else
-        {
-            currentHealth = maxHealth;
-        }
-        
+        currentHealth.ForceInit();        
     }
 
     private void OnEnable()
@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
 
     public float GetCurrentHealth()
     {
-        return currentHealth;
+        return currentHealth.value;
     }
 
     public float GetMaxHealth()
@@ -53,25 +53,25 @@ public class Health : MonoBehaviour
 
     public float GetPercent()
     {
-        return 100 * (currentHealth / GetComponent<BaseStats>().GetStat(Stat.Health));
+        return 100 * (currentHealth.value / GetComponent<BaseStats>().GetStat(Stat.Health));
     }
 
     public void DealDamage(GameObject instigator, float damage)
     {
-        if (currentHealth <= 0) { return; }
+        if (currentHealth.value <= 0) { return; }
 
         print(gameObject.name + " took damage: " + damage);
 
-        currentHealth -= damage;
+        currentHealth.value -= damage;
 
-        if (currentHealth < 0)
+        if (currentHealth.value < 0)
         {
-            currentHealth = 0;
+            currentHealth.value = 0;
         }
 
         OnTakeDamage?.Invoke();
 
-        if (currentHealth == 0)
+        if (currentHealth.value == 0)
         {
             OnDie?.Invoke();
             AwardExperience(instigator);
@@ -105,8 +105,8 @@ public class Health : MonoBehaviour
         
 
         //Regenerate to max health
-        currentHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
+        currentHealth.value = GetComponent<BaseStats>().GetStat(Stat.Health);
 
-        Debug.Log(currentHealth);
+        Debug.Log(currentHealth.value);
     }
 }

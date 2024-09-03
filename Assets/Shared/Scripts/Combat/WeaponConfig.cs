@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
-public class WeaponConfig : ScriptableObject
+public class WeaponConfig : ScriptableObject, IModifierProvider
 {
     [SerializeField] public GameObject _weaponPrefab = null;
     [SerializeField] float _weaponDamage;
@@ -71,4 +71,21 @@ public class WeaponConfig : ScriptableObject
     {
         return percentageBonus;
     }
+
+    public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+    {
+        if (stat == Stat.Damage)
+        {
+            yield return _weaponDamage;
+        }
+    }
+
+    public IEnumerable<float> GetPercentageModifiers(Stat stat)
+    {
+        if (stat == Stat.Damage)
+        {
+            yield return percentageBonus;
+        }
+    }
+
 }
