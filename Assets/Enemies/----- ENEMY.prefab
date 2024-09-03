@@ -3224,6 +3224,9 @@ GameObject:
   - component: {fileID: 7472134977629846448}
   - component: {fileID: 664748408960178753}
   - component: {fileID: 8311431661288316288}
+  - component: {fileID: 7792547751755755991}
+  - component: {fileID: 5995133256600079158}
+  - component: {fileID: 3903033169511325810}
   m_Layer: 0
   m_Name: ----- ENEMY
   m_TagString: Untagged
@@ -3314,14 +3317,14 @@ MonoBehaviour:
   <Ragdoll>k__BackingField: {fileID: 664748408960178753}
   <Target>k__BackingField: {fileID: 1596305256467374407}
   <WeaponDamage>k__BackingField: {fileID: 6391282016531300767}
-  <MovementSpeed>k__BackingField: 7
+  <MovementSpeed>k__BackingField: 0
   <ImpactStateDuration>k__BackingField: 0.5
   <WanderRadius>k__BackingField: 10
   <WanderTimer>k__BackingField: 2
-  <AttackRange>k__BackingField: 2.5
+  <AttackRange>k__BackingField: 0
   <AttackDamage>k__BackingField: 0
   <AttackKnockback>k__BackingField: 5
-  <PlayerDetectRange>k__BackingField: 15
+  <PlayerDetectRange>k__BackingField: 0
   <PlayerFleeRange>k__BackingField: 10
 --- !u!114 &1596305256467374407
 MonoBehaviour:
@@ -3347,6 +3350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82357b7101680c342b932d98b1cf31cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerationPercentage: 70
   maxHealth: 100
 --- !u!114 &6140307627355577145
 MonoBehaviour:
@@ -3427,6 +3431,67 @@ MonoBehaviour:
   health: {fileID: 1403208636335331178}
   weapon: {fileID: 7472134977629846448}
   coveredAngle: 90
+--- !u!114 &7792547751755755991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultWeaponConfig: {fileID: 11400000, guid: 15c930a3f46342e47b0705240d7194bd,
+    type: 2}
+  _rightHandTransform: {fileID: 1758755846941516979}
+  _leftHandTransform: {fileID: 3275305585354064588}
+  currentWeaponConfig: {fileID: 0}
+  currentAttack: {fileID: 0}
+--- !u!54 &5995133256600079158
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3903033169511325810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800ed84f4464c4d4cbbda73c352ab18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 3
+  characterClass: 1
+  progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
+  levelUpParticleEffect: {fileID: 0}
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0
