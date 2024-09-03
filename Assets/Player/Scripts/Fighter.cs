@@ -68,11 +68,20 @@ public class Fighter : MonoBehaviour, IModifierProvider
         currentAttack = attack;
     }
 
-    public IEnumerable<float> GetAdditiveModifier(Stat stat)
+    public IEnumerable<float> GetAdditiveModifiers(Stat stat)
     {
         if (stat == Stat.Damage)
         {
             yield return currentWeaponConfig.GetWeaponDamage();
+            //Can have 2 yield returns for multiple weapons 
+        }
+    }
+
+    public IEnumerable<float> GetPercentageModifiers(Stat stat)
+    {
+        if (stat == Stat.Damage)
+        {
+            yield return currentWeaponConfig.GetPercentageBonus();
             //Can have 2 yield returns for multiple weapons 
         }
     }
