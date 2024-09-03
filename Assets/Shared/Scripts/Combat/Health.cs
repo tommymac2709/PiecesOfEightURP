@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    //Used in health regeneration to regenerate health on level up to percentage of new level max health
+    [SerializeField] float regenerationPercentage = 70f;
+
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] public float currentHealth { get; private set; }
 
@@ -14,6 +17,8 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
+
         //Change when completing enemy setup
         if (GetComponent<BaseStats>() != null)
         {
@@ -25,6 +30,8 @@ public class Health : MonoBehaviour
         }
         
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -73,5 +80,19 @@ public class Health : MonoBehaviour
         if (experience == null) { return; }
 
         experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
+    }
+
+    private void RegenerateHealth()
+    {
+        //Regen to percentage of the new level max health if below that number
+        //float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
+        //currentHealth = Mathf.Max(currentHealth, regenHealthPoints);
+
+        
+
+        //Regenerate to max health
+        currentHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
+
+        Debug.Log(currentHealth);
     }
 }

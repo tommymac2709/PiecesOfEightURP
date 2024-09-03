@@ -1140,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 3234847534794414990, guid: bfd46c7ea9a65af45a03df8919ea0a1d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6838792430359383936, guid: bfd46c7ea9a65af45a03df8919ea0a1d,
         type: 3}
@@ -15027,6 +15027,7 @@ MonoBehaviour:
   startingLevel: 1
   characterClass: 1
   progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
+  levelUpParticleEffect: {fileID: 0}
 --- !u!1001 &940785700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20737,7 +20738,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: -10, z: -1}
   combinedCenterOfMass: {x: 0, y: -10, z: -1}
   useDefaultInertia: 1
-  inertiaTensor: {x: 395615700, y: 191551070, z: 229344530}
+  inertiaTensor: {x: 395615700, y: 191551020, z: 229344530}
   combinedInertiaTensor: {x: 0, y: 0, z: 0}
 --- !u!114 &1268021266
 MonoBehaviour:
@@ -34097,7 +34098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2093388910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35262,6 +35263,7 @@ MonoBehaviour:
   startingLevel: 2
   characterClass: 1
   progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
+  levelUpParticleEffect: {fileID: 0}
 --- !u!54 &2132062247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38219,6 +38221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82357b7101680c342b932d98b1cf31cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerationPercentage: 70
   maxHealth: 100
 --- !u!136 &5173491640397749810
 CapsuleCollider:
@@ -39799,6 +39802,8 @@ MonoBehaviour:
   startingLevel: 1
   characterClass: 0
   progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
+  levelUpParticleEffect: {fileID: 8543879159486555003, guid: 73d4fb86a7cb16e4c85d630f216c03f0,
+    type: 3}
 --- !u!114 &9158735126705449444
 MonoBehaviour:
   m_ObjectHideFlags: 0
