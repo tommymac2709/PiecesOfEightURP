@@ -16,13 +16,31 @@ public class BaseStats : MonoBehaviour
 
     int currentLevel = 0;
 
+    Experience experience;
+
+    private void Awake()
+    {
+        experience = GetComponent<Experience>();
+    }
+
     private void Start()
     {
         currentLevel = CalculateLevel();
-        Experience experience = GetComponent<Experience>();
-        if (experience != null )
+    }
+
+    private void OnEnable()
+    {
+        if (experience != null)
         {
             experience.onExperienceGained += UpdateLevel;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (experience != null)
+        {
+            experience.onExperienceGained -= UpdateLevel;
         }
     }
 

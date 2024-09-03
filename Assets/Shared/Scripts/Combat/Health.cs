@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
+        
 
         //Change when completing enemy setup
         if (GetComponent<BaseStats>() != null)
@@ -29,6 +29,16 @@ public class Health : MonoBehaviour
             currentHealth = maxHealth;
         }
         
+    }
+
+    private void OnEnable()
+    {
+        GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
+    }
+
+    private void OnDisable()
+    {
+        GetComponent<BaseStats>().onLevelUp -= RegenerateHealth;
     }
 
     public float GetCurrentHealth()

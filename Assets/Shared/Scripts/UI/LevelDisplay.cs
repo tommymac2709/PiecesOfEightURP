@@ -12,7 +12,7 @@ public class LevelDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerLevelValueText;
     [SerializeField] private TextMeshProUGUI enemyLevelValueText;
 
-    private void Start()
+    private void Awake()
     {
         targeter = GameObject.FindWithTag("Player").GetComponentInChildren<Targeter>();
         playerBaseStats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
