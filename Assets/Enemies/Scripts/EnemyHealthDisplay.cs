@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -25,6 +26,6 @@ public class EnemyHealthDisplay : MonoBehaviour
             return;
         }
 
-        healthText.text = targeter.GetTarget().GetComponent<Health>().GetPercent().ToString("f0") + "%";
+        healthText.text = String.Format("{0:0}/{1:0}", targeter.GetTarget().GetComponent<Health>().GetCurrentHealth(), targeter.GetTarget().GetComponent<Health>().GetMaxHealth());
     }
 }

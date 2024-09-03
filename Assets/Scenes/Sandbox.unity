@@ -35159,21 +35159,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
-        type: 3}
-      propertyPath: <AttackRange>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
-        type: 3}
-      propertyPath: <MovementSpeed>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
-        type: 3}
-      propertyPath: <PlayerDetectRange>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4368929775457895397, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35232,65 +35217,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8290213627640367632, guid: 39303c5f15701d14a828bd24e6ad028e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2132062247}
-    - targetCorrespondingSourceObject: {fileID: 8290213627640367632, guid: 39303c5f15701d14a828bd24e6ad028e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2132062246}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39303c5f15701d14a828bd24e6ad028e, type: 3}
---- !u!1 &2132062245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8290213627640367632, guid: 39303c5f15701d14a828bd24e6ad028e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2132062244}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2132062246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132062245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800ed84f4464c4d4cbbda73c352ab18f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingLevel: 3
-  characterClass: 1
-  progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
-  levelUpParticleEffect: {fileID: 0}
---- !u!54 &2132062247
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132062245}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &2133995875
 PrefabInstance:
   m_ObjectHideFlags: 0

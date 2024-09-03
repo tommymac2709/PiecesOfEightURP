@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+ 
 public class Fighter : MonoBehaviour
 {
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
@@ -148,7 +148,9 @@ public class Fighter : MonoBehaviour
                 //{
                 //    Debug.Log("Added " + item.name + " to already hit list");
                 //}
-                damageReceiver.DealDamage( gameObject, other.transform, currentWeaponConfig.GetWeaponDamage());
+                float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
+                float damageToDeal = 5f;
+                damageReceiver.DealDamage( gameObject, other.transform, damage);
                
             }
         }

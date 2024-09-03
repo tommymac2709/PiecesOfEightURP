@@ -37,7 +37,7 @@ public class DamageReceiver : MonoBehaviour
 
 
 
-    public void DealDamage(GameObject instigator, Transform attacker, int damageAmount)
+    public void DealDamage(GameObject instigator, Transform attacker, float damageAmount)
     {
         attacker.TryGetComponent<EnemyStateMachine>(out var enemyStateMachine);
 

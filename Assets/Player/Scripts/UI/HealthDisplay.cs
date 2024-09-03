@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class HealthDisplay : MonoBehaviour
 {
@@ -15,6 +17,6 @@ public class HealthDisplay : MonoBehaviour
 
     private void Update()
     {
-        healthValueText.text = health.GetPercent().ToString("f0") + "%";
+        healthValueText.text = String.Format("{0:0}/{1:0}", health.GetCurrentHealth(), health.GetMaxHealth());
     }
 }

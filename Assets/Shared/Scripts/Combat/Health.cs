@@ -31,12 +31,14 @@ public class Health : MonoBehaviour
         
     }
 
-    
-
-    // Update is called once per frame
-    void Update()
+    public float GetCurrentHealth()
     {
-        
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return GetComponent<BaseStats>().GetStat(Stat.Health);
     }
 
     public float GetPercent()
@@ -47,6 +49,8 @@ public class Health : MonoBehaviour
     public void DealDamage(GameObject instigator, float damage)
     {
         if (currentHealth <= 0) { return; }
+
+        print(gameObject.name + " took damage: " + damage);
 
         currentHealth -= damage;
 
