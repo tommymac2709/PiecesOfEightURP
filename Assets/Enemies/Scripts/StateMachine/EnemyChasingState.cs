@@ -36,11 +36,25 @@ public class EnemyChasingState : EnemyBaseState
             return;
         }
 
+
+
+        Vector3 lastPosition = stateMachine.transform.position;
         MoveToPlayer(deltaTime);
+        Vector3 deltaMovement = lastPosition - stateMachine.transform.position;
+        float deltaMagnitude = deltaMovement.magnitude;
+        float grossSpeed = deltaMagnitude / deltaTime;
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, grossSpeed / stateMachine.MovementSpeed, AnimatorDampTime, deltaTime);
 
-        FacePlayer();
+        if (deltaMagnitude > 0)
+        {
+            FaceTarget(stateMachine.transform.position - deltaMovement, deltaTime);
+        }
+        else
+        {
+            FaceTarget(stateMachine.Player.transform.position, deltaTime);
+        }
 
-        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1f, AnimatorDampTime, deltaTime);
+
     }
 
     public override void Exit()
@@ -58,10 +72,11 @@ public class EnemyChasingState : EnemyBaseState
         if (stateMachine.Agent.enabled)
         {
             stateMachine.Agent.destination = stateMachine.Player.transform.position;
-
-            Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
-
+            Vector3 desiredVelocity = stateMachine.Agent.desiredVelocity.normalized;
+            Move(desiredVelocity * stateMachine.MovementSpeed, deltaTime);
             stateMachine.Agent.velocity = stateMachine.Controller.velocity;
+            stateMachine.Agent.nextPosition = stateMachine.transform.position;
+
         }
         else
         {

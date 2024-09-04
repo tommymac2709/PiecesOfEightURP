@@ -22,6 +22,8 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
+    [field: SerializeField] public float RotationSpeed { get; private set; }
+
     [field: SerializeField] public float ImpactStateDuration { get; private set; }
 
     [field: SerializeField] public float WanderRadius { get; private set; }

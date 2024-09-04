@@ -49,7 +49,7 @@ public class EnemyAttackState : EnemyBaseState
 
         previousFrameTime = normalizedTime;
 
-        FacePlayer();
+        FaceTarget(stateMachine.Player.transform.position, deltaTime);
 
         if (!IsInAttackRange())
         {
