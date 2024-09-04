@@ -3186,7 +3186,9 @@ MonoBehaviour:
   <Ragdoll>k__BackingField: {fileID: 664748408960178753}
   <Target>k__BackingField: {fileID: 1596305256467374407}
   <MovementSpeed>k__BackingField: 2
-  <ImpactStateDuration>k__BackingField: 0.5
+  <RotationSpeed>k__BackingField: 5
+  <ImpactStateDuration>k__BackingField: 0.3
+  <ParriedStateDuration>k__BackingField: 1
   <WanderRadius>k__BackingField: 10
   <WanderTimer>k__BackingField: 2
   <AttackRange>k__BackingField: 2

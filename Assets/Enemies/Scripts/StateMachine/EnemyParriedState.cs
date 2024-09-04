@@ -30,6 +30,10 @@ public class EnemyParriedState : EnemyBaseState
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
         }
 
+        
+
+        
+
     }
 
     public override void Exit()

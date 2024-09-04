@@ -18,7 +18,10 @@ public class DamageReceiver : MonoBehaviour
     private bool canParry;
 
 
-
+    private void Update()
+    {
+        
+    }
 
     public void SetIsInvulnerable(bool isInvulnerable)
     {
@@ -39,21 +42,23 @@ public class DamageReceiver : MonoBehaviour
 
     public void DealDamage(GameObject instigator, Transform attacker, float damageAmount)
     {
-        attacker.TryGetComponent<EnemyStateMachine>(out var enemyStateMachine);
+        instigator.TryGetComponent<EnemyStateMachine>(out var enemyStateMachine);
 
-        if (enemyStateMachine != null)
-        {
-            if (canParry && AttackerInCoverage(attacker))
+        //if (enemyStateMachine != null)
+        //{
+            
+
+            if (canParry && AttackerInCoverage(instigator))
             {
                 //weapon.HitOne();
-                enemyStateMachine.SwitchState(new EnemyParriedState(enemyStateMachine, 2f));
+                enemyStateMachine.SwitchState(new EnemyParriedState(enemyStateMachine, enemyStateMachine.ParriedStateDuration));
                 return;
             }
-        }
+        //}
        
         if (isInvulnerable) { return; }
 
-        if (isBlocking && AttackerInCoverage(attacker))
+        if (isBlocking && AttackerInCoverage(instigator))
         {
             //weapon.HitTwo();
             return;
@@ -63,10 +68,10 @@ public class DamageReceiver : MonoBehaviour
         health.DealDamage(instigator, damageAmount);
     }
 
-    private bool AttackerInCoverage(Transform other)
+    private bool AttackerInCoverage(GameObject other)
     {
         var requiredValue = Mathf.Cos(coveredAngle * Mathf.Deg2Rad);
-        var directionToAttacker = (other.position - transform.position).normalized;
+        var directionToAttacker = (other.transform.position - transform.position).normalized;
         var dotProduct = Vector3.Dot(transform.forward, directionToAttacker);
         return dotProduct >= requiredValue;
     }

@@ -16833,6 +16833,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1003698582}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1004446017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defe3efb56c1bc943a6bfb504a00dc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  startDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  fogDensity:
+    m_OverrideState: 0
+    m_Value: 20
+  heightFogDepth:
+    m_OverrideState: 0
+    m_Value: 25
+  heightFogDensity:
+    m_OverrideState: 0
+    m_Value: 1
+  heightFogBrightness:
+    m_OverrideState: 0
+    m_Value: 0.6
+  fogBrightness:
+    m_OverrideState: 0
+    m_Value: 1
+  subsurfaceStrength:
+    m_OverrideState: 0
+    m_Value: 0.35
+  causticsStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  distortionStrength:
+    m_OverrideState: 0
+    m_Value: 0.25
+  distortionFrequency:
+    m_OverrideState: 0
+    m_Value: 0.75
+  distortionSpeed:
+    m_OverrideState: 0
+    m_Value: 0.5
 --- !u!1001 &1008287108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22770,7 +22816,7 @@ MonoBehaviour:
   waterLevelPadding: 0.5
   waterMaterial: {fileID: 2100000, guid: fbb04271505a76f40b984e38071e86f3, type: 2}
   dynamicMaterial: 0
-  settings: {fileID: 0}
+  settings: {fileID: 1004446017}
   useVolumeBlending: 0
   startDistance: 0
   fogDensity: 8
@@ -35110,6 +35156,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
+        type: 3}
+      propertyPath: <ImpactStateDuration>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903033169511325810, guid: 39303c5f15701d14a828bd24e6ad028e,
+        type: 3}
+      propertyPath: startingLevel
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4368929775457895397, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
       propertyPath: m_LocalPosition.x

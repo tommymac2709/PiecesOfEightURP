@@ -8,7 +8,7 @@ public class EnemyIdleState : EnemyBaseState
     private const float AnimatorDampTime = 0.1f;
 
     private bool idleSpeedReached;
-
+    
     public EnemyIdleState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
