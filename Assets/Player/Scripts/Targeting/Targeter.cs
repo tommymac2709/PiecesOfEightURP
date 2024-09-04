@@ -1,11 +1,17 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using System.Linq;
 
 public class Targeter : MonoBehaviour
 {
     [SerializeField] private CinemachineTargetGroup cinemachineTargetGroup;
+
+    [Tooltip("The higher the value, the more precedence will be given to how close the target is to the targeter." +
+                 "The lower the value, the more precedence will be given to how close the target is to the center of the screen.")]
+    [Range(0, 1)]
+    [SerializeField] private float distanceWeight = .5f;
+
 
     public List<Target> targets = new List<Target>();
 
@@ -38,38 +44,41 @@ public class Targeter : MonoBehaviour
     public bool SelectTarget()
     {
         if (targets.Count == 0) return false;
-
+        Rect bounds = new Rect(0, 0, 1, 1);
         Target closestTarget = null;
-        float closestTargetDistance = Mathf.Infinity;   
-
-        foreach (Target target in targets) 
+        float ClosestDistanceToCenter = Mathf.Infinity;
+        foreach (Target target in targets.OrderByDescending(t => Vector3.SqrMagnitude(t.transform.position - transform.position)))
         {
-            Vector3 viewPos = mainCamera.WorldToViewportPoint(target.transform.position); //CHANGE TO VECTOR2 FOR CLOSEST TO CENTRE OF SCREEN TARGETING
-
-            if (!target.GetComponentInChildren<Renderer>().isVisible)
+            Target candidate = null;
+            float candidateToCenter = Mathf.Infinity;
+            Vector2 viewPos = mainCamera.WorldToViewportPoint(target.transform.position);
+            if (!bounds.Contains(viewPos)) continue;
+            Vector2 toCenter = viewPos - new Vector2(0.5f, 0.5f);
+            float distanceToTarget = toCenter.sqrMagnitude;
+            if (distanceToTarget < ClosestDistanceToCenter)
             {
-                continue;
+                candidate = target;
             }
-
-            Vector3 toPlayer = viewPos - transform.position;
-
-            //Vector2 toCentre = viewPos - new Vector2(0.5f, 0.5f); UNCOMMENT FOR CLOSEST TO CENTRE OF SCREEN TARGETING 
-            if (toPlayer.sqrMagnitude < closestTargetDistance) //change toPlayer to toCentre FOR CLOSEST TO CENTRE OF SCREEN TARGETING
-            { 
-                closestTarget = target;
-                closestTargetDistance = toPlayer.sqrMagnitude; //change toPlayer to toCentre FOR CLOSEST TO CENTRE OF SCREEN TARGETING
+            else if (closestTarget != null)
+            {
+                float distanceOfCandidateToCamera = Vector3.SqrMagnitude(target.transform.position - transform.position);
+                float distanceOfClosestToCamera =
+                    Vector3.SqrMagnitude(closestTarget.transform.position - transform.position);
+                if (distanceOfCandidateToCamera > distanceOfClosestToCamera * distanceWeight)
+                {
+                    continue;
+                }
+                candidate = target;
             }
+            closestTarget = candidate;
+            ClosestDistanceToCenter = distanceToTarget;
         }
-
         if (closestTarget == null) return false;
-
         CurrentTarget = closestTarget;
-        cinemachineTargetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
-
-
+        cinemachineTargetGroup.AddMember(CurrentTarget.transform, 1, 2);
         return true;
-
     }
+
 
     public void CancelTargeting()
     {
