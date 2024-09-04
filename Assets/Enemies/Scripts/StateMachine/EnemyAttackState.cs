@@ -6,29 +6,63 @@ public class EnemyAttackState : EnemyBaseState
     
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
+    private float previousFrameTime;
+    private AttackData currentAttack;
+
+    private bool hasCombo;
+
+    bool compile;
 
     
 
-    public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
+    public EnemyAttackState(EnemyStateMachine stateMachine, AttackData attack) : base(stateMachine)
     {
+        currentAttack = attack;
+        stateMachine.Fighter.SetCurrentAttack(attack);
+
+    }
+
+    public EnemyAttackState(EnemyStateMachine stateMachine, int attack) : base(stateMachine)
+    {
+        currentAttack = stateMachine.Fighter.GetCurrentAttack(attack);
     }
 
     public override void Enter()
     {
-        stateMachine.WeaponDamage.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
+        if (currentAttack.ApplyRootMotion) stateMachine.Animator.applyRootMotion = true;
+        hasCombo = currentAttack.NextComboAttack != null;
 
-        stateMachine.Animator.CrossFadeInFixedTime(AttackAnimHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(currentAttack.AnimationName, currentAttack.TransitionDuration);
     }
 
     public override void Tick(float deltaTime)
     {
-        if (GetNormalizedTime(stateMachine.Animator, "Attack") >= 1)
+        float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+
+        if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
-            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            if (hasCombo)
+            {
+                ComboAttack(normalizedTime);
+            }
         }
 
+        previousFrameTime = normalizedTime;
+
         FacePlayer();
-        
+
+        if (!IsInAttackRange())
+        {
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            return;
+        }
+    }
+
+    private void ComboAttack(float normalizedTime)
+    {
+        if (normalizedTime < currentAttack.ComboAttackTime) { return; }
+
+        stateMachine.SwitchState(new EnemyAttackState(stateMachine, currentAttack.NextComboAttack));
     }
 
     public override void Exit()

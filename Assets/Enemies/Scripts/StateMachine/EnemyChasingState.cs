@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyChasingState : EnemyBaseState
 {
-    private readonly int MotionBlendTreeHash = Animator.StringToHash("Motion");
-    private readonly int MovementSpeedHash = Animator.StringToHash("MovementSpeed");
+    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
+    private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
@@ -13,7 +13,7 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(MotionBlendTreeHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
@@ -32,7 +32,7 @@ public class EnemyChasingState : EnemyBaseState
 
         if (IsInAttackRange())
         {
-            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+            stateMachine.SwitchState(new EnemyAttackState(stateMachine, 0));
             return;
         }
 
@@ -40,7 +40,7 @@ public class EnemyChasingState : EnemyBaseState
 
         FacePlayer();
 
-        stateMachine.Animator.SetFloat(MovementSpeedHash, 1f, AnimatorDampTime, deltaTime);
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1f, AnimatorDampTime, deltaTime);
     }
 
     public override void Exit()

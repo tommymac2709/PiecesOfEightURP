@@ -7,7 +7,7 @@ public class DamageReceiver : MonoBehaviour
 
     [SerializeField] Health health;
 
-    [SerializeField] WeaponHandler weapon;
+    //[SerializeField] WeaponHandler weapon;
 
     [SerializeField] float coveredAngle = 90f;
 

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
-    private readonly int MotionBlendTreeHash = Animator.StringToHash("Motion");
-    private readonly int MovementSpeedHash = Animator.StringToHash("MovementSpeed");
+    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
+    private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
@@ -14,7 +14,7 @@ public class EnemyIdleState : EnemyBaseState
     public override void Enter()
     {
         
-        stateMachine.Animator.CrossFadeInFixedTime(MotionBlendTreeHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
@@ -40,7 +40,7 @@ public class EnemyIdleState : EnemyBaseState
         //    return;
         //}
 
-        stateMachine.Animator.SetFloat(MovementSpeedHash, 0, AnimatorDampTime, deltaTime);
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
     }
 
     public override void Exit()

@@ -8,6 +8,8 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public CharacterController Controller { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
 
+    [field: SerializeField] public Fighter Fighter { get; private set; }
+
     [field: SerializeField] public Health Health{ get; private set; }
 
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
@@ -16,7 +18,7 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public Target Target { get; private set; }
 
-    [field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
+    //[field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
 
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
