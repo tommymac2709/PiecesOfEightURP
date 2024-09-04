@@ -53,6 +53,7 @@ public class EnemyAttackState : EnemyBaseState
 
         if (!IsInAttackRange())
         {
+
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
         }
