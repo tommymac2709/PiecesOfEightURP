@@ -7,6 +7,8 @@ public class EnemyIdleState : EnemyBaseState
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
+    private bool idleSpeedReached;
+
     public EnemyIdleState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -40,7 +42,17 @@ public class EnemyIdleState : EnemyBaseState
         //    return;
         //}
 
-        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
+        if (!idleSpeedReached)
+        {
+            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
+            if (stateMachine.Animator.GetFloat(FreeLookSpeedHash) < .05f)
+            {
+                stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f);
+                idleSpeedReached = true;
+
+            }
+        }
+        
     }
 
     public override void Exit()
