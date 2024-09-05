@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinemachineTargetGroup: {fileID: 0}
+  distanceWeight: 0.5
   targets: []
 --- !u!135 &1327580070128901748
 SphereCollider:
@@ -1272,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e191cbdf79c144ea4af07fb198938f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: {fileID: 11400000, guid: 908cff68f84078840ac149562acaf9ec, type: 2}
   <ClimbCamera>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 6250408747986796385}
   <Fighter>k__BackingField: {fileID: 6555897636167996238}
@@ -1447,7 +1449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5752655109540230528}
-  weapon: {fileID: 1029893140229148542}
   coveredAngle: 90
 --- !u!114 &5503783039838190702
 MonoBehaviour:

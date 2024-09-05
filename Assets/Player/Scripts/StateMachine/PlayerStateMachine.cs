@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
+    [field: SerializeField] public InventorySO Inventory;
+
     [field: SerializeField] public GameObject ClimbCamera { get; private set; }
 
     [field: SerializeField] public InputReader InputReader { get; private set; }
@@ -63,6 +65,8 @@ public class PlayerStateMachine : StateMachine
 
     private void Start()
     {
+        Inventory.Container.Clear();
+
         MainCameraTransform = Camera.main.transform;
 
         SwitchState(new PlayerFreeLookState(this));
