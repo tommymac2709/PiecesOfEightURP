@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class UtilitiesInRuntime : MonoBehaviour
 {
+    [SerializeField] InventorySO inventory;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +13,15 @@ public class UtilitiesInRuntime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Alpha9)) 
+        {
+            inventory.Save();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha0))
+        {
+            inventory.Load();
+        }
+
     }
 }
