@@ -65,7 +65,7 @@ public class PlayerStateMachine : StateMachine
 
     private void Start()
     {
-        Inventory.Container.Clear();
+        Inventory.Container.Items.Clear();
 
         MainCameraTransform = Camera.main.transform;
 

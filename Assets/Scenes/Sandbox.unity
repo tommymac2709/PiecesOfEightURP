@@ -2382,10 +2382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
@@ -2405,6 +2405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c801c33286f9dd24087c850b4b0633a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootInventoryPrefab: {fileID: 8076195564523389556, guid: b4b0c30e581998e43b5455502c09febf,
+    type: 3}
   inventory: {fileID: 11400000, guid: 908cff68f84078840ac149562acaf9ec, type: 2}
 --- !u!1001 &120916445
 PrefabInstance:
