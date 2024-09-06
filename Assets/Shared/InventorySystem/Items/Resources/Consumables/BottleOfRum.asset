@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5851850c48db8fd4a8b0ec503741c8f2, type: 3}
   m_Name: BottleOfRum
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 6645565575303213824, guid: 455b28653866ffc4898d64e7cb2e6010, type: 3}
   type: 0
   description: A full bottle of rum. Yo-ho!
   interactText: Bottle Of Rum
