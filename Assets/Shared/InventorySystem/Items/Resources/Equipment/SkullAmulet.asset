@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057a0d724552adf41a4d6b7768e3454c, type: 3}
   m_Name: SkullAmulet
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3365772887847557071, guid: 0104ed98f40147a40857ab224c06be8d, type: 3}
+  Id: 0
+  uiDisplay: {fileID: 21300000, guid: 1d7c74841cbf1434dbfd2a56c78fc2d1, type: 3}
   type: 1
   description: An amulet which will reduce the amount of damage you take
   interactText: Pickup Skull Amulet

@@ -10894,7 +10894,6 @@ GameObject:
   - component: {fileID: 691566366}
   - component: {fileID: 691566365}
   - component: {fileID: 691566364}
-  - component: {fileID: 691566367}
   m_Layer: 0
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -10985,20 +10984,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &691566367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691566362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bc5dd1446820e48a15efd803d29b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 908cff68f84078840ac149562acaf9ec, type: 2}
-  gridParent: {fileID: 1429751959}
 --- !u!1001 &708129922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23266,6 +23251,7 @@ GameObject:
   - component: {fileID: 1429751962}
   - component: {fileID: 1429751961}
   - component: {fileID: 1429751963}
+  - component: {fileID: 1429751964}
   m_Layer: 0
   m_Name: Panel_Background
   m_TagString: Untagged
@@ -23305,14 +23291,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 738a30cc0b59b154b81d0dd9a11423ba, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23354,6 +23340,22 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1429751964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429751959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bc5dd1446820e48a15efd803d29b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 1711224775224630105, guid: 5dad49d15d765aa41a0ceea1e95b7e30,
+    type: 3}
+  inventory: {fileID: 11400000, guid: 908cff68f84078840ac149562acaf9ec, type: 2}
+  gridParent: {fileID: 1429751959}
 --- !u!1001 &1438699156
 PrefabInstance:
   m_ObjectHideFlags: 0
