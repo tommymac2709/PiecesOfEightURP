@@ -19,9 +19,12 @@ public class PickupItemInteractable : MonoBehaviour, IInteractable
 
     public void Interact(Transform interactorTransform)
     {
+        Destroy(gameObject);
         InventorySO inventory = GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().Inventory;
         inventory.AddItem(item, numberToAdd);
-        Destroy(gameObject);
+        DisplayInventory display = GameObject.FindObjectOfType<DisplayInventory>();
+        display.UpdateDisplay();
+        
     }
 
     

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057a0d724552adf41a4d6b7768e3454c, type: 3}
   m_Name: HatOfAttack
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7763787089228231136, guid: 310b242729581b94fafd7cccbc07192c, type: 3}
   type: 1
   description: A cool hat
   interactText: Pickup Hat of Attack
