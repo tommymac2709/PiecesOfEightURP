@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DisplayInventory : MonoBehaviour
@@ -11,50 +13,62 @@ public class DisplayInventory : MonoBehaviour
     public GameObject inventoryPrefab;
     public InventorySO inventory;
     public GameObject gridParent;
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+
+    private void Awake()
+    {
+        itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+    }
 
     private void Start()
     {
-        CreateDisplay();
+        CreateSlots();
     }
 
 
     private void Update()
     {
-        UpdateDisplay();
+        UpdateSlotDisplay();
     }
 
-    private void CreateDisplay()
+    public void UpdateSlotDisplay()
     {
-        for (int i = 0; i < inventory.Container.Items.Count; i++)
+        foreach (KeyValuePair<GameObject, InventorySlot> _slot in itemsDisplayed)
         {
-            InventorySlot slot = inventory.Container.Items[i];
-
-            var obj = Instantiate(inventoryPrefab, gridParent.transform, false);
-            obj.transform.GetChild(0).GetComponent<Image>().sprite = inventory.database.GetItem[slot.item.Id].uiDisplay;
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = slot.amount.ToString("n0");
-            itemsDisplayed.Add(slot, obj);
-        }
-    }
-
-
-    public void UpdateDisplay()
-    {
-        for (int i = 0; i < inventory.Container.Items.Count; i++)
-        {
-            InventorySlot slot = inventory.Container.Items[i];
-
-            if (itemsDisplayed.ContainsKey(slot))
+            if (_slot.Value.ID >= 0)
             {
-                itemsDisplayed[slot].GetComponentInChildren<TextMeshProUGUI>().text = slot.amount.ToString("n0");
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.GetItem[_slot.Value.item.Id].uiDisplay;
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+                _slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = _slot.Value.amount == 1 ? " " : _slot.Value.amount.ToString("n0");
             }
             else
             {
-                var obj = Instantiate(inventoryPrefab, gridParent.transform, false);
-                obj.transform.GetChild(0).GetComponent<Image>().sprite = inventory.database.GetItem[slot.item.Id].uiDisplay;
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = slot.amount.ToString("n0");
-                itemsDisplayed.Add(slot, obj);
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
+                _slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = " ";
             }
         }
     }
+
+    private void CreateSlots()
+    {
+        Debug.Log("Created slots");
+        //itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+        if (itemsDisplayed != null)
+        {
+            Debug.Log("Created dictionary");
+        }
+        for (int i = 0; i < inventory.Container.Items.Length; i++)
+        {
+            var obj = Instantiate(inventoryPrefab, gridParent.transform, false);
+            Debug.Log("Instantiated " + obj.name);
+            itemsDisplayed.Add(obj, inventory.Container.Items[i]);
+        }
+    }
+
+    private void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
+    {
+
+    }
+
 }
