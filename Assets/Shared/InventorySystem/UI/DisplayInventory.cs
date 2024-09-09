@@ -113,7 +113,7 @@ public class DisplayInventory : MonoBehaviour
         }
         else
         {
-
+            inventory.RemoveItem(itemsDisplayed[obj].item);
         }
         Destroy(mouseItem.obj);
         mouseItem.item = null;
