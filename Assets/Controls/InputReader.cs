@@ -21,8 +21,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action UseAbilityEvent;
     public event Action CancelTargetEvent;
     public event Action InteractEvent;
+    public event Action CancelWindowEvent;
+    public event Action InventoryEvent;
 
-    
+
+
 
     private Controls controls;
 
@@ -129,5 +132,23 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) { return; }
 
         InteractEvent?.Invoke();
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            InventoryEvent?.Invoke();
+        }
+
+    }
+
+    public void OnCancelWindow(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            CancelWindowEvent?.Invoke();
+        }
+
     }
 }
