@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DisplayInventory : MonoBehaviour
 {
@@ -98,11 +99,12 @@ public class DisplayInventory : MonoBehaviour
 
     private void OnDrag(GameObject obj)
     {
-        if (mouseItem.obj != null)
-        {
-            mouseItem.obj.GetComponent<RectTransform>().position = Input.mousePosition;
-
-        }
+        
+            if (mouseItem.obj != null)
+            {
+                mouseItem.obj.GetComponent<RectTransform>().position = Mouse.current.position.ReadValue();  //new input mouse position
+            }
+        
     }
 
     private void OnDragEnd(GameObject obj)
@@ -123,8 +125,9 @@ public class DisplayInventory : MonoBehaviour
     {
         var mouseObject = new GameObject();
         var rt = mouseObject.AddComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(50, 50);
-        mouseObject.transform.SetParent(gridParent.transform, false);
+
+        rt.sizeDelta = new Vector2(75, 75);
+        mouseObject.transform.SetParent(obj.transform);
         if (itemsDisplayed[obj].ID >= 0)
         {
             var img = mouseObject.AddComponent<Image>();
