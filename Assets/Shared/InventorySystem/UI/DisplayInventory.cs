@@ -115,7 +115,7 @@ public class DisplayInventory : MonoBehaviour
         }
         else
         {
-            inventory.RemoveItem(itemsDisplayed[obj].item);
+           // inventory.RemoveItem(itemsDisplayed[obj].item);
         }
         Destroy(mouseItem.obj);
         mouseItem.item = null;
@@ -126,7 +126,7 @@ public class DisplayInventory : MonoBehaviour
         var mouseObject = new GameObject();
         var rt = mouseObject.AddComponent<RectTransform>();
 
-        rt.sizeDelta = new Vector2(75, 75);
+        rt.sizeDelta = new Vector2(80, 80);
         mouseObject.transform.SetParent(obj.transform);
         if (itemsDisplayed[obj].ID >= 0)
         {

@@ -23986,6 +23986,7 @@ GameObject:
   - component: {fileID: 1429751961}
   - component: {fileID: 1429751963}
   - component: {fileID: 1429751964}
+  - component: {fileID: 1429751965}
   m_Layer: 0
   m_Name: Panel_Background
   m_TagString: Untagged
@@ -24064,16 +24065,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 75
-    m_Right: 0
+    m_Right: 75
     m_Top: 100
-    m_Bottom: 100
-  m_ChildAlignment: 0
+    m_Bottom: 50
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 75, y: 50}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Spacing: {x: 10, y: 10}
+  m_Constraint: 1
+  m_ConstraintCount: 4
 --- !u!114 &1429751964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24090,6 +24091,20 @@ MonoBehaviour:
     type: 3}
   inventory: {fileID: 11400000, guid: 7b9c25cb87a1f564cb640f71491d419b, type: 2}
   gridParent: {fileID: 1429751959}
+--- !u!114 &1429751965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429751959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!1001 &1438699156
 PrefabInstance:
   m_ObjectHideFlags: 0

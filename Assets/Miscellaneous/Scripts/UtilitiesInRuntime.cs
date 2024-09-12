@@ -27,6 +27,6 @@ public class UtilitiesInRuntime : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Items = new InventorySlot[18];
+        inventory.Container.Items = new InventorySlot[16];
     }
 }

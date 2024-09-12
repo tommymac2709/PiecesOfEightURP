@@ -99,7 +99,7 @@ public class InventorySO : ScriptableObject
 public class Inventory
 {
     [SerializeField] // Serialize the Items array so it shows in the Inspector.
-    public InventorySlot[] Items = new InventorySlot[18];
+    public InventorySlot[] Items = new InventorySlot[16];
 }
 
 [System.Serializable]
