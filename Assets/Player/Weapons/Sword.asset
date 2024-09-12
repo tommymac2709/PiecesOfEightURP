@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd6c21e330a8e6498f4712cf609f098, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  Id: 3
+  uiDisplay: {fileID: 21300000, guid: deeae33315027e045bf104c3f198179d, type: 3}
+  type: 0
+  description: 
+  interactText: 
   _weaponPrefab: {fileID: 2353232748905043175, guid: cdb5e54566dbd784c9325ea60fd5f270,
     type: 3}
   _weaponDamage: 5
