@@ -16,7 +16,14 @@ public class DisplayInventory : MonoBehaviour
     public GameObject inventoryPrefab;
     public InventorySO inventory;
     public GameObject gridParent;
+
+    [SerializeField] TextMeshProUGUI weaponDisplayName;
+    [SerializeField] Sprite weaponDisplaySprite;
+    [SerializeField] TextMeshProUGUI weaponDisplayDescription;
+
+    
     Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+
 
     private void Awake()
     {
@@ -71,6 +78,7 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            
 
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
         }
@@ -94,6 +102,8 @@ public class DisplayInventory : MonoBehaviour
         if (itemsDisplayed.ContainsKey(obj) )
         {
             mouseItem.hoverItem = itemsDisplayed[obj];
+            
+
         }
     }
 
@@ -143,6 +153,7 @@ public class DisplayInventory : MonoBehaviour
     {
         mouseItem.hoverObj = null;
         mouseItem.hoverItem = null;
+       
     }
 }
 

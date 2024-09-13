@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+
 public class Fighter : MonoBehaviour, IModifierProvider
 {
+    [SerializeField] WeaponConfig unarmedWeaponConfig = null;
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
     [SerializeField] Transform _rightHandTransform = null;
     [SerializeField] Transform _leftHandTransform = null;
 
     public WeaponConfig currentWeaponConfig = null;
+    public WeaponConfig currentlyUsingWeaponConfig = null;
     Weapon currentWeapon;
     public AttackData currentAttack;
     private Coroutine hitCoroutine = null;
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
+
+    public bool isHoldingWeapon {get; private set;}
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +28,26 @@ public class Fighter : MonoBehaviour, IModifierProvider
     // Update is called once per frame
     void Update()
     {
+        if (currentWeaponConfig == unarmedWeaponConfig)
+        {
+            isHoldingWeapon = false;
+        }
+        else
+        {
+            isHoldingWeapon = true;
+        }
+
         
+    }
+
+    public WeaponConfig GetUnarmedWeapon()
+    {
+        return unarmedWeaponConfig;
+    }
+
+    public WeaponConfig GetCurrentlyUsingWeapon()
+    {
+        return currentlyUsingWeaponConfig;
     }
 
     public void EquipWeapon(WeaponConfig weapon)
@@ -39,7 +62,11 @@ public class Fighter : MonoBehaviour, IModifierProvider
             currentWeapon = weaponObject.GetComponent<Weapon>();
         }
         // Get the Weapon component from the spawned weapon
-        
+
+        if (currentWeaponConfig == unarmedWeaponConfig) return;
+
+        currentlyUsingWeaponConfig = weapon;
+
     }
 
 

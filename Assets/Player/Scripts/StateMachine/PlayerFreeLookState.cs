@@ -31,6 +31,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.DodgeEvent += OnDodge;
         stateMachine.InputReader.UseAbilityEvent += OnUseAbility;
+        stateMachine.InputReader.SheatheEvent += OnSheathe;
 
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f);
 
@@ -44,6 +45,8 @@ public class PlayerFreeLookState : PlayerBaseState
         }
         
     }
+
+    
 
     public override void Tick(float deltaTime)
     {
@@ -92,6 +95,24 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.JumpEvent -= OnJump;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
         stateMachine.InputReader.UseAbilityEvent -= OnUseAbility;
+        stateMachine.InputReader.SheatheEvent -= OnSheathe;
+    }
+
+    private void OnSheathe()
+    {
+        if (stateMachine.Fighter.GetCurrentlyUsingWeapon() == null) return;
+
+        if (stateMachine.Fighter.isHoldingWeapon)
+        {
+            stateMachine.Fighter.EquipWeapon(stateMachine.Fighter.GetUnarmedWeapon());
+        }
+        else
+        {
+            stateMachine.Fighter.EquipWeapon(stateMachine.Fighter.GetCurrentlyUsingWeapon());
+        }
+        
+
+        
     }
 
     private void OnUseAbility()

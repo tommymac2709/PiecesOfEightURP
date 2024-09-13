@@ -144,6 +144,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UnsheatheWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf634bfa-36a8-4e9d-bc2e-2920e80c1458"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -531,6 +540,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""CancelWindow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44df8304-63be-4555-ae2d-f15a62b06ab5"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": "";Mouse and Keyboard"",
+                    ""action"": ""UnsheatheWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -580,6 +600,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_CancelWindow = m_Player.FindAction("CancelWindow", throwIfNotFound: true);
+        m_Player_UnsheatheWeapon = m_Player.FindAction("UnsheatheWeapon", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -659,6 +680,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_CancelWindow;
+    private readonly InputAction m_Player_UnsheatheWeapon;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -676,6 +698,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @CancelWindow => m_Wrapper.m_Player_CancelWindow;
+        public InputAction @UnsheatheWeapon => m_Wrapper.m_Player_UnsheatheWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -724,6 +747,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CancelWindow.started += instance.OnCancelWindow;
             @CancelWindow.performed += instance.OnCancelWindow;
             @CancelWindow.canceled += instance.OnCancelWindow;
+            @UnsheatheWeapon.started += instance.OnUnsheatheWeapon;
+            @UnsheatheWeapon.performed += instance.OnUnsheatheWeapon;
+            @UnsheatheWeapon.canceled += instance.OnUnsheatheWeapon;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -767,6 +793,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CancelWindow.started -= instance.OnCancelWindow;
             @CancelWindow.performed -= instance.OnCancelWindow;
             @CancelWindow.canceled -= instance.OnCancelWindow;
+            @UnsheatheWeapon.started -= instance.OnUnsheatheWeapon;
+            @UnsheatheWeapon.performed -= instance.OnUnsheatheWeapon;
+            @UnsheatheWeapon.canceled -= instance.OnUnsheatheWeapon;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -817,5 +846,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnCancelWindow(InputAction.CallbackContext context);
+        void OnUnsheatheWeapon(InputAction.CallbackContext context);
     }
 }

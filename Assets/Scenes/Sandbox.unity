@@ -24091,6 +24091,9 @@ MonoBehaviour:
     type: 3}
   inventory: {fileID: 11400000, guid: 7b9c25cb87a1f564cb640f71491d419b, type: 2}
   gridParent: {fileID: 1429751959}
+  weaponDisplayName: {fileID: 0}
+  weaponDisplaySprite: {fileID: 0}
+  weaponDisplayDescription: {fileID: 0}
 --- !u!114 &1429751965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33254,7 +33257,7 @@ PrefabInstance:
     - target: {fileID: 8848659060226213466, guid: 90b666af5d81f3c479c8585ed7e72243,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37277,6 +37280,12 @@ PrefabInstance:
       propertyPath: cinemachineTargetGroup
       value: 
       objectReference: {fileID: 642493154}
+    - target: {fileID: 6555897636167996238, guid: ce263be1b30b0a64bbffecb03d8b705b,
+        type: 3}
+      propertyPath: unarmedWeaponConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: dcb66bf625ee19944b10ae9074fc3b31,
+        type: 2}
     - target: {fileID: 6729596228005485338, guid: ce263be1b30b0a64bbffecb03d8b705b,
         type: 3}
       propertyPath: startingLevel

@@ -15,9 +15,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public bool IsTargeting;
 
+      
+
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
+    public event Action SheatheEvent;
     public event Action UseAbilityEvent;
     public event Action CancelTargetEvent;
     public event Action InteractEvent;
@@ -150,5 +153,14 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             CancelWindowEvent?.Invoke();
         }
 
+    }
+
+    public void OnUnsheatheWeapon(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SheatheEvent?.Invoke();
+            
+        }
     }
 }

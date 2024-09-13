@@ -121,6 +121,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UnsheatheWeapon",
+                    "type": "Button",
+                    "id": "bf634bfa-36a8-4e9d-bc2e-2920e80c1458",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -506,6 +515,17 @@
                     "processors": "",
                     "groups": ";Mouse and Keyboard",
                     "action": "CancelWindow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44df8304-63be-4555-ae2d-f15a62b06ab5",
+                    "path": "<Keyboard>/r",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Mouse and Keyboard",
+                    "action": "UnsheatheWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
