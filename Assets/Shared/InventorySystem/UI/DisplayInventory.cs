@@ -24,6 +24,7 @@ public class DisplayInventory : MonoBehaviour
     
     Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
+    PlayerStateMachine stateMachine;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class DisplayInventory : MonoBehaviour
 
     private void Start()
     {
+        stateMachine = GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>();
         CreateSlots();
     }
 
@@ -78,7 +80,8 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
-            
+            AddEvent(obj, EventTriggerType.PointerClick, delegate { OnClicked(obj); });
+
 
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
         }
@@ -94,6 +97,11 @@ public class DisplayInventory : MonoBehaviour
         eventTrigger.callback.AddListener(action);
         trigger.triggers.Add(eventTrigger);
 
+    }
+
+    private void OnClicked(GameObject obj)
+    {
+        stateMachine.Fighter.EquipWeapon(itemsDisplayed[obj].item.weaponConfig);
     }
 
     public void OnEnter(GameObject obj)

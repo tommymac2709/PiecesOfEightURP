@@ -19,6 +19,7 @@ public abstract class ItemSO : ScriptableObject
     [TextArea(15, 20)]
     public string description;
     public string interactText;
+    public WeaponConfig weaponConfig;
 
 }
 
@@ -27,10 +28,12 @@ public class Item
 {
     public string Name;
     public int Id;
+    public WeaponConfig weaponConfig;
 
     public Item(ItemSO item)
     {
         Name = item.name;
         Id = item.Id;
+        weaponConfig = item.weaponConfig;
     }
 }
