@@ -28,4 +28,6 @@ public class QuestEndInteractable : MonoBehaviour, IInteractable
     {
         return transform;
     }
+
+    
 }

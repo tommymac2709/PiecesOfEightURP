@@ -11,5 +11,8 @@ public interface IInteractable
     string GetInteractText();
 
     Transform GetTransform();
-       
+
+
+
+
 }

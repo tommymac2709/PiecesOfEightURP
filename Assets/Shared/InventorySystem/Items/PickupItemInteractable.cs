@@ -7,6 +7,11 @@ public class PickupItemInteractable : MonoBehaviour, IInteractable
     [SerializeField] ItemSO item;
     [SerializeField] int numberToAdd;
 
+    public void EnableOutline()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public string GetInteractText()
     {
         return item.interactText;

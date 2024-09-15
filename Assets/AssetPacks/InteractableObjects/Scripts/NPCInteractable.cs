@@ -20,4 +20,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     {
         return transform;
     }
+
+   
 }

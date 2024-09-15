@@ -28,4 +28,6 @@ public class QuestStartInteractable : MonoBehaviour, IInteractable
     {
         return transform;
     }
+
+  
 }

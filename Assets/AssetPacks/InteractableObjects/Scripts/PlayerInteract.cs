@@ -8,6 +8,8 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] private PlayerStateMachine stateMachine;
 
+    [SerializeField] float coveredAngle = 90f;
+
     private void OnEnable()
     {
         stateMachine.InputReader.InteractEvent += OnInteract;
@@ -47,7 +49,7 @@ public class PlayerInteract : MonoBehaviour
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, _interactRange); //returns an ARRAY of COLLIDERS
         foreach (Collider collider in colliderArray)
         {
-            if (collider.TryGetComponent(out IInteractable interactable))
+            if (collider.TryGetComponent(out IInteractable interactable) && PickupInCoverage(interactable))
             {
                 interactableList.Add(interactable);
                 
@@ -71,6 +73,17 @@ public class PlayerInteract : MonoBehaviour
         }
 
         return closestInteractable;
+
+
     }
-       
+
+    private bool PickupInCoverage(IInteractable interactable)
+    {
+        var requiredValue = Mathf.Cos(coveredAngle * Mathf.Deg2Rad);
+        GameObject interactableObject = interactable.GetTransform().gameObject;
+        var directionToInteractable = (interactableObject.transform.position - transform.position).normalized;
+        var dotProduct = Vector3.Dot(transform.forward, directionToInteractable);
+        return dotProduct >= requiredValue;
+    }
+
 }

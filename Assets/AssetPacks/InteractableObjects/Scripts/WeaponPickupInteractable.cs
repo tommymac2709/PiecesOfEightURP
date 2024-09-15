@@ -33,4 +33,5 @@ public class WeaponPickupInteractable : MonoBehaviour, IInteractable
     {
         return transform;
     }
+
 }
