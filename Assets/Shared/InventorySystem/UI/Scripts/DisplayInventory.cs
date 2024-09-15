@@ -17,11 +17,11 @@ public class DisplayInventory : MonoBehaviour
     public InventorySO inventory;
     public GameObject gridParent;
 
+    [SerializeField] GameObject toolTipVisual;
     [SerializeField] TextMeshProUGUI weaponDisplayName;
-    [SerializeField] Sprite weaponDisplaySprite;
+    [SerializeField] Image weaponDisplaySprite;
     [SerializeField] TextMeshProUGUI weaponDisplayDescription;
 
-    
     Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
     PlayerStateMachine stateMachine;
@@ -65,7 +65,7 @@ public class DisplayInventory : MonoBehaviour
     private void CreateSlots()
     {
         Debug.Log("Created slots");
-        //itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+        itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
         if (itemsDisplayed != null)
         {
             Debug.Log("Created dictionary");
@@ -110,11 +110,19 @@ public class DisplayInventory : MonoBehaviour
         if (itemsDisplayed.ContainsKey(obj) )
         {
             mouseItem.hoverItem = itemsDisplayed[obj];
-            
+
+            if (itemsDisplayed[obj].ID < 0) return;
+
+            toolTipVisual.SetActive(true);
+            weaponDisplayName.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemName;
+            weaponDisplayDescription.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemDescription;
+            weaponDisplaySprite.sprite = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemSprite;
 
         }
+
     }
 
+    
     private void OnDrag(GameObject obj)
     {
         
@@ -161,7 +169,11 @@ public class DisplayInventory : MonoBehaviour
     {
         mouseItem.hoverObj = null;
         mouseItem.hoverItem = null;
-       
+        toolTipVisual.SetActive(false);
+        weaponDisplayName.text = null;
+        weaponDisplayDescription.text = null;
+        weaponDisplaySprite.sprite = null;
+
     }
 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponPickupInteractable : MonoBehaviour, IInteractable
 {
-    [SerializeField] private string _interactText;
+    //[SerializeField] private string _interactText;
     [SerializeField] WeaponConfig _weapon = null;
 
     [SerializeField] ItemSO item;
@@ -18,14 +18,15 @@ public class WeaponPickupInteractable : MonoBehaviour, IInteractable
 
         Fighter player = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
 
-        player.EquipWeapon(_weapon);
+        // player.EquipWeapon(_weapon);
+        player.EquipWeapon(item.weaponConfig);
 
         Destroy(gameObject);
     }
 
     public string GetInteractText()
     {
-        return _interactText;
+        return item.interactText;
     }
 
     public Transform GetTransform()

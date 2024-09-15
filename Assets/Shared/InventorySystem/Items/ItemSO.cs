@@ -20,6 +20,7 @@ public abstract class ItemSO : ScriptableObject
     public string description;
     public string interactText;
     public WeaponConfig weaponConfig;
+    public InventoryItemTooltipSO itemTooltip;
 
 }
 
