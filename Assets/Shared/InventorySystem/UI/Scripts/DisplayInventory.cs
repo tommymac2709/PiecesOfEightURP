@@ -49,15 +49,19 @@ public class DisplayInventory : MonoBehaviour
         {
             if (_slot.Value.ID >= 0)
             {
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.GetItem[_slot.Value.item.Id].uiDisplay;
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
-                _slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = _slot.Value.amount == 1 ? " " : _slot.Value.amount.ToString("n0");
+               // _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.GetItem[_slot.Value.item.Id].uiDisplay;
+              //  _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+                TextMeshProUGUI[] textSlots = _slot.Key.GetComponentsInChildren<TextMeshProUGUI>();
+                textSlots[0].text = _slot.Value.amount == 1 ? " " : _slot.Value.amount.ToString("n0");
+                textSlots[1].text = _slot.Value.item.Name;
             }
             else
             {
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
-                _slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = " ";
+               // _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+               // _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
+                TextMeshProUGUI[] textSlots = _slot.Key.GetComponentsInChildren<TextMeshProUGUI>();
+                textSlots[0].text = " ";
+                textSlots[1].text = " ";
             }
         }
     }
@@ -117,6 +121,7 @@ public class DisplayInventory : MonoBehaviour
             weaponDisplayName.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemName;
             weaponDisplayDescription.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemDescription;
             weaponDisplaySprite.sprite = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemSprite;
+            
 
         }
 

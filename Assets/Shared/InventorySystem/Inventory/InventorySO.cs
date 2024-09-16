@@ -114,6 +114,7 @@ public class InventorySlot
         ID = -1;
         item = null;
         amount = 0;
+        
     }
     public InventorySlot(int _id, Item _item, int _amount)
     {

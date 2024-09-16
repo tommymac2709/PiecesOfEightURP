@@ -43,6 +43,11 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        
+    }
+
     public IInteractable GetInteractableObject()
     {
         List<IInteractable> interactableList = new List<IInteractable>();
