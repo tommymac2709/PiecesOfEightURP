@@ -18297,6 +18297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e39a3028df259748a28c99c89c49c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interactText: 
   _weapon: {fileID: 0}
   item: {fileID: 11400000, guid: fb908a1b253963547819b1ca494b1379, type: 2}
   numberToAdd: 1
@@ -25841,6 +25842,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DaggerPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950584214626105272, guid: e8a5bb2c25207274eb92fcfeb3792619,
+        type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: fb908a1b253963547819b1ca494b1379,
+        type: 2}
+    - target: {fileID: 4950584214626105272, guid: e8a5bb2c25207274eb92fcfeb3792619,
+        type: 3}
+      propertyPath: numberToAdd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8227155937739945123, guid: e8a5bb2c25207274eb92fcfeb3792619,
         type: 3}

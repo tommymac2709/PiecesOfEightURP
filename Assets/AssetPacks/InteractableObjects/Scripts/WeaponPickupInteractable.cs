@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponPickupInteractable : MonoBehaviour, IInteractable
 {
-    //[SerializeField] private string _interactText;
+    [SerializeField] private string _interactText;
     [SerializeField] WeaponConfig _weapon = null;
 
     [SerializeField] ItemSO item;
