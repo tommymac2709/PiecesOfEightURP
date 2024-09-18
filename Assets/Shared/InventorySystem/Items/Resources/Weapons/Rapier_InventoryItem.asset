@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193d3d5c83f87a440b602176c518ea4b, type: 3}
+  m_Name: Rapier_InventoryItem
+  m_EditorClassIdentifier: 
+  Id: 6
+  uiDisplay: {fileID: 21300000, guid: 2974a63dca34fad46b5178afe0bae5c1, type: 3}
+  type: 2
+  description: A splendid rapier.
+  interactText: Equip Rapier
+  weaponConfig: {fileID: 11400000, guid: fc1580cae7cb93a48948fa8f8c61dc7b, type: 2}
+  itemTooltip: {fileID: 11400000, guid: fee3d8795b2f7b340b0584db9dcdd76e, type: 2}

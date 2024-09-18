@@ -18,9 +18,9 @@ public class DisplayInventory : MonoBehaviour
     public GameObject gridParent;
 
     [SerializeField] GameObject toolTipVisual;
-    [SerializeField] TextMeshProUGUI weaponDisplayName;
-    [SerializeField] Image weaponDisplaySprite;
-    [SerializeField] TextMeshProUGUI weaponDisplayDescription;
+    [SerializeField] TextMeshProUGUI tooltipWeaponDisplayName;
+    [SerializeField] Image tooltipWeaponDisplaySprite;
+    [SerializeField] TextMeshProUGUI tooltipWeaponDisplayDescription;
 
     Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
@@ -123,9 +123,9 @@ public class DisplayInventory : MonoBehaviour
             if (itemsDisplayed[obj].ID < 0) return;
 
             toolTipVisual.SetActive(true);
-            weaponDisplayName.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemName;
-            weaponDisplayDescription.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemDescription;
-            weaponDisplaySprite.sprite = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemSprite;
+            tooltipWeaponDisplayName.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemName;
+            tooltipWeaponDisplayDescription.text = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemDescription;
+            tooltipWeaponDisplaySprite.sprite = inventory.database.GetItem[itemsDisplayed[obj].ID].itemTooltip.itemSprite;
             
 
         }
@@ -180,9 +180,9 @@ public class DisplayInventory : MonoBehaviour
         mouseItem.hoverObj = null;
         mouseItem.hoverItem = null;
         toolTipVisual.SetActive(false);
-        weaponDisplayName.text = null;
-        weaponDisplayDescription.text = null;
-        weaponDisplaySprite.sprite = null;
+        tooltipWeaponDisplayName.text = null;
+        tooltipWeaponDisplayDescription.text = null;
+        tooltipWeaponDisplaySprite.sprite = null;
 
     }
 }

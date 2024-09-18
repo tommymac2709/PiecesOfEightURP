@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd6c21e330a8e6498f4712cf609f098, type: 3}
+  m_Name: Rapier_WeaponConfig
+  m_EditorClassIdentifier: 
+  Id: 0
+  uiDisplay: {fileID: 21300002, guid: c15ba1dcb835b28498cc6239dc893a2e, type: 3}
+  type: 2
+  description: 
+  interactText: 
+  weaponConfig: {fileID: 0}
+  itemTooltip: {fileID: 0}
+  _weaponPrefab: {fileID: 2353232748905043175, guid: 7621eade8aa14004884992fca4105bbb,
+    type: 3}
+  _weaponDamage: 5
+  percentageBonus: 20
+  isRightHanded: 1
+  <Attacks>k__BackingField:
+  - {fileID: 11400000, guid: bd5996530e66e1245aa47e10072910a4, type: 2}
