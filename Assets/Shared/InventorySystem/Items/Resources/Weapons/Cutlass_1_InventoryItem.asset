@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193d3d5c83f87a440b602176c518ea4b, type: 3}
+  m_Name: Cutlass_1_InventoryItem
+  m_EditorClassIdentifier: 
+  Id: 4
+  uiDisplay: {fileID: 0}
+  type: 2
+  description: A basic cutlass
+  interactText: Pickup Cutlass
+  weaponConfig: {fileID: 11400000, guid: f4d6f18decde8644586307e2588a99cd, type: 2}
+  itemTooltip: {fileID: 11400000, guid: ef93f46e6c4f14848af7b0082b95c304, type: 2}

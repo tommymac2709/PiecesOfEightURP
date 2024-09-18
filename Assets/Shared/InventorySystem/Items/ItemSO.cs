@@ -30,9 +30,11 @@ public class Item
     public string Name;
     public int Id;
     public WeaponConfig weaponConfig;
+    public ItemType itemType;
 
     public Item(ItemSO item)
     {
+        itemType = item.type;
         Name = item.name;
         Id = item.Id;
         weaponConfig = item.weaponConfig;

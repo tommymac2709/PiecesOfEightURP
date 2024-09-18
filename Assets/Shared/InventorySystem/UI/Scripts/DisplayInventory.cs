@@ -105,7 +105,12 @@ public class DisplayInventory : MonoBehaviour
 
     private void OnClicked(GameObject obj)
     {
-        stateMachine.Fighter.EquipWeapon(itemsDisplayed[obj].item.weaponConfig);
+        if (itemsDisplayed[obj].item.itemType == ItemType.Weapon)
+        {
+            stateMachine.Fighter.EquipWeapon(itemsDisplayed[obj].item.weaponConfig);
+            Debug.Log("Equipped " + itemsDisplayed[obj].item.weaponConfig.name);
+        }
+        
     }
 
     public void OnEnter(GameObject obj)
