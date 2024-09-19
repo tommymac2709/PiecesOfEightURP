@@ -25,4 +25,4 @@ MonoBehaviour:
   percentageBonus: 20
   isRightHanded: 1
   <Attacks>k__BackingField:
-  - {fileID: 11400000, guid: bd5996530e66e1245aa47e10072910a4, type: 2}
+  - {fileID: 11400000, guid: ad58a41c7c9ae0548a462e8d69fb6501, type: 2}
