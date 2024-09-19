@@ -196,10 +196,17 @@ public class Fighter : MonoBehaviour, IModifierProvider
                 float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
                 float damageToDeal = 5f;
                 damageReceiver.DealDamage( gameObject, other.transform, damage);
+                TryApplyKnockback(other, transform.position);
                
             }
         }
     }
 
-    
+    private void TryApplyKnockback(Collider other, Vector3 position)
+    {
+        other.GetComponent<ForceReceiver>().AddForce((other.transform.position - position).normalized * currentAttack.Knockback);
+    }
+
+
+
 }

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ApplyRootMotion>k__BackingField: 0
   <AnimationName>k__BackingField: Attack3
-  damageModifier: 1
+  damageModifier: 2
   transitionDuration: 0.1
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: bbc2a1d1f7118264e95af55b02455bc4,
     type: 2}
   comboAttackTime: 0.801
+  <Knockback>k__BackingField: 300

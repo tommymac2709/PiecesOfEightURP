@@ -24,6 +24,8 @@ public class AttackData : ScriptableObject
 
     [Range(0, 0.99f)][SerializeField] private float comboAttackTime = 0.99f;
 
+
+
     public float DamageModifier => damageModifier;
     public float TransitionDuration => transitionDuration;
     public float ComboAttackTime => comboAttackTime;
@@ -39,6 +41,6 @@ public class AttackData : ScriptableObject
 
 
 
-    //[field: SerializeField] public float Knockback { get; private set; }
+    [field: SerializeField] public float Knockback { get; private set; }
 
 }

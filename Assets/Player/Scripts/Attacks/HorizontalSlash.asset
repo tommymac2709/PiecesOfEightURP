@@ -19,3 +19,4 @@ MonoBehaviour:
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: bd5996530e66e1245aa47e10072910a4,
     type: 2}
   comboAttackTime: 0.8
+  <Knockback>k__BackingField: 300
