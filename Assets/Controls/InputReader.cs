@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputReader : MonoBehaviour, Controls.IPlayerActions
+public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIActions
 {
     public Vector2 MovementValue { get; private set; }
 
@@ -27,22 +27,42 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action CancelWindowEvent;
     public event Action InventoryEvent;
 
-
-
-
     private Controls controls;
+
+
 
     private void Start()
     {
         controls = new Controls();
         controls.Player.SetCallbacks(this);
+        controls.UI.SetCallbacks(this);
 
+        controls.Player.Enable();
+        controls.UI.Enable();
+
+        WindowController.OnAnyWindowOpened += DisableControls;
+        WindowController.OnAllWindowsClosed += EnableControls;
+
+    }
+
+    void EnableControls()
+    {
         controls.Player.Enable();
     }
 
-    private void OnDestroy()
+    void DisableControls()
     {
         controls.Player.Disable();
+    }
+
+
+    private void OnDestroy()
+    {
+        WindowController.OnAnyWindowOpened -= DisableControls;
+        WindowController.OnAllWindowsClosed -= EnableControls;
+
+        controls.Player.Disable();
+        controls.UI.Disable();
     }
 
     public void OnJump(InputAction.CallbackContext context)

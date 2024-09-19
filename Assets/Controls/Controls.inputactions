@@ -105,24 +105,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "70a6f37b-4073-4fa3-b217-c3f889381b4d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "CancelWindow",
-                    "type": "Button",
-                    "id": "7ec73d66-271e-4019-a186-9c893096ec4a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "UnsheatheWeapon",
                     "type": "Button",
                     "id": "bf634bfa-36a8-4e9d-bc2e-2920e80c1458",
@@ -498,7 +480,44 @@
                 },
                 {
                     "name": "",
-                    "id": "ea59e00c-3e40-449e-a8a8-321a04bd9847",
+                    "id": "44df8304-63be-4555-ae2d-f15a62b06ab5",
+                    "path": "<Keyboard>/r",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Mouse and Keyboard",
+                    "action": "UnsheatheWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "e2cfa2ff-e944-4515-b87b-f7beaba95b1d",
+            "actions": [
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "a4a3e767-a5aa-4b81-93c0-ac8f0b6cae29",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CancelWindow",
+                    "type": "Button",
+                    "id": "f2234194-1ca7-4c2d-8ebf-239b386d10b3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0bdf98df-dd51-4cf2-ae31-9012de0541d3",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
@@ -509,23 +528,12 @@
                 },
                 {
                     "name": "",
-                    "id": "7d2ee3f2-be84-4c99-98c4-fabc9beaac4f",
+                    "id": "bbfb5af5-8441-456b-9cc2-7b15498ddce0",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Mouse and Keyboard",
                     "action": "CancelWindow",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "44df8304-63be-4555-ae2d-f15a62b06ab5",
-                    "path": "<Keyboard>/r",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": ";Mouse and Keyboard",
-                    "action": "UnsheatheWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

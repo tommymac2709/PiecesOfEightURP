@@ -128,24 +128,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""70a6f37b-4073-4fa3-b217-c3f889381b4d"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""CancelWindow"",
-                    ""type"": ""Button"",
-                    ""id"": ""7ec73d66-271e-4019-a186-9c893096ec4a"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""UnsheatheWeapon"",
                     ""type"": ""Button"",
                     ""id"": ""bf634bfa-36a8-4e9d-bc2e-2920e80c1458"",
@@ -521,7 +503,44 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ea59e00c-3e40-449e-a8a8-321a04bd9847"",
+                    ""id"": ""44df8304-63be-4555-ae2d-f15a62b06ab5"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": "";Mouse and Keyboard"",
+                    ""action"": ""UnsheatheWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""e2cfa2ff-e944-4515-b87b-f7beaba95b1d"",
+            ""actions"": [
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4a3e767-a5aa-4b81-93c0-ac8f0b6cae29"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CancelWindow"",
+                    ""type"": ""Button"",
+                    ""id"": ""f2234194-1ca7-4c2d-8ebf-239b386d10b3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0bdf98df-dd51-4cf2-ae31-9012de0541d3"",
                     ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -532,23 +551,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7d2ee3f2-be84-4c99-98c4-fabc9beaac4f"",
+                    ""id"": ""bbfb5af5-8441-456b-9cc2-7b15498ddce0"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Mouse and Keyboard"",
                     ""action"": ""CancelWindow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""44df8304-63be-4555-ae2d-f15a62b06ab5"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": "";Mouse and Keyboard"",
-                    ""action"": ""UnsheatheWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -598,14 +606,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
-        m_Player_CancelWindow = m_Player.FindAction("CancelWindow", throwIfNotFound: true);
         m_Player_UnsheatheWeapon = m_Player.FindAction("UnsheatheWeapon", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
+        m_UI_CancelWindow = m_UI.FindAction("CancelWindow", throwIfNotFound: true);
     }
 
     ~@Controls()
     {
         Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Controls.Player.Disable() has not been called.");
+        Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Controls.UI.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -678,8 +689,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_UseAbility;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Inventory;
-    private readonly InputAction m_Player_CancelWindow;
     private readonly InputAction m_Player_UnsheatheWeapon;
     public struct PlayerActions
     {
@@ -696,8 +705,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
-        public InputAction @CancelWindow => m_Wrapper.m_Player_CancelWindow;
         public InputAction @UnsheatheWeapon => m_Wrapper.m_Player_UnsheatheWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -741,12 +748,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
-            @CancelWindow.started += instance.OnCancelWindow;
-            @CancelWindow.performed += instance.OnCancelWindow;
-            @CancelWindow.canceled += instance.OnCancelWindow;
             @UnsheatheWeapon.started += instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.performed += instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.canceled += instance.OnUnsheatheWeapon;
@@ -787,12 +788,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
-            @CancelWindow.started -= instance.OnCancelWindow;
-            @CancelWindow.performed -= instance.OnCancelWindow;
-            @CancelWindow.canceled -= instance.OnCancelWindow;
             @UnsheatheWeapon.started -= instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.performed -= instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.canceled -= instance.OnUnsheatheWeapon;
@@ -813,6 +808,60 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_Inventory;
+    private readonly InputAction m_UI_CancelWindow;
+    public struct UIActions
+    {
+        private @Controls m_Wrapper;
+        public UIActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
+        public InputAction @CancelWindow => m_Wrapper.m_UI_CancelWindow;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @Inventory.started += instance.OnInventory;
+            @Inventory.performed += instance.OnInventory;
+            @Inventory.canceled += instance.OnInventory;
+            @CancelWindow.started += instance.OnCancelWindow;
+            @CancelWindow.performed += instance.OnCancelWindow;
+            @CancelWindow.canceled += instance.OnCancelWindow;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @Inventory.started -= instance.OnInventory;
+            @Inventory.performed -= instance.OnInventory;
+            @Inventory.canceled -= instance.OnInventory;
+            @CancelWindow.started -= instance.OnCancelWindow;
+            @CancelWindow.performed -= instance.OnCancelWindow;
+            @CancelWindow.canceled -= instance.OnCancelWindow;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_MouseandKeyboardSchemeIndex = -1;
     public InputControlScheme MouseandKeyboardScheme
     {
@@ -844,8 +893,11 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnUseAbility(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnUnsheatheWeapon(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
         void OnInventory(InputAction.CallbackContext context);
         void OnCancelWindow(InputAction.CallbackContext context);
-        void OnUnsheatheWeapon(InputAction.CallbackContext context);
     }
 }

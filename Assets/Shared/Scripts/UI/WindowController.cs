@@ -4,7 +4,10 @@ using UnityEngine;
 
 public abstract class WindowController : MonoBehaviour
 {
-    private static HashSet<WindowController> activeWindows = new();
+    protected static HashSet<WindowController> activeWindows = new();
+
+    public static event System.Action OnAnyWindowOpened;
+    public static event System.Action OnAllWindowsClosed;
 
     protected InputReader InputReader;
     protected virtual void Awake()
@@ -22,12 +25,17 @@ public abstract class WindowController : MonoBehaviour
     {
         activeWindows.Add(this);
         Time.timeScale = 0.0f;
+        OnAnyWindowOpened?.Invoke();
     }
 
     void OnDisable()
     {
         activeWindows.Remove(this);
-        if (activeWindows.Count == 0) Time.timeScale = 1.0f;
+        if (activeWindows.Count == 0)
+        {
+            Time.timeScale = 1.0f;
+            OnAllWindowsClosed?.Invoke();
+        }
     }
 
     /// <summary>
@@ -40,7 +48,7 @@ public abstract class WindowController : MonoBehaviour
     /// </summary>
     protected abstract void Unsubscribe();
 
-    protected void CloseWindow()
+    public void CloseWindow()
     {
         gameObject.SetActive(false);
     }
@@ -50,4 +58,5 @@ public abstract class WindowController : MonoBehaviour
         gameObject.SetActive(!gameObject.activeSelf);
     }
 }
+
 
