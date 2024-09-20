@@ -18,16 +18,7 @@ public abstract class EnemyBaseState : State
 
     protected void Move(Vector3 motion, float deltaTime)
     {
-        Vector3 intendedMovement = (motion + stateMachine.ForceReceiver.Movement) * deltaTime;
-        if (SampleNavMesh(stateMachine.transform.position + intendedMovement))
-        {
-            stateMachine.Controller.Move(intendedMovement);
-        }
-        else
-        {
-            stateMachine.Controller.Move(new Vector3(0, stateMachine.ForceReceiver.Movement.y, 0));
-        }
-
+        stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
     }
 
     protected void FaceTarget(Vector3 target, float deltaTime)
@@ -37,20 +28,6 @@ public abstract class EnemyBaseState : State
         stateMachine.transform.rotation = Quaternion.Slerp(stateMachine.transform.rotation, Quaternion.LookRotation(directionToTarget), stateMachine.RotationSpeed * deltaTime);
     }
 
-    protected bool SampleNavMesh(Vector3 position)
-    {
-        if (!stateMachine.Controller.isGrounded)
-        {
-            RaycastHit hit;
-            bool hasHit = Physics.Raycast(position, Vector3.down, out hit, 2, 1 << LayerMask.NameToLayer("Terrain"));
-            if (hasHit) position = hit.point;
-        }
-        NavMeshHit navMeshHit;
-        bool hasCastToNavMesh = NavMesh.SamplePosition(
-            position, out navMeshHit, 1f, NavMesh.AllAreas);
-        if (!hasCastToNavMesh) return false;
-        return true;
-    }
 
     protected void FaceMovementDirection()
     {

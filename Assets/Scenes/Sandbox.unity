@@ -132,20 +132,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -429,20 +419,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -643,11 +623,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -845,20 +820,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -949,20 +914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -1479,20 +1434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -1688,20 +1633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -1990,11 +1925,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -2115,20 +2045,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -2387,11 +2307,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -2569,20 +2484,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -2929,20 +2834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -3033,20 +2928,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -3216,20 +3101,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -3514,20 +3389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -3618,20 +3483,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -3722,20 +3577,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -3826,20 +3671,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -4374,20 +4209,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -4478,20 +4303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -4582,20 +4397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -4686,20 +4491,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -5377,20 +5172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -5944,20 +5729,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -6545,20 +6320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -6756,20 +6521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -7317,20 +7072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -7515,20 +7260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -7731,20 +7466,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -7835,20 +7560,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -7939,20 +7654,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -8201,20 +7906,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -8478,20 +8173,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -9075,20 +8760,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -9179,20 +8854,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -9283,20 +8948,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -9387,20 +9042,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -9843,20 +9488,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -9947,20 +9582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -10051,20 +9676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -10394,20 +10009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -10951,20 +10556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -11243,20 +10838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -11494,20 +11079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -12166,20 +11741,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -12270,20 +11835,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -12374,20 +11929,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -12478,20 +12023,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -12766,11 +12301,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -12943,20 +12473,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -13152,20 +12672,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -13726,20 +13236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -13836,20 +13336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -13940,20 +13430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -14044,20 +13524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -14247,20 +13717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -14351,20 +13811,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -14455,20 +13905,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -14563,11 +14003,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -14742,11 +14177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -15112,20 +14542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -15317,20 +14737,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -15421,20 +14831,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -15669,11 +15069,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -15968,20 +15363,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -16178,20 +15563,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -16376,20 +15751,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -16480,20 +15845,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -16584,20 +15939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -16688,20 +16033,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -16976,20 +16311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -17180,20 +16505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -17284,20 +16599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -17388,20 +16693,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -17492,20 +16787,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -17769,20 +17054,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -17877,11 +17152,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -18003,20 +17273,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -18107,20 +17367,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -18700,7 +17950,7 @@ GameObject:
   - component: {fileID: 1003353904}
   - component: {fileID: 1003353903}
   - component: {fileID: 1003353905}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18821,20 +18071,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -18925,20 +18165,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -19029,20 +18259,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -19368,20 +18588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -19660,20 +18870,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -19796,11 +18996,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -20204,20 +19399,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -20308,20 +19493,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -20513,20 +19688,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -20685,20 +19850,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -20789,20 +19944,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -20893,20 +20038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -21374,20 +20509,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -21562,20 +20687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -21750,11 +20865,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -21914,11 +21024,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -22285,20 +21390,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -22389,20 +21484,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -22592,11 +21677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -22695,20 +21775,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -23478,11 +22548,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -23831,20 +22896,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -23963,20 +23018,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -24067,20 +23112,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -24482,11 +23517,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWS_Cliff (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
       propertyPath: m_Enabled
@@ -24664,20 +23694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -24768,20 +23788,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -24907,7 +23917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386531629}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Rocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25294,20 +24304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -25497,20 +24497,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -25813,20 +24803,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -26304,20 +25284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -26408,20 +25378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -26512,20 +25472,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -26818,20 +25768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -27021,20 +25961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -27125,20 +26055,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -27785,20 +26705,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -28122,20 +27032,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -28399,20 +27299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -28602,20 +27492,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -28706,20 +27586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -29122,20 +27992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -29666,20 +28526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -29770,20 +28620,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -29874,20 +28714,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -30825,20 +29655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -30929,20 +29749,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -31072,20 +29882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -31623,20 +30423,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -31796,20 +30586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -31904,11 +30684,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -32030,20 +30805,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -32227,20 +30992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -32331,20 +31086,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -32435,20 +31180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -32539,20 +31274,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -32998,20 +31723,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -33196,20 +31911,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -33300,20 +32005,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -33404,20 +32099,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -33512,11 +32197,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -33730,20 +32410,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -33928,20 +32598,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -34036,11 +32696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -34166,11 +32821,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SWS_Cliff (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291002386469357409, guid: c0e783d3458b6c340b95648897321979,
         type: 3}
@@ -34770,20 +33420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -35001,20 +33641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -35576,20 +34206,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -35680,20 +34300,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -35948,20 +34558,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -36052,20 +34652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -36156,20 +34746,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -36260,20 +34840,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -36631,20 +35201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -36735,20 +35295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -36839,20 +35389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -37116,20 +35656,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -37314,20 +35844,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -37545,20 +36065,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -37743,20 +36253,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -38177,20 +36677,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -38281,20 +36771,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -38465,20 +36945,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -38675,20 +37145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -38779,20 +37239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -39377,20 +37827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -39481,20 +37921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -39757,20 +38187,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -39861,20 +38281,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
@@ -40042,20 +38452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1386531629}
     m_Modifications:
-    - target: {fileID: 215441256915173523, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}
       propertyPath: m_Name
       value: SWS_DemoRock
-      objectReference: {fileID: 0}
-    - target: {fileID: 434290672778168216, guid: 402116231069f8f408462fbe36f02c9d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3485136059956966795, guid: 402116231069f8f408462fbe36f02c9d,
         type: 3}

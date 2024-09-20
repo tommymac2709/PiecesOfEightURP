@@ -3185,10 +3185,10 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 5049605926301838905}
   <Ragdoll>k__BackingField: {fileID: 664748408960178753}
   <Target>k__BackingField: {fileID: 1596305256467374407}
-  <MovementSpeed>k__BackingField: 6
+  <MovementSpeed>k__BackingField: 2
   <RotationSpeed>k__BackingField: 5
-  <ImpactStateDuration>k__BackingField: 0.2
-  <ParriedStateDuration>k__BackingField: 0.75
+  <ImpactStateDuration>k__BackingField: 0.3
+  <ParriedStateDuration>k__BackingField: 1
   <WanderRadius>k__BackingField: 10
   <WanderTimer>k__BackingField: 2
   <AttackRange>k__BackingField: 2
@@ -3299,13 +3299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unarmedWeaponConfig: {fileID: 0}
   defaultWeaponConfig: {fileID: 11400000, guid: 15c930a3f46342e47b0705240d7194bd,
     type: 2}
   _rightHandTransform: {fileID: 1758755846941516979}
   _leftHandTransform: {fileID: 3275305585354064588}
   currentWeaponConfig: {fileID: 0}
-  currentlyUsingWeaponConfig: {fileID: 0}
   currentAttack: {fileID: 0}
 --- !u!114 &3903033169511325810
 MonoBehaviour:
