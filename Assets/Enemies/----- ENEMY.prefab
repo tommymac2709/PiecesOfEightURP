@@ -3095,6 +3095,7 @@ GameObject:
   - component: {fileID: 7792547751755755991}
   - component: {fileID: 3903033169511325810}
   - component: {fileID: 4241037404864592215}
+  - component: {fileID: 7450554268512378496}
   m_Layer: 0
   m_Name: ----- ENEMY
   m_TagString: Untagged
@@ -3185,6 +3186,7 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 5049605926301838905}
   <Ragdoll>k__BackingField: {fileID: 664748408960178753}
   <Target>k__BackingField: {fileID: 1596305256467374407}
+  <CooldownTokenManager>k__BackingField: {fileID: 7450554268512378496}
   <MovementSpeed>k__BackingField: 2
   <RotationSpeed>k__BackingField: 5
   <ImpactStateDuration>k__BackingField: 0.3
@@ -3299,11 +3301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unarmedWeaponConfig: {fileID: 0}
   defaultWeaponConfig: {fileID: 11400000, guid: 15c930a3f46342e47b0705240d7194bd,
     type: 2}
   _rightHandTransform: {fileID: 1758755846941516979}
   _leftHandTransform: {fileID: 3275305585354064588}
   currentWeaponConfig: {fileID: 0}
+  currentlyUsingWeaponConfig: {fileID: 0}
   currentAttack: {fileID: 0}
 --- !u!114 &3903033169511325810
 MonoBehaviour:
@@ -3349,6 +3353,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7450554268512378496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30079e6fc50034c4096697ca9b744ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,98 +1,57 @@
+
 using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    private readonly int AttackAnimHash = Animator.StringToHash("Attack");
-    
-    private const float CrossFadeDuration = 0.1f;
-    private const float AnimatorDampTime = 0.1f;
-    private float previousFrameTime;
-    private AttackData currentAttack;
-
-    private bool triedCombo = false;
-
+    private AttackData attack;
     private int level;
-
-    bool compile;
-
-
+    private bool triedCombo;
 
     public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
-        currentAttack = stateMachine.Fighter.GetCurrentAttack(0);
+        attack = stateMachine.Fighter.GetCurrentAttack(0);
     }
 
     public EnemyAttackState(EnemyStateMachine stateMachine, AttackData attack) : base(stateMachine)
     {
-        this.currentAttack = attack;
+        this.attack = attack;
         stateMachine.Fighter.SetCurrentAttack(attack);
     }
 
-
     public override void Enter()
     {
-        if (currentAttack.ApplyRootMotion) stateMachine.Animator.applyRootMotion = true;
-        // hasCombo = currentAttack.NextComboAttack != null;
-        if (!currentAttack)
+        if (!attack)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
 
-        stateMachine.Animator.CrossFadeInFixedTime(currentAttack.AnimationName, currentAttack.TransitionDuration);
-
-        
+        stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, 0.1f);
     }
 
     public override void Tick(float deltaTime)
     {
-        
-        FaceTarget(stateMachine.Player.transform.position, deltaTime);
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-
-        if (currentAttack.NextComboAttack && !triedCombo  )
+        if (attack.NextComboAttack && !triedCombo && normalizedTime > attack.ComboAttackTime)
         {
-
-            if (normalizedTime >= currentAttack.ComboAttackTime)
-
-            stateMachine.SwitchState(new EnemyAttackState(stateMachine, currentAttack.NextComboAttack));
-            Debug.Log("Enemy Combo attack!");
-            return;
-
-
+            if (1 > Random.Range(0, 2))
+            {
+                stateMachine.SwitchState(new EnemyAttackState(stateMachine, attack.NextComboAttack));
+                return;
+            }
+            triedCombo = true;
         }
-        triedCombo = true;
 
-        //previousFrameTime = normalizedTime;
-
-        // FaceTarget(stateMachine.Player.transform.position, deltaTime);
-
-        //if (!IsInAttackRange())
-        //{
-
-        //    stateMachine.SwitchState(new EnemyChasingState(stateMachine));
-        //    return;
-        //}
         if (normalizedTime > .98f)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
         }
-
-        
-
-    }
-
-    private void ComboAttack(float normalizedTime)
-    {
-        if (normalizedTime < currentAttack.ComboAttackTime) { return; }
-
-        stateMachine.SwitchState(new EnemyAttackState(stateMachine, currentAttack.NextComboAttack));
     }
 
     public override void Exit()
     {
-        
+        stateMachine.CooldownTokenManager.SetCooldown("Attack", attack.Cooldown);
     }
-
-    
 }
+
+

@@ -18,6 +18,9 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public Target Target { get; private set; }
 
+    [field: SerializeField] public CooldownTokenManager CooldownTokenManager { get; private set; }
+
+
     //[field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
 
     [field: SerializeField] public float MovementSpeed { get; private set; }

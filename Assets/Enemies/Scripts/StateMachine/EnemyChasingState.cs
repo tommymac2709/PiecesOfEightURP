@@ -29,17 +29,32 @@ public class EnemyChasingState : EnemyBaseState
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
+        Vector3 lastPosition = stateMachine.transform.position;
 
         if (IsInAttackRange())
         {
-            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
-            return;
+            if (!stateMachine.CooldownTokenManager.HasCooldown("Attack"))
+            {
+                stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                return;
+            }
+            else
+            {
+                MoveNoInput(deltaTime);
+                stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0);
+                return;
+            }
+            
+        }
+        else
+        {
+            MoveToPlayer(deltaTime);
         }
 
 
 
-        Vector3 lastPosition = stateMachine.transform.position;
-        MoveToPlayer(deltaTime);
+        
+        
         Vector3 deltaMovement = lastPosition - stateMachine.transform.position;
         float deltaMagnitude = deltaMovement.magnitude;
         float grossSpeed = deltaMagnitude / deltaTime;

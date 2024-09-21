@@ -19,6 +19,9 @@ public class AttackData : ScriptableObject
 
     [field: SerializeField] public AttackData NextComboAttack { get; private set; }
 
+    [field: SerializeField] public float Cooldown { get; private set; } = 1f;
+
+
     //How far through an attack it will let you combo into the next attack
     //I.e. if the player is still holding the attack button when the animtion is .8 of the way through, play the next attack
 
