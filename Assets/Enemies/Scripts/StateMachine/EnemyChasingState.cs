@@ -42,6 +42,7 @@ public class EnemyChasingState : EnemyBaseState
             else
             {
                 MoveNoInput(deltaTime);
+                
                 stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0);
                 return;
             }

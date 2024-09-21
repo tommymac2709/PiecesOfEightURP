@@ -33,6 +33,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        FaceTarget(stateMachine.Player.transform.position, deltaTime);
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
         if (attack.NextComboAttack && !triedCombo && normalizedTime > attack.ComboAttackTime)
         {
@@ -46,7 +47,7 @@ public class EnemyAttackState : EnemyBaseState
 
         if (normalizedTime > .98f)
         {
-            stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }
     }
 

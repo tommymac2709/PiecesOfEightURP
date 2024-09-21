@@ -99,7 +99,7 @@ public class CooldownTokenManager : MonoBehaviour
     {
         if (activeCooldowns.ContainsKey(token))
         {
-            if (!append)
+            if (append)
             {
                 activeCooldowns[token].TimeRemaining += duration;
                 activeCooldowns[token].Duration += duration;
