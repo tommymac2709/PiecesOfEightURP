@@ -38679,6 +38679,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3625033179339952356, guid: 39303c5f15701d14a828bd24e6ad028e,
+        type: 3}
+      propertyPath: <AttackRange>k__BackingField
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4368929775457895397, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -5,6 +5,8 @@ public class EnemyStateMachine : StateMachine
 {
     [field: SerializeField] public Animator Animator { get; private set; }
 
+    [field: SerializeField] public BaseStats BaseStats { get; private set; }
+
     [field: SerializeField] public CharacterController Controller { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
 

@@ -4,6 +4,7 @@ public class EnemyChasingState : EnemyBaseState
 {
     private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+    private readonly int TargetingSpeedHash = Animator.StringToHash("TargetingRightSpeed");
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 

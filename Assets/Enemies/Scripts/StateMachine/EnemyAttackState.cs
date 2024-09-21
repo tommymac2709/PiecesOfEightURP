@@ -6,6 +6,7 @@ public class EnemyAttackState : EnemyBaseState
     private AttackData attack;
     private int level;
     private bool triedCombo;
+   
 
     public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
@@ -26,6 +27,7 @@ public class EnemyAttackState : EnemyBaseState
             return;
         }
 
+        level = stateMachine.BaseStats.GetLevel();
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, 0.1f);
     }
 
@@ -34,7 +36,7 @@ public class EnemyAttackState : EnemyBaseState
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
         if (attack.NextComboAttack && !triedCombo && normalizedTime > attack.ComboAttackTime)
         {
-            if (1 > Random.Range(0, 2))
+            if (level * 5 > Random.Range(0, 51))
             {
                 stateMachine.SwitchState(new EnemyAttackState(stateMachine, attack.NextComboAttack));
                 return;
