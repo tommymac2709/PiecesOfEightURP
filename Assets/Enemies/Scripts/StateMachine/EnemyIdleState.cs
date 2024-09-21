@@ -15,7 +15,13 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Enter()
     {
-        
+        if (stateMachine.PatrolPath) //If we have path, switch
+        {
+            stateMachine.SwitchState(new EnemyPatrollingState(stateMachine));
+            return;
+        }
+
+
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
     }
 

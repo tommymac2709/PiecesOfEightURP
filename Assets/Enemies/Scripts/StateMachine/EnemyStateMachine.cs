@@ -22,6 +22,8 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public CooldownTokenManager CooldownTokenManager { get; private set; }
 
+    [field: SerializeField] public PatrolPath PatrolPath { get; private set; }
+
 
     //[field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
 
@@ -52,6 +54,7 @@ public class EnemyStateMachine : StateMachine
 
     public bool IsAttacking { get; private set; }
 
+    public Blackboard Blackboard = new Blackboard();
     private void Start()
     {
         //Player = GameObject.FindGameObjectWithTag("Player");
