@@ -50,6 +50,8 @@ public class EnemyStateMachine : StateMachine
     public Health Player { get; private set; }
     public AbilityManager PlayerAbilityManager { get; private set; }
 
+    public bool IsAttacking { get; private set; }
+
     private void Start()
     {
         //Player = GameObject.FindGameObjectWithTag("Player");
@@ -84,6 +86,10 @@ public class EnemyStateMachine : StateMachine
         SwitchState(new EnemyDeadState(this));
     }
 
+    public void SetAttacking(bool isAttacking)
+    {
+        IsAttacking = isAttacking;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -26,6 +26,7 @@ public class EnemyAttackState : EnemyBaseState
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
+        stateMachine.SetAttacking(true); // Set the enemy as attacking
 
         level = stateMachine.BaseStats.GetLevel();
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, 0.1f);
@@ -53,6 +54,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Exit()
     {
+        stateMachine.SetAttacking(false); // Set the enemy as not attacking
         stateMachine.CooldownTokenManager.SetCooldown("Attack", attack.Cooldown);
     }
 }

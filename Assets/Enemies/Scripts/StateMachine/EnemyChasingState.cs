@@ -34,7 +34,7 @@ public class EnemyChasingState : EnemyBaseState
 
         if (IsInAttackRange())
         {
-            if (!stateMachine.CooldownTokenManager.HasCooldown("Attack"))
+            if (!IsOtherEnemyAttacking() && !stateMachine.CooldownTokenManager.HasCooldown("Attack"))
             {
                 stateMachine.SwitchState(new EnemyAttackState(stateMachine));
                 return;
@@ -101,4 +101,21 @@ public class EnemyChasingState : EnemyBaseState
         }
         
     }
+
+    private bool IsOtherEnemyAttacking()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(stateMachine.transform.position, stateMachine.AttackRange *stateMachine.AttackRange);
+
+        foreach (Collider collider in hitColliders)
+        {
+            EnemyStateMachine otherEnemy = collider.GetComponent<EnemyStateMachine>();
+            if (otherEnemy != null && otherEnemy != stateMachine && otherEnemy.IsAttacking)
+            {
+                return true; // Another enemy is attacking
+            }
+        }
+
+        return false; // No other enemies are attacking
+    }
+
 }

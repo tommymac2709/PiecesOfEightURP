@@ -186,7 +186,7 @@ public class Fighter : MonoBehaviour, IModifierProvider
 
             
 
-            if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver))
+            if (other.TryGetComponent<DamageReceiver>(out DamageReceiver damageReceiver) && other.tag != this.tag)
             {
                 alreadyCollidedWith.Add(other);
                 //foreach (var item in alreadyCollidedWith)
