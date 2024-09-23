@@ -18,6 +18,7 @@ public class EnemyDwellState : EnemyBaseState
         this.dwellTime = dwellTime;
     }
 
+
     public override void Enter()
     {
         //For now, we're  using the IdleHash (remember we set up an explicit Idle animation for dialogues, etc).
@@ -29,6 +30,7 @@ public class EnemyDwellState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        if (deltaTime == 0f) { return; }
         MoveNoInput(deltaTime);
         if (IsInChaseRange())
         {

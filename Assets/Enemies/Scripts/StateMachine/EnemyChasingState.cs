@@ -12,13 +12,17 @@ public class EnemyChasingState : EnemyBaseState
     {
     }
 
+
     public override void Enter()
     {
+        
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
     {
+        if (deltaTime == 0f) { return; }
+        
         //if (!CanSeePlayer())
         //{
         //    stateMachine.SwitchState(new EnemyIdleState(stateMachine));

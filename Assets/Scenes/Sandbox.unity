@@ -11377,9 +11377,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5c97365285b304db19d09b564e7c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpeedModifier>k__BackingField: 1
+  <SpeedModifier>k__BackingField: 0.5
   <AcceptanceRadius>k__BackingField: 2
   <DwellTime>k__BackingField: 5
+--- !u!114 &637738359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defe3efb56c1bc943a6bfb504a00dc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  startDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  fogDensity:
+    m_OverrideState: 0
+    m_Value: 20
+  heightFogDepth:
+    m_OverrideState: 0
+    m_Value: 25
+  heightFogDensity:
+    m_OverrideState: 0
+    m_Value: 1
+  heightFogBrightness:
+    m_OverrideState: 0
+    m_Value: 0.6
+  fogBrightness:
+    m_OverrideState: 0
+    m_Value: 1
+  subsurfaceStrength:
+    m_OverrideState: 0
+    m_Value: 0.35
+  causticsStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  distortionStrength:
+    m_OverrideState: 0
+    m_Value: 0.25
+  distortionFrequency:
+    m_OverrideState: 0
+    m_Value: 0.75
+  distortionSpeed:
+    m_OverrideState: 0
+    m_Value: 0.5
 --- !u!1 &642493152
 GameObject:
   m_ObjectHideFlags: 0
@@ -25145,7 +25191,7 @@ MonoBehaviour:
   waterLevelPadding: 0.5
   waterMaterial: {fileID: 2100000, guid: fbb04271505a76f40b984e38071e86f3, type: 2}
   dynamicMaterial: 0
-  settings: {fileID: 0}
+  settings: {fileID: 637738359}
   useVolumeBlending: 0
   startDistance: 0
   fogDensity: 8
@@ -27250,7 +27296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5c97365285b304db19d09b564e7c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpeedModifier>k__BackingField: 1
+  <SpeedModifier>k__BackingField: 0.5
   <AcceptanceRadius>k__BackingField: 2
   <DwellTime>k__BackingField: 3
 --- !u!1001 &1569223263
@@ -29400,7 +29446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5c97365285b304db19d09b564e7c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpeedModifier>k__BackingField: 1
+  <SpeedModifier>k__BackingField: 0.5
   <AcceptanceRadius>k__BackingField: 2
   <DwellTime>k__BackingField: 6
 --- !u!1 &1679207989
@@ -39420,6 +39466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528406913152600717, guid: 39303c5f15701d14a828bd24e6ad028e,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8290213627640367632, guid: 39303c5f15701d14a828bd24e6ad028e,
         type: 3}

@@ -24,6 +24,7 @@ public class EnemyPatrollingState : EnemyBaseState
 
 
 
+
     public override void Enter()
     {
         //Sanity check.  Ideally this check should never be needed because Patrol State should only
@@ -72,6 +73,7 @@ public class EnemyPatrollingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        if (deltaTime == 0f) { return; }
         if (IsInChaseRange())
         {
             //Clearing key to ensure that at the end of the battle, the enemy finds the nearest waypoint
