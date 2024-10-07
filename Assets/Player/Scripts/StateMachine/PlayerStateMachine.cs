@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class PlayerStateMachine : StateMachine
+public class PlayerStateMachine : StateMachine, ISaveable
 {
     [field: SerializeField] public InventorySO Inventory;
 
@@ -99,5 +99,20 @@ public class PlayerStateMachine : StateMachine
         PreviousDodgeTime = dodgeTime;
     }
 
-    
+    public object CaptureState()
+    {
+       
+        return new SerializableVector3(Controller.transform.position);
+    }
+
+    public void RestoreState(object state)
+    {
+
+        SerializableVector3 position = (SerializableVector3)state;
+        Controller.enabled = false;
+        Controller.transform.position = position.ToVector();
+        Controller.enabled = true;
+    }
+
+
 }

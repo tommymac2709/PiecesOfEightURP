@@ -22,7 +22,11 @@ public class Fighter : MonoBehaviour, IModifierProvider
     // Start is called before the first frame update
     void Start()
     {
-        EquipWeapon(defaultWeaponConfig);
+        if (currentWeaponConfig == null)
+        {
+            EquipWeapon(defaultWeaponConfig);
+        }
+        
     }
 
     // Update is called once per frame
@@ -207,6 +211,5 @@ public class Fighter : MonoBehaviour, IModifierProvider
         other.GetComponent<ForceReceiver>().AddForce((other.transform.position - position).normalized * currentAttack.Knockback);
     }
 
-
-
+    
 }

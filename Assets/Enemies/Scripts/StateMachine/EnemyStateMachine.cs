@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyStateMachine : StateMachine
+public class EnemyStateMachine : StateMachine, ISaveable
 {
     [field: SerializeField] public Animator Animator { get; private set; }
 
@@ -16,7 +16,7 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
 
-    [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
+   // [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
 
     [field: SerializeField] public Target Target { get; private set; }
 
@@ -99,6 +99,31 @@ public class EnemyStateMachine : StateMachine
         Gizmos.DrawWireSphere(transform.position, PlayerDetectRange);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, PlayerFleeRange);
+    }
+
+    [System.Serializable]
+    struct StateMachineData
+    {
+        public SerializableVector3 position;
+        public SerializableVector3 rotation;
+    }
+
+    public object CaptureState()
+    {
+        StateMachineData data = new StateMachineData();
+        data.position = new SerializableVector3(transform.position);
+        data.rotation = new SerializableVector3(transform.eulerAngles);
+        return data;
+    }
+
+    public void RestoreState(object state)
+    {
+
+        StateMachineData data = (StateMachineData)state;
+        Agent.enabled = false;
+        transform.position = data.position.ToVector();
+        transform.eulerAngles = data.rotation.ToVector();
+        Agent.enabled = true;
     }
 
 

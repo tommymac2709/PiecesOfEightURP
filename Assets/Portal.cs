@@ -39,10 +39,17 @@ public class Portal : MonoBehaviour
 
         yield return fader.FadeOut(fadeOutTime);
 
+        SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
+        wrapper.SaveGame();
+
         yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+        wrapper.LoadGame();
 
         Portal otherPortal = GetOtherPortal();
         UpdatePlayer(otherPortal);
+
+        wrapper.SaveGame();
 
         yield return new WaitForSeconds(fadeWaitTime);
 
@@ -55,8 +62,11 @@ public class Portal : MonoBehaviour
     private void UpdatePlayer(Portal otherPortal)
     {
         GameObject player = GameObject.FindWithTag("Player");
+        PlayerStateMachine stateMachine = player.GetComponent<PlayerStateMachine>();
+        stateMachine.Controller.enabled = false;
         player.transform.position = otherPortal.spawnPoint.position;
         player.transform.rotation = otherPortal.spawnPoint.rotation;
+        stateMachine.Controller.enabled = true;
     }
 
     private Portal GetOtherPortal()

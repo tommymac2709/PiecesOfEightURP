@@ -26,6 +26,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     public event Action InteractEvent;
     public event Action CancelWindowEvent;
     public event Action InventoryEvent;
+    public event Action SaveGameEvent;
+    public event Action LoadGameEvent;
+    public event Action DeleteSaveFileEvent;
 
     private Controls controls;
 
@@ -63,6 +66,27 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
 
         controls.Player.Disable();
         controls.UI.Disable();
+    }
+
+    public void OnSaveGame(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        SaveGameEvent?.Invoke();
+    }
+
+    public void OnLoadGame(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        LoadGameEvent?.Invoke();
+    }
+
+    public void OnDeleteSave(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        DeleteSaveFileEvent?.Invoke();
     }
 
     public void OnJump(InputAction.CallbackContext context)

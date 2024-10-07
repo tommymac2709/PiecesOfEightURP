@@ -9,8 +9,11 @@ public class Ragdoll : MonoBehaviour
     private Collider[] allColliders;
 
     private Rigidbody[] allRigidbodies;
+
+    
     void Start()
     {
+        
         allColliders = GetComponentsInChildren<Collider>(true);
         allRigidbodies = GetComponentsInChildren<Rigidbody>(true);
 
@@ -21,9 +24,10 @@ public class Ragdoll : MonoBehaviour
     {
         foreach (Collider collider in allColliders)
         {
+            
             if (collider.gameObject.CompareTag("Ragdoll"))
             {
-                collider.enabled = isRagdoll;
+                collider.isTrigger = isRagdoll;
             }
             
         }
@@ -39,6 +43,8 @@ public class Ragdoll : MonoBehaviour
 
         characterController.enabled = !isRagdoll;
         animator.enabled = !isRagdoll;
+        
     }
+
     
 }

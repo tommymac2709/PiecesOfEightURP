@@ -1235,6 +1235,7 @@ GameObject:
   - component: {fileID: 6729596228005485338}
   - component: {fileID: 6461287861843001675}
   - component: {fileID: 5443004205664315036}
+  - component: {fileID: 100165510662637626}
   m_Layer: 3
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -1374,11 +1375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe766a659f1c334f93a86369a5b3aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unarmedWeaponConfig: {fileID: 0}
   defaultWeaponConfig: {fileID: 11400000, guid: dcb66bf625ee19944b10ae9074fc3b31,
     type: 2}
   _rightHandTransform: {fileID: 6780535644581288842}
   _leftHandTransform: {fileID: 8266154429557013260}
   currentWeaponConfig: {fileID: 0}
+  currentlyUsingWeaponConfig: {fileID: 0}
   currentAttack: {fileID: 0}
 --- !u!114 &3106349452993215398
 MonoBehaviour:
@@ -1578,6 +1581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactRange: 3
   stateMachine: {fileID: 5657556325095794347}
+  coveredAngle: 90
 --- !u!114 &6729596228005485338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,6 +1625,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentExperiencePoints: 0
+--- !u!114 &100165510662637626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890225168022548691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: player
 --- !u!1 &1894074468985138207
 GameObject:
   m_ObjectHideFlags: 0

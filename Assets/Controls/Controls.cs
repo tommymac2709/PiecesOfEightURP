@@ -38,6 +38,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""SaveGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""3b579930-f90e-4ead-a04b-d29502cb93c2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LoadGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""a9776f53-e096-4120-bf71-f4cdd3f92762"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Dodge"",
                     ""type"": ""Button"",
                     ""id"": ""34dff20a-e38d-4920-840c-10f59aa2476f"",
@@ -135,6 +153,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DeleteSave"",
+                    ""type"": ""Button"",
+                    ""id"": ""3c258893-55c8-4d5e-bb87-801282ecd236"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -157,6 +184,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e1ddf9b-82e5-47f6-bf6e-c0bd585f91a5"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""SaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0e64b5d-7031-4b76-a885-6dd298273f51"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""LoadGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -511,6 +560,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""UnsheatheWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b822e26d-8b9f-4b60-a29b-f2c18ae8db8d"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeleteSave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -596,6 +656,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_SaveGame = m_Player.FindAction("SaveGame", throwIfNotFound: true);
+        m_Player_LoadGame = m_Player.FindAction("LoadGame", throwIfNotFound: true);
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
@@ -607,6 +669,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_UnsheatheWeapon = m_Player.FindAction("UnsheatheWeapon", throwIfNotFound: true);
+        m_Player_DeleteSave = m_Player.FindAction("DeleteSave", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
@@ -679,6 +742,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_SaveGame;
+    private readonly InputAction m_Player_LoadGame;
     private readonly InputAction m_Player_Dodge;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
@@ -690,11 +755,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_UseAbility;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_UnsheatheWeapon;
+    private readonly InputAction m_Player_DeleteSave;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
         public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @SaveGame => m_Wrapper.m_Player_SaveGame;
+        public InputAction @LoadGame => m_Wrapper.m_Player_LoadGame;
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
@@ -706,6 +774,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @UnsheatheWeapon => m_Wrapper.m_Player_UnsheatheWeapon;
+        public InputAction @DeleteSave => m_Wrapper.m_Player_DeleteSave;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -718,6 +787,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @SaveGame.started += instance.OnSaveGame;
+            @SaveGame.performed += instance.OnSaveGame;
+            @SaveGame.canceled += instance.OnSaveGame;
+            @LoadGame.started += instance.OnLoadGame;
+            @LoadGame.performed += instance.OnLoadGame;
+            @LoadGame.canceled += instance.OnLoadGame;
             @Dodge.started += instance.OnDodge;
             @Dodge.performed += instance.OnDodge;
             @Dodge.canceled += instance.OnDodge;
@@ -751,6 +826,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @UnsheatheWeapon.started += instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.performed += instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.canceled += instance.OnUnsheatheWeapon;
+            @DeleteSave.started += instance.OnDeleteSave;
+            @DeleteSave.performed += instance.OnDeleteSave;
+            @DeleteSave.canceled += instance.OnDeleteSave;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -758,6 +836,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @SaveGame.started -= instance.OnSaveGame;
+            @SaveGame.performed -= instance.OnSaveGame;
+            @SaveGame.canceled -= instance.OnSaveGame;
+            @LoadGame.started -= instance.OnLoadGame;
+            @LoadGame.performed -= instance.OnLoadGame;
+            @LoadGame.canceled -= instance.OnLoadGame;
             @Dodge.started -= instance.OnDodge;
             @Dodge.performed -= instance.OnDodge;
             @Dodge.canceled -= instance.OnDodge;
@@ -791,6 +875,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @UnsheatheWeapon.started -= instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.performed -= instance.OnUnsheatheWeapon;
             @UnsheatheWeapon.canceled -= instance.OnUnsheatheWeapon;
+            @DeleteSave.started -= instance.OnDeleteSave;
+            @DeleteSave.performed -= instance.OnDeleteSave;
+            @DeleteSave.canceled -= instance.OnDeleteSave;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -883,6 +970,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
+        void OnSaveGame(InputAction.CallbackContext context);
+        void OnLoadGame(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
@@ -894,6 +983,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUseAbility(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnUnsheatheWeapon(InputAction.CallbackContext context);
+        void OnDeleteSave(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

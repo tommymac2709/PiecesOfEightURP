@@ -15,6 +15,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SaveGame",
+                    "type": "Button",
+                    "id": "3b579930-f90e-4ead-a04b-d29502cb93c2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LoadGame",
+                    "type": "Button",
+                    "id": "a9776f53-e096-4120-bf71-f4cdd3f92762",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Dodge",
                     "type": "Button",
                     "id": "34dff20a-e38d-4920-840c-10f59aa2476f",
@@ -112,6 +130,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DeleteSave",
+                    "type": "Button",
+                    "id": "3c258893-55c8-4d5e-bb87-801282ecd236",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -134,6 +161,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e1ddf9b-82e5-47f6-bf6e-c0bd585f91a5",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "SaveGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0e64b5d-7031-4b76-a885-6dd298273f51",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "LoadGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -486,6 +535,17 @@
                     "processors": "",
                     "groups": ";Mouse and Keyboard",
                     "action": "UnsheatheWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b822e26d-8b9f-4b60-a29b-f2c18ae8db8d",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeleteSave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

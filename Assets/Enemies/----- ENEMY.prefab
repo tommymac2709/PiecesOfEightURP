@@ -3096,6 +3096,7 @@ GameObject:
   - component: {fileID: 3903033169511325810}
   - component: {fileID: 4241037404864592215}
   - component: {fileID: 7450554268512378496}
+  - component: {fileID: 8603792598151506240}
   m_Layer: 0
   m_Name: ----- ENEMY
   m_TagString: Enemy
@@ -3185,9 +3186,9 @@ MonoBehaviour:
   <Fighter>k__BackingField: {fileID: 7792547751755755991}
   <Health>k__BackingField: {fileID: 1403208636335331178}
   <Agent>k__BackingField: {fileID: 5049605926301838905}
-  <Ragdoll>k__BackingField: {fileID: 664748408960178753}
   <Target>k__BackingField: {fileID: 1596305256467374407}
   <CooldownTokenManager>k__BackingField: {fileID: 7450554268512378496}
+  <PatrolPath>k__BackingField: {fileID: 0}
   <MovementSpeed>k__BackingField: 2
   <RotationSpeed>k__BackingField: 5
   <ImpactStateDuration>k__BackingField: 0.3
@@ -3269,7 +3270,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8290213627640367632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36c464d14205fe94e8b1155067720267, type: 3}
   m_Name: 
@@ -3366,6 +3367,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30079e6fc50034c4096697ca9b744ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8603792598151506240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0

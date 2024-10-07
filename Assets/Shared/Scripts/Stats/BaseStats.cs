@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStats : MonoBehaviour
+public class BaseStats : MonoBehaviour, ISaveable
 {
     [Range(1, 99)]
     [SerializeField] int startingLevel = 1;
@@ -130,5 +130,15 @@ public class BaseStats : MonoBehaviour
         }
 
         return total;
+    }
+
+    public object CaptureState()
+    {
+        return currentLevel.value;
+    }
+
+    public void RestoreState(object state)
+    {
+        currentLevel.value = (int)state;
     }
 }

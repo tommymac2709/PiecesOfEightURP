@@ -10,6 +10,7 @@ public class WeaponPickupInteractable : MonoBehaviour, IInteractable
     [SerializeField] ItemSO item;
     [SerializeField] int numberToAdd;
 
+
     public void Interact(Transform transform)
     {
         
@@ -20,6 +21,14 @@ public class WeaponPickupInteractable : MonoBehaviour, IInteractable
 
         // player.EquipWeapon(_weapon);
         player.EquipWeapon(item.weaponConfig);
+
+        RuntimeObjectSaveManager saveManager = FindObjectOfType<RuntimeObjectSaveManager>();
+        
+        if (saveManager.objects.Contains(this.gameObject))
+        {
+            saveManager.objects.Remove(this.gameObject);
+        }
+        
 
         Destroy(gameObject);
     }

@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 using GameDevTV.Utils;
+using System.Collections.Generic;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, ISaveable
 {
     //Used in health regeneration to regenerate health on level up to percentage of new level max health
     [SerializeField] float regenerationPercentage = 70f;
@@ -28,6 +29,12 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (currentHealth.value == 0)
+        {
+            OnDie?.Invoke();
+            
+
+        }
         currentHealth.ForceInit();        
     }
 
@@ -108,5 +115,29 @@ public class Health : MonoBehaviour
         currentHealth.value = GetComponent<BaseStats>().GetStat(Stat.Health);
 
         Debug.Log(currentHealth.value);
+    }
+
+    public object CaptureState()
+    {
+        Dictionary<string, float> data = new Dictionary<string, float>();
+        data["currentHealth"] = currentHealth.value;
+        data["maxHealth"] = GetMaxHealth();
+        return data;
+    }
+
+    public void RestoreState(object state)
+    {
+        Dictionary<string, float> data = (Dictionary<string, float>)state;
+        currentHealth.value = data["currentHealth"];
+        if (currentHealth.value == 0)
+        {
+            OnDie?.Invoke();
+            return;
+
+
+        }
+        maxHealth = data["maxHealth"];
+
+        
     }
 }
