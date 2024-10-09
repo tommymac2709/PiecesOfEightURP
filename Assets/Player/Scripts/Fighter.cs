@@ -1,8 +1,10 @@
+using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fighter : MonoBehaviour, IModifierProvider
+public class Fighter : MonoBehaviour, IModifierProvider, IJsonSaveable
 {
     [SerializeField] WeaponConfig unarmedWeaponConfig = null;
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
@@ -211,5 +213,17 @@ public class Fighter : MonoBehaviour, IModifierProvider
         other.GetComponent<ForceReceiver>().AddForce((other.transform.position - position).normalized * currentAttack.Knockback);
     }
 
-    
+    public JToken CaptureAsJToken()
+    {
+        return JToken.FromObject(currentWeaponConfig.name);
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        string weaponName = state.ToObject<string>();
+        WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
+        EquipWeapon(weapon);
+    }
+
+
 }

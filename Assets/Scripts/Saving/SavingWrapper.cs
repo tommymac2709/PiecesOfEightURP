@@ -1,3 +1,4 @@
+using GameDevTV.Saving;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class SavingWrapper : MonoBehaviour
 {
     PlayerStateMachine stateMachine;
-    SavingSystem savingSystem;
+    JSonSavingSystem savingSystem;
     [SerializeField] float fadeInTime = 2f;
 
     const string defaultSaveFile = "save";
@@ -18,7 +19,7 @@ public class SavingWrapper : MonoBehaviour
 
     IEnumerator Start()
     {
-        savingSystem = GetComponent<SavingSystem>();
+        savingSystem = GetComponent<JSonSavingSystem>();
         Fader fader = FindObjectOfType<Fader>();
         fader.FadeOutImmediate();
         yield return savingSystem.LoadLastScene(defaultSaveFile);
@@ -30,8 +31,8 @@ public class SavingWrapper : MonoBehaviour
 
     private void OnEnable()
     {
-        stateMachine.InputReader.SaveGameEvent += SaveGame;
-        stateMachine.InputReader.LoadGameEvent += LoadGame;
+        InputReader.SaveGameEvent += SaveGame;
+        InputReader.LoadGameEvent += LoadGame;
     }
 
     public void LoadGame()
@@ -47,8 +48,8 @@ public class SavingWrapper : MonoBehaviour
 
     private void OnDisable()
     {
-        stateMachine.InputReader.SaveGameEvent -= SaveGame;
-        stateMachine.InputReader.LoadGameEvent -= LoadGame;
+        InputReader.SaveGameEvent -= SaveGame;
+        InputReader.LoadGameEvent -= LoadGame;
     }
 
     // Update is called once per frame

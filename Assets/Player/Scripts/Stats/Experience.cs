@@ -1,9 +1,11 @@
+using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Experience : MonoBehaviour, ISaveable
+public class Experience : MonoBehaviour, IJsonSaveable
 {
     [SerializeField] float currentExperiencePoints = 0;
 
@@ -22,13 +24,24 @@ public class Experience : MonoBehaviour, ISaveable
         return currentExperiencePoints;
     }
 
-    public object CaptureState()
+    //public object CaptureState()
+    //{
+    //    return currentExperiencePoints;
+    //}
+
+    //public void RestoreState(object state)
+    //{
+    //    currentExperiencePoints = (float)state;
+    //}
+
+    public JToken CaptureAsJToken()
     {
-        return currentExperiencePoints;
+        return JToken.FromObject(currentExperiencePoints);
     }
 
-    public void RestoreState(object state)
+    public void RestoreFromJToken(JToken state)
     {
-        currentExperiencePoints = (float)state;
+        currentExperiencePoints = state.ToObject<float>();
+
     }
 }

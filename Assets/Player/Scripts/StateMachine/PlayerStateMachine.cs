@@ -1,9 +1,11 @@
+using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class PlayerStateMachine : StateMachine, ISaveable
+public class PlayerStateMachine : StateMachine, IJsonSaveable
 {
     [field: SerializeField] public InventorySO Inventory;
 
@@ -99,20 +101,30 @@ public class PlayerStateMachine : StateMachine, ISaveable
         PreviousDodgeTime = dodgeTime;
     }
 
-    public object CaptureState()
-    {
+    //public object CaptureState()
+    //{
        
-        return new SerializableVector3(Controller.transform.position);
+    //    return new SerializableVector3(Controller.transform.position);
+    //}
+
+    //public void RestoreState(object state)
+    //{
+
+    //    SerializableVector3 position = (SerializableVector3)state;
+    //    Controller.enabled = false;
+    //    Controller.transform.position = position.ToVector();
+    //    Controller.enabled = true;
+    //}
+
+    public JToken CaptureAsJToken()
+    {
+        return Controller.transform.position.ToToken();
     }
 
-    public void RestoreState(object state)
+    public void RestoreFromJToken(JToken state)
     {
-
-        SerializableVector3 position = (SerializableVector3)state;
         Controller.enabled = false;
-        Controller.transform.position = position.ToVector();
+        Controller.transform.position = state.ToVector3();
         Controller.enabled = true;
     }
-
-
 }

@@ -26,9 +26,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     public event Action InteractEvent;
     public event Action CancelWindowEvent;
     public event Action InventoryEvent;
-    public event Action SaveGameEvent;
-    public event Action LoadGameEvent;
-    public event Action DeleteSaveFileEvent;
+    public static event Action SaveGameEvent;
+    public static event Action LoadGameEvent;
+    public static event Action DeleteSaveFileEvent;
 
     private Controls controls;
 

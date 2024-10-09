@@ -2,8 +2,10 @@ using System;
 using UnityEngine;
 using GameDevTV.Utils;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using GameDevTV.Saving;
 
-public class Health : MonoBehaviour, ISaveable
+public class Health : MonoBehaviour, IJsonSaveable
 {
     //Used in health regeneration to regenerate health on level up to percentage of new level max health
     [SerializeField] float regenerationPercentage = 70f;
@@ -117,27 +119,39 @@ public class Health : MonoBehaviour, ISaveable
         Debug.Log(currentHealth.value);
     }
 
-    public object CaptureState()
+    //public object CaptureState()
+    //{
+    //    Dictionary<string, float> data = new Dictionary<string, float>();
+    //    data["currentHealth"] = currentHealth.value;
+    //    data["maxHealth"] = GetMaxHealth();
+    //    return data;
+    //}
+
+    //public void RestoreState(object state)
+    //{
+    //    Dictionary<string, float> data = (Dictionary<string, float>)state;
+    //    currentHealth.value = data["currentHealth"];
+    //    if (currentHealth.value == 0)
+    //    {
+    //        OnDie?.Invoke();
+    //        return;
+
+
+    //    }
+    //    maxHealth = data["maxHealth"];
+
+
+    //}
+
+    public JToken CaptureAsJToken()
     {
-        Dictionary<string, float> data = new Dictionary<string, float>();
-        data["currentHealth"] = currentHealth.value;
-        data["maxHealth"] = GetMaxHealth();
-        return data;
+        return JToken.FromObject(currentHealth.value);
     }
 
-    public void RestoreState(object state)
+    public void RestoreFromJToken(JToken state)
     {
-        Dictionary<string, float> data = (Dictionary<string, float>)state;
-        currentHealth.value = data["currentHealth"];
-        if (currentHealth.value == 0)
-        {
-            OnDie?.Invoke();
-            return;
-
-
-        }
-        maxHealth = data["maxHealth"];
-
+        currentHealth.value = state.ToObject<float>();
         
     }
+
 }
