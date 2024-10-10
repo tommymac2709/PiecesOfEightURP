@@ -1238,8 +1238,8 @@ GameObject:
   - component: {fileID: 100165510662637626}
   - component: {fileID: 7132909982575438035}
   - component: {fileID: 2789864013435240119}
-  - component: {fileID: 2136171515354428931}
   - component: {fileID: 7214112014042764652}
+  - component: {fileID: 9042447458106717161}
   m_Layer: 3
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -1667,18 +1667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 16
---- !u!114 &2136171515354428931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890225168022548691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11801ca435999e4e96afb1bcc282d56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7214112014042764652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,6 +1677,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a19ff972ec6859b48870488d7b1e81b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9042447458106717161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890225168022548691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12da51368706a449a087e448bbfeed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1894074468985138207

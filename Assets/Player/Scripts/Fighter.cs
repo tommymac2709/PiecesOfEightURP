@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameDevTV.Inventories;
 
-public class Fighter : MonoBehaviour, IModifierProvider/*, IJsonSaveable*/
+public class Fighter : MonoBehaviour/*, IJsonSaveable*/
 {
     [SerializeField] WeaponConfig unarmedWeaponConfig = null;
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
@@ -124,23 +124,7 @@ public class Fighter : MonoBehaviour, IModifierProvider/*, IJsonSaveable*/
         currentAttack = attack;
     }
 
-    public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-    {
-        if (stat == Stat.Damage)
-        {
-            yield return currentWeaponConfig.GetWeaponDamage();
-            //Can have 2 yield returns for multiple weapons 
-        }
-    }
-
-    public IEnumerable<float> GetPercentageModifiers(Stat stat)
-    {
-        if (stat == Stat.Damage)
-        {
-            yield return currentWeaponConfig.GetPercentageBonus();
-            //Can have 2 yield returns for multiple weapons 
-        }
-    }
+    
 
     public void TryHitStart(int slot)
     {
