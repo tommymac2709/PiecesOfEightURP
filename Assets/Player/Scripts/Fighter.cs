@@ -3,14 +3,17 @@ using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameDevTV.Inventories;
 
-public class Fighter : MonoBehaviour, IModifierProvider, IJsonSaveable
+public class Fighter : MonoBehaviour, IModifierProvider/*, IJsonSaveable*/
 {
     [SerializeField] WeaponConfig unarmedWeaponConfig = null;
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
     [SerializeField] Transform _rightHandTransform = null;
     [SerializeField] Transform _leftHandTransform = null;
 
+
+    Equipment equipment;
     public WeaponConfig currentWeaponConfig = null;
     public WeaponConfig currentlyUsingWeaponConfig = null;
     Weapon currentWeapon;
@@ -21,6 +24,14 @@ public class Fighter : MonoBehaviour, IModifierProvider, IJsonSaveable
 
     public bool isHoldingWeapon {get; private set;}
 
+    private void Awake()
+    {
+        equipment = GetComponent<Equipment>();
+        if (equipment)
+        {
+            equipment.equipmentUpdated += UpdateWeapon;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +86,18 @@ public class Fighter : MonoBehaviour, IModifierProvider, IJsonSaveable
 
     }
 
+    private void UpdateWeapon()
+    {
+        var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+        if (weapon == null) 
+        {
+            EquipWeapon(defaultWeaponConfig);
+        }
+        else
+        {
+            EquipWeapon(weapon);
+        }
+    }
 
     /// <summary>
     /// Get specified animation by index, and set the current Attack.
@@ -213,17 +236,17 @@ public class Fighter : MonoBehaviour, IModifierProvider, IJsonSaveable
         other.GetComponent<ForceReceiver>().AddForce((other.transform.position - position).normalized * currentAttack.Knockback);
     }
 
-    public JToken CaptureAsJToken()
-    {
-        return JToken.FromObject(currentWeaponConfig.name);
-    }
+    //public JToken CaptureAsJToken()
+    //{
+    //    return JToken.FromObject(currentWeaponConfig.name);
+    //}
 
-    public void RestoreFromJToken(JToken state)
-    {
-        string weaponName = state.ToObject<string>();
-        WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
-        EquipWeapon(weapon);
-    }
+    //public void RestoreFromJToken(JToken state)
+    //{
+    //    string weaponName = state.ToObject<string>();
+    //    WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
+    //    EquipWeapon(weapon);
+    //}
 
 
 }

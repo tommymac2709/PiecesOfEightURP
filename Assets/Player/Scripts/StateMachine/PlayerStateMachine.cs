@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine, IJsonSaveable
 {
-    [field: SerializeField] public InventorySO Inventory;
+    
 
     [field: SerializeField] public GameObject ClimbCamera { get; private set; }
 

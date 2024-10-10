@@ -38,7 +38,7 @@ public class SavingWrapper : MonoBehaviour
     public void LoadGame()
     {
         
-        savingSystem.Load(defaultSaveFile);
+        savingSystem.LoadLastScene(defaultSaveFile);
     }
 
     public void SaveGame()

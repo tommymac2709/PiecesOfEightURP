@@ -1,3 +1,4 @@
+using GameDevTV.Inventories;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
-public class WeaponConfig : ItemSO, IModifierProvider
+public class WeaponConfig : EquipableItem, IModifierProvider
 {
     [SerializeField] public GameObject _weaponPrefab = null;
     [SerializeField] float _weaponDamage;

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd6c21e330a8e6498f4712cf609f098, type: 3}
   m_Name: Cutlass_1_WeaponConfig
   m_EditorClassIdentifier: 
-  Id: 0
-  uiDisplay: {fileID: 0}
-  type: 2
+  itemID: 283dacb9-620b-43ba-9850-b1223d0c21a7
+  displayName: Cutlass 1
   description: 
-  interactText: 
-  weaponConfig: {fileID: 11400000}
-  itemTooltip: {fileID: 11400000, guid: ef93f46e6c4f14848af7b0082b95c304, type: 2}
+  icon: {fileID: 21300000, guid: 494bb88e341e7c44db44a102cbdcf4a1, type: 3}
+  pickup: {fileID: -3440914615517353341, guid: aec950133ee2d3540ba1896229e85e53, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   _weaponPrefab: {fileID: 2353232748905043175, guid: 3f9b608573ba1754d87e4a460979cb1b,
     type: 3}
   _weaponDamage: 5

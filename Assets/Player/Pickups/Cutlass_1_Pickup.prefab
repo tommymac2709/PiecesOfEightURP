@@ -159,7 +159,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6123261252992101290, guid: 3ea30e1c30512104bbadfa2da922ffae, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7089379445924702385, guid: 3ea30e1c30512104bbadfa2da922ffae,
@@ -170,7 +171,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1199296540766802860, guid: 3ea30e1c30512104bbadfa2da922ffae,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8708803303281995012}
+      addedObject: {fileID: -3440914615517353341}
+    - targetCorrespondingSourceObject: {fileID: 1199296540766802860, guid: 3ea30e1c30512104bbadfa2da922ffae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5808873560839175273}
   m_SourcePrefab: {fileID: 100100000, guid: 3ea30e1c30512104bbadfa2da922ffae, type: 3}
 --- !u!1 &4585326728150862862 stripped
 GameObject:
@@ -178,7 +183,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3388566765147250594}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8708803303281995012
+--- !u!114 &-3440914615517353341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +192,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4585326728150862862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65476a540ad1e204cb055bb2e8cfbd40, type: 3}
+  m_Script: {fileID: 11500000, guid: 91f208ba0dbe65d478b628ca24b59c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5808873560839175273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585326728150862862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f76349baa2b4d54583a2cbcee851f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &5576602646095591187 stripped

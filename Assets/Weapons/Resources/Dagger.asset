@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd6c21e330a8e6498f4712cf609f098, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
+  itemID: e162e6ea-ccca-4fc3-8d2d-498343b101a9
+  displayName: Dagger
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
   _weaponPrefab: {fileID: 2353232748905043175, guid: ff5ceda12a71c1c4b9eb6477bd43eb94,
     type: 3}
   _weaponDamage: 2
+  percentageBonus: 0
   isRightHanded: 0
   <Attacks>k__BackingField:
   - {fileID: 11400000, guid: d5c8099ffec684b4cac0bdfd263e18d5, type: 2}

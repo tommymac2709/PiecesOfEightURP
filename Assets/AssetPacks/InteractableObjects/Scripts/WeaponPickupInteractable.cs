@@ -7,20 +7,20 @@ public class WeaponPickupInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string _interactText;
     [SerializeField] WeaponConfig _weapon = null;
 
-    [SerializeField] ItemSO item;
+    
     [SerializeField] int numberToAdd;
 
 
     public void Interact(Transform transform)
     {
         
-        InventorySO inventory = GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().Inventory;
-        inventory.AddItem(new Item(item), numberToAdd);
+        //InventorySO inventory = GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().Inventory;
+        //inventory.AddItem(new Item(item), numberToAdd);
 
         Fighter player = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
 
         // player.EquipWeapon(_weapon);
-        player.EquipWeapon(item.weaponConfig);
+        //player.EquipWeapon(item.weaponConfig);
 
         RuntimeObjectSaveManager saveManager = FindObjectOfType<RuntimeObjectSaveManager>();
         
@@ -35,7 +35,8 @@ public class WeaponPickupInteractable : MonoBehaviour, IInteractable
 
     public string GetInteractText()
     {
-        return item.interactText;
+        //return item.interactText;
+        return null;
     }
 
     public Transform GetTransform()
