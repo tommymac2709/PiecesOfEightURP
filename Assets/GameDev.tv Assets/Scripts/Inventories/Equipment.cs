@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 
 namespace GameDevTV.Inventories
 {
@@ -11,7 +12,7 @@ namespace GameDevTV.Inventories
     /// 
     /// This component should be placed on the GameObject tagged "Player".
     /// </summary>
-    public class Equipment : MonoBehaviour, ISaveable
+    public class Equipment : MonoBehaviour, IJsonSaveable
     {
         // STATE
         Dictionary<EquipLocation, EquipableItem> equippedItems = new Dictionary<EquipLocation, EquipableItem>();
@@ -73,31 +74,37 @@ namespace GameDevTV.Inventories
         }
 
         // PRIVATE
-
-        object ISaveable.CaptureState()
+        public JToken CaptureAsJToken()
         {
-            var equippedItemsForSerialization = new Dictionary<EquipLocation, string>();
+            JObject state = new JObject();
+            IDictionary<string, JToken> stateDict = state;
             foreach (var pair in equippedItems)
             {
-                equippedItemsForSerialization[pair.Key] = pair.Value.GetItemID();
+                stateDict[pair.Key.ToString()] = JToken.FromObject(pair.Value.GetItemID());
             }
-            return equippedItemsForSerialization;
+            return state;
         }
 
-        void ISaveable.RestoreState(object state)
+        public void RestoreFromJToken(JToken state)
         {
-            equippedItems = new Dictionary<EquipLocation, EquipableItem>();
-
-            var equippedItemsForSerialization = (Dictionary<EquipLocation, string>)state;
-
-            foreach (var pair in equippedItemsForSerialization)
+            if (state is JObject stateObject)
             {
-                var item = (EquipableItem)InventoryItem.GetFromID(pair.Value);
-                if (item != null)
+                equippedItems.Clear();
+                IDictionary<string, JToken> stateDict = stateObject;
+                foreach (var pair in stateObject)
                 {
-                    equippedItems[pair.Key] = item;
+                    if (Enum.TryParse(pair.Key, true, out EquipLocation key))
+                    {
+                        if (InventoryItem.GetFromID(pair.Value.ToObject<string>()) is EquipableItem item)
+                        {
+                            equippedItems[key] = item;
+                        }
+                    }
                 }
             }
+            equipmentUpdated?.Invoke();
         }
+
+
     }
 }

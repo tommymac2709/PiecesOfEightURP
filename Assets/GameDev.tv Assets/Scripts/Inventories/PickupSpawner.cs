@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 
 namespace GameDevTV.Inventories
 {
@@ -7,7 +8,7 @@ namespace GameDevTV.Inventories
     /// Spawns pickups that should exist on first load in a level. This
     /// automatically spawns the correct prefab for a given inventory item.
     /// </summary>
-    public class PickupSpawner : MonoBehaviour, ISaveable
+    public class PickupSpawner : MonoBehaviour
     {
         // CONFIG DATA
         [SerializeField] InventoryItem item = null;
@@ -55,14 +56,14 @@ namespace GameDevTV.Inventories
             }
         }
 
-        object ISaveable.CaptureState()
+        public JToken CaptureAsJToken()
         {
-            return isCollected();
+            return JToken.FromObject(isCollected());
         }
 
-        void ISaveable.RestoreState(object state)
+        public void RestoreFromJToken(JToken state)
         {
-            bool shouldBeCollected = (bool)state;
+            bool shouldBeCollected = state.ToObject<bool>();
 
             if (shouldBeCollected && !isCollected())
             {
@@ -73,6 +74,9 @@ namespace GameDevTV.Inventories
             {
                 SpawnPickup();
             }
+
         }
+
+
     }
 }
