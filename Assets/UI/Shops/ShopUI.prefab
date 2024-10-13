@@ -1623,7 +1623,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7955585087580044004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 765416304738213904}
+        m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3813177095658136791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +1991,7 @@ GameObject:
   - component: {fileID: 8378642865901052545}
   - component: {fileID: 4912274840432030035}
   - component: {fileID: 4548457465844833454}
+  - component: {fileID: 765416304738213904}
   m_Layer: 0
   m_Name: ShopUI
   m_TagString: Untagged
@@ -2051,6 +2064,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &765416304738213904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472360664732657767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e345239773919bb428aef456f465b675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopName: {fileID: 6679120534117327268}
+  listRoot: {fileID: 3317124440481865871}
+  rowPrefab: {fileID: 6353013892744980549, guid: 8b20d64a01cdccb45a50b17fface0bf8,
+    type: 3}
 --- !u!1 &4895692932621125467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,6 +2958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Row (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4869420342685062497, guid: 8b20d64a01cdccb45a50b17fface0bf8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6064949234585615732, guid: 8b20d64a01cdccb45a50b17fface0bf8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3177,6 +3211,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Row
       objectReference: {fileID: 0}
+    - target: {fileID: 4869420342685062497, guid: 8b20d64a01cdccb45a50b17fface0bf8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6064949234585615732, guid: 8b20d64a01cdccb45a50b17fface0bf8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3300,6 +3339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Row (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869420342685062497, guid: 8b20d64a01cdccb45a50b17fface0bf8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6064949234585615732, guid: 8b20d64a01cdccb45a50b17fface0bf8,
         type: 3}
