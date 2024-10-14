@@ -25,9 +25,19 @@ public class Shop : MonoBehaviour, IInteractable
     }
 
     Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
+    Dictionary<InventoryItem, int> stock = new Dictionary<InventoryItem, int>();
+
     Shopper currentShopper = null;
 
     public event Action onChange;
+
+    private void Awake()
+    {
+        foreach (StockItemConfig config in stockConfig)
+        {
+            stock[config.item] = config.initialStock;
+        }
+    }
 
     public void SetShopper(Shopper shopper)
     {
@@ -48,7 +58,9 @@ public class Shop : MonoBehaviour, IInteractable
             int quantityInTransaction = 0;
             transaction.TryGetValue(config.item, out quantityInTransaction);
 
-            yield return new ShopItem(config.item, config.initialStock, price, quantityInTransaction);
+            int currentStock = stock[config.item];
+
+            yield return new ShopItem(config.item, currentStock, price, quantityInTransaction);
         }
     }
 
@@ -77,7 +89,17 @@ public class Shop : MonoBehaviour, IInteractable
             transaction[item] = 0;
         }
 
-        transaction[item] += quantity;
+        if (transaction[item] + quantity > stock[item]) 
+        {
+            transaction[item] = stock[item];
+        
+        }
+        else
+        {
+            transaction[item] += quantity;
+        }
+
+        
 
         if (transaction[item] <= 0)
         {
@@ -111,12 +133,18 @@ public class Shop : MonoBehaviour, IInteractable
                 if (success)
                 {
                     AddToTransaction(item, -1);
+                    stock[item]--;
                     shopperPurse.UpdateBalance(-price);
                 }
             }
 
             
 
+        }
+
+        if (onChange != null)
+        {
+            onChange();
         }
 
 
