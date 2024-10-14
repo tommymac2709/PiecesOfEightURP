@@ -72,8 +72,30 @@ public class Shop : MonoBehaviour, IInteractable
     {
         if (IsTransactionEmpty()) return false;
         if (!HasSufficientFunds()) return false;
+        if (!HasInventorySpace()) return false;
 
         return true; 
+    }
+
+    public bool HasInventorySpace()
+    {
+        Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
+        if (shopperInventory == null) return false;
+        List<InventoryItem> flatItems = new List<InventoryItem>();
+        foreach (ShopItem shopItem in GetAllItems())
+        {
+            
+
+            InventoryItem item = shopItem.GetInventoryItem();
+            int quantity = shopItem.GetQuantityInTransaction();
+
+            for (int i = 0; i < quantity; i++)
+            {
+                flatItems.Add(item);
+            }
+        }
+
+        return shopperInventory.HasSpaceFor(flatItems);
     }
 
     public bool HasSufficientFunds()
@@ -84,7 +106,7 @@ public class Shop : MonoBehaviour, IInteractable
         return purse.GetBalance() >= TransactionTotal();
     }
 
-    private bool IsTransactionEmpty()
+    public bool IsTransactionEmpty()
     {
         return transaction.Count == 0;
     }

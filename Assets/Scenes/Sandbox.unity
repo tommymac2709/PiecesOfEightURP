@@ -26910,8 +26910,8 @@ MonoBehaviour:
   shopName: Shiver Me Trinkets
   stockConfig:
   - item: {fileID: 11400000, guid: 18aa76de0ecf5f145b6363779f499e34, type: 2}
-    initialStock: 3
-    buyingDiscountPercentage: 0
+    initialStock: 40
+    buyingDiscountPercentage: 95
   - item: {fileID: 11400000, guid: fc1580cae7cb93a48948fa8f8c61dc7b, type: 2}
     initialStock: 1
     buyingDiscountPercentage: 0
@@ -34204,7 +34204,7 @@ PrefabInstance:
     - target: {fileID: 5998440701910202809, guid: 50228bceb20960b438125547a770c38f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.74994
+      value: -570.74866
       objectReference: {fileID: 0}
     - target: {fileID: 5998645212039720723, guid: 50228bceb20960b438125547a770c38f,
         type: 3}
