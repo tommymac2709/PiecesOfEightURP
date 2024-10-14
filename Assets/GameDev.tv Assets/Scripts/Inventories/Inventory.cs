@@ -12,7 +12,7 @@ namespace GameDevTV.Inventories
     ///
     /// This component should be placed on the GameObject tagged "Player".
     /// </summary>
-    public class Inventory : MonoBehaviour, IJsonSaveable
+    public class Inventory : MonoBehaviour, IJsonSaveable,IPredicateEvaluator
     {
         // CONFIG DATA
         [Tooltip("Allowed size")]
@@ -53,12 +53,34 @@ namespace GameDevTV.Inventories
 
         public bool HasSpaceFor(IEnumerable<InventoryItem> items)
         {
-            int count = 0;
+            int freeSlots = FreeSlots();
+            List<InventoryItem> stackedItems = new List<InventoryItem>();
             foreach (var item in items)
             {
-                count++;
+                if (item.IsStackable())
+                {
+                    if (HasItem(item)) continue;
+                    if (stackedItems.Contains(item)) continue;
+                    stackedItems.Add(item);
+                }
+                // Already seen in the list
+                if (freeSlots <= 0) return false;
+                freeSlots--;
             }
-            return count <= inventorySize;
+            return true;
+        }
+
+        public int FreeSlots()
+        {
+            int count = 0;
+            foreach (InventorySlot slot in slots)
+            {
+                if (slot.number == 0)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
 
         /// <summary>
@@ -231,6 +253,7 @@ namespace GameDevTV.Inventories
             return -1;
         }
 
+
         public JToken CaptureAsJToken()
         {
             JObject state = new JObject();
@@ -268,6 +291,16 @@ namespace GameDevTV.Inventories
             }
         }
 
+        public bool? Evaluate(string predicate, string[] parameters)
+        {
+            switch (predicate)
+            {
+                case "HasInventoryItem":
+                    return HasItem(InventoryItem.GetFromID(parameters[0]));
+            }
+
+            return null;
+        }
 
         [System.Serializable]
         private struct InventorySlotRecord
