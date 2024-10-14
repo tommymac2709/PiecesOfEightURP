@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Purse : MonoBehaviour
 {
     [SerializeField] float startingBalance = 400f;
 
     float currentBalance = 0;
+
+    public event Action onChange;
 
     private void Awake()
     {
@@ -21,6 +24,10 @@ public class Purse : MonoBehaviour
     public void UpdateBalance(float amount)
     {
         currentBalance += amount;
-        print($"Balance: {currentBalance}");
+        if (onChange != null)
+        {
+            onChange();
+        }
+        
     }
 }
