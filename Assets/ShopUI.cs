@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -10,17 +11,24 @@ public class ShopUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI totalPriceField;
     [SerializeField] Transform listRoot;
     [SerializeField] ShopRowUI rowPrefab;
+    [SerializeField] Button confirmButton;
 
 
     Shopper shopper = null;
     Shop currentShop = null;
+
+    Color originalTotalTextColour;
+
     // Start is called before the first frame update
     void Start()
     {
-       shopper = GameObject.FindGameObjectWithTag("Player").GetComponent<Shopper>();
+        originalTotalTextColour = totalPriceField.color;
+        shopper = GameObject.FindGameObjectWithTag("Player").GetComponent<Shopper>();
         if (shopper == null) { return; }
 
         shopper.activeShopChange += ShopChanged;
+
+        confirmButton.onClick.AddListener(ConfirmTransaction);
 
         ShopChanged();
     }
@@ -57,6 +65,8 @@ public class ShopUI : MonoBehaviour
         }
 
         totalPriceField.text = $"Total: ${currentShop.TransactionTotal():N2}";
+        totalPriceField.color = currentShop.HasSufficientFunds() ? originalTotalTextColour : Color.red;
+        confirmButton.interactable = currentShop.CanTransact();
     }
 
     public void Close()

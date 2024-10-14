@@ -584,19 +584,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2381046947534710672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 765416304738213904}
-        m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
-        m_MethodName: ConfirmTransaction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1719521401356122382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2082,7 @@ MonoBehaviour:
   listRoot: {fileID: 3317124440481865871}
   rowPrefab: {fileID: 6353013892744980549, guid: 8b20d64a01cdccb45a50b17fface0bf8,
     type: 3}
+  confirmButton: {fileID: 9017887817289824208}
 --- !u!1 &4895692932621125467
 GameObject:
   m_ObjectHideFlags: 0

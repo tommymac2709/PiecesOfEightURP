@@ -68,7 +68,26 @@ public class Shop : MonoBehaviour, IInteractable
     public ItemCategory GetItemFilter() { return ItemCategory.None; }
     public void SelectMode(bool isBuying) { }
     public bool IsBuyingMode() { return true; }
-    public bool CanTransact() { return true; }
+    public bool CanTransact() 
+    {
+        if (IsTransactionEmpty()) return false;
+        if (!HasSufficientFunds()) return false;
+
+        return true; 
+    }
+
+    public bool HasSufficientFunds()
+    {
+        Purse purse = currentShopper.GetComponent<Purse>();
+        if (purse == null) return false;
+
+        return purse.GetBalance() >= TransactionTotal();
+    }
+
+    private bool IsTransactionEmpty()
+    {
+        return transaction.Count == 0;
+    }
 
     public float TransactionTotal() 
     {
