@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 namespace GameDevTV.Inventories
@@ -27,6 +28,8 @@ namespace GameDevTV.Inventories
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
+        [Tooltip("THe base price this item will list at in shops")]
+        [SerializeField] float price;
 
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
@@ -101,6 +104,11 @@ namespace GameDevTV.Inventories
         public string GetDescription()
         {
             return description;
+        }
+
+        public float GetPrice()
+        {
+            return price;
         }
 
         // PRIVATE

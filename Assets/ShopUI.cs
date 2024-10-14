@@ -7,6 +7,7 @@ using UnityEngine;
 public class ShopUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI shopName;
+    [SerializeField] TextMeshProUGUI totalPriceField;
     [SerializeField] Transform listRoot;
     [SerializeField] ShopRowUI rowPrefab;
 
@@ -26,12 +27,18 @@ public class ShopUI : MonoBehaviour
 
     private void ShopChanged()
     {
+        if (currentShop != null)
+        {
+            currentShop.onChange -= RefreshUI;
+        }
         currentShop = shopper.GetActiveShop();
         gameObject.SetActive(currentShop != null);
 
         if (currentShop == null) return;
 
         shopName.text = currentShop.GetShopName();
+
+        currentShop.onChange += RefreshUI;
 
         RefreshUI();
     }
@@ -46,12 +53,19 @@ public class ShopUI : MonoBehaviour
         foreach (ShopItem item in currentShop.GetFilteredItems())
         {
             ShopRowUI row = Instantiate<ShopRowUI>(rowPrefab, listRoot);
-            row.Setup(item);
+            row.Setup(currentShop, item);
         }
+
+        totalPriceField.text = $"Total: ${currentShop.TransactionTotal():N2}";
     }
 
     public void Close()
     {
         shopper.SetActiveShop(null);
+    }
+
+    public void ConfirmTransaction()
+    {
+        currentShop.ConfirmTransaction();
     }
 }

@@ -36,4 +36,14 @@ public class ShopItem
     {
         return price;
     }
+
+    public InventoryItem GetInventoryItem()
+    {
+        return item;
+    }
+
+    public int GetQuantityInTransaction()
+    {
+        return quantityInTransaction;
+    }
 }

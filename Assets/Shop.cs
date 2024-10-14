@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor.ShaderGraph.Internal;
 
 public class Shop : MonoBehaviour, IInteractable
 {
@@ -23,13 +24,32 @@ public class Shop : MonoBehaviour, IInteractable
 
     }
 
+    Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
+    Shopper currentShopper = null;
+
     public event Action onChange;
+
+    public void SetShopper(Shopper shopper)
+    {
+        currentShopper = shopper;
+    }
+
     public IEnumerable<ShopItem> GetFilteredItems() 
     {
-        yield return new ShopItem(InventoryItem.GetFromID("0a95d347-7f66-413d-bbab-6295b018294e"), 10, 100f, 0);
-        yield return new ShopItem(InventoryItem.GetFromID("283dacb9-620b-43ba-9850-b1223d0c21a7"), 1, 2000f, 0);
-        yield return new ShopItem(InventoryItem.GetFromID("9195e44a-7c52-416b-a280-866391225e3c"), 1, 578.98f, 0);
-        yield return new ShopItem(InventoryItem.GetFromID("9f536480-7cb0-4a18-bf7b-e2e15fff51e1"), 1, 4.50f, 0);
+        return GetAllItems();
+    }
+
+    public IEnumerable<ShopItem> GetAllItems()
+    {
+        foreach (StockItemConfig config in stockConfig)
+        {
+            float price = config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
+
+            int quantityInTransaction = 0;
+            transaction.TryGetValue(config.item, out quantityInTransaction);
+
+            yield return new ShopItem(config.item, config.initialStock, price, quantityInTransaction);
+        }
     }
 
     public void SelectFilter(ItemCategory category) { }
@@ -37,9 +57,70 @@ public class Shop : MonoBehaviour, IInteractable
     public void SelectMode(bool isBuying) { }
     public bool IsBuyingMode() { return true; }
     public bool CanTransact() { return true; }
-    public float TransactionTotal() { return 0; }
-    public void AddToTransaction(InventoryItem item, int quantity) { }
-    public void ConfirmTransaction() { }
+
+    public float TransactionTotal() 
+    {
+        float total = 0f;
+
+        foreach (ShopItem item in GetAllItems())
+        {
+            total += item.GetPrice() * item.GetQuantityInTransaction();
+        }
+        return total;
+    }
+
+
+    public void AddToTransaction(InventoryItem item, int quantity) 
+    {
+        if (!transaction.ContainsKey(item))
+        {
+            transaction[item] = 0;
+        }
+
+        transaction[item] += quantity;
+
+        if (transaction[item] <= 0)
+        {
+            transaction.Remove(item);
+        }
+
+        if (onChange != null)
+        {
+            onChange();
+        }
+    }
+    public void ConfirmTransaction() 
+    { 
+        Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
+        Purse shopperPurse = currentShopper.GetComponent<Purse>();
+        if (shopperInventory == null || shopperPurse == null) return;
+
+        
+
+        foreach (ShopItem shopItem in GetAllItems())
+        {
+            InventoryItem item = shopItem.GetInventoryItem();
+            int quantity = shopItem.GetQuantityInTransaction();
+            float price = shopItem.GetPrice();
+            for (int i = 0; i < quantity; i++)
+            {
+                if (shopperPurse.GetBalance() < price) { break; }
+
+                bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
+
+                if (success)
+                {
+                    AddToTransaction(item, -1);
+                    shopperPurse.UpdateBalance(-price);
+                }
+            }
+
+            
+
+        }
+
+
+    }
 
     public void Interact(Transform interactorTransform)
     {
