@@ -12,6 +12,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] Transform listRoot;
     [SerializeField] ShopRowUI rowPrefab;
     [SerializeField] Button confirmButton;
+    [SerializeField] Button toggleBuyingSellingButton;
 
 
     Shopper shopper = null;
@@ -29,6 +30,7 @@ public class ShopUI : MonoBehaviour
         shopper.activeShopChange += ShopChanged;
 
         confirmButton.onClick.AddListener(ConfirmTransaction);
+        toggleBuyingSellingButton.onClick.AddListener(ToggleBuyingSelling);
 
         ShopChanged();
     }
@@ -67,6 +69,18 @@ public class ShopUI : MonoBehaviour
         totalPriceField.text = $"Total: ${currentShop.TransactionTotal():N2}";
         totalPriceField.color = currentShop.HasSufficientFunds() ? originalTotalTextColour : Color.red;
         confirmButton.interactable = currentShop.CanTransact();
+        TextMeshProUGUI toggleButtonText = toggleBuyingSellingButton.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI confirmText = confirmButton.GetComponentInChildren<TextMeshProUGUI>();
+        if (currentShop.IsBuyingMode())
+        {
+            toggleButtonText.text = "Switch to selling";
+            confirmText.text = "Buy";
+        }
+        else
+        {
+            toggleButtonText.text = "Switch to buying";
+            confirmText.text = "Sell";
+        }
     }
 
     public void Close()
@@ -77,5 +91,10 @@ public class ShopUI : MonoBehaviour
     public void ConfirmTransaction()
     {
         currentShop.ConfirmTransaction();
+    }
+
+    public void ToggleBuyingSelling()
+    {
+        currentShop.SelectMode(!currentShop.IsBuyingMode());
     }
 }

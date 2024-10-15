@@ -2083,6 +2083,7 @@ MonoBehaviour:
   rowPrefab: {fileID: 6353013892744980549, guid: 8b20d64a01cdccb45a50b17fface0bf8,
     type: 3}
   confirmButton: {fileID: 9017887817289824208}
+  toggleBuyingSellingButton: {fileID: 1053393137177237819}
 --- !u!1 &4895692932621125467
 GameObject:
   m_ObjectHideFlags: 0

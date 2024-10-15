@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33533f64e5e878f4eb9621d172f7b676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingBalance: 400
+  startingBalance: 10000
 --- !u!1 &1894074468985138207
 GameObject:
   m_ObjectHideFlags: 0

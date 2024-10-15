@@ -9,6 +9,8 @@ public class Shop : MonoBehaviour, IInteractable
 {
     
     [SerializeField] string shopName;
+    [Range(0f, 100f)]
+    [SerializeField] float sellingPercentage = 80f;
 
     [SerializeField]
     StockItemConfig[] stockConfig;
@@ -20,7 +22,8 @@ public class Shop : MonoBehaviour, IInteractable
         public int initialStock;
         [Range(-50, 100)]
         public float buyingDiscountPercentage;
-
+        [Range(-100, 100)]
+        public float itemSellPercentage = 10f;
 
     }
 
@@ -28,6 +31,8 @@ public class Shop : MonoBehaviour, IInteractable
     Dictionary<InventoryItem, int> stock = new Dictionary<InventoryItem, int>();
 
     Shopper currentShopper = null;
+
+    bool isBuyingMode = true;
 
     public event Action onChange;
 
@@ -53,7 +58,7 @@ public class Shop : MonoBehaviour, IInteractable
     {
         foreach (StockItemConfig config in stockConfig)
         {
-            float price = config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
+            float price = GetPrice(config);
 
             int quantityInTransaction = 0;
             transaction.TryGetValue(config.item, out quantityInTransaction);
@@ -64,10 +69,31 @@ public class Shop : MonoBehaviour, IInteractable
         }
     }
 
+    private float GetPrice(StockItemConfig config)
+    {
+        if (isBuyingMode)
+        {
+            return config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
+        }
+
+        return Mathf.Max(config.item.GetPrice() * ((sellingPercentage / 100f) - (config.itemSellPercentage / 100f)), 0);
+
+    }
+
     public void SelectFilter(ItemCategory category) { }
     public ItemCategory GetItemFilter() { return ItemCategory.None; }
-    public void SelectMode(bool isBuying) { }
-    public bool IsBuyingMode() { return true; }
+    public void SelectMode(bool isBuying) 
+    { 
+        isBuyingMode = isBuying;
+        if (onChange != null)
+        {
+            onChange();
+        }
+    }
+    public bool IsBuyingMode() 
+    { 
+        return isBuyingMode; 
+    }
     public bool CanTransact() 
     {
         if (IsTransactionEmpty()) return false;
