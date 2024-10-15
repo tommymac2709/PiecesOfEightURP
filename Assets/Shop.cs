@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEditor.ShaderGraph.Internal;
+
 
 public class Shop : MonoBehaviour, IInteractable
 {
@@ -62,11 +62,37 @@ public class Shop : MonoBehaviour, IInteractable
 
             int quantityInTransaction = 0;
             transaction.TryGetValue(config.item, out quantityInTransaction);
+            int availability = GetAvailability(config.item);
 
-            int currentStock = stock[config.item];
-
-            yield return new ShopItem(config.item, currentStock, price, quantityInTransaction);
+            yield return new ShopItem(config.item, availability, price, quantityInTransaction);
         }
+    }
+
+    private int GetAvailability(InventoryItem item)
+    {
+        if (isBuyingMode)
+        {
+            return stock[item];
+        }
+
+        return CountItemsInInventory(item);
+        
+    }
+
+    private int CountItemsInInventory(InventoryItem item)
+    {
+        Inventory inventory = currentShopper.GetComponent<Inventory>();
+        if (inventory == null) return 0;
+
+        int total = 0;
+        for (int i = 0; i < inventory.GetSize(); i++)
+        {
+            if (inventory.GetItemInSlot(i) == item)
+            {
+                total += inventory.GetNumberInSlot(i);
+            }
+        }
+        return total;
     }
 
     private float GetPrice(StockItemConfig config)
@@ -105,6 +131,8 @@ public class Shop : MonoBehaviour, IInteractable
 
     public bool HasInventorySpace()
     {
+        if (!isBuyingMode) return true;
+
         Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
         if (shopperInventory == null) return false;
         List<InventoryItem> flatItems = new List<InventoryItem>();
@@ -126,6 +154,8 @@ public class Shop : MonoBehaviour, IInteractable
 
     public bool HasSufficientFunds()
     {
+        if (!isBuyingMode) return true;
+
         Purse purse = currentShopper.GetComponent<Purse>();
         if (purse == null) return false;
 
@@ -156,9 +186,11 @@ public class Shop : MonoBehaviour, IInteractable
             transaction[item] = 0;
         }
 
-        if (transaction[item] + quantity > stock[item]) 
+        int availability = GetAvailability(item);
+
+        if (transaction[item] + quantity > availability) 
         {
-            transaction[item] = stock[item];
+            transaction[item] = availability;
         
         }
         else
@@ -193,19 +225,16 @@ public class Shop : MonoBehaviour, IInteractable
             float price = shopItem.GetPrice();
             for (int i = 0; i < quantity; i++)
             {
-                if (shopperPurse.GetBalance() < price) { break; }
-
-                bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
-
-                if (success)
+                if (isBuyingMode)
                 {
-                    AddToTransaction(item, -1);
-                    stock[item]--;
-                    shopperPurse.UpdateBalance(-price);
+                    BuyItem(shopperInventory, shopperPurse, item, price);
                 }
-            }
+                else
+                {
+                    SellItem(shopperInventory, shopperPurse, item, price);
+                }
 
-            
+            }
 
         }
 
@@ -215,6 +244,44 @@ public class Shop : MonoBehaviour, IInteractable
         }
 
 
+    }
+
+    private void SellItem(Inventory shopperInventory, Purse shopperPurse, InventoryItem item, float price)
+    {
+        int slot = FindFirstItemSlot( shopperInventory, item);
+        if (slot == -1) return;
+        
+        AddToTransaction(item, -1);
+        shopperInventory.RemoveFromSlot(slot, 1);
+        stock[item]++;
+        shopperPurse.UpdateBalance(price);
+        
+    }
+
+    private int FindFirstItemSlot(Inventory shopperInventory, InventoryItem item)
+    {
+        for (int i = 0; i < shopperInventory.GetSize(); i++)
+        {
+            if (shopperInventory.GetItemInSlot(i) == item)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private void BuyItem(Inventory shopperInventory, Purse shopperPurse, InventoryItem item, float price)
+    {
+        if (shopperPurse.GetBalance() < price) return;
+
+        bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
+
+        if (success)
+        {
+            AddToTransaction(item, -1);
+            stock[item]--;
+            shopperPurse.UpdateBalance(-price);
+        }
     }
 
     public void Interact(Transform interactorTransform)
