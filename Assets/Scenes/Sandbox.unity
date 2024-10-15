@@ -21989,7 +21989,7 @@ MonoBehaviour:
   waterLevelPadding: 0.5
   waterMaterial: {fileID: 2100000, guid: fbb04271505a76f40b984e38071e86f3, type: 2}
   dynamicMaterial: 0
-  settings: {fileID: 1964602097}
+  settings: {fileID: 0}
   useVolumeBlending: 0
   startDistance: 0
   fogDensity: 8
@@ -26914,18 +26914,22 @@ MonoBehaviour:
     initialStock: 40
     buyingDiscountPercentage: 0
     itemSellPercentage: 0
+    levelToUnlock: 1
   - item: {fileID: 11400000, guid: fc1580cae7cb93a48948fa8f8c61dc7b, type: 2}
     initialStock: 40
     buyingDiscountPercentage: 0
     itemSellPercentage: 0
+    levelToUnlock: 3
   - item: {fileID: 11400000, guid: f4d6f18decde8644586307e2588a99cd, type: 2}
     initialStock: 4
     buyingDiscountPercentage: 0
     itemSellPercentage: 0
+    levelToUnlock: 2
   - item: {fileID: 11400000, guid: c38fd5857184ff74fb82e294dc17cf51, type: 2}
     initialStock: 40
     buyingDiscountPercentage: 0
     itemSellPercentage: 0
+    levelToUnlock: 2
 --- !u!136 &1804358826
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29844,52 +29848,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1964119740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1964602097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: defe3efb56c1bc943a6bfb504a00dc77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  startDistance:
-    m_OverrideState: 0
-    m_Value: 0
-  fogDensity:
-    m_OverrideState: 0
-    m_Value: 20
-  heightFogDepth:
-    m_OverrideState: 0
-    m_Value: 25
-  heightFogDensity:
-    m_OverrideState: 0
-    m_Value: 1
-  heightFogBrightness:
-    m_OverrideState: 0
-    m_Value: 0.6
-  fogBrightness:
-    m_OverrideState: 0
-    m_Value: 1
-  subsurfaceStrength:
-    m_OverrideState: 0
-    m_Value: 0.35
-  causticsStrength:
-    m_OverrideState: 0
-    m_Value: 1
-  distortionStrength:
-    m_OverrideState: 0
-    m_Value: 0.25
-  distortionFrequency:
-    m_OverrideState: 0
-    m_Value: 0.75
-  distortionSpeed:
-    m_OverrideState: 0
-    m_Value: 0.5
 --- !u!1001 &1969157888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34260,7 +34218,7 @@ PrefabInstance:
     - target: {fileID: 5998440701910202809, guid: 50228bceb20960b438125547a770c38f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.7496
+      value: -570.7493
       objectReference: {fileID: 0}
     - target: {fileID: 5998645212039720723, guid: 50228bceb20960b438125547a770c38f,
         type: 3}

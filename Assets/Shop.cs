@@ -24,6 +24,7 @@ public class Shop : MonoBehaviour, IInteractable
         public float buyingDiscountPercentage;
         [Range(-100, 100)]
         public float itemSellPercentage = 10f;
+        public int levelToUnlock = 0;
 
     }
 
@@ -65,8 +66,12 @@ public class Shop : MonoBehaviour, IInteractable
 
     public IEnumerable<ShopItem> GetAllItems()
     {
+        int level = GetShopperLevel();
+
         foreach (StockItemConfig config in stockConfig)
         {
+            if (config.levelToUnlock > level) { continue; }
+            
             float price = GetPrice(config);
 
             int quantityInTransaction = 0;
@@ -313,6 +318,15 @@ public class Shop : MonoBehaviour, IInteractable
     public string GetShopName()
     {
         return shopName;
+    }
+
+    private int GetShopperLevel()
+    {
+        BaseStats stats = currentShopper.GetComponent<BaseStats>();
+        if (stats == null) return 0;
+
+        return stats.GetLevel();
+
     }
 
     public string GetInteractText()

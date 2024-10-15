@@ -11,7 +11,13 @@ public class Experience : MonoBehaviour, IJsonSaveable
 
     public event Action onExperienceGained;
 
-    
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.M))
+        {
+            GainExperience(Time.deltaTime * 100);
+        }
+    }
 
     public void GainExperience(float experience)
     {
