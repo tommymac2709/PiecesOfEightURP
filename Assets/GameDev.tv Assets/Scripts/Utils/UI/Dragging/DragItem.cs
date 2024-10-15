@@ -94,6 +94,11 @@ namespace GameDevTV.Core.UI.Dragging
             var destinationContainer = destination as IDragContainer<T>;
             var sourceContainer = source as IDragContainer<T>;
 
+            if (destinationContainer == null)
+            {
+                AttemptSimpleTransfer(sourceContainer);
+                return;
+            }
             // Swap won't be possible
             if (destinationContainer == null || sourceContainer == null ||
                 destinationContainer.GetItem() == null ||

@@ -34,6 +34,8 @@ public class Shop : MonoBehaviour, IInteractable
 
     bool isBuyingMode = true;
 
+    ItemCategory filter = ItemCategory.None;
+
     public event Action onChange;
 
     private void Awake()
@@ -51,7 +53,14 @@ public class Shop : MonoBehaviour, IInteractable
 
     public IEnumerable<ShopItem> GetFilteredItems() 
     {
-        return GetAllItems();
+        foreach (ShopItem shopItem in GetAllItems())
+        {
+            InventoryItem inventoryItem = shopItem.GetInventoryItem();
+            if (filter == ItemCategory.None || inventoryItem.GetCategory() == filter)
+            {
+                yield return shopItem;
+            }
+        }
     }
 
     public IEnumerable<ShopItem> GetAllItems()
@@ -106,8 +115,19 @@ public class Shop : MonoBehaviour, IInteractable
 
     }
 
-    public void SelectFilter(ItemCategory category) { }
-    public ItemCategory GetItemFilter() { return ItemCategory.None; }
+    public void SelectFilter(ItemCategory category) 
+    {
+        filter = category;
+        print(category);
+        if (onChange != null)
+        {
+            onChange();
+        }
+    }
+    public ItemCategory GetItemFilter() 
+    { 
+        return filter; 
+    }
     public void SelectMode(bool isBuying) 
     { 
         isBuyingMode = isBuying;

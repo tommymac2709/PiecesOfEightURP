@@ -19,6 +19,7 @@ MonoBehaviour:
   pickup: {fileID: -3440914615517353341, guid: aec950133ee2d3540ba1896229e85e53, type: 3}
   stackable: 0
   price: 325
+  category: 2
   allowedEquipLocation: 5
   _weaponPrefab: {fileID: 2353232748905043175, guid: 3f9b608573ba1754d87e4a460979cb1b,
     type: 3}

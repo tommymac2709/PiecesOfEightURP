@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4562214006214592290}
   - component: {fileID: 1356086305383633387}
   - component: {fileID: 7758828854650600828}
+  - component: {fileID: 7446649209263908819}
   m_Layer: 0
   m_Name: WeaponsButton
   m_TagString: Untagged
@@ -121,6 +122,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7446649209263908819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597680973655518411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d22ab3a9bbca94a904dd76a16e709e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 2
 --- !u!1 &828861658319503837
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,9 +798,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Special
-
-'
+  m_text: Other
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1127,6 +1139,7 @@ GameObject:
   - component: {fileID: 478706323117522223}
   - component: {fileID: 554778045445984504}
   - component: {fileID: 4962688089613762935}
+  - component: {fileID: 8731427560725752025}
   m_Layer: 0
   m_Name: AllButton
   m_TagString: Untagged
@@ -1236,6 +1249,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8731427560725752025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718274697977110911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d22ab3a9bbca94a904dd76a16e709e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 0
 --- !u!1 &2772195152717278048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2122,7 @@ GameObject:
   - component: {fileID: 6541853876851195501}
   - component: {fileID: 5056145325431405222}
   - component: {fileID: 1685927227640451126}
+  - component: {fileID: 524245867314646640}
   m_Layer: 0
   m_Name: AbilitiesButton
   m_TagString: Untagged
@@ -2205,6 +2232,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &524245867314646640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895692932621125467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d22ab3a9bbca94a904dd76a16e709e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 3
 --- !u!1 &5310590838850977215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,8 +2257,9 @@ GameObject:
   - component: {fileID: 2263084168389643096}
   - component: {fileID: 2077532900943414803}
   - component: {fileID: 6261384806373072833}
+  - component: {fileID: 7011997593121672621}
   m_Layer: 0
-  m_Name: SpecialButton (1)
+  m_Name: OtherButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2326,6 +2367,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7011997593121672621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310590838850977215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d22ab3a9bbca94a904dd76a16e709e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 4
 --- !u!1 &6435921426348947608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,6 +2683,7 @@ GameObject:
   - component: {fileID: 4607227333280286165}
   - component: {fileID: 6489984780351423436}
   - component: {fileID: 576886421644571932}
+  - component: {fileID: 4973915294448252934}
   m_Layer: 0
   m_Name: WearablesButton
   m_TagString: Untagged
@@ -2738,6 +2793,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4973915294448252934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243645069847709204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d22ab3a9bbca94a904dd76a16e709e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 1
 --- !u!1 &8872277433631110772
 GameObject:
   m_ObjectHideFlags: 0

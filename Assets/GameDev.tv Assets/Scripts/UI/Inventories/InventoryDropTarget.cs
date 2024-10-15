@@ -18,7 +18,9 @@ namespace GameDevTV.UI.Inventories
         public void AddItems(InventoryItem item, int number)
         {
             var player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<ItemDropper>().DropItem(item, number);
+            ItemDropper itemDropper = player.GetComponent<ItemDropper>();
+            if (itemDropper == null) return;
+            itemDropper.DropItem(item, number);
         }
 
         public int MaxAcceptable(InventoryItem item)

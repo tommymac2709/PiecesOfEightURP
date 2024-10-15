@@ -4,5 +4,5 @@ public enum ItemCategory
     Wearables,
     Weapons,
     Abilities,
-    Special
+    Other
 }
