@@ -5478,6 +5478,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 367204267}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &368272361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defe3efb56c1bc943a6bfb504a00dc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  startDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  fogDensity:
+    m_OverrideState: 0
+    m_Value: 20
+  heightFogDepth:
+    m_OverrideState: 0
+    m_Value: 25
+  heightFogDensity:
+    m_OverrideState: 0
+    m_Value: 1
+  heightFogBrightness:
+    m_OverrideState: 0
+    m_Value: 0.6
+  fogBrightness:
+    m_OverrideState: 0
+    m_Value: 1
+  subsurfaceStrength:
+    m_OverrideState: 0
+    m_Value: 0.35
+  causticsStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  distortionStrength:
+    m_OverrideState: 0
+    m_Value: 0.25
+  distortionFrequency:
+    m_OverrideState: 0
+    m_Value: 0.75
+  distortionSpeed:
+    m_OverrideState: 0
+    m_Value: 0.5
 --- !u!1 &371532286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3655746786952929560, guid: c0e783d3458b6c340b95648897321979,
@@ -8309,7 +8355,7 @@ PrefabInstance:
     - target: {fileID: 1942473445905523857, guid: 545ff59551bd8c443a5720495dcb1a49,
         type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2654317031804091238, guid: 545ff59551bd8c443a5720495dcb1a49,
         type: 3}
@@ -8569,7 +8615,7 @@ PrefabInstance:
     - target: {fileID: 8866218720799106939, guid: 545ff59551bd8c443a5720495dcb1a49,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: -0.000013351793
       objectReference: {fileID: 0}
     - target: {fileID: 8900730946647546423, guid: 545ff59551bd8c443a5720495dcb1a49,
         type: 3}
@@ -21989,7 +22035,7 @@ MonoBehaviour:
   waterLevelPadding: 0.5
   waterMaterial: {fileID: 2100000, guid: fbb04271505a76f40b984e38071e86f3, type: 2}
   dynamicMaterial: 0
-  settings: {fileID: 0}
+  settings: {fileID: 368272361}
   useVolumeBlending: 0
   startDistance: 0
   fogDensity: 8
