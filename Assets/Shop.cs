@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 
-
-public class Shop : MonoBehaviour, IInteractable
+public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 {
     
     [SerializeField] string shopName;
@@ -338,4 +339,33 @@ public class Shop : MonoBehaviour, IInteractable
     {
         return this.transform;
     }
+
+    public JToken CaptureAsJToken()
+    {
+        JObject state = new JObject();
+        IDictionary<string, JToken> stateDict = state;
+        foreach (KeyValuePair<InventoryItem, int> pair in stock)
+        {
+            stateDict[pair.Key.GetItemID()] = JToken.FromObject(pair.Value);
+        }
+        return state;
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        if (state is JObject stateObject)
+        {
+            IDictionary<string, JToken> stateDict = stateObject;
+            stock.Clear();
+            foreach (KeyValuePair<string, JToken> pair in stateDict)
+            {
+                InventoryItem item = InventoryItem.GetFromID(pair.Key);
+                if (item)
+                {
+                    stock[item] = pair.Value.ToObject<int>();
+                }
+            }
+        }
+    }
+
 }

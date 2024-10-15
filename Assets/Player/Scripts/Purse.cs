@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using GameDevTV.Saving;
+using Newtonsoft.Json.Linq;
 
-public class Purse : MonoBehaviour
+public class Purse : MonoBehaviour, IJsonSaveable
 {
     [SerializeField] float startingBalance = 400f;
 
@@ -30,4 +32,14 @@ public class Purse : MonoBehaviour
         }
         
     }
+    public JToken CaptureAsJToken()
+    {
+        return JToken.FromObject(currentBalance);
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        currentBalance = state.ToObject<float>();
+    }
+
 }

@@ -26872,6 +26872,7 @@ GameObject:
   - component: {fileID: 1804358824}
   - component: {fileID: 1804358826}
   - component: {fileID: 1804358825}
+  - component: {fileID: 1804358827}
   m_Layer: 0
   m_Name: TestShopkeeper
   m_TagString: Untagged
@@ -26953,6 +26954,19 @@ CapsuleCollider:
   m_Height: 1.86
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1804358827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804358823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed41a504b1e4f14e9ed75617dc7e959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 4bf5e3ad-4453-4477-9664-1e722c8d171e
 --- !u!1001 &1805057344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34218,7 +34232,7 @@ PrefabInstance:
     - target: {fileID: 5998440701910202809, guid: 50228bceb20960b438125547a770c38f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.7493
+      value: -570.74915
       objectReference: {fileID: 0}
     - target: {fileID: 5998645212039720723, guid: 50228bceb20960b438125547a770c38f,
         type: 3}
