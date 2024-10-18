@@ -6,55 +6,56 @@ using UnityEngine;
 
 public class SavingWrapper : MonoBehaviour
 {
-    PlayerStateMachine stateMachine;
-    JSonSavingSystem savingSystem;
+    
     [SerializeField] float fadeInTime = 2f;
 
     const string defaultSaveFile = "save";
 
-    private void Awake()
+    public void ContinueGame()
     {
-        stateMachine = GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>();
+        StartCoroutine(LoadLastScene());
     }
 
-    IEnumerator Start()
+    private IEnumerator LoadLastScene()
     {
-        savingSystem = GetComponent<JSonSavingSystem>();
         Fader fader = FindObjectOfType<Fader>();
-        fader.FadeOutImmediate();
-        yield return savingSystem.LoadLastScene(defaultSaveFile);
+        yield return fader.FadeOut(fadeInTime);
+        yield return GetComponent<JSonSavingSystem>().LoadLastScene(defaultSaveFile);
         yield return fader.FadeIn(fadeInTime);
 
-        
+
 
     }
 
-    private void OnEnable()
-    {
-        InputReader.SaveGameEvent += SaveGame;
-        InputReader.LoadGameEvent += LoadGame;
-    }
+     private void Update() 
+     {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                SaveGame();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                LoadGame();
+            }
+            if (Input.GetKeyDown(KeyCode.Delete))
+            {
+                Delete();
+            }
+     }
 
     public void LoadGame()
     {
-        
-        savingSystem.Load(defaultSaveFile);
+        GetComponent<JSonSavingSystem>().Load(defaultSaveFile);
     }
 
-    public void SaveGame()
-    {
-        savingSystem.Save(defaultSaveFile);
-    }
+        public void SaveGame()
+        {
+            GetComponent<JSonSavingSystem>().Save(defaultSaveFile);
+        }
 
-    private void OnDisable()
-    {
-        InputReader.SaveGameEvent -= SaveGame;
-        InputReader.LoadGameEvent -= LoadGame;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public void Delete()
+        {
+            GetComponent<JSonSavingSystem>().Delete(defaultSaveFile);
+        }
 }
+

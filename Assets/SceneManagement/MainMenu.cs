@@ -1,18 +1,28 @@
+using GameDevTV.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    LazyValue<SavingWrapper> savingWrapper;
+
+    private void Awake()
     {
-        
+        savingWrapper = new LazyValue<SavingWrapper>(GetSavingWrapper);
     }
 
-    // Update is called once per frame
-    void Update()
+    
+
+    private SavingWrapper GetSavingWrapper()
     {
-        
+        return FindObjectOfType<SavingWrapper>();
+
+    }
+
+    public void ContinueGame()
+    {
+        savingWrapper.value.ContinueGame();
     }
 }
