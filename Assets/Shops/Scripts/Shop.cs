@@ -40,7 +40,7 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 
     public event Action onChange;
 
-    public event Action onShopOpen;
+    
 
     private void Awake()
     {
@@ -314,12 +314,9 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 
     public void Interact(Transform interactorTransform)
     {
-        var shopper = GameObject.FindWithTag("Player").GetComponent<Shopper>();
-        shopper.SetActiveShop(this);
-        if(onShopOpen != null)
-        {
-            onShopOpen();
-        }
+        interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
+        
+       
         
     }
 

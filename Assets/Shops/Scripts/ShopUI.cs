@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopUI : MonoBehaviour
+public class ShopUI : WindowController
 {
     [SerializeField] TextMeshProUGUI shopName;
     [SerializeField] TextMeshProUGUI totalPriceField;
@@ -96,6 +97,7 @@ public class ShopUI : MonoBehaviour
     public void Close()
     {
         shopper.SetActiveShop(null);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void ConfirmTransaction()
@@ -108,5 +110,17 @@ public class ShopUI : MonoBehaviour
         currentShop.SelectMode(!currentShop.IsBuyingMode());
     }
 
- 
+    protected override void Subscribe()
+    {
+        shopper = GameObject.FindGameObjectWithTag("Player").GetComponent<Shopper>();
+        if (shopper == null) return;
+
+        shopper.activeShopChange += ShopChanged;
+    }
+
+    protected override void Unsubscribe()
+    {
+        shopper.activeShopChange -= ShopChanged;
+    }
+
 }
