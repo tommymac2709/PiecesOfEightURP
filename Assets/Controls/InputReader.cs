@@ -26,6 +26,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     public event Action InteractEvent;
     public event Action CancelWindowEvent;
     public event Action InventoryEvent;
+    public event Action ShopEvent;
     public static event Action SaveGameEvent;
     public static event Action LoadGameEvent;
     public static event Action DeleteSaveFileEvent;
@@ -186,6 +187,15 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
         if (context.performed)
         {
             InventoryEvent?.Invoke();
+        }
+
+    }
+
+    public void OnShop(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            ShopEvent?.Invoke();
         }
 
     }

@@ -40,6 +40,8 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 
     public event Action onChange;
 
+    public event Action onShopOpen;
+
     private void Awake()
     {
         foreach (StockItemConfig config in stockConfig)
@@ -314,6 +316,11 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
     {
         var shopper = GameObject.FindWithTag("Player").GetComponent<Shopper>();
         shopper.SetActiveShop(this);
+        if(onShopOpen != null)
+        {
+            onShopOpen();
+        }
+        
     }
 
     public string GetShopName()

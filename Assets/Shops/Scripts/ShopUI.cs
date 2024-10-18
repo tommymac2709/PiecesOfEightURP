@@ -107,4 +107,6 @@ public class ShopUI : MonoBehaviour
     {
         currentShop.SelectMode(!currentShop.IsBuyingMode());
     }
+
+ 
 }
