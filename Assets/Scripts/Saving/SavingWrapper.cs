@@ -33,6 +33,12 @@ public class SavingWrapper : MonoBehaviour
         PlayerPrefs.SetString(currentSaveKey, saveFile);
     }
 
+    public void LoadGame(string saveFile)
+    {
+        SetCurrentSave(saveFile);
+        ContinueGame();
+    }
+
     private string GetCurrentSave()
     {
         return PlayerPrefs.GetString(currentSaveKey);
@@ -84,5 +90,10 @@ public class SavingWrapper : MonoBehaviour
         {
             GetComponent<JSonSavingSystem>().Delete(GetCurrentSave());
         }
+
+    public IEnumerable<string> ListSaves()
+    {
+        return GetComponent<JSonSavingSystem>().ListSaves();
+    }
 }
 
