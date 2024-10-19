@@ -54,6 +54,12 @@ namespace GameDevTV.Saving
             RestoreFromToken(LoadJsonFromFile(saveFile));
         }
 
+        public bool SaveFileExists(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            return File.Exists(path);
+        }
+
         public IEnumerable<string> ListSaves()
         {
             foreach (string path in Directory.EnumerateFiles(Application.persistentDataPath))
