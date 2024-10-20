@@ -11,6 +11,13 @@ public class Experience : MonoBehaviour, IJsonSaveable
 
     public event Action onExperienceGained;
 
+    SavingWrapper wrapper;
+
+    private void Start()
+    {
+        wrapper = FindObjectOfType<SavingWrapper>();    
+    }
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.M))
@@ -22,7 +29,9 @@ public class Experience : MonoBehaviour, IJsonSaveable
     public void GainExperience(float experience)
     {
         currentExperiencePoints += experience;
+        wrapper.SaveGame();
         onExperienceGained();
+
     }
 
     public float GetExperience()

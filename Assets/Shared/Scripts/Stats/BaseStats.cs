@@ -18,6 +18,7 @@ public class BaseStats : MonoBehaviour, ISaveable
     LazyValue<int> currentLevel;
 
     Experience experience;
+    SavingWrapper wrapper;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class BaseStats : MonoBehaviour, ISaveable
 
     private void Start()
     {
+        wrapper = FindObjectOfType<SavingWrapper>();
         currentLevel.ForceInit();
     }
 
@@ -54,6 +56,7 @@ public class BaseStats : MonoBehaviour, ISaveable
             currentLevel.value = newLevel;
             LevelUpEffect();
             onLevelUp();
+            wrapper.SaveGame();
         }
     }
 

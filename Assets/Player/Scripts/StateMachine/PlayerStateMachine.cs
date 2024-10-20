@@ -1,5 +1,6 @@
 using GameDevTV.Saving;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
@@ -67,9 +68,10 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
     public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
     public Transform MainCameraTransform { get; private set; }
 
+    public event Action onSaveableEvent;
+
     private void Start()
     {
-        Time.timeScale = 1f;
         //Inventory.Container.Clear();
 
         MainCameraTransform = Camera.main.transform;
