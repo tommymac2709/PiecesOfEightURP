@@ -46,7 +46,14 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
 
         WindowController.OnAnyWindowOpened += DisableControls;
         WindowController.OnAllWindowsClosed += EnableControls;
+        Health.OnDeathUI += DisableAllControls;
 
+    }
+
+    private void DisableAllControls()
+    {
+        controls.Player.Disable();
+        controls.UI.Disable();
     }
 
     void EnableControls()
@@ -64,6 +71,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     {
         WindowController.OnAnyWindowOpened -= DisableControls;
         WindowController.OnAllWindowsClosed -= EnableControls;
+
+        Health.OnDeathUI -= DisableAllControls;
 
         controls.Player.Disable();
         controls.UI.Disable();

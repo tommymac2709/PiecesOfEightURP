@@ -9,6 +9,7 @@ public class DeathUI : MonoBehaviour
 
     public void ReloadGame()
     {
+
         StartCoroutine(ReloadRoutine());
     }
 

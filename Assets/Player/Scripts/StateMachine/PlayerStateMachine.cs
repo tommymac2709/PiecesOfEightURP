@@ -89,6 +89,7 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
 
     private IEnumerator RespawnRoutine()
     {
+
         yield return new WaitForSeconds(2f);
         Fader fader = FindObjectOfType<Fader>();
         yield return fader.FadeOut(2f);

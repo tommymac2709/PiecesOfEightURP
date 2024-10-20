@@ -17,6 +17,7 @@ public class Health : MonoBehaviour, IJsonSaveable
     public event Action OnTakeDamage;
     public event Action OnDie;
     public UnityEvent onResurrection;
+    public static event Action OnDeathUI;
 
     public bool IsDead => currentHealth.value == 0f;
 
@@ -85,6 +86,7 @@ public class Health : MonoBehaviour, IJsonSaveable
         if (currentHealth.value == 0)
         {
             OnDie?.Invoke();
+            OnDeathUI?.Invoke();
             AwardExperience(instigator);
 
         }
