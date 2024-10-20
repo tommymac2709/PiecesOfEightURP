@@ -73,6 +73,7 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
     private void Start()
     {
         //Inventory.Container.Clear();
+        
 
         MainCameraTransform = Camera.main.transform;
 

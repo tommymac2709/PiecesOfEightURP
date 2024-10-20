@@ -44,7 +44,7 @@ public class SavingWrapper : MonoBehaviour
         ContinueGame();
     }
 
-    private string GetCurrentSave()
+    public string GetCurrentSave()
     {
         return PlayerPrefs.GetString(currentSaveKey);
     }
@@ -54,6 +54,9 @@ public class SavingWrapper : MonoBehaviour
         yield return fader.FadeOut(fadeInTime);
         yield return SceneManager.LoadSceneAsync(firstSceneBuildIndex);
         yield return fader.FadeIn(fadeInTime);
+        SaveGame();
+
+
     }
 
     private IEnumerator LoadMenuScene()
@@ -73,21 +76,6 @@ public class SavingWrapper : MonoBehaviour
 
     }
 
-     private void Update() 
-     {
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                SaveGame();
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                LoadGame();
-            }
-            if (Input.GetKeyDown(KeyCode.Delete))
-            {
-                Delete();
-            }
-     }
 
     public void LoadGame()
     {
