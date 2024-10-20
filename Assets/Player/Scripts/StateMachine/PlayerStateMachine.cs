@@ -36,6 +36,8 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
 
     [field: SerializeField] public GameObject FreeLookCamera { get; private set; }
 
+    [field: SerializeField] public GameObject DeathUI { get; private set; }
+
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
 
     [field: SerializeField] public float FreeLookSprintMovementSpeed { get; private set; }
@@ -67,6 +69,7 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
 
     private void Start()
     {
+        Time.timeScale = 1f;
         //Inventory.Container.Clear();
 
         MainCameraTransform = Camera.main.transform;
@@ -84,8 +87,11 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
     private IEnumerator RespawnRoutine()
     {
         yield return new WaitForSeconds(2f);
-        SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
-        wrapper.ContinueGame();
+        Fader fader = FindObjectOfType<Fader>();
+        yield return fader.FadeOut(2f);
+        DeathUI.SetActive(true);
+        yield return fader.FadeIn(2f);
+        
 
     }
     private void OnEnable()
