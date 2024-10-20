@@ -13,14 +13,12 @@ public class SaveLoadUI : MonoBehaviour
     void OnEnable()
     {
         SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
-
-
-        //Debug.Log("Loading list of save files");
-        //foreach (Transform child in contentRoot)
-        //{
-        //    Destroy(child.gameObject);
-        //}
-
+        if (wrapper == null) { return; }
+        foreach (Transform child in contentRoot)
+        {
+            Destroy(child.gameObject);
+        }
+        
         foreach (string save in wrapper.ListSaves())
         {
             GameObject buttonInstance = Instantiate(buttonPrefab, contentRoot);

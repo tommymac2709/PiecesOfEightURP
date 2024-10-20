@@ -10,8 +10,10 @@ public class SavingWrapper : MonoBehaviour
     
     [SerializeField] float fadeInTime = 2f;
     [SerializeField] int firstSceneBuildIndex = 1;
+    [SerializeField] int menuSceneBuildIndex = 0;
 
-    
+
+
     private const string currentSaveKey = "currentSaveName";
 
     public void ContinueGame()
@@ -48,6 +50,14 @@ public class SavingWrapper : MonoBehaviour
         Fader fader = FindObjectOfType<Fader>();
         yield return fader.FadeOut(fadeInTime);
         yield return SceneManager.LoadSceneAsync(firstSceneBuildIndex);
+        yield return fader.FadeIn(fadeInTime);
+    }
+
+    private IEnumerator LoadMenuScene()
+    {
+        Fader fader = FindObjectOfType<Fader>();
+        yield return fader.FadeOut(fadeInTime);
+        yield return SceneManager.LoadSceneAsync(menuSceneBuildIndex);
         yield return fader.FadeIn(fadeInTime);
     }
 
@@ -94,6 +104,11 @@ public class SavingWrapper : MonoBehaviour
     public IEnumerable<string> ListSaves()
     {
         return GetComponent<JSonSavingSystem>().ListSaves();
+    }
+
+    public void LoadMenu()
+    {
+        StartCoroutine(LoadMenuScene());
     }
 }
 

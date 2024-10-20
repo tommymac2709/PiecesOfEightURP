@@ -23,7 +23,7 @@ public class Fader : MonoBehaviour
     {
         while (canvasGroup.alpha < 1)
         {
-            canvasGroup.alpha += Time.deltaTime / time;
+            canvasGroup.alpha += Time.unscaledDeltaTime / time;
             yield return null;
         }
     }
@@ -32,7 +32,7 @@ public class Fader : MonoBehaviour
     {
         while (canvasGroup.alpha > 0)
         {
-            canvasGroup.alpha -= Time.deltaTime / time;
+            canvasGroup.alpha -= Time.unscaledDeltaTime / time;
             yield return null;
         }
     }

@@ -37,17 +37,17 @@ public class PauseMenuUI : WindowController
         }
     }
 
-    //public void Save()
-    //{
-    //    SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
-    //    savingWrapper.Save();
-    //}
+    public void Save()
+    {
+        SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+        savingWrapper.SaveGame();
+    }
 
-    //public void SaveAndQuit()
-    //{
-    //    SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
-    //    savingWrapper.Save();
-    //    savingWrapper.LoadMenu();
-    //}
+    public void SaveAndQuit()
+    {
+        SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+        savingWrapper.SaveGame();
+        savingWrapper.LoadMenu();
+    }
 }
 
