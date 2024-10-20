@@ -12,7 +12,10 @@ public class SavingWrapper : MonoBehaviour
     [SerializeField] int firstSceneBuildIndex = 1;
     [SerializeField] int menuSceneBuildIndex = 0;
 
-
+    private void Start()
+    {
+        
+    }
 
     private const string currentSaveKey = "currentSaveName";
 

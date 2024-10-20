@@ -4,17 +4,19 @@ using GameDevTV.Utils;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using GameDevTV.Saving;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour, IJsonSaveable
 {
     //Used in health regeneration to regenerate health on level up to percentage of new level max health
     [SerializeField] float regenerationPercentage = 70f;
 
-    [SerializeField] private float maxHealth = 100f;
+    //[SerializeField] private float maxHealth = 100f;
     [SerializeField] public LazyValue<float> currentHealth { get; private set; }
 
     public event Action OnTakeDamage;
     public event Action OnDie;
+    public UnityEvent onResurrection;
 
     public bool IsDead => currentHealth.value == 0f;
 

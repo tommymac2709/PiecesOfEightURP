@@ -72,8 +72,22 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
         MainCameraTransform = Camera.main.transform;
 
         SwitchState(new PlayerFreeLookState(this));
+
+        Health.onResurrection.AddListener(() =>
+        {
+            StartCoroutine(RespawnRoutine());
+            
+        });
+
     }
 
+    private IEnumerator RespawnRoutine()
+    {
+        yield return new WaitForSeconds(2f);
+        SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
+        wrapper.ContinueGame();
+
+    }
     private void OnEnable()
     {
         Health.OnTakeDamage += HandleTakeDamage;
