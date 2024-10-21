@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4463c25de12df48bd4003873c4406e, type: 3}
   m_Name: TwoHandThrust
   m_EditorClassIdentifier: 
-  <ApplyRootMotion>k__BackingField: 0
+  <ApplyRootMotion>k__BackingField: 1
   <AnimationName>k__BackingField: Attack3
   damageModifier: 2
   transitionDuration: 0.1
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: bbc2a1d1f7118264e95af55b02455bc4,
     type: 2}
+  <Cooldown>k__BackingField: 1
   comboAttackTime: 0.801
   <Knockback>k__BackingField: 3
