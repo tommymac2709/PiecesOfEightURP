@@ -86,7 +86,12 @@ public class Health : MonoBehaviour, IJsonSaveable
         if (currentHealth.value == 0)
         {
             OnDie?.Invoke();
-            OnDeathUI?.Invoke();
+
+            if (gameObject.CompareTag("Player"))
+            {
+                OnDeathUI?.Invoke();
+            }
+            
             AwardExperience(instigator);
 
         }
