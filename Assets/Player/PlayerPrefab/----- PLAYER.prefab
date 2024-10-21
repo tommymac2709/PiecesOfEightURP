@@ -1242,6 +1242,7 @@ GameObject:
   - component: {fileID: 9042447458106717161}
   - component: {fileID: 5933670159358864605}
   - component: {fileID: 9122494442107826661}
+  - component: {fileID: 1737831436256227210}
   m_Layer: 3
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -1295,6 +1296,7 @@ MonoBehaviour:
   <WeaponDamage>k__BackingField: {fileID: 0}
   <TargetCamera>k__BackingField: {fileID: 0}
   <FreeLookCamera>k__BackingField: {fileID: 0}
+  <DeathUI>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 8
   <FreeLookSprintMovementSpeed>k__BackingField: 15
   <TargetingMovementSpeed>k__BackingField: 6
@@ -1429,7 +1431,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenerationPercentage: 70
-  maxHealth: 100
+  onResurrection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &448684375731609609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,6 +1722,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBalance: 10000
+--- !u!114 &1737831436256227210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890225168022548691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c756a4f32f0d945bb0d60bb0f29ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1894074468985138207
 GameObject:
   m_ObjectHideFlags: 0
