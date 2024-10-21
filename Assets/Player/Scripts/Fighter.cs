@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameDevTV.Inventories;
 
-public class Fighter : MonoBehaviour, IJsonSaveable
+public class Fighter : MonoBehaviour /*IJsonSaveable*/
 {
     [SerializeField] WeaponConfig unarmedWeaponConfig = null;
     [SerializeField] WeaponConfig defaultWeaponConfig = null;
@@ -222,17 +222,17 @@ public class Fighter : MonoBehaviour, IJsonSaveable
 
 
 
-    public JToken CaptureAsJToken()
-    {
-        return JToken.FromObject(currentWeaponConfig.name);
-    }
+    //public JToken CaptureAsJToken()
+    //{
+    //    return JToken.FromObject(currentWeaponConfig.name);
+    //}
 
-    public void RestoreFromJToken(JToken state)
-    {
-        string weaponName = state.ToObject<string>();
-        WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
-        EquipWeapon(weapon);
-    }
+    //public void RestoreFromJToken(JToken state)
+    //{
+    //    string weaponName = state.ToObject<string>();
+    //    WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
+    //    EquipWeapon(weapon);
+    //}
 
 
 }

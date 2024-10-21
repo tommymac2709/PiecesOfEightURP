@@ -19,7 +19,7 @@ public class DeathUI : MonoBehaviour
         Fader fader = FindObjectOfType<Fader>();
         yield return fader.FadeOut(0.2f);
         this.gameObject.SetActive(false);
-        wrapper.LoadGame(wrapper.GetCurrentSave());
+        wrapper.ContinueGame();
     }
 
     public void LoadMenu()
