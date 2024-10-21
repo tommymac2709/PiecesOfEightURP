@@ -15,6 +15,9 @@ namespace GameDevTV.Inventories
         // STATE
         private List<Pickup> droppedItems = new List<Pickup>();
 
+        [SerializeField] Transform dropPosition;
+        [SerializeField] private Vector3 offset;
+
         // PUBLIC
 
         /// <summary>
@@ -47,7 +50,8 @@ namespace GameDevTV.Inventories
         /// <returns>The location the drop should be spawned.</returns>
         protected virtual Vector3 GetDropLocation()
         {
-            return transform.position;
+            //return transform.position + offset;
+            return dropPosition.transform.position;
         }
 
         // PRIVATE

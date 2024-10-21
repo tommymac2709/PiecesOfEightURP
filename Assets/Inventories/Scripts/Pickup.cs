@@ -23,6 +23,17 @@ namespace GameDevTV.Inventories
             inventory = player.GetComponent<Inventory>();
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag != "Player"  && collision.gameObject.tag != "Pickup")
+            {
+                Rigidbody rb = GetComponent<Rigidbody>();
+                rb.isKinematic = true;
+                GetComponent<BoxCollider>().enabled = false;
+            }
+            
+        }
+
         // PUBLIC
 
         /// <summary>

@@ -8,6 +8,7 @@ TagManager:
   - Ragdoll
   - Climbing
   - Enemy
+  - Pickup
   layers:
   - Default
   - TransparentFX
