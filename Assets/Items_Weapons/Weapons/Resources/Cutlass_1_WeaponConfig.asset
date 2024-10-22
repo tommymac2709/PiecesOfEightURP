@@ -23,7 +23,7 @@ MonoBehaviour:
   allowedEquipLocation: 5
   _weaponPrefab: {fileID: 2353232748905043175, guid: 3f9b608573ba1754d87e4a460979cb1b,
     type: 3}
-  _weaponDamage: 50
+  _weaponDamage: 5
   percentageBonus: 10
   isRightHanded: 1
   <Attacks>k__BackingField:

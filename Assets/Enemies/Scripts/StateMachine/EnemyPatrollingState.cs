@@ -68,7 +68,7 @@ public class EnemyPatrollingState : EnemyBaseState
         //Since the waypoint won't move, we can simply set the destination here on the Agent
         stateMachine.Agent.SetDestination(targetPatrolPoint);
         //Set the animation
-        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(WalkHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)

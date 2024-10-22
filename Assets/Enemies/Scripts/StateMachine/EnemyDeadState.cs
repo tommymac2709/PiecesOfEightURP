@@ -13,9 +13,11 @@ public class EnemyDeadState : EnemyBaseState
 
     public override void Enter()
     {
+        Debug.Log("Enemy Entered dead state");
         stateMachine.Animator.CrossFadeInFixedTime(DeathAnimHash, CrossFadeDuration);
+        Debug.Log("Anim should have played");
         stateMachine.Controller.enabled = false;
-        stateMachine.Animator.enabled = false;
+        //stateMachine.Animator.enabled = false;
         //var navMesh = stateMachine.gameObject.GetComponent<NavMeshAgent>();
         //navMesh.enabled = false;
         stateMachine.enabled = false;
