@@ -3196,7 +3196,7 @@ MonoBehaviour:
   <ParriedStateDuration>k__BackingField: 1
   <WanderRadius>k__BackingField: 10
   <WanderTimer>k__BackingField: 2
-  <AttackRange>k__BackingField: 3.5
+  <AttackRange>k__BackingField: 2
   <AttackDamage>k__BackingField: 0
   <AttackKnockback>k__BackingField: 5
   <PlayerDetectRange>k__BackingField: 10

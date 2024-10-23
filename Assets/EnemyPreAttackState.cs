@@ -7,7 +7,7 @@ public class EnemyPreAttackState : EnemyBaseState
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRightSpeed");
 
     private const float CrossFadeDuration = 0.1f;
-    private const float PreAttackDuration = 1.5f;
+    private const float PreAttackDuration = 3f;
     private const float CircleChangeCooldownDuration = 2f; // Cooldown duration for circling direction change
 
     private float timeSpentPreAttacking;
@@ -17,29 +17,35 @@ public class EnemyPreAttackState : EnemyBaseState
     // Speed variables for different behaviors
     [SerializeField] private float moveTowardSpeed = 0.5f;
     [SerializeField] private float moveAwaySpeed = 0.5f;
-    [SerializeField] private float diagonalBackwardSpeed = 0.5f; // New speed for diagonal backward
+    [SerializeField] private float diagonalBackwardSpeed = 0.5f;
     [SerializeField] private float circleSpeed = 0.5f;
 
     private enum PreAttackBehavior { CircleLeft, CircleRight, MoveToward, MoveAway, DiagonalBackward }
     private PreAttackBehavior chosenBehavior;
+    private PreAttackBehavior previousBehavior;
 
-    // Current animator parameter values
+    // Variables to hold current and target values for smooth transitions
     private float currentForwardValue;
     private float currentRightValue;
+    private float targetForwardValue;
+    private float targetRightValue;
 
     public EnemyPreAttackState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(CircleBlendTreeHash, 0.5f);
+        stateMachine.Animator.CrossFadeInFixedTime(CircleBlendTreeHash, CrossFadeDuration);
         timeSpentPreAttacking = 0;
         circleChangeCooldown = 0; // Reset cooldown
         hasDecidedToAttack = false;
+        previousBehavior = chosenBehavior;
         ChooseRandomBehavior();
 
-        // Initialize current values
-        currentForwardValue = 0f;
-        currentRightValue = 0f;
+        // Initialize current and target values
+        currentForwardValue = stateMachine.Animator.GetFloat(TargetingForwardHash);
+        currentRightValue = stateMachine.Animator.GetFloat(TargetingRightHash);
+        targetForwardValue = currentForwardValue;
+        targetRightValue = currentRightValue;
     }
 
     public override void Tick(float deltaTime)
@@ -51,13 +57,17 @@ public class EnemyPreAttackState : EnemyBaseState
         }
 
         timeSpentPreAttacking += deltaTime;
-        circleChangeCooldown -= deltaTime; // Decrease cooldown timer
+        circleChangeCooldown -= deltaTime;
 
         AdjustBehaviorBasedOnDistance(deltaTime);
 
-        // Smoothly update animator parameters
-        stateMachine.Animator.SetFloat(TargetingForwardHash, Mathf.Lerp(stateMachine.Animator.GetFloat(TargetingForwardHash), currentForwardValue, 0.1f));
-        stateMachine.Animator.SetFloat(TargetingRightHash, Mathf.Lerp(stateMachine.Animator.GetFloat(TargetingRightHash), currentRightValue, 0.1f));
+        // Smoothly interpolate between current and target values
+        currentForwardValue = Mathf.Lerp(currentForwardValue, targetForwardValue, 0.1f); // Lerp to target forward value
+        currentRightValue = Mathf.Lerp(currentRightValue, targetRightValue, 0.1f); // Lerp to target right value
+
+        // Apply the lerped values to the animator
+        stateMachine.Animator.SetFloat(TargetingForwardHash, currentForwardValue);
+        stateMachine.Animator.SetFloat(TargetingRightHash, currentRightValue);
 
         if (timeSpentPreAttacking >= PreAttackDuration && !hasDecidedToAttack)
         {
@@ -78,11 +88,12 @@ public class EnemyPreAttackState : EnemyBaseState
     {
         float distanceToPlayer = Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position);
 
+
         // Handle movement based on proximity to player
         switch (chosenBehavior)
         {
             case PreAttackBehavior.MoveToward:
-                if (distanceToPlayer <= 2.5f) // Stop if within 1 unit
+                if (distanceToPlayer <= 1.5f) // Stop if within 1 unit
                 {
                     ChooseRandomCircle(); // Choose circling direction
                 }
@@ -93,7 +104,7 @@ public class EnemyPreAttackState : EnemyBaseState
                 break;
 
             case PreAttackBehavior.MoveAway:
-                if (distanceToPlayer >= 3f) // Stop if farther than 2 units
+                if (distanceToPlayer >= 2f) // Stop if farther than 2 units
                 {
                     ChooseRandomCircle(); // Choose circling direction
                 }
@@ -116,12 +127,25 @@ public class EnemyPreAttackState : EnemyBaseState
 
             case PreAttackBehavior.CircleLeft:
                 CirclePlayer(deltaTime, true); // Circle left
+                // If the timer hits zero, choose a new random behavior
+                if (circleChangeCooldown <= 0)
+                {
+                    ChooseRandomBehavior(); // Choose a new behavior
+                }
                 break;
 
             case PreAttackBehavior.CircleRight:
                 CirclePlayer(deltaTime, false); // Circle right
+                // If the timer hits zero, choose a new random behavior
+                if (circleChangeCooldown <= 0)
+                {
+                    ChooseRandomBehavior(); // Choose a new behavior
+                }
                 break;
         }
+
+        // Update previous behavior after switching
+        previousBehavior = chosenBehavior;
     }
 
     private void ChooseRandomCircle()
@@ -141,9 +165,9 @@ public class EnemyPreAttackState : EnemyBaseState
         Move(circleDirection * circleSpeed, deltaTime); // Use circling speed
         FaceTarget(stateMachine.Player.transform.position, deltaTime); // Always face the player
 
-        // Set current animator parameters for circling
-        currentForwardValue = 0.5f; // Adjust for speed
-        currentRightValue = circleLeft ? -0.5f : 0.5f; // Circle left or right
+        // Set target animator parameters for circling
+        targetForwardValue = 0.5f; // Adjust for speed
+        targetRightValue = circleLeft ? -0.5f : 0.5f; // Circle left or right
     }
 
     private void MoveTowardPlayer(float deltaTime)
@@ -152,9 +176,9 @@ public class EnemyPreAttackState : EnemyBaseState
         Move(direction * moveTowardSpeed, deltaTime); // Move closer with specified speed
         FaceTarget(stateMachine.Player.transform.position, deltaTime);
 
-        // Set current animator parameters for moving toward the player
-        currentForwardValue = 1f; // Forward movement
-        currentRightValue = 0f; // No right movement
+        // Set target animator parameters for moving toward the player
+        targetForwardValue = 1f; // Forward movement
+        targetRightValue = 0f; // No right movement
     }
 
     private void MoveAwayFromPlayer(float deltaTime)
@@ -162,17 +186,11 @@ public class EnemyPreAttackState : EnemyBaseState
         Vector3 direction = (stateMachine.transform.position - stateMachine.Player.transform.position).normalized;
         Move(direction * moveAwaySpeed, deltaTime); // Move away with specified speed
 
-        // Ensure we don't move too far
-        if (Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) >= 2f)
-        {
-            ChooseRandomCircle(); // Switch to circling when too far
-        }
-
         FaceTarget(stateMachine.Player.transform.position, deltaTime);
 
-        // Set current animator parameters for moving away from the player
-        currentForwardValue = -1f; // Backward movement
-        currentRightValue = 0f; // No right movement
+        // Set target animator parameters for moving away from the player
+        targetForwardValue = -1f; // Backward movement
+        targetRightValue = 0f; // No right movement
     }
 
     private void MoveDiagonalBackward(float deltaTime)
@@ -185,9 +203,9 @@ public class EnemyPreAttackState : EnemyBaseState
         Move(diagonalBackwardDirection * diagonalBackwardSpeed, deltaTime); // Move diagonally backward
         FaceTarget(stateMachine.Player.transform.position, deltaTime);
 
-        // Set current animator parameters for moving diagonally backward
-        currentForwardValue = -0.5f; // Adjust backward speed
-        currentRightValue = -0.5f; // Adjust for diagonal movement
+        // Set target animator parameters for moving diagonally backward
+        targetForwardValue = -0.5f; // Adjust backward speed
+        targetRightValue = -0.5f; // Adjust for diagonal movement
     }
 
     private void DecideToAttack()
