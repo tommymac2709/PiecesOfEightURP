@@ -7,7 +7,7 @@ public class EnemyPreAttackState : EnemyBaseState
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRightSpeed");
 
     private const float CrossFadeDuration = 0.1f;
-    private const float PreAttackDuration = 3f;
+    private const float PreAttackDuration = 1.5f;
     private const float CircleChangeCooldownDuration = 2f; // Cooldown duration for circling direction change
 
     private float timeSpentPreAttacking;
@@ -211,7 +211,7 @@ public class EnemyPreAttackState : EnemyBaseState
 
     private void DecideToAttack()
     {
-        bool shouldAttack = Random.Range(0, 2) == 0; // 50% chance to attack
+        bool shouldAttack = Random.Range(0, 5) < 4; // 80% chance to attack
 
         if (shouldAttack && !IsOtherEnemyAttacking())
         {
