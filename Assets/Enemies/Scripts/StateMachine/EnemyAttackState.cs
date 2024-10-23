@@ -48,7 +48,7 @@ public class EnemyAttackState : EnemyBaseState
 
         if (normalizedTime > .98f)
         {
-            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            stateMachine.SwitchState(new EnemyPreAttackState(stateMachine));
         }
     }
 
