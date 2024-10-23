@@ -50,6 +50,7 @@ public class EnemyPreAttackState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        float distanceToPlayer = Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position);
         if (!IsInAttackRange())
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
@@ -69,7 +70,7 @@ public class EnemyPreAttackState : EnemyBaseState
         stateMachine.Animator.SetFloat(TargetingForwardHash, currentForwardValue);
         stateMachine.Animator.SetFloat(TargetingRightHash, currentRightValue);
 
-        if (timeSpentPreAttacking >= PreAttackDuration && !hasDecidedToAttack)
+        if (distanceToPlayer <= 2f && timeSpentPreAttacking >= PreAttackDuration && !hasDecidedToAttack)
         {
             hasDecidedToAttack = true;
             DecideToAttack();
@@ -104,7 +105,7 @@ public class EnemyPreAttackState : EnemyBaseState
                 break;
 
             case PreAttackBehavior.MoveAway:
-                if (distanceToPlayer >= 2f) // Stop if farther than 2 units
+                if (distanceToPlayer >= 4.5f) // Stop if farther than n units
                 {
                     ChooseRandomCircle(); // Choose circling direction
                 }
@@ -115,7 +116,7 @@ public class EnemyPreAttackState : EnemyBaseState
                 break;
 
             case PreAttackBehavior.DiagonalBackward:
-                if (distanceToPlayer >= 2f) // Stop if too far
+                if (distanceToPlayer >= 4.5f) // Stop if too far
                 {
                     ChooseRandomCircle(); // Choose circling direction
                 }
