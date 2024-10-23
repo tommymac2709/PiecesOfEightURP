@@ -64,6 +64,23 @@ public abstract class EnemyBaseState : State
         return distanceToPlayerSqr <= stateMachine.PlayerFleeRange * stateMachine.PlayerFleeRange;
     }
 
+    protected bool IsOtherEnemyAttacking()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(stateMachine.transform.position, stateMachine.AttackRange * stateMachine.AttackRange);
+
+        foreach (Collider collider in hitColliders)
+        {
+            EnemyStateMachine otherEnemy = collider.GetComponent<EnemyStateMachine>();
+            if (otherEnemy != null && otherEnemy != stateMachine && otherEnemy.IsAttacking)
+            {
+                return true; // Another enemy is attacking
+            }
+        }
+
+        return false; // No other enemies are attacking
+    }
+
+
     protected bool CanSeePlayer()
     {
         if (stateMachine.PlayerAbilityManager.IsInvisible == false)

@@ -40,17 +40,15 @@ public class EnemyChasingState : EnemyBaseState
         {
             if (!IsOtherEnemyAttacking() && !stateMachine.CooldownTokenManager.HasCooldown("Attack"))
             {
-                stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                stateMachine.SwitchState(new EnemyPreAttackState(stateMachine)); // Switch to pre-attack circling
                 return;
             }
             else
             {
                 MoveNoInput(deltaTime);
-                
                 stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0);
                 return;
             }
-            
         }
         else
         {
@@ -59,8 +57,9 @@ public class EnemyChasingState : EnemyBaseState
 
 
 
-        
-        
+
+
+
         Vector3 deltaMovement = lastPosition - stateMachine.transform.position;
         float deltaMagnitude = deltaMovement.magnitude;
         float grossSpeed = deltaMagnitude / deltaTime;

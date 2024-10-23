@@ -14,6 +14,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     [field: SerializeField] public Health Health{ get; private set; }
 
+    [SerializeField] public PlayerStateMachine PlayerStateMachine { get; private set; }
+
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
 
    // [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
@@ -60,6 +62,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
         //Player = GameObject.FindGameObjectWithTag("Player");
 
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        PlayerStateMachine = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
         PlayerAbilityManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
         Agent.updatePosition = false;
         Agent.updateRotation = false;

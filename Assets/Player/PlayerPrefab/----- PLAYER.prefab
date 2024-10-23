@@ -1330,9 +1330,9 @@ MonoBehaviour:
   <TargetCamera>k__BackingField: {fileID: 0}
   <FreeLookCamera>k__BackingField: {fileID: 0}
   <DeathUI>k__BackingField: {fileID: 0}
-  <FreeLookMovementSpeed>k__BackingField: 8
-  <FreeLookSprintMovementSpeed>k__BackingField: 15
-  <TargetingMovementSpeed>k__BackingField: 6
+  <FreeLookMovementSpeed>k__BackingField: 5
+  <FreeLookSprintMovementSpeed>k__BackingField: 6.5
+  <TargetingMovementSpeed>k__BackingField: 63
   <DodgeDuration>k__BackingField: 0.5
   <DodgeDurationFreeLook>k__BackingField: 1
   <DodgeDistance>k__BackingField: 3
