@@ -3159,7 +3159,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 47d445364fdde5e4ea2c0a20ecaae6cb, type: 3}
   m_Controller: {fileID: 9100000, guid: 7b8d11ca8b8f3af44856928e90b15ba1, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3191,13 +3191,13 @@ MonoBehaviour:
   <Target>k__BackingField: {fileID: 1596305256467374407}
   <CooldownTokenManager>k__BackingField: {fileID: 7450554268512378496}
   <PatrolPath>k__BackingField: {fileID: 0}
-  <MovementSpeed>k__BackingField: 2
+  <MovementSpeed>k__BackingField: 3.5
   <RotationSpeed>k__BackingField: 5
   <ImpactStateDuration>k__BackingField: 0.3
   <ParriedStateDuration>k__BackingField: 1
   <WanderRadius>k__BackingField: 10
   <WanderTimer>k__BackingField: 2
-  <AttackRange>k__BackingField: 2
+  <AttackRange>k__BackingField: 5
   <AttackDamage>k__BackingField: 0
   <AttackKnockback>k__BackingField: 5
   <PlayerDetectRange>k__BackingField: 10
@@ -3328,7 +3328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800ed84f4464c4d4cbbda73c352ab18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLevel: 1
+  startingLevel: 3
   characterClass: 1
   progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
   levelUpParticleEffect: {fileID: 0}
@@ -3384,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed41a504b1e4f14e9ed75617dc7e959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: 
+  uniqueIdentifier: 7de596a1-46ca-4086-baa1-0066493b8e1f
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0
