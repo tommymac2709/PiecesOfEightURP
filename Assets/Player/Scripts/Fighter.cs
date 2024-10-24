@@ -86,7 +86,7 @@ public class Fighter : MonoBehaviour /*IJsonSaveable*/
 
     }
 
-    private void UpdateWeapon()
+    public void UpdateWeapon()
     {
         var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
         if (weapon == null) 

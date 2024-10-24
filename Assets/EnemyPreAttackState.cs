@@ -20,7 +20,7 @@ public class EnemyPreAttackState : EnemyBaseState
     [SerializeField] private float diagonalBackwardSpeed = 1.5f;
     [SerializeField] private float circleSpeed = 0.5f;
 
-    private enum PreAttackBehavior { CircleLeft, CircleRight, MoveToward, MoveAway, MoveAwayTwoUnits, MoveAwayThreeUnits, DiagonalBackward, DiagonalBackwardTwoUnits, DiagonalBackwardThreeUnits }
+    private enum PreAttackBehavior { CircleLeft, CircleRight, MoveToward, MoveAway, DiagonalBackward}
     private PreAttackBehavior chosenBehavior;
     private PreAttackBehavior previousBehavior;
 
@@ -34,6 +34,8 @@ public class EnemyPreAttackState : EnemyBaseState
 
     public override void Enter()
     {
+
+
         stateMachine.Animator.CrossFadeInFixedTime(CircleBlendTreeHash, CrossFadeDuration);
         timeSpentPreAttacking = 0;
         circleChangeCooldown = 0; // Reset cooldown
@@ -99,10 +101,6 @@ public class EnemyPreAttackState : EnemyBaseState
         }
         else if (randomChoice < 85) // 10% chance to move away
         {
-            chosenBehavior = PreAttackBehavior.MoveAwayTwoUnits;
-        }
-        else if (randomChoice < 90) // 10% chance to move away
-        {
             chosenBehavior = PreAttackBehavior.MoveAway;
         }
         else // 10% chance to move diagonally backward
@@ -141,27 +139,7 @@ public class EnemyPreAttackState : EnemyBaseState
                 }
                 break;
 
-            case PreAttackBehavior.MoveAwayTwoUnits:
-                if (distanceToPlayer >= 2f) // Stop if farther than n units
-                {
-                    ChooseRandomCircle(); // Choose circling direction
-                }
-                else
-                {
-                    MoveAwayFromPlayer(deltaTime);
-                }
-                break;
-
-            case PreAttackBehavior.MoveAwayThreeUnits:
-                if (distanceToPlayer >= 3f) // Stop if farther than n units
-                {
-                    ChooseRandomCircle(); // Choose circling direction
-                }
-                else
-                {
-                    MoveAwayFromPlayer(deltaTime);
-                }
-                break;
+                      
 
             case PreAttackBehavior.DiagonalBackward:
                 if (distanceToPlayer >= 4.5f) // Stop if too far
@@ -174,28 +152,9 @@ public class EnemyPreAttackState : EnemyBaseState
                 }
                 break;
 
-            case PreAttackBehavior.DiagonalBackwardTwoUnits:
-                if (distanceToPlayer >= 2f) // Stop if too far
-                {
-                    ChooseRandomCircle(); // Choose circling direction
-                }
-                else
-                {
-                    MoveDiagonalBackward(deltaTime);
-                }
-                break;
+            
 
-            case PreAttackBehavior.DiagonalBackwardThreeUnits:
-                if (distanceToPlayer >= 3f) // Stop if too far
-                {
-                    ChooseRandomCircle(); // Choose circling direction
-                }
-                else
-                {
-                    MoveDiagonalBackward(deltaTime);
-                }
-                break;
-
+           
             case PreAttackBehavior.CircleLeft:
                 CirclePlayer(deltaTime, true); // Circle left
                 // If the timer hits zero, choose a new random behavior

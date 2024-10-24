@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 namespace GameDevTV.Inventories
 {
@@ -63,10 +64,33 @@ namespace GameDevTV.Inventories
 
         public void PickupItem()
         {
-            bool foundSlot = inventory.AddToFirstEmptySlot(item, number);
-            if (foundSlot)
+            Fighter playerFighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
+            StatsEquipment equipment = GameObject.FindWithTag("Player").GetComponent<StatsEquipment>();
+            var weapon = item as WeaponConfig;
+            if (equipment.GetItemInSlot(weapon.GetAllowedEquipLocation()) == null)
             {
                 Destroy(gameObject);
+                equipment.AddItem(weapon.GetAllowedEquipLocation(), weapon);
+                return;
+            }
+            else if (equipment.GetItemInSlot(weapon.GetAllowedEquipLocation()) != null)
+            {
+                bool foundSlot = inventory.AddToFirstEmptySlot(item, number);
+                if (foundSlot)
+                {
+                    Destroy(gameObject);
+                }
+
+
+            
+
+            
+            
+               
+              
+                
+                
+                
             }
         }
 

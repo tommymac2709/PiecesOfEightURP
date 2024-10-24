@@ -3,8 +3,8 @@ using UnityEngine;
 public class EnemyFleeState : EnemyBaseState
 {
 
-    private readonly int MotionBlendTreeHash = Animator.StringToHash("Motion");
-    private readonly int MovementSpeedHash = Animator.StringToHash("MovementSpeed");
+    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
+    private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
@@ -14,7 +14,7 @@ public class EnemyFleeState : EnemyBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(MotionBlendTreeHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
@@ -25,7 +25,7 @@ public class EnemyFleeState : EnemyBaseState
 
         FaceMovementDirection();
 
-        stateMachine.Animator.SetFloat(MovementSpeedHash, 1f, AnimatorDampTime, deltaTime);
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1f, AnimatorDampTime, deltaTime);
     }
 
     public override void Exit()
@@ -40,6 +40,7 @@ public class EnemyFleeState : EnemyBaseState
         //Vector3 newPos = stateMachine.transform.position + dirToPlayer;
         stateMachine.Agent.SetDestination(stateMachine.transform.position + (stateMachine.transform.position - stateMachine.Player.transform.position));
 
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, stateMachine.MovementSpeed, AnimatorDampTime, deltaTime);
         Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
 
 

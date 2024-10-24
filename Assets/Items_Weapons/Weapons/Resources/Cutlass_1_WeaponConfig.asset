@@ -20,6 +20,7 @@ MonoBehaviour:
   stackable: 0
   price: 325
   category: 2
+  weaponConfig: {fileID: 11400000}
   allowedEquipLocation: 5
   _weaponPrefab: {fileID: 2353232748905043175, guid: 3f9b608573ba1754d87e4a460979cb1b,
     type: 3}

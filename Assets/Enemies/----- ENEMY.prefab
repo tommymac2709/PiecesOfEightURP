@@ -3227,6 +3227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenerationPercentage: 70
+  percentHealthToTryFlee: 25
   onResurrection:
     m_PersistentCalls:
       m_Calls: []

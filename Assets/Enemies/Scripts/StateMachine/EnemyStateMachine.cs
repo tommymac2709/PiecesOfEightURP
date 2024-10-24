@@ -76,14 +76,14 @@ public class EnemyStateMachine : StateMachine, ISaveable
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
-        Health.OnLowHealth += FleeFromPlayer;
+        
     }
 
     private void OnDisable()
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
-        Health.OnLowHealth -= FleeFromPlayer;
+        
     }
 
     private void HandleTakeDamage()
@@ -91,16 +91,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
         SwitchState(new EnemyImpactState(this, ImpactStateDuration));
     }
 
-    private void FleeFromPlayer()
-    {
-        bool shouldFlee = Random.Range(0, 2) == 0; // 50% chance to attack
-        if (shouldFlee)
-        {
-            SwitchState(new EnemyFleeState(this));
-        }
-       
-        
-    }
+    
 
     private void HandleDie()
     {
