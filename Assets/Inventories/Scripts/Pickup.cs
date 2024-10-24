@@ -66,7 +66,7 @@ namespace GameDevTV.Inventories
         {
             Fighter playerFighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
             StatsEquipment equipment = GameObject.FindWithTag("Player").GetComponent<StatsEquipment>();
-            var weapon = item as WeaponConfig;
+            var weapon = item as EquipableItem;
             if (equipment.GetItemInSlot(weapon.GetAllowedEquipLocation()) == null)
             {
                 Destroy(gameObject);
@@ -80,17 +80,6 @@ namespace GameDevTV.Inventories
                 {
                     Destroy(gameObject);
                 }
-
-
-            
-
-            
-            
-               
-              
-                
-                
-                
             }
         }
 
