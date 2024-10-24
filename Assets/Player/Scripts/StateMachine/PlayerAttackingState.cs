@@ -12,6 +12,8 @@ public class PlayerAttackingState : PlayerBaseState
 
     private bool hasCombo;
 
+    private float canBlockTime = 0.5f;
+
     public PlayerAttackingState(PlayerStateMachine stateMachine, AttackData attack) : base(stateMachine)
     {
         currentAttack = attack;
@@ -40,12 +42,20 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        
+
         MoveNoInput(deltaTime);
 
         FaceTarget();
 
 
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+
+        if (normalizedTime < canBlockTime && stateMachine.InputReader.IsBlocking)
+        {
+            stateMachine.SwitchState(new PlayerBlockingState(stateMachine));
+            return;
+        }
         Vector3 movement = CalculateMovement();
 
         if (normalizedTime >= previousFrameTime && normalizedTime < 1f)

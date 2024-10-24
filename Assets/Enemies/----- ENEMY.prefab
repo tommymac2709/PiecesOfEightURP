@@ -3186,6 +3186,7 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 6140307627355577145}
   <Fighter>k__BackingField: {fileID: 7792547751755755991}
   <Health>k__BackingField: {fileID: 1403208636335331178}
+  <ThisHealth>k__BackingField: {fileID: 1403208636335331178}
   <Agent>k__BackingField: {fileID: 5049605926301838905}
   <Target>k__BackingField: {fileID: 1596305256467374407}
   <CooldownTokenManager>k__BackingField: {fileID: 7450554268512378496}

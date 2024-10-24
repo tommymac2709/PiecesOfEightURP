@@ -10,12 +10,13 @@ public class Health : MonoBehaviour, IJsonSaveable
 {
     //Used in health regeneration to regenerate health on level up to percentage of new level max health
     [SerializeField] float regenerationPercentage = 70f;
-
+    [SerializeField] float percentHealthToTryFlee = 25f;
     //[SerializeField] private float maxHealth = 100f;
     [SerializeField] public LazyValue<float> currentHealth { get; private set; }
 
     public event Action OnTakeDamage;
     public event Action OnDie;
+    public event Action OnLowHealth;
     public UnityEvent onResurrection;
     public static event Action OnDeathUI;
 
@@ -75,6 +76,11 @@ public class Health : MonoBehaviour, IJsonSaveable
         print(gameObject.name + " took damage: " + damage);
 
         currentHealth.value -= damage;
+
+        if (GetPercent() < percentHealthToTryFlee)
+        {
+            OnLowHealth?.Invoke();
+        }
 
         if (currentHealth.value < 0)
         {

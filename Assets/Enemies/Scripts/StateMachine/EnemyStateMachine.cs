@@ -14,6 +14,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     [field: SerializeField] public Health Health{ get; private set; }
 
+    [field: SerializeField] public Health ThisHealth { get; private set; }
+
     [SerializeField] public PlayerStateMachine PlayerStateMachine { get; private set; }
 
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
@@ -74,17 +76,30 @@ public class EnemyStateMachine : StateMachine, ISaveable
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
+        Health.OnLowHealth += FleeFromPlayer;
     }
 
     private void OnDisable()
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
+        Health.OnLowHealth -= FleeFromPlayer;
     }
 
     private void HandleTakeDamage()
     {
         SwitchState(new EnemyImpactState(this, ImpactStateDuration));
+    }
+
+    private void FleeFromPlayer()
+    {
+        bool shouldFlee = Random.Range(0, 2) == 0; // 50% chance to attack
+        if (shouldFlee)
+        {
+            SwitchState(new EnemyFleeState(this));
+        }
+       
+        
     }
 
     private void HandleDie()

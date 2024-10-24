@@ -1,5 +1,6 @@
 public enum CharacterClass
 {
     Player,
-    BasicEnemy
+    BasicEnemy,
+    ToughEnemy
 }

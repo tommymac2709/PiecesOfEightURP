@@ -20,12 +20,7 @@ public class EnemyFleeState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         
-        if (!IsInFleeRange())
-        {
-            stateMachine.SwitchState(new EnemyWanderState(stateMachine));
-            return;
-        }
-
+        
         FleeFromPlayer(deltaTime);
 
         FaceMovementDirection();
