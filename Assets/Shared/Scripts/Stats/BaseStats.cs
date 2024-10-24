@@ -9,6 +9,7 @@ public class BaseStats : MonoBehaviour, ISaveable
     [Range(1, 99)]
     [SerializeField] int startingLevel = 1;
     [SerializeField] CharacterClass characterClass;
+    [SerializeField] Faction faction;
     [SerializeField] Progression progression = null;
     [SerializeField] GameObject levelUpParticleEffect = null;
     [SerializeField] bool shouldUseModifiers = false;
@@ -75,6 +76,11 @@ public class BaseStats : MonoBehaviour, ISaveable
     private float GetBaseStat(Stat stat)
     {
         return progression.GetStat(stat, characterClass, GetLevel());
+    }
+
+    public Faction GetFaction()
+    {
+        return faction;
     }
 
     public int GetLevel()

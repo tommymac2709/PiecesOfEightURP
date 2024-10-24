@@ -1274,6 +1274,7 @@ GameObject:
   - component: {fileID: 5933670159358864605}
   - component: {fileID: 9122494442107826661}
   - component: {fileID: 1737831436256227210}
+  - component: {fileID: 314403716181626606}
   m_Layer: 3
   m_Name: ----- PLAYER
   m_TagString: Player
@@ -1464,6 +1465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenerationPercentage: 70
+  percentHealthToTryFlee: 50
   onResurrection:
     m_PersistentCalls:
       m_Calls: []
@@ -1769,6 +1771,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropPosition: {fileID: 2588302022672779610}
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &314403716181626606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890225168022548691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2ceb2bbb6dd574aa13ca0572c71ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1894074468985138207
 GameObject:
   m_ObjectHideFlags: 0

@@ -110,11 +110,14 @@ public class Health : MonoBehaviour, IJsonSaveable
     private void AwardExperience(GameObject instigator)
     {
         Experience experience = instigator.GetComponent<Experience>();
+        Notoriety notoriety = instigator.GetComponent<Notoriety>();
         Debug.Log("Attacker was " + instigator.gameObject.name);
 
         if (experience == null) { return; }
+        if (notoriety == null) { return; }
 
         experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
+        notoriety.IncreaseNotoriety(GetComponent<BaseStats>().GetFaction(), 10f);
     }
 
     private void RegenerateHealth()
