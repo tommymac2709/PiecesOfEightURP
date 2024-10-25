@@ -39,7 +39,7 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
     {
         switch(faction)
         {
-            case Faction.EnemyPirate:
+            case Faction.Pirate:
                 IncreasePirateNotoriety(amount);
                 break;
 
@@ -49,6 +49,24 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
 
             case Faction.Community:
                 IncreaseCommunityNotoriety(amount);
+                break;
+        }
+    }
+
+    public void DecreaseNotoriety(Faction faction, float amount)
+    {
+        switch (faction)
+        {
+            case Faction.Pirate:
+                DecreasePirateNotoriety(amount);
+                break;
+
+            case Faction.Navy:
+                DecreaseNavyNotoriety(amount);
+                break;
+
+            case Faction.Community:
+                DecreaseCommunityNotoriety(amount);
                 break;
         }
     }

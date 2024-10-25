@@ -1,7 +1,8 @@
 public enum Faction
 {
     FriendlyPirate,
-    EnemyPirate,
+    Pirate,
     Navy,
-    Community
+    Community,
+    NoFaction
 }

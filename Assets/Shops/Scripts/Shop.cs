@@ -10,8 +10,13 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 {
     
     [SerializeField] string shopName;
+    [SerializeField] Faction faction;
+    [SerializeField] float availableThresholdCommunityNotoriety;
+    [SerializeField] float availableThresholdNavyNotoriety;
+    [SerializeField] float availableThresholdPirateNotoriety;
     [Range(0f, 100f)]
     [SerializeField] float sellingPercentage = 80f;
+
 
     [SerializeField]
     StockItemConfig[] stockConfig;
@@ -314,15 +319,61 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 
     public void Interact(Transform interactorTransform)
     {
-        interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
-        
-       
-        
+        switch (this.faction)
+        {
+            case Faction.Community:
+                if (interactorTransform.GetComponent<Notoriety>().GetCommunityNotoriety() > availableThresholdCommunityNotoriety)
+                {
+                    
+                    return;
+                }
+                else
+                {
+                    interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
+                }
+                break;
+
+            case Faction.Navy:
+                if (interactorTransform.GetComponent<Notoriety>().GetNavyNotoriety() > availableThresholdNavyNotoriety)
+                {
+                    return;
+                }
+                else
+                {
+                    interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
+                }
+                break;
+
+            case Faction.Pirate:
+                if (interactorTransform.GetComponent<Notoriety>().GetPirateNotoriety() > availableThresholdPirateNotoriety)
+                {
+                    return;
+                }
+                else
+                {
+                    interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
+                }
+                break;
+            case Faction.NoFaction:
+
+                interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
+
+                break;
+            default:
+                interactorTransform.GetComponent<Shopper>().SetActiveShop(this);
+                break;
+
+        }
     }
 
     public string GetShopName()
     {
         return shopName;
+    }
+
+    public Faction GetFaction()
+    {
+        return faction;
     }
 
     private int GetShopperLevel()
