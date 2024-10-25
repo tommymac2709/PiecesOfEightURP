@@ -49,7 +49,8 @@ public abstract class EnemyBaseState : State
     protected bool ShouldBeHostile()
     {
         Notoriety playerNotoriety = GameObject.FindWithTag("Player").GetComponent<Notoriety>();
-        float currentAffiliatedNotorietyThreshold = playerNotoriety.GetAffiliatedNotorietyThreshold(stateMachine.BaseStats.GetFaction());
+        Notoriety thisNotoriety = stateMachine.GetComponent<Notoriety>();
+        float currentAffiliatedNotorietyThreshold = thisNotoriety.GetAffiliatedNotorietyThreshold(stateMachine.BaseStats.GetFaction());
         float currentAffiliatedNotoriety = playerNotoriety.GetAffiliatedNotoriety(stateMachine.BaseStats.GetFaction());
         return currentAffiliatedNotoriety >= currentAffiliatedNotorietyThreshold;
     }

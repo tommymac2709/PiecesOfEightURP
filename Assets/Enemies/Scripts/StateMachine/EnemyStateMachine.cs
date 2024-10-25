@@ -28,6 +28,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     [field: SerializeField] public PatrolPath PatrolPath { get; private set; }
 
+    [field: SerializeField] public Notoriety Notoriety { get; private set;}
+
 
     //[field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
 

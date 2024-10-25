@@ -3097,6 +3097,7 @@ GameObject:
   - component: {fileID: 4241037404864592215}
   - component: {fileID: 7450554268512378496}
   - component: {fileID: 3784791628204880268}
+  - component: {fileID: 7943276124060131440}
   m_Layer: 0
   m_Name: ----- ENEMY
   m_TagString: Enemy
@@ -3191,6 +3192,7 @@ MonoBehaviour:
   <Target>k__BackingField: {fileID: 1596305256467374407}
   <CooldownTokenManager>k__BackingField: {fileID: 7450554268512378496}
   <PatrolPath>k__BackingField: {fileID: 0}
+  <Notoriety>k__BackingField: {fileID: 7943276124060131440}
   <MovementSpeed>k__BackingField: 3.5
   <RotationSpeed>k__BackingField: 5
   <ImpactStateDuration>k__BackingField: 0.3
@@ -3386,6 +3388,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 7de596a1-46ca-4086-baa1-0066493b8e1f
+--- !u!114 &7943276124060131440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2ceb2bbb6dd574aa13ca0572c71ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPirateNotoriety: 0
+  currentNavyNotoriety: 0
+  currentCommunityNotoriety: 0
+  pirateHosilityThreshold: 0
+  navyHosilityThreshold: 0
+  communityHosilityThreshold: 0
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0
