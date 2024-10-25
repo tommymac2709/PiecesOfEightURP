@@ -16,6 +16,8 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
     [SerializeField] float availableThresholdPirateNotoriety;
     [Range(0f, 100f)]
     [SerializeField] float sellingPercentage = 80f;
+    [SerializeField] string initialInteractText;
+    [SerializeField] string changedInteractText;
 
 
     [SerializeField]
@@ -53,6 +55,8 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
         {
             stock[config.item] = config.initialStock;
         }
+
+        initialInteractText = String.Format($"Shop: {shopName} <br><br> (Affiliation: {faction})");
     }
 
     public void SetShopper(Shopper shopper)
@@ -336,6 +340,7 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
             case Faction.Navy:
                 if (interactorTransform.GetComponent<Notoriety>().GetNavyNotoriety() > availableThresholdNavyNotoriety)
                 {
+                    
                     return;
                 }
                 else
@@ -387,7 +392,7 @@ public class Shop : MonoBehaviour, IInteractable, IJsonSaveable
 
     public string GetInteractText()
     {
-        return "Shop: " + shopName;
+        return initialInteractText;
     }
 
     public Transform GetTransform()

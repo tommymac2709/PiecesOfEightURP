@@ -7,7 +7,7 @@ public class PlayerInteractUI : MonoBehaviour
 {
     [SerializeField] private GameObject _containerGameObject;
     [SerializeField] private PlayerInteract _playerInteract;
-    [SerializeField] private TextMeshProUGUI _interactText;
+    [SerializeField] public TextMeshProUGUI _interactText;
 
     private void Update()
     {
