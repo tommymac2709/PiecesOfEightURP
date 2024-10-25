@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4db1a6475a7054ba7f6bea3a1b7549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePoint: {x: 0.05, y: 0.6, z: 0}
-  damageRadius: 0.33
+  damagePoint: {x: 0.05, y: 0.24, z: 0}
+  damageRadius: 0.6
   onHit:
     m_PersistentCalls:
       m_Calls: []
