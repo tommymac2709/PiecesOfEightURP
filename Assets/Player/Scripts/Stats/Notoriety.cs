@@ -12,6 +12,12 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
     [SerializeField] float currentNavyNotoriety;
     [SerializeField] float currentCommunityNotoriety;
 
+    [SerializeField] float pirateHosilityThreshold;
+    [SerializeField] float navyHosilityThreshold;
+    [SerializeField] float communityHosilityThreshold;
+
+
+
     public event Action OnPirateNotorietyIncreased;
     public event Action OnPirateNotorietyDecreased;
 
@@ -117,6 +123,65 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
         currentCommunityNotoriety -= amount;
         wrapper.SaveGame();
         OnCommunityNotorietyDecreased?.Invoke();
+    }
+
+    public float GetAffiliatedNotoriety(Faction faction)
+    {
+        float affiliatedNotoriety = 0;
+
+        switch (faction)
+        {
+            case Faction.Pirate:
+                affiliatedNotoriety = GetPirateNotoriety();
+                break;
+
+            case Faction.Navy:
+                affiliatedNotoriety = GetNavyNotoriety();
+                break;
+
+            case Faction.Community:
+                affiliatedNotoriety = GetCommunityNotoriety();
+                break;
+        }
+        return affiliatedNotoriety;
+    }
+
+    public float GetAffiliatedNotorietyThreshold(Faction faction)
+    {
+        float affiliatedNotorietyThreshold = 0;
+        switch (faction)
+        {
+            case Faction.Pirate:
+                
+                affiliatedNotorietyThreshold = GetPirateHostilityThreshold();
+                break;
+
+            case Faction.Navy:
+                
+                affiliatedNotorietyThreshold = GetNavyHostilityThreshold();
+                break;
+
+            case Faction.Community:
+                
+                affiliatedNotorietyThreshold = GetCommunityHostilityThreshold();
+                break;
+        }
+        return affiliatedNotorietyThreshold;
+    }
+
+    public float GetPirateHostilityThreshold()
+    {
+        return pirateHosilityThreshold;
+    }
+
+    public float GetNavyHostilityThreshold()
+    {
+        return navyHosilityThreshold;
+    }
+
+    public float GetCommunityHostilityThreshold()
+    {
+        return communityHosilityThreshold;
     }
 
     public float GetPirateNotoriety()

@@ -46,6 +46,14 @@ public abstract class EnemyBaseState : State
         return distanceToPlayerSqr  <= stateMachine.PlayerDetectRange * stateMachine.PlayerDetectRange;
     }
 
+    protected bool ShouldBeHostile()
+    {
+        Notoriety playerNotoriety = GameObject.FindWithTag("Player").GetComponent<Notoriety>();
+        float currentAffiliatedNotorietyThreshold = playerNotoriety.GetAffiliatedNotorietyThreshold(stateMachine.BaseStats.GetFaction());
+        float currentAffiliatedNotoriety = playerNotoriety.GetAffiliatedNotoriety(stateMachine.BaseStats.GetFaction());
+        return currentAffiliatedNotoriety >= currentAffiliatedNotorietyThreshold;
+    }
+
     protected bool IsInAttackRange()
     {
         if (stateMachine.Player.IsDead) { return false; }

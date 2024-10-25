@@ -32,7 +32,7 @@ public class EnemyDwellState : EnemyBaseState
     {
         if (deltaTime == 0f) { return; }
         MoveNoInput(deltaTime);
-        if (IsInChaseRange())
+        if (IsInChaseRange() && ShouldBeHostile())
         {
             //Clear key so that after leaving chase range we get the nearest waypoint to where we end up
             stateMachine.Blackboard.Remove(NextPatrolPointIndexKey);

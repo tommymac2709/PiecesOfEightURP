@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePoint: {x: 0.05, y: 0.24, z: 0}
-  damageRadius: 0.6
+  damageRadius: 0.723
   onHit:
     m_PersistentCalls:
       m_Calls: []

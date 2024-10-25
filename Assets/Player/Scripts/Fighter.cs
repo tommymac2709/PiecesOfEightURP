@@ -207,9 +207,7 @@ public class Fighter : MonoBehaviour /*IJsonSaveable*/
                 //    Debug.Log("Added " + item.name + " to already hit list");
                 //}
                 float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
-                float defence = GetComponent<BaseStats>().GetStat(Stat.Defence);
-
-                damage /= 1 + defence / damage;
+                
 
                 damageReceiver.DealDamage( gameObject, other.transform, damage);
                 TryApplyKnockback(other, transform.position);

@@ -1328,6 +1328,7 @@ MonoBehaviour:
   <Ragdoll>k__BackingField: {fileID: 448684375731609609}
   <Targeter>k__BackingField: {fileID: 5826706587471712610}
   <WeaponDamage>k__BackingField: {fileID: 0}
+  <Notoriety>k__BackingField: {fileID: 314403716181626606}
   <TargetCamera>k__BackingField: {fileID: 0}
   <FreeLookCamera>k__BackingField: {fileID: 0}
   <DeathUI>k__BackingField: {fileID: 0}
@@ -1640,6 +1641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLevel: 1
   characterClass: 0
+  faction: 0
   progression: {fileID: 11400000, guid: d608774df8b2e9c4789c60a6ebcd1c05, type: 2}
   levelUpParticleEffect: {fileID: 8543879159486555003, guid: 73d4fb86a7cb16e4c85d630f216c03f0,
     type: 3}
@@ -1783,6 +1785,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2ceb2bbb6dd574aa13ca0572c71ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPirateNotoriety: 0
+  currentNavyNotoriety: 0
+  currentCommunityNotoriety: 0
+  pirateHosilityThreshold: 1
+  navyHosilityThreshold: 1
+  communityHosilityThreshold: 1
 --- !u!1 &1894074468985138207
 GameObject:
   m_ObjectHideFlags: 0

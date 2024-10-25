@@ -33,6 +33,8 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
 
     [field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
 
+    [field: SerializeField] public Notoriety Notoriety { get; private set; }
+
     [field: SerializeField] public GameObject TargetCamera { get; private set; }
 
     [field: SerializeField] public GameObject FreeLookCamera { get; private set; }
