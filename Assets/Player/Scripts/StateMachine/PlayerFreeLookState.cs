@@ -62,7 +62,6 @@ public class PlayerFreeLookState : PlayerBaseState
         if (stateMachine.InputReader.IsBlocking)
         {
             stateMachine.SwitchState(new PlayerBlockingState(stateMachine));
-            Debug.Log("Block pressed");
             return;
         }
 

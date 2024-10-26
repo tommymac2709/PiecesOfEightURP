@@ -101,7 +101,7 @@ public class PlayerAttackingState : PlayerBaseState
     
     public override void Exit()
     {
-        
+        stateMachine.Animator.applyRootMotion = false;
     }
     private void ComboAttack(float normalizedTime)
     {
