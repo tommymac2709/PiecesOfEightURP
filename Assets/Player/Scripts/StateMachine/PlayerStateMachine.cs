@@ -144,13 +144,33 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
 
     public JToken CaptureAsJToken()
     {
-        return Controller.transform.position.ToToken();
+        JObject state = new JObject();
+        IDictionary<string, JToken> stateD = state;
+        stateD["a"] = Controller.transform.position.ToToken();
+        stateD["b"] = FreeLookMovementSpeed;
+        stateD["c"] = FreeLookSprintMovementSpeed;
+        stateD["d"] = TargetingMovementSpeed;
+        return state;
     }
 
     public void RestoreFromJToken(JToken state)
     {
-        Controller.enabled = false;
-        Controller.transform.position = state.ToVector3();
-        Controller.enabled = true;
+        IDictionary<string, JToken> stateDict = state.ToObject<JObject>();
+        Controller.transform.position = stateDict["a"].ToVector3();
+        FreeLookMovementSpeed = stateDict["b"].ToObject<float>();
+        FreeLookSprintMovementSpeed = stateDict["c"].ToObject<float>();
+        TargetingMovementSpeed = stateDict["d"].ToObject<float>();
     }
+
+    //public JToken CaptureAsJToken()
+    //{
+    //    return Controller.transform.position.ToToken();
+    //}
+
+    //public void RestoreFromJToken(JToken state)
+    //{
+    //    Controller.enabled = false;
+    //    Controller.transform.position = state.ToVector3();
+    //    Controller.enabled = true;
+    //}
 }
