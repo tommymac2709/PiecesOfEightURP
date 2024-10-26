@@ -12,9 +12,9 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
     [SerializeField] float currentNavyNotoriety;
     [SerializeField] float currentCommunityNotoriety;
 
-    [SerializeField] float pirateHosilityThreshold;
-    [SerializeField] float navyHosilityThreshold;
-    [SerializeField] float communityHosilityThreshold;
+    [SerializeField] float pirateHostilityThreshold;
+    [SerializeField] float navyHostilityThreshold;
+    [SerializeField] float communityHostilityThreshold;
 
 
 
@@ -39,6 +39,11 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
     void Update()
     {
         
+    }
+
+    public void SetEnemyAggro()
+    {
+        pirateHostilityThreshold = 0;
     }
 
     public void IncreaseNotoriety(Faction faction, float amount)
@@ -171,17 +176,17 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
 
     public float GetPirateHostilityThreshold()
     {
-        return pirateHosilityThreshold;
+        return pirateHostilityThreshold;
     }
 
     public float GetNavyHostilityThreshold()
     {
-        return navyHosilityThreshold;
+        return navyHostilityThreshold;
     }
 
     public float GetCommunityHostilityThreshold()
     {
-        return communityHosilityThreshold;
+        return communityHostilityThreshold;
     }
 
     public float GetPirateNotoriety()

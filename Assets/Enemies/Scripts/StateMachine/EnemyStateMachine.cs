@@ -90,6 +90,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     private void HandleTakeDamage()
     {
+        Notoriety.SetEnemyAggro();
         SwitchState(new EnemyImpactState(this, ImpactStateDuration));
     }
 
