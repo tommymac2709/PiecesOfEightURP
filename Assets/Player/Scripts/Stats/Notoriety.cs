@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
+public class Notoriety : MonoBehaviour, IJsonSaveable
 {
     [SerializeField] float currentPirateNotoriety;
     [SerializeField] float currentNavyNotoriety;
@@ -204,13 +204,22 @@ public class Notoriety : MonoBehaviour/*, IJsonSaveable*/
         return currentCommunityNotoriety;
     }
 
-    //public JToken CaptureAsJToken()
-    //{
-    //    throw new NotImplementedException();
-    //}
+    public JToken CaptureAsJToken()
+    {
+        JObject state = new JObject();
+        IDictionary<string, JToken> stateD = state;
+        stateD["a"] = currentPirateNotoriety;
+        stateD["b"] = currentNavyNotoriety;
+        stateD["c"] = currentCommunityNotoriety;
+        return state;
 
-    //public void RestoreFromJToken(JToken state)
-    //{
-    //    throw new NotImplementedException();
-    //}
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        IDictionary<string, JToken> stateDict = state.ToObject<JObject>();
+        currentPirateNotoriety = stateDict["a"].ToObject<float>();
+        currentNavyNotoriety = stateDict["b"].ToObject<float>();
+        currentCommunityNotoriety = stateDict["c"].ToObject<float>();
+    }
 }

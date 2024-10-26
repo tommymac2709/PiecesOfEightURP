@@ -1334,7 +1334,7 @@ MonoBehaviour:
   <DeathUI>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 5
   <FreeLookSprintMovementSpeed>k__BackingField: 6.5
-  <TargetingMovementSpeed>k__BackingField: 3
+  <TargetingMovementSpeed>k__BackingField: 1.5
   <DodgeDuration>k__BackingField: 0.5
   <DodgeDurationFreeLook>k__BackingField: 1
   <DodgeDistance>k__BackingField: 3
@@ -1788,9 +1788,9 @@ MonoBehaviour:
   currentPirateNotoriety: 0
   currentNavyNotoriety: 0
   currentCommunityNotoriety: 0
-  pirateHosilityThreshold: 1
-  navyHosilityThreshold: 1
-  communityHosilityThreshold: 1
+  pirateHostilityThreshold: 0
+  navyHostilityThreshold: 0
+  communityHostilityThreshold: 0
 --- !u!1 &1894074468985138207
 GameObject:
   m_ObjectHideFlags: 0
