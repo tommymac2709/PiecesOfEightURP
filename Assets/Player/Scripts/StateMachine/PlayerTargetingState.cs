@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
-    private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
+    private readonly int TargetingBlendTreeHash = Animator.StringToHash("CircleBlendTree");
 
     private readonly int TargetingForwardHash = Animator.StringToHash("TargetingForwardSpeed");
 
