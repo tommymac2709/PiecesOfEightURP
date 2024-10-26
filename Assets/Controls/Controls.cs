@@ -162,6 +162,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CycleTarget"",
+                    ""type"": ""Button"",
+                    ""id"": ""31264db7-b498-439a-9508-34507401b6e9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -571,6 +580,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""DeleteSave"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a023d8a-74fd-4477-84cc-721bb9429077"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Mouse and Keyboard"",
+                    ""action"": ""CycleTarget"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -670,6 +690,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_UnsheatheWeapon = m_Player.FindAction("UnsheatheWeapon", throwIfNotFound: true);
         m_Player_DeleteSave = m_Player.FindAction("DeleteSave", throwIfNotFound: true);
+        m_Player_CycleTarget = m_Player.FindAction("CycleTarget", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
@@ -756,6 +777,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_UnsheatheWeapon;
     private readonly InputAction m_Player_DeleteSave;
+    private readonly InputAction m_Player_CycleTarget;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -775,6 +797,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @UnsheatheWeapon => m_Wrapper.m_Player_UnsheatheWeapon;
         public InputAction @DeleteSave => m_Wrapper.m_Player_DeleteSave;
+        public InputAction @CycleTarget => m_Wrapper.m_Player_CycleTarget;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -829,6 +852,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @DeleteSave.started += instance.OnDeleteSave;
             @DeleteSave.performed += instance.OnDeleteSave;
             @DeleteSave.canceled += instance.OnDeleteSave;
+            @CycleTarget.started += instance.OnCycleTarget;
+            @CycleTarget.performed += instance.OnCycleTarget;
+            @CycleTarget.canceled += instance.OnCycleTarget;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -878,6 +904,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @DeleteSave.started -= instance.OnDeleteSave;
             @DeleteSave.performed -= instance.OnDeleteSave;
             @DeleteSave.canceled -= instance.OnDeleteSave;
+            @CycleTarget.started -= instance.OnCycleTarget;
+            @CycleTarget.performed -= instance.OnCycleTarget;
+            @CycleTarget.canceled -= instance.OnCycleTarget;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -984,6 +1013,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnUnsheatheWeapon(InputAction.CallbackContext context);
         void OnDeleteSave(InputAction.CallbackContext context);
+        void OnCycleTarget(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

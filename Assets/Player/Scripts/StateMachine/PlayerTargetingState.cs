@@ -1,5 +1,6 @@
 //using System.Diagnostics;
 
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -27,6 +28,7 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.FreeLookCamera.SetActive(false);
 
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.InputReader.CycleTargetEvent += OnCycleTarget;
         stateMachine.InputReader.DodgeEvent += OnDodge;
         stateMachine.InputReader.UseAbilityEvent += OnUseAbility;
 
@@ -67,6 +69,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.InputReader.IsTargeting = false;
         stateMachine.InputReader.TargetEvent -= OnTarget;
+        stateMachine.InputReader.CycleTargetEvent -= OnCycleTarget;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
         stateMachine.InputReader.UseAbilityEvent -= OnUseAbility;
     }
@@ -82,6 +85,10 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.Targeter.CancelTargeting();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+    }
+    private void OnCycleTarget()
+    {
+        stateMachine.Targeter.CycleTarget();
     }
 
     private void OnDodge()

@@ -20,6 +20,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
+    public event Action CycleTargetEvent;
     public event Action SheatheEvent;
     public event Action UseAbilityEvent;
     public event Action CancelTargetEvent;
@@ -128,6 +129,13 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
         if (!context.performed) { return; }
 
         TargetEvent?.Invoke();
+    }
+
+    public void OnCycleTarget(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        CycleTargetEvent?.Invoke();
     }
 
     public void OnCancelTarget(InputAction.CallbackContext context)

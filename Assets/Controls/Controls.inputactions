@@ -139,6 +139,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CycleTarget",
+                    "type": "Button",
+                    "id": "31264db7-b498-439a-9508-34507401b6e9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -546,6 +555,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "DeleteSave",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a023d8a-74fd-4477-84cc-721bb9429077",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse and Keyboard",
+                    "action": "CycleTarget",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
