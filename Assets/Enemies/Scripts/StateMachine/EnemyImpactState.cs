@@ -9,9 +9,9 @@ public class EnemyImpactState : EnemyBaseState
 
     private float stateDuration;
 
-    public EnemyImpactState(EnemyStateMachine stateMachine, float stateDuration) : base(stateMachine)
+    public EnemyImpactState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
-        this.stateDuration = stateDuration;
+        
     }
 
     public override void Enter()
@@ -23,10 +23,14 @@ public class EnemyImpactState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         MoveNoInput(deltaTime);
+        float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Impact");
+        //stateDuration -= deltaTime;
 
-        stateDuration -= deltaTime;
-
-        if (stateDuration <= 0f)
+        //if (stateDuration <= 0f)
+        //{
+        //    stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+        //}
+        if (normalizedTime > 0.9f)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
         }

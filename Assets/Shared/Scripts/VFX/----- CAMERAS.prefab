@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000004851654, y: -0.000000034383575, z: -0.0000000042427963,
     w: 1}
-  m_LocalPosition: {x: -0.0000013709068, y: 0.000001013279, z: 1.8708286}
+  m_LocalPosition: {x: 0.0000038146973, y: 0.000002861023, z: 60.30237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,7 +81,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2568022579103125117}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.025675405, y: 0.97274154, z: -0.13239636, w: -0.18864214}
+  m_LocalRotation: {x: -0.021593079, y: 0.33024898, z: 0.007557186, w: 0.94361657}
   m_LocalPosition: {x: -37.564186, y: -2.758395, z: -47.092453}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 6204825595631910287}
     CustomLookAtTarget: 1
   Lens:
-    FieldOfView: 60
+    FieldOfView: 80
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -447,8 +447,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3189412624259597478}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.098512016, y: -0.0000000074070794, z: -7.3325296e-10, w: 0.9951359}
-  m_LocalPosition: {x: -38.23806, y: -4.6270146, z: -55.609474}
+  m_LocalRotation: {x: -0.015370943, y: 0.937214, z: -0.04164529, w: -0.34591815}
+  m_LocalPosition: {x: 16.646803, y: 4.3251653, z: 164.49802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -628,9 +628,9 @@ MonoBehaviour:
       Input:
         InputAction: {fileID: 2095521359924115625, guid: 700c5c39ffb339c488f1ec8c4390f74a,
           type: 3}
-        Gain: 8
+        Gain: 4
         LegacyInput: Mouse X
-        LegacyGain: 200
+        LegacyGain: 100
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -642,9 +642,9 @@ MonoBehaviour:
       Input:
         InputAction: {fileID: 2095521359924115625, guid: 700c5c39ffb339c488f1ec8c4390f74a,
           type: 3}
-        Gain: -8
+        Gain: -4
         LegacyInput: Mouse Y
-        LegacyGain: -400
+        LegacyGain: -200
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -720,17 +720,17 @@ MonoBehaviour:
     Enabled: 1
     DistanceLimit: 0
     MinimumOcclusionTime: 0
-    CameraRadius: 0.4
+    CameraRadius: 0.2
     UseFollowTarget:
       Enabled: 0
       YOffset: 0
     Strategy: 0
     MaximumEffort: 4
-    SmoothingTime: 0
+    SmoothingTime: 0.3
     Damping: 0.4
-    DampingWhenOccluded: 0.2
+    DampingWhenOccluded: 0.3
   ShotQualityEvaluation:
-    Enabled: 0
+    Enabled: 1
     OptimalDistance: 10
     NearLimit: 5
     FarLimit: 30
@@ -798,8 +798,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4860392909510552292}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.098512016, y: -0.000000007407079, z: -7.3325296e-10, w: 0.9951359}
-  m_LocalPosition: {x: -38.23806, y: -4.6270146, z: -55.609474}
+  m_LocalRotation: {x: -0.015370933, y: 0.937214, z: -0.04164527, w: -0.34591812}
+  m_LocalPosition: {x: 16.646803, y: 4.3251653, z: 164.49802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -19,6 +19,8 @@ public class AttackData : ScriptableObject
 
     [field: SerializeField] public AttackData NextComboAttack { get; private set; }
 
+    
+
     [field: SerializeField] public float Cooldown { get; private set; } = 1f;
 
 

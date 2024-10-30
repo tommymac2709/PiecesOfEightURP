@@ -30,7 +30,7 @@ public class EnemyForcePulledState : EnemyBaseState
         if (Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) < 2f)
         {
             stateMachine.Controller.enabled = true;
-            stateMachine.SwitchState(new EnemyImpactState(stateMachine,1f));
+            //stateMachine.SwitchState(new EnemyImpactState(stateMachine,));
             return;
         }
 
