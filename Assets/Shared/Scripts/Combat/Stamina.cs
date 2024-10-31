@@ -8,15 +8,21 @@ using Newtonsoft.Json.Linq;
 
 public class Stamina : MonoBehaviour, IJsonSaveable
 {
+    private InputReader inputReader;
+
+
     [SerializeField] float regenerationPercentage = 70f;
 
     [SerializeField] float percentLossOnBlock;
     [SerializeField] float percentLossOnDamage;
     [SerializeField] float staminaRegenRate;
     [SerializeField] float staminaRegenDelay;
+    [SerializeField] float sprintStaminaDrainRate; // Rate of stamina reduction per second
 
     [SerializeField] float staminaForDisplay;
     [SerializeField] public LazyValue<float> currentStamina { get; private set; }
+
+    public event Action OnStaminaDepleted;
 
     private Coroutine staminaRegenCoroutine;
 
@@ -44,12 +50,54 @@ public class Stamina : MonoBehaviour, IJsonSaveable
     private void Awake()
     {
         currentStamina = new LazyValue<float>(GetInitialStamina);
+        
     }
 
     private void LoseStaminaOnDamage()
     {
         currentStamina.value -= (currentStamina.value / percentLossOnDamage);
         RestartStaminaRegen();
+    }
+    public void StartSprintDrain()
+    {
+        if (staminaRegenCoroutine != null)
+        {
+            StopCoroutine(staminaRegenCoroutine);
+        }
+        StartCoroutine(SprintStaminaDrain());
+    }
+
+    public void StopSprintDrain()
+    {
+        // Stop draining stamina and restart regeneration after sprinting stops
+        RestartStaminaRegen();
+    }
+
+    private IEnumerator SprintStaminaDrain()
+    {
+        while (currentStamina.value > 0)
+        {
+            if (!GetComponent<InputReader>().IsSprinting)
+            {   
+                StopSprintDrain();
+                break;
+            }
+
+            if (inputReader.MovementValue.sqrMagnitude > 0)
+            {
+                currentStamina.value -= sprintStaminaDrainRate * Time.deltaTime;
+
+                if (currentStamina.value <= 0)
+                {
+                    currentStamina.value = 0;
+                    OnStaminaDepleted?.Invoke(); // Trigger stamina depleted event
+                    StopSprintDrain(); // Stop sprinting when stamina runs out
+                    break;
+                }
+            }
+            
+            yield return null;
+        }
     }
 
     private void RestartStaminaRegen()
@@ -113,6 +161,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
     {
         currentStamina.ForceInit();
         staminaForDisplay = currentStamina.value;
+        inputReader = GetComponent<InputReader>(); // Get the InputReader component
     }
 
     // Update is called once per frame

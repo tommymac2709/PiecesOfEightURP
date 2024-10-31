@@ -45,10 +45,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
         controls.Player.Enable();
         controls.UI.Enable();
 
+        GetComponent<Stamina>().OnStaminaDepleted += HandleStaminaDepleted;
+
         WindowController.OnAnyWindowOpened += DisableControls;
         WindowController.OnAllWindowsClosed += EnableControls;
         Health.OnDeathUI += DisableAllControls;
 
+    }
+
+    private void HandleStaminaDepleted()
+    {
+        IsSprinting = false;
     }
 
     private void DisableAllControls()
@@ -74,10 +81,16 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
         WindowController.OnAllWindowsClosed -= EnableControls;
 
         Health.OnDeathUI -= DisableAllControls;
+        if (GetComponent<Stamina>() != null)
+        {
+            GetComponent<Stamina>().OnStaminaDepleted -= HandleStaminaDepleted;
+        }
 
         controls.Player.Disable();
         controls.UI.Disable();
     }
+
+
 
     public void OnSaveGame(InputAction.CallbackContext context)
     {
@@ -163,7 +176,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
 
     public void OnBlock(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && GetComponent<Stamina>().GetCurrentStamina() > 0)
         {
             IsBlocking = true;
         }
@@ -175,15 +188,18 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
 
     public void OnSprint(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && GetComponent<Stamina>().GetCurrentStamina() > 0)
         {
             IsSprinting = true;
+            GetComponent<Stamina>().StartSprintDrain();
         }
         else if (context.canceled)
         {
             IsSprinting = false;
+            GetComponent<Stamina>().StopSprintDrain();
         }
     }
+
 
     public void OnUseAbility(InputAction.CallbackContext context)
     {
