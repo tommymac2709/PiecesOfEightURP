@@ -5,7 +5,10 @@ public class DamageReceiver : MonoBehaviour
 {
     public event Action OnParried;
 
+    public event Action OnBlocked;
+
     [SerializeField] Health health;
+    [SerializeField] Stamina stamina;
 
     //[SerializeField] WeaponHandler weapon;
 
@@ -56,13 +59,16 @@ public class DamageReceiver : MonoBehaviour
             }
         //}
        
-        if (isInvulnerable) { return; }
+        
 
-        if (isBlocking && AttackerInCoverage(instigator))
+        if (isBlocking && AttackerInCoverage(instigator) && stamina.GetCurrentStamina() > 0)
         {
+            OnBlocked?.Invoke();
             //weapon.HitTwo();
             return;
         }
+
+        if (isInvulnerable) { return; }
 
         //weapon.HitOne();
         health.DealDamage(instigator, damageAmount);

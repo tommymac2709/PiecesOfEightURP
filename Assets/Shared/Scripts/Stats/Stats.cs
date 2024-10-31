@@ -4,5 +4,6 @@ public enum Stat
     ExperienceReward,
     ExperienceToLevelUp,
     Damage,
-    Defence
+    Defence,
+    Stamina
 }

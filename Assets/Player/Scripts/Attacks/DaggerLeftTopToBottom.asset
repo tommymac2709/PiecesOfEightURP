@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: DaggerLeftTopToBottom
   m_EditorClassIdentifier: 
   <ApplyRootMotion>k__BackingField: 1
+  <ApplyImpactRootMotion>k__BackingField: 1
   <AnimationName>k__BackingField: DaggerLeft1
+  <ImpactAnimationName>k__BackingField: Impact
   damageModifier: 1
   transitionDuration: 0.1
   <NextComboAttack>k__BackingField: {fileID: 0}
+  <Cooldown>k__BackingField: 1
   comboAttackTime: 0.99
+  <Knockback>k__BackingField: 0
