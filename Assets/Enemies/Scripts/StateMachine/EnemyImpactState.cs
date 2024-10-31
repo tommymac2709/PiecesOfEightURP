@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class EnemyImpactState : EnemyBaseState
 {
-    private readonly int ImpactAnimHash = Animator.StringToHash("Impact");
-
+    private readonly int impactAnimHash;
     private const float CrossFadeDuration = 0.1f;
-    private const float AnimatorDampTime = 0.1f;
+    private AttackData attackData;
 
-    private float stateDuration;
-
-    public EnemyImpactState(EnemyStateMachine stateMachine) : base(stateMachine)
+    public EnemyImpactState(EnemyStateMachine stateMachine, AttackData attackData) : base(stateMachine)
     {
-        
+        impactAnimHash = Animator.StringToHash(attackData.ImpactAnimationName);
+        this.attackData = attackData;
     }
 
     public override void Enter()
     {
-        
-        stateMachine.Animator.CrossFadeInFixedTime(ImpactAnimHash, CrossFadeDuration);
+        if (attackData.ApplyImpactRootMotion) stateMachine.Animator.applyRootMotion = true;
+
+        stateMachine.Animator.CrossFadeInFixedTime(impactAnimHash, CrossFadeDuration);
+
         Debug.Log(stateMachine.Health.currentHealth);
     }
     public override void Tick(float deltaTime)
@@ -39,6 +39,7 @@ public class EnemyImpactState : EnemyBaseState
 
     public override void Exit()
     {
+        stateMachine.Animator.applyRootMotion = false;
 
     }
 

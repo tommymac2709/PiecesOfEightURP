@@ -91,7 +91,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
     private void HandleTakeDamage()
     {
         Notoriety.SetEnemyAggro();
-        SwitchState(new EnemyImpactState(this));
+        var currentAttack = PlayerStateMachine.Fighter.currentAttack;
+        SwitchState(new EnemyImpactState(this, currentAttack));
     }
 
     

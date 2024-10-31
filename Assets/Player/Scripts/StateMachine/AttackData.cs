@@ -7,7 +7,13 @@ public class AttackData : ScriptableObject
 
 {
     [field: SerializeField] public bool ApplyRootMotion { get; private set; } = true;
+
+    [field: SerializeField] public bool ApplyImpactRootMotion { get; private set; } = true;
+
     [field: SerializeField] public string AnimationName {  get; private set; }
+
+    [field: SerializeField] public string ImpactAnimationName { get; private set; }
+
 
     [Range(0.5f, 2.0f)]
     [Tooltip("This will be multiplied by the damage in the Current Weapon Config")]
@@ -19,7 +25,6 @@ public class AttackData : ScriptableObject
 
     [field: SerializeField] public AttackData NextComboAttack { get; private set; }
 
-    
 
     [field: SerializeField] public float Cooldown { get; private set; } = 1f;
 
