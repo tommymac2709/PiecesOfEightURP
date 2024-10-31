@@ -58,17 +58,21 @@ public class DamageReceiver : MonoBehaviour
                 return;
             }
         //}
-       
-        
+
+        if (isInvulnerable) { return; }
 
         if (isBlocking && AttackerInCoverage(instigator) && stamina.GetCurrentStamina() > 0)
         {
             OnBlocked?.Invoke();
             //weapon.HitTwo();
+            
             return;
         }
-
-        if (isInvulnerable) { return; }
+        else if (isBlocking && AttackerInCoverage(instigator) && stamina.GetCurrentStamina() <= 0)
+        {
+            var stateMachine = GetComponent<PlayerStateMachine>();
+            stateMachine.SwitchState(new PlayerImpactState(stateMachine));
+        }
 
         //weapon.HitOne();
         health.DealDamage(instigator, damageAmount);
