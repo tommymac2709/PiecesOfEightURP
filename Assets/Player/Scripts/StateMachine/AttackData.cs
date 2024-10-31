@@ -15,6 +15,7 @@ public class AttackData : ScriptableObject
     [field: SerializeField] public string ImpactAnimationName { get; private set; }
 
 
+
     [Range(0.5f, 2.0f)]
     [Tooltip("This will be multiplied by the damage in the Current Weapon Config")]
     [SerializeField]

@@ -123,8 +123,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     public void OnDodge(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
-
+        if (GetComponent<Stamina>().GetCurrentStamina() <= 0) { return; }   
         DodgeEvent?.Invoke();
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)

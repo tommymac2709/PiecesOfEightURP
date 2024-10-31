@@ -15,6 +15,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
 
     [SerializeField] float percentLossOnBlock;
     [SerializeField] float percentLossOnDamage;
+    [SerializeField] float percentLossOnDodge;
     [SerializeField] float staminaRegenRate;
     [SerializeField] float staminaRegenDelay;
     [SerializeField] float sprintStaminaDrainRate; // Rate of stamina reduction per second
@@ -31,11 +32,12 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         GetComponent<Health>().OnTakeDamage += LoseStaminaOnDamage;
         GetComponent<DamageReceiver>().OnBlocked += LoseStaminaBlocked;
         GetComponent<BaseStats>().onLevelUp += RegenerateStamina;
+        
     }
 
     private void LoseStaminaBlocked()
     {
-        currentStamina.value -= (currentStamina.value / percentLossOnBlock);
+        currentStamina.value -= (GetComponent<BaseStats>().GetStat(Stat.Stamina) / percentLossOnBlock);
         RestartStaminaRegen();
 
     }
@@ -45,6 +47,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         GetComponent<Health>().OnTakeDamage -= LoseStaminaOnDamage;
         GetComponent<DamageReceiver>().OnBlocked -= LoseStaminaBlocked;
         GetComponent<BaseStats>().onLevelUp -= RegenerateStamina;
+        inputReader.DodgeEvent -= LoseStaminaOnDodge;
     }
 
     private void Awake()
@@ -55,7 +58,13 @@ public class Stamina : MonoBehaviour, IJsonSaveable
 
     private void LoseStaminaOnDamage()
     {
-        currentStamina.value -= (currentStamina.value / percentLossOnDamage);
+        currentStamina.value -= (GetComponent<BaseStats>().GetStat(Stat.Stamina) / percentLossOnDamage);
+        RestartStaminaRegen();
+    }
+
+    public void LoseStaminaOnDodge()
+    {
+        currentStamina.value -= (GetComponent<BaseStats>().GetStat(Stat.Stamina) / percentLossOnDodge);
         RestartStaminaRegen();
     }
     public void StartSprintDrain()
@@ -162,6 +171,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         currentStamina.ForceInit();
         staminaForDisplay = currentStamina.value;
         inputReader = GetComponent<InputReader>(); // Get the InputReader component
+        inputReader.DodgeEvent += LoseStaminaOnDodge;
     }
 
     // Update is called once per frame
