@@ -89,6 +89,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
+        DamageReceiver.OnImpactEnemy += HandleTakeDamage;
+        DamageReceiver.OnBlocked += HandleBlocked;
         PlayerAttackingState.OnPlayerAttack += HandlePlayerAttack;
         
     }
@@ -97,8 +99,15 @@ public class EnemyStateMachine : StateMachine, ISaveable
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
+        DamageReceiver.OnImpactEnemy -= HandleTakeDamage;
+        DamageReceiver.OnBlocked -= HandleBlocked;
         PlayerAttackingState.OnPlayerAttack -= HandlePlayerAttack;
         
+    }
+
+    private void HandleBlocked()
+    {
+        SwitchState(new EnemyBlockImpactState(this));
     }
 
     private void HandlePlayerAttack()
@@ -112,7 +121,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     private bool ShouldBlock()
     {
-        if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange)
+        if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange && Notoriety.GetIsAggro())
         {
             int rnd = Random.Range(0, 2);
             if (rnd == 0)

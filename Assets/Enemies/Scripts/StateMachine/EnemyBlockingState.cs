@@ -34,8 +34,9 @@ public class EnemyBlockingState : EnemyBaseState
 
     public override void Exit()
     {
-        stateMachine.DamageReceiver.SetIsBlocking(false); // Reset blocking property
         PlayerAttackingState.OnPlayerAttackComplete -= StopBlocking;
+        stateMachine.DamageReceiver.SetIsBlocking(false); // Reset blocking property
+        
     }
 
     private void StopBlocking()

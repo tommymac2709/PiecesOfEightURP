@@ -104,12 +104,14 @@ public class PlayerStateMachine : StateMachine, IJsonSaveable
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
+        DamageReceiver.OnImpactPlayer += HandleTakeDamage;
     }
 
     private void OnDisable()
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
+        DamageReceiver.OnImpactPlayer += HandleTakeDamage;
     }
 
     private void HandleTakeDamage()

@@ -7,6 +7,9 @@ public class DamageReceiver : MonoBehaviour
 
     public event Action OnBlocked;
 
+    public event Action OnImpactEnemy;
+    public event Action OnImpactPlayer;
+
     [SerializeField] Health health;
     [SerializeField] Stamina stamina;
 
@@ -45,19 +48,43 @@ public class DamageReceiver : MonoBehaviour
 
     public void DealDamage(GameObject instigator, Transform attacker, float damageAmount)
     {
+        if (instigator == null)
+        {
+            Debug.LogError("Instigator is null");
+            return;
+        }
+
+        if (attacker == null)
+        {
+            Debug.LogError("Attacker is null");
+            return;
+        }
+
+        if (health == null)
+        {
+            Debug.LogError("Health is null");
+            return;
+        }
+
+        if (stamina == null)
+        {
+            Debug.LogError("Stamina is null");
+            return;
+        }
+
         instigator.TryGetComponent<EnemyStateMachine>(out var enemyStateMachine);
 
-        //if (enemyStateMachine != null)
-        //{
-            
+        if (enemyStateMachine != null)
+        {
+
 
             if (canParry && AttackerInCoverage(instigator))
             {
-                //weapon.HitOne();
+               
                 enemyStateMachine.SwitchState(new EnemyParriedState(enemyStateMachine, enemyStateMachine.ParriedStateDuration));
                 return;
             }
-        //}
+        }
 
         if (isInvulnerable) { return; }
 
@@ -70,8 +97,8 @@ public class DamageReceiver : MonoBehaviour
         }
         else if (isBlocking && AttackerInCoverage(instigator) && stamina.GetCurrentStamina() <= 0)
         {
-            var stateMachine = GetComponent<PlayerStateMachine>();
-            stateMachine.SwitchState(new PlayerImpactState(stateMachine));
+            OnImpactEnemy?.Invoke();
+            OnImpactPlayer?.Invoke();
         }
 
         //weapon.HitOne();

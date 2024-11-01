@@ -30,12 +30,16 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         GetComponent<Health>().OnTakeDamage += LoseStaminaOnDamage;
         GetComponent<DamageReceiver>().OnBlocked += LoseStaminaBlocked;
         GetComponent<BaseStats>().onLevelUp += RegenerateStamina;
+        
+        if (!this.CompareTag("Player")) { return; }
+        inputReader.DodgeEvent += LoseStaminaOnDodge;
     }
     private void OnDisable()
     {
         GetComponent<Health>().OnTakeDamage -= LoseStaminaOnDamage;
         GetComponent<DamageReceiver>().OnBlocked -= LoseStaminaBlocked;
         GetComponent<BaseStats>().onLevelUp -= RegenerateStamina;
+        if(!this.CompareTag("Player")) { return; }
         inputReader.DodgeEvent -= LoseStaminaOnDodge;
     }
     private void Awake()
@@ -46,8 +50,14 @@ public class Stamina : MonoBehaviour, IJsonSaveable
     {
         currentStamina.ForceInit();
         staminaForDisplay = currentStamina.value;
-        inputReader = GetComponent<InputReader>(); // Get the InputReader component
-        inputReader.DodgeEvent += LoseStaminaOnDodge;
+
+        TryGetComponent<PlayerStateMachine>(out var playerStateMachine);
+        if (playerStateMachine)
+        {
+            inputReader = GetComponent<InputReader>(); // Get the InputReader component
+            inputReader.DodgeEvent += LoseStaminaOnDodge;
+        }
+        
     }
     void Update()
     {
@@ -103,6 +113,12 @@ public class Stamina : MonoBehaviour, IJsonSaveable
 
     private IEnumerator SprintStaminaDrain()
     {
+        TryGetComponent<PlayerStateMachine>(out var playerStateMachine);
+        if (playerStateMachine == null) 
+        {
+            yield return null;
+
+        }
         while (currentStamina.value > 0)
         {
             if (!GetComponent<InputReader>().IsSprinting)

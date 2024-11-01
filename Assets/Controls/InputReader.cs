@@ -175,7 +175,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
         //}
         if (context.performed) { return; }
 
-        AttackPressed();
+        AttackPressed?.Invoke();
     }
 
     public void OnBlock(InputAction.CallbackContext context)

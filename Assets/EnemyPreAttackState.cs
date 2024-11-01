@@ -7,7 +7,7 @@ public class EnemyPreAttackState : EnemyBaseState
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRightSpeed");
 
     private const float CrossFadeDuration = 0.1f;
-    private const float PreAttackDuration = 1f;
+    private const float PreAttackDuration = 0.5f;
     private const float CircleChangeCooldownDuration = 2f; // Cooldown duration for circling direction change
 
     private float timeSpentPreAttacking;
@@ -118,7 +118,7 @@ public class EnemyPreAttackState : EnemyBaseState
         switch (chosenBehavior)
         {
             case PreAttackBehavior.MoveToward:
-                if (distanceToPlayer <= 1.5f) // Stop if within 1 unit
+                if (distanceToPlayer <= 1.5f) // Stop if within n unit
                 {
                     ChooseRandomCircle(); // Choose circling direction
                 }
@@ -240,7 +240,7 @@ public class EnemyPreAttackState : EnemyBaseState
 
     private void DecideToAttack()
     {
-        bool shouldAttack = Random.Range(0, 5) < 4; // 80% chance to attack
+        bool shouldAttack = Random.Range(0, 101) < 90; // n% chance to attack
 
         if (shouldAttack && !IsOtherEnemyAttacking())
         {
