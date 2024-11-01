@@ -91,6 +91,7 @@ public class DamageReceiver : MonoBehaviour
         if (isBlocking && AttackerInCoverage(instigator) && stamina.GetCurrentStamina() > 0)
         {
             OnBlocked?.Invoke();
+
             //weapon.HitTwo();
             
             return;

@@ -29,7 +29,7 @@ public class EnemyBlockImpactState : EnemyBaseState
         MoveNoInput(deltaTime);
         float normalizedTimeAttack = GetNormalizedTime(stateMachine.PlayerStateMachine.Animator, "Attack");
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Impact");
-        if (normalizedTime > 0.5f)
+        if (normalizedTime > 0.75f)
         {
             int rnd = Random.Range(0, 2);
             if (rnd == 0)

@@ -14,6 +14,7 @@ public class EnemyImpactState : EnemyBaseState
 
     public override void Enter()
     {
+        
         if (attackData.ApplyImpactRootMotion) stateMachine.Animator.applyRootMotion = true;
 
         stateMachine.Animator.CrossFadeInFixedTime(impactAnimHash, CrossFadeDuration);

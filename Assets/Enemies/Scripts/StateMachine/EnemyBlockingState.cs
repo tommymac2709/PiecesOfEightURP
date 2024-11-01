@@ -46,7 +46,17 @@ public class EnemyBlockingState : EnemyBaseState
 
     private void StopBlocking()
     {
-        stateMachine.SwitchState(new EnemyIdleState(stateMachine)); // Switch out of blocking
+        int rnd = Random.Range(0, 2);
+        if (rnd == 0)
+        {
+            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+            return;
+        }
+        else if (rnd == 1)
+        {
+            stateMachine.SwitchState(new EnemyIdleState(stateMachine)); // Switch out of blocking
+        }
+        
     }
     private bool PlayerOutOfRange()
     {
