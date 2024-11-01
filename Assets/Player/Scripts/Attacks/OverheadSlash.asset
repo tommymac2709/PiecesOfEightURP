@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OverheadSlash
   m_EditorClassIdentifier: 
   <ApplyRootMotion>k__BackingField: 1
+  <ApplyImpactRootMotion>k__BackingField: 1
   <AnimationName>k__BackingField: Attack1
   <ImpactAnimationName>k__BackingField: OverheadImpact
   damageModifier: 1
@@ -20,5 +21,5 @@ MonoBehaviour:
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: ad58a41c7c9ae0548a462e8d69fb6501,
     type: 2}
   <Cooldown>k__BackingField: 1
-  comboAttackTime: 0.801
+  comboAttackTime: 0.5
   <Knockback>k__BackingField: 3

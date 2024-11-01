@@ -30,7 +30,12 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Enter()
     {
-        
+
+        #region(Click to Attack)
+        stateMachine.InputReader.AttackPressed += HandleAttackPressed;
+
+        #endregion
+
 
         if (currentAttack.ApplyRootMotion) stateMachine.Animator.applyRootMotion = true;
         hasCombo = currentAttack.NextComboAttack != null;
@@ -58,7 +63,7 @@ public class PlayerAttackingState : PlayerBaseState
         }
         Vector3 movement = CalculateMovement();
 
-        if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
+        if (normalizedTime < 1f)
         {
             
             //if(normalizedTime >= currentAttack.ForceTime)
@@ -66,22 +71,23 @@ public class PlayerAttackingState : PlayerBaseState
             //    TryApplyForce();
             //}
 
-            if (stateMachine.InputReader.IsAttacking)
-            {
-                if (hasCombo)
-                {
-                    ComboAttack(normalizedTime);
-                }
+        //    if (stateMachine.InputReader.IsAttacking)
+        //    {
+        //        if (hasCombo)
+        //        {
+        //            ComboAttack(normalizedTime);
+        //        }
                 
 
                 
 
-                if (stateMachine.Targeter.CurrentTarget != null && stateMachine.InputReader.IsTargeting) return;
+        //        if (stateMachine.Targeter.CurrentTarget != null && stateMachine.InputReader.IsTargeting) return;
 
-                if (movement == Vector3.zero) { return; }
+        //        if (movement == Vector3.zero) { return; }
 
-                FaceDirection(movement, Time.deltaTime);
-            }
+        //        FaceDirection(movement, Time.deltaTime);
+        //    }
+
         }
         else
         {
@@ -95,13 +101,14 @@ public class PlayerAttackingState : PlayerBaseState
             }
         }
 
-        previousFrameTime = normalizedTime;
+        
     }
 
     
     public override void Exit()
     {
         stateMachine.Animator.applyRootMotion = false;
+        stateMachine.InputReader.AttackPressed -= HandleAttackPressed;
     }
     private void ComboAttack(float normalizedTime)
     {
@@ -109,6 +116,15 @@ public class PlayerAttackingState : PlayerBaseState
 
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine,currentAttack.NextComboAttack));
     }
+
+    void HandleAttackPressed()
+    {
+        // stateMachine.InputReader.AttackDown -= HandleAttackDown; //Makes it harder to time combos.
+        // with this enabled, you CANNOT button mash and expect to combo.
+
+        float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+        ComboAttack(normalizedTime);
+    }//Enables Button Push
 
     //private void TryApplyForce()
     //{
@@ -119,7 +135,7 @@ public class PlayerAttackingState : PlayerBaseState
     //    alreadyAppliedForce = true;
     //}
 
-    
+
 
     private Vector3 CalculateMovement()
     {

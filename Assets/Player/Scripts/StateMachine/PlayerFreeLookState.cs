@@ -32,6 +32,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.DodgeEvent += OnDodge;
         stateMachine.InputReader.UseAbilityEvent += OnUseAbility;
         stateMachine.InputReader.SheatheEvent += OnSheathe;
+        stateMachine.InputReader.AttackPressed += OnAttack;
 
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f);
 
@@ -51,13 +52,13 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
 
+        //if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
+        //{
 
-        if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
-        {
+        //    stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+        //    return;
+        //}
 
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
-            return;
-        }
 
         if (stateMachine.InputReader.IsBlocking)
         {
@@ -97,6 +98,17 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.DodgeEvent -= OnDodge;
         stateMachine.InputReader.UseAbilityEvent -= OnUseAbility;
         stateMachine.InputReader.SheatheEvent -= OnSheathe;
+        stateMachine.InputReader.AttackPressed -= OnAttack;
+    }
+
+    private void OnAttack()
+    {
+        if (stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
+        {
+
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+            return;
+        }
     }
 
     private void OnSheathe()

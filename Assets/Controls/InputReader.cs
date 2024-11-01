@@ -15,8 +15,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
 
     public bool IsTargeting;
 
-      
 
+    public event Action AttackPressed;
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
@@ -165,14 +165,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
     */
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed) 
-        { 
-            IsAttacking = true; 
-        }
-        else if (context.canceled)
-        {
-            IsAttacking = false;
-        }
+        //if (context.performed) 
+        //{ 
+        //    IsAttacking = true; 
+        //}
+        //else if (context.canceled)
+        //{
+        //    IsAttacking = false;
+        //}
+        if (context.performed) { return; }
+
+        AttackPressed();
     }
 
     public void OnBlock(InputAction.CallbackContext context)

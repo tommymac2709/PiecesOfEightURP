@@ -31,17 +31,18 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.InputReader.CycleTargetEvent += OnCycleTarget;
         stateMachine.InputReader.DodgeEvent += OnDodge;
         stateMachine.InputReader.UseAbilityEvent += OnUseAbility;
+        stateMachine.InputReader.AttackPressed += OnAttack;
 
         stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
-        {
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
-            return;
-        }
+        //if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
+        //{
+        //    stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+        //    return;
+        //}
 
         if (stateMachine.InputReader.IsBlocking)
         {
@@ -72,6 +73,17 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.InputReader.CycleTargetEvent -= OnCycleTarget;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
         stateMachine.InputReader.UseAbilityEvent -= OnUseAbility;
+        stateMachine.InputReader.AttackPressed -= OnAttack;
+    }
+
+    private void OnAttack()
+    {
+        if (stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
+        {
+
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+            return;
+        }
     }
 
     private void OnUseAbility()
