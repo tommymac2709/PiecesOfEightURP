@@ -29,7 +29,7 @@ public class EnemyBlockImpactState : EnemyBaseState
         MoveNoInput(deltaTime);
         float normalizedTimeAttack = GetNormalizedTime(stateMachine.PlayerStateMachine.Animator, "Attack");
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Impact");
-        if (normalizedTimeAttack > 0.5f)
+        if (normalizedTime > 0.5f)
         {
             int rnd = Random.Range(0, 2);
             if (rnd == 0)
@@ -38,8 +38,7 @@ public class EnemyBlockImpactState : EnemyBaseState
                 return;
             }
         }
-        
-        if (normalizedTime > 0.9f)
+        else if (normalizedTime > 0.9f)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
