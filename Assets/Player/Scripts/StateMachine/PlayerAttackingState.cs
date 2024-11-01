@@ -15,6 +15,7 @@ public class PlayerAttackingState : PlayerBaseState
     private float canBlockTime = 0.5f;
 
     public static event Action OnPlayerAttack;
+    public static event Action OnPlayerAttackComplete;
 
     public PlayerAttackingState(PlayerStateMachine stateMachine, AttackData attack) : base(stateMachine)
     {
@@ -110,13 +111,15 @@ public class PlayerAttackingState : PlayerBaseState
     
     public override void Exit()
     {
+        OnPlayerAttackComplete?.Invoke();
         stateMachine.Animator.applyRootMotion = false;
         stateMachine.InputReader.AttackPressed -= HandleAttackPressed;
+
     }
     private void ComboAttack(float normalizedTime)
     {
         if (normalizedTime < currentAttack.ComboAttackTime) { return; }
-
+        OnPlayerAttackComplete?.Invoke();
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine,currentAttack.NextComboAttack));
     }
 

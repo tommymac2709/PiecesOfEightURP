@@ -112,8 +112,18 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     private bool ShouldBlock()
     {
+        if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange)
+        {
+            int rnd = Random.Range(0, 2);
+            if (rnd == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         // Logic to decide if the enemy should block
-        return Vector3.Distance(transform.position, Player.transform.position) < BlockRange;
+        return false;
     }
 
     private void HandleTakeDamage()
