@@ -27,10 +27,22 @@ public class EnemyBlockImpactState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         MoveNoInput(deltaTime);
+        float normalizedTimeAttack = GetNormalizedTime(stateMachine.PlayerStateMachine.Animator, "Attack");
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Impact");
+        if (normalizedTimeAttack > 0.5f)
+        {
+            int rnd = Random.Range(0, 2);
+            if (rnd == 0)
+            {
+                stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                return;
+            }
+        }
+        
         if (normalizedTime > 0.9f)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+            return;
         }
     }
 

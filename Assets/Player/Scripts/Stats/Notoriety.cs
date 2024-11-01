@@ -218,6 +218,8 @@ public class Notoriety : MonoBehaviour, IJsonSaveable
         stateD["a"] = currentPirateNotoriety;
         stateD["b"] = currentNavyNotoriety;
         stateD["c"] = currentCommunityNotoriety;
+        stateD["d"] = isAggro;
+        stateD["e"] = pirateHostilityThreshold;
         return state;
 
     }
@@ -228,5 +230,7 @@ public class Notoriety : MonoBehaviour, IJsonSaveable
         currentPirateNotoriety = stateDict["a"].ToObject<float>();
         currentNavyNotoriety = stateDict["b"].ToObject<float>();
         currentCommunityNotoriety = stateDict["c"].ToObject<float>();
+        isAggro = stateDict["d"].ToObject<bool>();
+        pirateHostilityThreshold = stateDict["e"].ToObject<float>();
     }
 }

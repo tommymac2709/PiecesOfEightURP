@@ -123,15 +123,15 @@ public class EnemyStateMachine : StateMachine, ISaveable
     {
         if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange && Notoriety.GetIsAggro())
         {
-            int rnd = Random.Range(0, 2);
-            if (rnd == 0)
+            int rnd = Random.Range(0, 10);
+            if (rnd < 8)
             {
                 return true;
             }
             return false;
         }
 
-        // Logic to decide if the enemy should block
+        
         return false;
     }
 

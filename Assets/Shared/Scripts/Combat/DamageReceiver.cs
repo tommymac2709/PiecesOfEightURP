@@ -99,6 +99,7 @@ public class DamageReceiver : MonoBehaviour
         {
             OnImpactEnemy?.Invoke();
             OnImpactPlayer?.Invoke();
+            return;
         }
 
         //weapon.HitOne();

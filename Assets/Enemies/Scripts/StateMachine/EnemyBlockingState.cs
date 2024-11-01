@@ -25,10 +25,15 @@ public class EnemyBlockingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        //timer += deltaTime;
-        //if (timer >= blockingDuration || PlayerOutOfRange())
+        //float normalizedTime = GetNormalizedTime(stateMachine.PlayerStateMachine.Animator, "Attack");
+        //if (normalizedTime > 0.5f) 
         //{
-        //    stateMachine.SwitchState(new EnemyIdleState(stateMachine)); // Switch out of blocking
+        //    int rnd = Random.Range(0, 2);
+        //    if (rnd == 0)
+        //    {
+        //        stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+        //        return;
+        //    }
         //}
     }
 
