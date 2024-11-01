@@ -8,40 +8,29 @@ using Newtonsoft.Json.Linq;
 
 public class Stamina : MonoBehaviour, IJsonSaveable
 {
+    [SerializeField] private float regenerationPercentage = 70f;
+
+    [SerializeField] private float percentLossOnBlock;
+    [SerializeField] private float percentLossOnDamage;
+    [SerializeField] private float percentLossOnDodge;
+
+    [SerializeField] private float staminaRegenRate;
+    [SerializeField] private float staminaRegenDelay;
+    [SerializeField] private float sprintStaminaDrainRate; // Rate of stamina reduction per second
+    [SerializeField] private float staminaForDisplay;
+   
     private InputReader inputReader;
-
-
-    [SerializeField] float regenerationPercentage = 70f;
-
-    [SerializeField] float percentLossOnBlock;
-    [SerializeField] float percentLossOnDamage;
-    [SerializeField] float percentLossOnDodge;
-    [SerializeField] float staminaRegenRate;
-    [SerializeField] float staminaRegenDelay;
-    [SerializeField] float sprintStaminaDrainRate; // Rate of stamina reduction per second
-
-    [SerializeField] float staminaForDisplay;
-    [SerializeField] public LazyValue<float> currentStamina { get; private set; }
-
-    public event Action OnStaminaDepleted;
-
     private Coroutine staminaRegenCoroutine;
+
+    [SerializeField] public LazyValue<float> currentStamina { get; private set; }
+    public event Action OnStaminaDepleted;
 
     private void OnEnable()
     {
         GetComponent<Health>().OnTakeDamage += LoseStaminaOnDamage;
         GetComponent<DamageReceiver>().OnBlocked += LoseStaminaBlocked;
         GetComponent<BaseStats>().onLevelUp += RegenerateStamina;
-        
     }
-
-    private void LoseStaminaBlocked()
-    {
-        currentStamina.value -= (GetComponent<BaseStats>().GetStat(Stat.Stamina) / percentLossOnBlock);
-        RestartStaminaRegen();
-
-    }
-
     private void OnDisable()
     {
         GetComponent<Health>().OnTakeDamage -= LoseStaminaOnDamage;
@@ -49,11 +38,46 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         GetComponent<BaseStats>().onLevelUp -= RegenerateStamina;
         inputReader.DodgeEvent -= LoseStaminaOnDodge;
     }
-
     private void Awake()
     {
         currentStamina = new LazyValue<float>(GetInitialStamina);
-        
+    }
+    void Start()
+    {
+        currentStamina.ForceInit();
+        staminaForDisplay = currentStamina.value;
+        inputReader = GetComponent<InputReader>(); // Get the InputReader component
+        inputReader.DodgeEvent += LoseStaminaOnDodge;
+    }
+    void Update()
+    {
+        staminaForDisplay = currentStamina.value;
+    }
+
+    private float GetInitialStamina()
+    {
+        return GetComponent<BaseStats>().GetStat(Stat.Stamina);
+    }
+
+    public float GetPercent()
+    {
+        return 100 * (currentStamina.value / GetComponent<BaseStats>().GetStat(Stat.Stamina));
+    }
+
+    public float GetCurrentStamina()
+    {
+        return currentStamina.value;
+    }
+
+    public float GetMaxStamina()
+    {
+        return GetComponent<BaseStats>().GetStat(Stat.Stamina);
+    }
+
+    private void LoseStaminaBlocked()
+    {
+        currentStamina.value -= (GetComponent<BaseStats>().GetStat(Stat.Stamina) / percentLossOnBlock);
+        RestartStaminaRegen();
     }
 
     private void LoseStaminaOnDamage()
@@ -67,6 +91,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         currentStamina.value -= (GetComponent<BaseStats>().GetStat(Stat.Stamina) / percentLossOnDodge);
         RestartStaminaRegen();
     }
+
     public void StartSprintDrain()
     {
         if (staminaRegenCoroutine != null)
@@ -76,18 +101,12 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         StartCoroutine(SprintStaminaDrain());
     }
 
-    public void StopSprintDrain()
-    {
-        // Stop draining stamina and restart regeneration after sprinting stops
-        RestartStaminaRegen();
-    }
-
     private IEnumerator SprintStaminaDrain()
     {
         while (currentStamina.value > 0)
         {
             if (!GetComponent<InputReader>().IsSprinting)
-            {   
+            {
                 StopSprintDrain();
                 break;
             }
@@ -104,9 +123,15 @@ public class Stamina : MonoBehaviour, IJsonSaveable
                     break;
                 }
             }
-            
+
             yield return null;
         }
+    }
+
+    public void StopSprintDrain()
+    {
+        // Stop draining stamina and restart regeneration after sprinting stops
+        RestartStaminaRegen();
     }
 
     private void RestartStaminaRegen()
@@ -131,26 +156,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         staminaRegenCoroutine = null;
     }
 
-    private float GetInitialStamina()
-    {
-        return GetComponent<BaseStats>().GetStat(Stat.Stamina);
-    }
-
-    public float GetPercent()
-    {
-        return 100 * (currentStamina.value / GetComponent<BaseStats>().GetStat(Stat.Stamina));
-    }
-
-    public float GetCurrentStamina()
-    {
-        return currentStamina.value;
-    }
-
-    public float GetMaxStamina()
-    {
-        return GetComponent<BaseStats>().GetStat(Stat.Stamina);
-    }
-
+    //This is on level up
     private void RegenerateStamina()
     {
         //Regen to percentage of the new level max health if below that number
@@ -163,21 +169,6 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         currentStamina.value = GetComponent<BaseStats>().GetStat(Stat.Stamina);
 
         Debug.Log(currentStamina.value);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentStamina.ForceInit();
-        staminaForDisplay = currentStamina.value;
-        inputReader = GetComponent<InputReader>(); // Get the InputReader component
-        inputReader.DodgeEvent += LoseStaminaOnDodge;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        staminaForDisplay = currentStamina.value;
     }
 
     public JToken CaptureAsJToken()

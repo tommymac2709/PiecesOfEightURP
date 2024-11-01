@@ -1,0 +1,90 @@
+Attack System Documentation
+
+See internal documentation comments for instructions to swap between Click-To-Attack and Hold-To-Attack. 
+
+Relevant scripts and change overview below:
+
+To Change to Hold-To-Attack
+
+1.
+PlayerFreeLookState
+
+a.
+public override void Enter()
+--> Comment out "stateMachine.InputReader.AttackPressed += OnAttack;"
+
+b.
+public override void Tick()
+--> Uncomment:
+if (stateMachine.InputReader.IsAttacking && stateMachine.Fighter.currentWeaponConfig.Attacks.Length > 0)
+        {
+
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+            return;
+        }
+
+c. 
+public override void Exit()
+--> Comment out "stateMachine.InputReader.AttackPressed -= OnAttack;"
+
+d.
+--> Comment out OnAttack() method
+
+
+
+2. 
+PlayerAttackingState
+
+a.
+public override void Enter()
+--> Comment out 'Click to Attack' region
+
+b. 
+public override void Tick()
+
+--> Add in ">= previousFrameTime && normalizedTime" to (if normalizedtime < 1f) line
+
+--> Uncomment if (stateMachine.InputReader.IsAttacking)
+        //    {
+        //        if (hasCombo)
+        //        {
+        //            ComboAttack(normalizedTime);
+        //        }
+                
+
+                
+
+        //        if (stateMachine.Targeter.CurrentTarget != null && stateMachine.InputReader.IsTargeting) return;
+
+        //        if (movement == Vector3.zero) { return; }
+
+        //        FaceDirection(movement, Time.deltaTime);
+        //    }
+
+c. 
+public override void Exit()
+--> Comment out stateMachine.InputReader.AttackPressed -= HandleAttackPressed;
+
+d. 
+--> Comment out HandleAttackPressed() method
+
+3. Input Reader
+
+a.
+--> Comment out 'AttackPressed' event
+
+b. public void OnAttack()
+--> Uncomment //if (context.performed) 
+        //{ 
+        //    IsAttacking = true; 
+        //}
+        //else if (context.canceled)
+        //{
+        //    IsAttacking = false;
+        //}
+--> Comment out if (context.performed) { return; }
+
+        AttackPressed();
+
+4. Player Targeting State
+SEE PLAYER FREELOOK STATE
