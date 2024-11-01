@@ -9,49 +9,43 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour, IJsonSaveable
 {
     //Used in health regeneration to regenerate health on level up to percentage of new level max health
-    [SerializeField] float regenerationPercentage = 70f;
-    [SerializeField] float percentHealthToTryFlee = 50f;
-    //[SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float regenerationPercentage = 70f;
+    //For enemy behaviour
+    [SerializeField] private float percentHealthToTryFlee = 50f;
     [SerializeField] public LazyValue<float> currentHealth { get; private set; }
+    public bool IsDead => currentHealth.value == 0f;
 
     public event Action OnTakeDamage;
     public event Action OnDie;
-   
-    public UnityEvent onResurrection;
     public static event Action OnDeathUI;
 
-    public bool IsDead => currentHealth.value == 0f;
-
-    private void Awake()
-    {
-        currentHealth = new LazyValue<float>(GetInitialHealth);
-    }
-
-    private float GetInitialHealth()
-    {
-        return GetComponent<BaseStats>().GetStat(Stat.Health);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        if (currentHealth.value == 0)
-        {
-            OnDie?.Invoke();
-            
-
-        }
-        currentHealth.ForceInit();        
-    }
+    public UnityEvent onResurrection;
 
     private void OnEnable()
     {
         GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
     }
-
     private void OnDisable()
     {
         GetComponent<BaseStats>().onLevelUp -= RegenerateHealth;
+    }
+    private void Awake()
+    {
+        currentHealth = new LazyValue<float>(GetInitialHealth);
+    }
+    void Start()
+    {
+        if (currentHealth.value == 0)
+        {
+            OnDie?.Invoke();
+        }
+
+        currentHealth.ForceInit();
+    }
+
+    private float GetInitialHealth()
+    {
+        return GetComponent<BaseStats>().GetStat(Stat.Health);
     }
 
     public float GetCurrentHealth()
@@ -69,6 +63,18 @@ public class Health : MonoBehaviour, IJsonSaveable
         return 100 * (currentHealth.value / GetComponent<BaseStats>().GetStat(Stat.Health));
     }
 
+    private void RegenerateHealth()
+    {
+        //Regen to percentage of the new level max health if below that number
+        //float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
+        //currentHealth = Mathf.Max(currentHealth, regenHealthPoints);
+
+        //Regenerate to max health
+        currentHealth.value = GetComponent<BaseStats>().GetStat(Stat.Health);
+
+        Debug.Log(currentHealth.value);
+    }
+
     public void DealDamage(GameObject instigator, float damage)
     {
         if (currentHealth.value <= 0) { return; }
@@ -76,8 +82,6 @@ public class Health : MonoBehaviour, IJsonSaveable
         print(gameObject.name + " took damage: " + damage);
 
         currentHealth.value -= damage;
-
-        
 
         if (currentHealth.value < 0)
         {
@@ -96,10 +100,7 @@ public class Health : MonoBehaviour, IJsonSaveable
             }
             
             AwardExperience(instigator);
-
         }
-
-
 
         Debug.Log(currentHealth);
 
@@ -119,44 +120,6 @@ public class Health : MonoBehaviour, IJsonSaveable
         experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
         notoriety.IncreaseNotoriety(GetComponent<BaseStats>().GetFaction(), 10f);
     }
-
-    private void RegenerateHealth()
-    {
-        //Regen to percentage of the new level max health if below that number
-        //float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
-        //currentHealth = Mathf.Max(currentHealth, regenHealthPoints);
-
-        
-
-        //Regenerate to max health
-        currentHealth.value = GetComponent<BaseStats>().GetStat(Stat.Health);
-
-        Debug.Log(currentHealth.value);
-    }
-
-    //public object CaptureState()
-    //{
-    //    Dictionary<string, float> data = new Dictionary<string, float>();
-    //    data["currentHealth"] = currentHealth.value;
-    //    data["maxHealth"] = GetMaxHealth();
-    //    return data;
-    //}
-
-    //public void RestoreState(object state)
-    //{
-    //    Dictionary<string, float> data = (Dictionary<string, float>)state;
-    //    currentHealth.value = data["currentHealth"];
-    //    if (currentHealth.value == 0)
-    //    {
-    //        OnDie?.Invoke();
-    //        return;
-
-
-    //    }
-    //    maxHealth = data["maxHealth"];
-
-
-    //}
 
     public JToken CaptureAsJToken()
     {
