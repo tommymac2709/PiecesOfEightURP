@@ -16,6 +16,7 @@ MonoBehaviour:
   <ApplyImpactRootMotion>k__BackingField: 1
   <AnimationName>k__BackingField: Attack1
   <ImpactAnimationName>k__BackingField: OverheadImpact
+  <BlockAnimationName>k__BackingField: OverheadBlock
   damageModifier: 1
   transitionDuration: 0.1
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: ad58a41c7c9ae0548a462e8d69fb6501,

@@ -122,7 +122,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
         // Condition for blocking, e.g., a probability check or distance check
         if (ShouldBlock())
         {
-            SwitchState(new EnemyBlockingState(this));
+            var currentAttack = PlayerStateMachine.Fighter.currentAttack;
+            SwitchState(new EnemyBlockingState(this, currentAttack));
         }
     }
 
@@ -135,7 +136,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
             {
                 return true;
             }
-            return false;
+            return true;
         }
 
         

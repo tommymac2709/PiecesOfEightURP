@@ -7,19 +7,22 @@ public class EnemyBlockingState : EnemyBaseState
     private float blockingDuration = 0.25f; // Time in seconds
     private float timer = 0;
 
-
-    private readonly int BlockAnimHash = Animator.StringToHash("Block");
+    private readonly int blockAnimHash;
+    
 
     private const float AnimatorDampTime = 0.1f;
 
     private const float CrossFadeDuration = 0.1f;
 
-    public EnemyBlockingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
+    public EnemyBlockingState(EnemyStateMachine stateMachine, AttackData playerAttackData) : base(stateMachine) 
+    {
+        blockAnimHash = Animator.StringToHash(playerAttackData.BlockAnimationName);
+    }
 
     public override void Enter()
     {
         PlayerAttackingState.OnPlayerAttackComplete += StopBlocking;
-        stateMachine.Animator.CrossFadeInFixedTime(BlockAnimHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(blockAnimHash, CrossFadeDuration);
         stateMachine.DamageReceiver.SetIsBlocking(true); // Set enemy blocking property
     }
 
