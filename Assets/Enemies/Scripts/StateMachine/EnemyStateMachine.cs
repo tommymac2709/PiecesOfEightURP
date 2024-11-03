@@ -61,6 +61,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     [field: SerializeField] public bool IsBlocking { get; private set; }
 
+    [field: SerializeField] public bool StateShouldBlock { get; private set; }
+
     public Health Player { get; private set; }
     public AbilityManager PlayerAbilityManager { get; private set; }
 
@@ -105,6 +107,11 @@ public class EnemyStateMachine : StateMachine, ISaveable
         
     }
 
+    public void SetStateShouldBlock(bool shouldBlock)
+    {
+        StateShouldBlock = shouldBlock;
+    }
+
     private void HandleBlocked()
     {
         SwitchState(new EnemyBlockImpactState(this));
@@ -121,7 +128,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     private bool ShouldBlock()
     {
-        if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange && Notoriety.GetIsAggro())
+        if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange && Notoriety.GetIsAggro() && StateShouldBlock)
         {
             int rnd = Random.Range(0, 10);
             if (rnd < 8)

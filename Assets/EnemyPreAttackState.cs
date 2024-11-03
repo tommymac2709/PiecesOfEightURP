@@ -7,7 +7,7 @@ public class EnemyPreAttackState : EnemyBaseState
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRightSpeed");
 
     private const float CrossFadeDuration = 0.1f;
-    private const float PreAttackDuration = 0.5f;
+    private const float PreAttackDuration = 0.25f;
     private const float CircleChangeCooldownDuration = 2f; // Cooldown duration for circling direction change
 
     private float timeSpentPreAttacking;
@@ -15,10 +15,10 @@ public class EnemyPreAttackState : EnemyBaseState
     private bool hasDecidedToAttack;
 
     // Speed variables for different behaviors
-    [SerializeField] private float moveTowardSpeed = 1.5f;
+    [SerializeField] private float moveTowardSpeed = 2f;
     [SerializeField] private float moveAwaySpeed = 1.5f;
     [SerializeField] private float diagonalBackwardSpeed = 1.5f;
-    [SerializeField] private float circleSpeed = 0.5f;
+    [SerializeField] private float circleSpeed = 1f;
 
     private enum PreAttackBehavior { CircleLeft, CircleRight, MoveToward, MoveAway, DiagonalBackward}
     private PreAttackBehavior chosenBehavior;

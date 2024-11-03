@@ -15,12 +15,14 @@ public class EnemyBlockImpactState : EnemyBaseState
 
     public override void Enter()
     {
+        stateMachine.SetStateShouldBlock(false);
         stateMachine.Animator.CrossFadeInFixedTime(BlockAnimHash, CrossFadeDuration);
         stateMachine.DamageReceiver.SetIsInvulnerable(true);
     }
 
     public override void Exit()
     {
+        stateMachine.SetStateShouldBlock(true);
         stateMachine.DamageReceiver.SetIsInvulnerable(false);
     }
 
@@ -29,16 +31,16 @@ public class EnemyBlockImpactState : EnemyBaseState
         MoveNoInput(deltaTime);
         float normalizedTimeAttack = GetNormalizedTime(stateMachine.PlayerStateMachine.Animator, "Attack");
         float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Impact");
-        if (normalizedTime > 0.75f)
-        {
-            int rnd = Random.Range(0, 2);
-            if (rnd == 0)
-            {
-                stateMachine.SwitchState(new EnemyAttackState(stateMachine));
-                return;
-            }
-        }
-        else if (normalizedTime > 0.9f)
+        //if (normalizedTime > 0.75f)
+        //{
+        //    int rnd = Random.Range(0, 2);
+        //    if (rnd == 0)
+        //    {
+        //        stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+        //        return;
+        //    }
+        //}
+        /*else */if (normalizedTime > 0.5f)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;

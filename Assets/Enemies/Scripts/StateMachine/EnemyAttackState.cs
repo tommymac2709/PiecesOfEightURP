@@ -21,6 +21,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Enter()
     {
+        stateMachine.SetStateShouldBlock(false);
         if (!attack)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
@@ -54,6 +55,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Exit()
     {
+        stateMachine.SetStateShouldBlock(true);
         stateMachine.SetAttacking(false); // Set the enemy as not attacking
         stateMachine.CooldownTokenManager.SetCooldown("Attack", attack.Cooldown);
     }
