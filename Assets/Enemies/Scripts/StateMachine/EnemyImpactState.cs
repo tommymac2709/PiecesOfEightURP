@@ -14,7 +14,7 @@ public class EnemyImpactState : EnemyBaseState
 
     public override void Enter()
     {
-        stateMachine.SetStateShouldBlock(true);
+        stateMachine.SetStateShouldBlock(false);
 
         if (attackData.ApplyImpactRootMotion) stateMachine.Animator.applyRootMotion = true;
 
@@ -32,7 +32,7 @@ public class EnemyImpactState : EnemyBaseState
         //{
         //    stateMachine.SwitchState(new EnemyIdleState(stateMachine));
         //}
-        if (normalizedTime > 0.9f)
+        if (normalizedTime > 0.5f)
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
         }

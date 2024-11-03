@@ -136,7 +136,7 @@ public class EnemyStateMachine : StateMachine, ISaveable
             {
                 return true;
             }
-            return true;
+            return false;
         }
 
         

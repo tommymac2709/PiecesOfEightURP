@@ -12,6 +12,8 @@ public class AttackData : ScriptableObject
 
     [field: SerializeField] public string AnimationName {  get; private set; }
 
+  
+
     [field: SerializeField] public string ImpactAnimationName { get; private set; }
 
     [field: SerializeField] public string BlockAnimationName { get; private set; }
