@@ -61,6 +61,10 @@ public class Stamina : MonoBehaviour, IJsonSaveable
     }
     void Update()
     {
+        if (currentStamina.value < 0)
+        {
+            currentStamina.value = 0;
+        }
         staminaForDisplay = currentStamina.value;
     }
 

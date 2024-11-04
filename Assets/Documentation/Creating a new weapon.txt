@@ -1,0 +1,79 @@
+CREATING A NEW WEAPON (Updated 4/11/2024)
+----------------------------------------
+ __________
+|	   |
+| Step One | Create the Scriptable Object
+|__________|
+
+a. Navigate to Assets/Items_Weapons/Weapons/Resources
+
+b. Right-click --> Create --> Weapon --> Make New Weapon
+
+c. Call it something descriptive
+
+d. Fill in relevant fields
+
+
+ __________
+|	   |
+| Step Two | Create the Weapon Prefab
+|__________|
+
+a. Navigate to Assets/Items_Weapons/Weapons/Resources/EquippedWeaponPrefabs
+
+b. Right-click --> Create --> Prefab
+
+c. Call it "Equipped________"
+
+d. Attach a "Weapon" script to the empty parent game object
+
+e. Add a visual as a child of the empty parent
+
+f. Set up the damage point and radius
+
+g. Return to the SO weapon config and set the prefab
+
+
+ ____________
+|	     |
+| Step Three | Create the Weapon Pickup
+|____________|
+
+a. Navigate to Assets/Player/Pickups
+
+b. Right-click on DefaultPickup and create a new Prefab Variant
+
+c. Change the visual to match the weapon
+
+d. Go back to the Weapon Config SO and set the pickup
+
+
+ ____________
+|	     |
+| Step Four  | Spawning the Weapon Pickup
+|____________|
+
+a. Place a PickupSpawner prefab into the world and give it the appropriate Weapon Config
+
+
+ ____________
+|	     |
+| Step Five  | Spawning the Weapon Pickup pt 2
+|____________|
+
+OPTIONAL
+
+a. Add the weapon to shop inventory lists
+
+
+ ____________
+|	     |
+| Step Six   | Adjusting the weapon
+|____________|
+
+a. Equip the weapon to the player (either as pickup or default weapon)
+
+b. Adjust scale, rotation and position as necessary
+
+
+

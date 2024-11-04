@@ -173,7 +173,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
         //{
         //    IsAttacking = false;
         //}
-        if (context.performed) { return; }
+        if (!context.performed) { return; }
 
         AttackPressed?.Invoke();
     }
@@ -221,37 +221,44 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions, Controls.IUIA
 
     public void OnInventory(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed)
         {
-            InventoryEvent?.Invoke();
+            return;
+            
         }
+        InventoryEvent?.Invoke();
 
     }
 
     public void OnShop(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed)
         {
-            ShopEvent?.Invoke();
+            return;
+            
         }
-
+        ShopEvent?.Invoke();
     }
 
     public void OnCancelWindow(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed)
         {
-            CancelWindowEvent?.Invoke();
+            return;
+            
         }
+        CancelWindowEvent?.Invoke();
 
     }
 
     public void OnUnsheatheWeapon(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed)
         {
-            SheatheEvent?.Invoke();
+            return;
+            
             
         }
+        SheatheEvent?.Invoke();
     }
 }
