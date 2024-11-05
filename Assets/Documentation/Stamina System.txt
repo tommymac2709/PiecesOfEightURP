@@ -1,0 +1,25 @@
+Stamina System (updated 3/11/2024)
+----------------------------------
+
+--> Player loses stamina on the following actions:
+
+Take damage
+Block
+Dodge roll (in free look state)
+Sprint
+__________
+
+-> Player cannot perform the following actions if stamina is 0:
+
+Block
+Dodge roll
+Sprint
+__________
+
+--> Stamina automatically begins to regenerate after n seconds post any event that causes stamina to be lost 
+__________
+
+--> Enemies also have stamina and their guard will be broken if attacked when blocking and stamina reaches zero (consider implementing this for player)
+__________
+
+

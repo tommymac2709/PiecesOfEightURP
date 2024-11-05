@@ -3098,6 +3098,7 @@ GameObject:
   - component: {fileID: 7450554268512378496}
   - component: {fileID: 3784791628204880268}
   - component: {fileID: 7943276124060131440}
+  - component: {fileID: 7055215973924431611}
   m_Layer: 0
   m_Name: ----- ENEMY
   m_TagString: Enemy
@@ -3184,6 +3185,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 4528406913152600717}
   <BaseStats>k__BackingField: {fileID: 3903033169511325810}
   <Controller>k__BackingField: {fileID: 2871223791956703218}
+  <DamageReceiver>k__BackingField: {fileID: 8311431661288316288}
   <ForceReceiver>k__BackingField: {fileID: 6140307627355577145}
   <Fighter>k__BackingField: {fileID: 7792547751755755991}
   <Health>k__BackingField: {fileID: 1403208636335331178}
@@ -3204,6 +3206,8 @@ MonoBehaviour:
   <AttackKnockback>k__BackingField: 5
   <PlayerDetectRange>k__BackingField: 10
   <PlayerFleeRange>k__BackingField: 10
+  <BlockRange>k__BackingField: 3
+  <IsBlocking>k__BackingField: 0
 --- !u!114 &1596305256467374407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3297,6 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 1403208636335331178}
+  stamina: {fileID: 7055215973924431611}
   coveredAngle: 90
 --- !u!114 &7792547751755755991
 MonoBehaviour:
@@ -3403,9 +3408,29 @@ MonoBehaviour:
   currentPirateNotoriety: 0
   currentNavyNotoriety: 0
   currentCommunityNotoriety: 0
-  pirateHosilityThreshold: 0
-  navyHosilityThreshold: 0
-  communityHosilityThreshold: 0
+  pirateHostilityThreshold: 0
+  navyHostilityThreshold: 0
+  communityHostilityThreshold: 0
+--- !u!114 &7055215973924431611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290213627640367632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78aecd582e7f9134687a33fc0c364d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regenerationPercentage: 70
+  percentLossOnBlock: 10
+  percentLossOnDamage: 10
+  percentLossOnDodge: 10
+  staminaRegenRate: 0.5
+  staminaRegenDelay: 2
+  sprintStaminaDrainRate: 10
+  staminaForDisplay: 0
 --- !u!1 &8375654682704795484
 GameObject:
   m_ObjectHideFlags: 0

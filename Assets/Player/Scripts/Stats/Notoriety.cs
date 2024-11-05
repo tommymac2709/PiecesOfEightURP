@@ -16,7 +16,7 @@ public class Notoriety : MonoBehaviour, IJsonSaveable
     [SerializeField] float navyHostilityThreshold;
     [SerializeField] float communityHostilityThreshold;
 
-
+    bool isAggro = false;
 
     public event Action OnPirateNotorietyIncreased;
     public event Action OnPirateNotorietyDecreased;
@@ -38,12 +38,19 @@ public class Notoriety : MonoBehaviour, IJsonSaveable
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    public bool GetIsAggro()
+    {
+        return isAggro;
+    }
+
 
     public void SetEnemyAggro()
     {
         pirateHostilityThreshold = 0;
+        isAggro = true;
     }
 
     public void IncreaseNotoriety(Faction faction, float amount)
@@ -211,6 +218,8 @@ public class Notoriety : MonoBehaviour, IJsonSaveable
         stateD["a"] = currentPirateNotoriety;
         stateD["b"] = currentNavyNotoriety;
         stateD["c"] = currentCommunityNotoriety;
+        stateD["d"] = isAggro;
+        stateD["e"] = pirateHostilityThreshold;
         return state;
 
     }
@@ -221,5 +230,7 @@ public class Notoriety : MonoBehaviour, IJsonSaveable
         currentPirateNotoriety = stateDict["a"].ToObject<float>();
         currentNavyNotoriety = stateDict["b"].ToObject<float>();
         currentCommunityNotoriety = stateDict["c"].ToObject<float>();
+        isAggro = stateDict["d"].ToObject<bool>();
+        pirateHostilityThreshold = stateDict["e"].ToObject<float>();
     }
 }

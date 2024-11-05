@@ -16,6 +16,7 @@ MonoBehaviour:
   <ApplyImpactRootMotion>k__BackingField: 1
   <AnimationName>k__BackingField: Attack2
   <ImpactAnimationName>k__BackingField: HorizontalSlashImpact
+  <BlockAnimationName>k__BackingField: HorizontalSlashBlock
   damageModifier: 1
   transitionDuration: 0.1
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: bd5996530e66e1245aa47e10072910a4,

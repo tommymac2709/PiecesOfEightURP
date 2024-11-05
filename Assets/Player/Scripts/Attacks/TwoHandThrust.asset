@@ -16,6 +16,7 @@ MonoBehaviour:
   <ApplyImpactRootMotion>k__BackingField: 1
   <AnimationName>k__BackingField: Attack3
   <ImpactAnimationName>k__BackingField: StabImpact
+  <BlockAnimationName>k__BackingField: StabBlock
   damageModifier: 2
   transitionDuration: 0.1
   <NextComboAttack>k__BackingField: {fileID: 11400000, guid: bbc2a1d1f7118264e95af55b02455bc4,

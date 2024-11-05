@@ -8,6 +8,8 @@ public class EnemyStateMachine : StateMachine, ISaveable
     [field: SerializeField] public BaseStats BaseStats { get; private set; }
 
     [field: SerializeField] public CharacterController Controller { get; private set; }
+
+    [field: SerializeField] public DamageReceiver DamageReceiver { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
 
     [field: SerializeField] public Fighter Fighter { get; private set; }
@@ -55,6 +57,12 @@ public class EnemyStateMachine : StateMachine, ISaveable
 
     [field: SerializeField] public float PlayerFleeRange { get; private set; }
 
+    [field: SerializeField] public float BlockRange { get; private set; }
+
+    [field: SerializeField] public bool IsBlocking { get; private set; }
+
+    [field: SerializeField] public bool StateShouldBlock { get; private set; }
+
     public Health Player { get; private set; }
     public AbilityManager PlayerAbilityManager { get; private set; }
 
@@ -74,10 +82,18 @@ public class EnemyStateMachine : StateMachine, ISaveable
         SwitchState(new EnemyIdleState(this));
     }
 
+    public void SetIsBlocking(bool isBlocking)
+    {
+        IsBlocking = isBlocking;
+    }
+
     private void OnEnable()
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
+        DamageReceiver.OnImpactEnemy += HandleTakeDamage;
+        DamageReceiver.OnBlocked += HandleBlocked;
+        PlayerAttackingState.OnPlayerAttack += HandlePlayerAttack;
         
     }
 
@@ -85,7 +101,46 @@ public class EnemyStateMachine : StateMachine, ISaveable
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
+        DamageReceiver.OnImpactEnemy -= HandleTakeDamage;
+        DamageReceiver.OnBlocked -= HandleBlocked;
+        PlayerAttackingState.OnPlayerAttack -= HandlePlayerAttack;
         
+    }
+
+    public void SetStateShouldBlock(bool shouldBlock)
+    {
+        StateShouldBlock = shouldBlock;
+    }
+
+    private void HandleBlocked()
+    {
+        SwitchState(new EnemyBlockImpactState(this));
+    }
+
+    private void HandlePlayerAttack()
+    {
+        // Condition for blocking, e.g., a probability check or distance check
+        if (ShouldBlock())
+        {
+            var currentAttack = PlayerStateMachine.Fighter.currentAttack;
+            SwitchState(new EnemyBlockingState(this, currentAttack));
+        }
+    }
+
+    private bool ShouldBlock()
+    {
+        if (Vector3.Distance(transform.position, Player.transform.position) < BlockRange && Notoriety.GetIsAggro() && StateShouldBlock)
+        {
+            int rnd = Random.Range(0, 10);
+            if (rnd < 8)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        
+        return false;
     }
 
     private void HandleTakeDamage()
