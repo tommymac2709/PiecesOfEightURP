@@ -40,7 +40,7 @@ public class Stamina : MonoBehaviour, IJsonSaveable
         GetComponent<DamageReceiver>().OnBlocked -= LoseStaminaBlocked;
         GetComponent<BaseStats>().onLevelUp -= RegenerateStamina;
         if(!this.CompareTag("Player")) { return; }
-        inputReader.DodgeEvent -= LoseStaminaOnDodge;
+        
     }
     private void Awake()
     {
